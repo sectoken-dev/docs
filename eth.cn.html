@@ -1236,10 +1236,10 @@
 
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/send/"</span>
-    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC: "</span><span class="n">your</span> <span class="n">token</span><span class="s">"},</span><span class="err">
-</span><span class="s">    params={"</span><span class="n">wallet_id</span><span class="s">": "</span><span class="n">your</span> <span class="n">wallet</span> <span class="nb">id</span><span class="s">"}</span><span class="err">
-</span><span class="s">)</span><span class="err">
-</span></code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/send/"</span> <span class="se">\</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>
+    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"your wallet id"</span><span class="p">}</span>
+<span class="p">)</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/send/"</span> <span class="se">\</span>
     -X GET <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
     -d <span class="s1">'{"wallet_id": "your wallet id"}'</span>
@@ -1316,14 +1316,14 @@
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/send/"</span>
-    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC: "</span><span class="n">your</span> <span class="n">token</span><span class="s">"},</span><span class="err">
-</span><span class="s">    json={</span><span class="err">
-</span><span class="s">        "</span><span class="n">wallet_id</span><span class="s">": "</span><span class="n">your</span> <span class="n">wallet</span> <span class="nb">id</span><span class="s">",</span><span class="err">
-</span><span class="s">        "</span><span class="n">order_id</span><span class="s">": "</span><span class="n">order</span> <span class="nb">id</span><span class="s">",</span><span class="err">
-</span><span class="s">        "</span><span class="n">signature</span><span class="s">": "</span><span class="n">signature</span> <span class="n">data</span><span class="s">"</span><span class="err">
-</span><span class="s">    }</span><span class="err">
-</span><span class="s">)</span><span class="err">
-</span></code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/send/"</span> <span class="se">\</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+        <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"your wallet id"</span><span class="p">,</span>
+        <span class="s">"order_id"</span><span class="p">:</span> <span class="s">"order id"</span><span class="p">,</span>
+        <span class="s">"signature"</span><span class="p">:</span> <span class="s">"signature data"</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/send/"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span>, <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
@@ -1482,10 +1482,10 @@
 
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/authority/"</span><span class="p">,</span>
-    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC: "</span><span class="n">your</span> <span class="n">token</span><span class="s">"},</span><span class="err">
-</span><span class="s">    params={"</span><span class="n">wallet_id</span><span class="s">": "</span><span class="n">your</span> <span class="n">wallet</span> <span class="nb">id</span><span class="s">", "</span><span class="n">user_type</span><span class="s">": "</span><span class="nb">all</span><span class="s">"}</span><span class="err">
-</span><span class="s">)</span><span class="err">
-</span></code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/authority/?wallet_id=your_wallet_id&amp;user_type=all"</span> <span class="se">\</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>
+    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"your wallet id"</span><span class="p">,</span> <span class="s">"user_type"</span><span class="p">:</span> <span class="s">"all"</span><span class="p">}</span>
+<span class="p">)</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/authority/?wallet_id=your_wallet_id&amp;user_type=all"</span> <span class="se">\</span>
     -X GET <span class="se">\ </span>
     -H <span class="s2">"HMAC:your token"</span>
 </code></pre>
@@ -1573,15 +1573,15 @@
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/authority/"</span><span class="p">,</span>
-    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC: "</span><span class="n">your</span> <span class="n">token</span><span class="s">"},</span><span class="err">
-</span><span class="s">    json={</span><span class="err">
-</span><span class="s">        "</span><span class="n">wallet_id</span><span class="s">": "</span><span class="n">your</span> <span class="n">wallet</span> <span class="nb">id</span><span class="s">",</span><span class="err">
-</span><span class="s">        "</span><span class="n">user_email</span><span class="s">": "</span><span class="n">email</span><span class="nd">@email.com</span><span class="s">",</span><span class="err">
-</span><span class="s">        "</span><span class="n">operation</span><span class="s">": "</span><span class="n">add</span><span class="s">",</span><span class="err">
-</span><span class="s">        "</span><span class="nb">type</span><span class="s">": "</span><span class="n">observer</span><span class="s">"</span><span class="err">
-</span><span class="s">    }</span><span class="err">
-</span><span class="s">)</span><span class="err">
-</span></code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/authority/"</span> <span class="se">\</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+        <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"your wallet id"</span><span class="p">,</span>
+        <span class="s">"user_email"</span><span class="p">:</span> <span class="s">"email@email.com"</span><span class="p">,</span>
+        <span class="s">"operation"</span><span class="p">:</span> <span class="s">"add"</span><span class="p">,</span>
+        <span class="s">"type"</span><span class="p">:</span> <span class="s">"observer"</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/authority/"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
     -H <span class="s2">"Contet-Type:application/json"</span> <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>

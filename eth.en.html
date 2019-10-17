@@ -223,7 +223,7 @@
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
           </li>
           <li>
-            <a href="#get-or-create-fee-address" class="toc-h1 toc-link" data-title="Get or Create Fee Address">Get or Create Fee Address</a>
+            <a href="#get-fee-address" class="toc-h1 toc-link" data-title="Get Fee Address">Get Fee Address</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#http-request" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
@@ -321,7 +321,7 @@
               </ul>
           </li>
           <li>
-            <a href="#d1b09b6b80" class="toc-h1 toc-link" data-title="查询地址余额">查询地址余额</a>
+            <a href="#get-balance-of-eth-address" class="toc-h1 toc-link" data-title="Get Balance of ETH Address">Get Balance of ETH Address</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#http-request-8" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
@@ -431,7 +431,7 @@
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
 <p><a href="https://testnet.sectoken.io/">https://testnet.sectoken.io/</a></p>
-<h1 id='get-or-create-fee-address'>Get or Create Fee Address</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<h1 id='get-fee-address'>Get Fee Address</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/fee/"</span><span class="p">,</span> 
@@ -1048,7 +1048,7 @@ If the platform does not participate in the signature, the number of public keys
 <td>Derived ETH address</td>
 </tr>
 </tbody></table>
-<h1 id='d1b09b6b80'>查询地址余额</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">reqeusts</span>
+<h1 id='get-balance-of-eth-address'>Get Balance of ETH Address</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">reqeusts</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/addr_balance/"</span><span class="p">,</span>

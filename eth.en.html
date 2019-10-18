@@ -377,7 +377,7 @@
               </ul>
           </li>
           <li>
-            <a href="#get-list-of-coin" class="toc-h1 toc-link" data-title="Get List of Coin">Get List of Coin</a>
+            <a href="#get-coin-list" class="toc-h1 toc-link" data-title="Get Coin List">Get Coin List</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#http-request-12" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
@@ -744,7 +744,7 @@ If the platform participates in the signature, the number of public keys to be p
 <td>coin_type</td>
 <td>string</td>
 <td>No</td>
-<td>Coin type. ETH or other erc20 token supported by the platform. Default is &quot;ETH&quot;.</td>
+<td>Coin type. ETH or other ERC20 token supported by the platform. Default is &quot;ETH&quot;.</td>
 </tr>
 </tbody></table>
 <h3 id='response-parameters-4'>Response Parameters</h3>
@@ -1068,7 +1068,7 @@ If the platform participates in the signature, the number of public keys to be p
 <td>coin_type</td>
 <td>string</td>
 <td>No</td>
-<td>Coin type. ETH or other erc20 token supported by the platform. Default is &quot;ETH&quot;.</td>
+<td>Coin type. ETH or other ERC20 token supported by the platform. Default is &quot;ETH&quot;.</td>
 </tr>
 </tbody></table>
 <h3 id='response-parameters-8'>Response Parameters</h3>
@@ -1170,7 +1170,7 @@ If the platform participates in the signature, the number of public keys to be p
 <td>coin_type</td>
 <td>string</td>
 <td>No</td>
-<td>Coin type. ETH or other erc20 token supported by the platform. Default is &quot;ETH&quot;.</td>
+<td>Coin type. ETH or other ERC20 token supported by the platform. Default is &quot;ETH&quot;.</td>
 </tr>
 </tbody></table>
 <h3 id='response-parameters-9'>Response Parameters</h3>
@@ -1383,12 +1383,12 @@ If the platform participates in the signature, the number of public keys to be p
 <td>Whether to broadcast.If the number of signatures does not reach the broadcast limit, it indicates that the final signature was not successful. Otherwise, it returns true.</td>
 </tr>
 </tbody></table>
-<h1 id='get-list-of-coin'>Get List of Coin</h1>
-<p>Get a list of ETH tokens supported by the platform.</p>
+<h1 id='get-coin-list'>Get Coin List</h1>
+<p>Get a list of ETH ERC20 tokens supported by the platform.</p>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://testnet.sectoken.io/wallet/eth/coin_types/"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC: "</span><span class="n">your</span> <span class="n">token</span><span class="s">"})</span><span class="err">
-</span></code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/coin_types/"</span> <span class="se">\</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://testnet.sectoken.io/wallet/eth/addr_list/"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC: "</span><span class="n">your</span> <span class="n">token</span><span class="s">"})</span><span class="err">
+</span></code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/addr_list/"</span> <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span>
 </code></pre>
 <blockquote>
@@ -1406,7 +1406,7 @@ If the platform participates in the signature, the number of public keys to be p
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-12'>HTTP Request</h3>
-<p><code>GET https://testnet.sectoken.io/wallet/eth/coin_types/</code></p>
+<p><code>GET https://testnet.sectoken.io/wallet/eth/addr_list/</code></p>
 <h3 id='no-request-parameters-3'>No Request Parameters</h3><h3 id='response-parameters-12'>Response Parameters</h3>
 <table><thead>
 <tr>

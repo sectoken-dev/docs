@@ -561,7 +561,7 @@
 </tr>
 </tbody></table>
 
-<aside class="notice">
+<aside>
 <p>如果平台参与签名，需要提供的公钥个数必须等于总签名数-1。</p>
 <p>如果平台不参与签名，需要提供的公钥个数必须等于总签名数。</p>
 </aside>
@@ -792,17 +792,17 @@
 <tr>
 <td>send_max</td>
 <td>string</td>
-<td>单次转账上限，0为无上限</td>
+<td>单次转账上限，&quot;0&quot;为无上限</td>
 </tr>
 <tr>
 <td>send_day_limit</td>
-<td>string</td>
+<td>integer</td>
 <td>单日转账次数上限，0为无上限</td>
 </tr>
 <tr>
 <td>send_day_max</td>
-<td>integer</td>
-<td>单日转账上限，0为无上限</td>
+<td>string</td>
+<td>单日转账上限，&quot;0&quot;为无上限</td>
 </tr>
 <tr>
 <td>freeze_overtime</td>
@@ -1152,13 +1152,19 @@
 <td>value</td>
 <td>string</td>
 <td>是</td>
-<td>转账金额，最小单位，使用字符串表示</td>
+<td>转账金额，最小单位</td>
 </tr>
 <tr>
 <td>coin_type</td>
 <td>string</td>
 <td>否</td>
 <td>币种，默认为eth，可以指定为平台支持的eth token，如eth_ht，eth_koz</td>
+</tr>
+<tr>
+<td>feerate</td>
+<td>int</td>
+<td>否</td>
+<td>转账速度，1快速0普通，默认为0</td>
 </tr>
 </tbody></table>
 <h3 id='70bdef7e25-9'>返回参数</h3>

@@ -448,7 +448,7 @@
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x1B004A73c74aC24891a1618e8b66C7dC95716E4b"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">318062988000000000</span><span class="w">
+      </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"318062988000000000"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -496,7 +496,7 @@
 <h1 id='create-multi-sign-wallet'>Create Multi-sign Wallet</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
-    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/getkey/"</span><span class="p">,</span> 
+    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/create/"</span><span class="p">,</span> 
     <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span> 
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
         <span class="s">"pubkeys"</span><span class="p">:</span> <span class="p">[</span><span class="s">"compressed pubkey1"</span><span class="p">,</span><span class="o">...</span><span class="p">],</span>
@@ -505,7 +505,7 @@
         <span class="s">"order_type"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
     <span class="p">}</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/getkey/"</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/create/"</span> <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
@@ -563,8 +563,9 @@
 </tr>
 </tbody></table>
 
-<aside class="notice">
-If the platform participates in the signature, the number of public keys to be provided must be equal to the total signature number -1. If the platform does not participate in the signature, the number of public keys required must be equal to the total number of signatures.
+<aside>
+<p>If the platform participates in the signature, the number of public keys to be provided must be equal to the total signature number -1.</p>
+<p>If the platform does not participate in the signature, the number of public keys required must be equal to the total number of signatures.</p>
 </aside>
 <h3 id='response-parameters-2'>Response Parameters</h3>
 <table><thead>
@@ -614,9 +615,7 @@ If the platform participates in the signature, the number of public keys to be p
 <td>Xpublic key</td>
 </tr>
 </tbody></table>
-<h1 id='activate-wallet'>Activate Wallet</h1>
-<p>Activate ETH wallet</p>
-<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<h1 id='activate-wallet'>Activate Wallet</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/activate/"</span><span class="p">,</span>
@@ -716,10 +715,10 @@ If the platform participates in the signature, the number of public keys to be p
         </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2cc5abb2b9932ca1ec5513ad1a9685f9"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"wallet_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TestSeven"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x32FfC556A1E1deEfE1084A0E276501d0B347bb39"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">999999999997000</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"send_max"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"999999999997000"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"send_max"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"send_day_max"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"send_day_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"send_day_max"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="s2">"freeze_overtime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -791,12 +790,12 @@ If the platform participates in the signature, the number of public keys to be p
 </tr>
 <tr>
 <td>balance</td>
-<td>integer</td>
+<td>string</td>
 <td>Balance. (Minimum unit)</td>
 </tr>
 <tr>
 <td>send_max</td>
-<td>integer</td>
+<td>string</td>
 <td>Maximum amount per transfer. 0 is unlimited.</td>
 </tr>
 <tr>
@@ -806,7 +805,7 @@ If the platform participates in the signature, the number of public keys to be p
 </tr>
 <tr>
 <td>send_day_max</td>
-<td>integer</td>
+<td>string</td>
 <td>Maximum number of transfers per day. 0 is unlimited.</td>
 </tr>
 <tr>
@@ -815,9 +814,7 @@ If the platform participates in the signature, the number of public keys to be p
 <td>Wallet freeze deadline. 0 is not frozen.</td>
 </tr>
 </tbody></table>
-<h1 id='get-eth-wallet-list'>Get ETH Wallet List</h1>
-<p>Get the list of all ETH wallets.</p>
-<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<h1 id='get-eth-wallet-list'>Get ETH Wallet List</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/detail/wallet/, </span><span class="err">
@@ -891,16 +888,14 @@ If the platform participates in the signature, the number of public keys to be p
 <td>Creation time of wallet</td>
 </tr>
 </tbody></table>
-<h1 id='get-wallet-address-list'>Get Wallet Address List</h1>
-<p>Get all the addresses of ETH wallet</p>
-<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<h1 id='get-wallet-address-list'>Get Wallet Address List</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/detail/derive/, </span><span class="err">
+    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/detail/addr_list/, </span><span class="err">
 </span><span class="s">    headers={"</span><span class="n">HMAC</span><span class="s">": "</span><span class="n">your</span> <span class="n">token</span><span class="s">"},</span><span class="err">
 </span><span class="s">    params={"</span><span class="n">wallet_id</span><span class="s">": "</span><span class="n">your</span> <span class="n">wallet</span> <span class="nb">id</span><span class="s">", "</span><span class="n">page</span><span class="s">": 1}</span><span class="err">
 </span><span class="s">)</span><span class="err">
-</span></code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/detail/derive/?wallet_id=your_wallet_id&amp;page=1"</span> <span class="se">\</span>
+</span></code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/detail/addr_list/?wallet_id=your_wallet_id&amp;page=1"</span> <span class="se">\</span>
     -X GET <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
 </code></pre>
@@ -912,7 +907,7 @@ If the platform participates in the signature, the number of public keys to be p
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"0x32FfC556A1E1deEfE1084A0E276501d0B347bb39"</span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-6'>HTTP Request</h3>
-<p><code>GET https://testnet.sectoken.io/wallet/eth/detail/derive/</code></p>
+<p><code>GET https://testnet.sectoken.io/wallet/eth/detail/addr_list/</code></p>
 <h3 id='request-parameters-4'>Request Parameters</h3>
 <table><thead>
 <tr>
@@ -958,11 +953,11 @@ If the platform participates in the signature, the number of public keys to be p
 <p>Derives a new ETH address for the wallet</p>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
-    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/derive/"</span><span class="p">,</span>
+    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/addr_list/"</span><span class="p">,</span>
     <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>
     <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"your wallet id"</span><span class="p">}</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/derive/"</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/addr_list/"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
@@ -976,7 +971,7 @@ If the platform participates in the signature, the number of public keys to be p
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xcf58D46C7b760c298fAFBf75D70D9E641f8357d7"</span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-7'>HTTP Request</h3>
-<p><code>POST https://testnet.sectoken.io/wallet/eth/derive/</code></p>
+<p><code>POST https://testnet.sectoken.io/wallet/eth/addr_list/</code></p>
 <h3 id='request-parameters-5'>Request Parameters</h3>
 <table><thead>
 <tr>
@@ -1044,7 +1039,7 @@ If the platform participates in the signature, the number of public keys to be p
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x1B004A73c74aC24891a1618e8b66C7dC95716E4b"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">312672375000000000</span><span class="w">
+        </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"312672375000000000"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-8'>HTTP Request</h3>
@@ -1100,7 +1095,7 @@ If the platform participates in the signature, the number of public keys to be p
 </thead><tbody>
 <tr>
 <td>balance</td>
-<td>integer</td>
+<td>string</td>
 <td>Balance. (Minimum unit)</td>
 </tr>
 </tbody></table>
@@ -1387,8 +1382,8 @@ If the platform participates in the signature, the number of public keys to be p
 <p>Get a list of ETH ERC20 tokens supported by the platform.</p>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://testnet.sectoken.io/wallet/eth/addr_list/"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC: "</span><span class="n">your</span> <span class="n">token</span><span class="s">"})</span><span class="err">
-</span></code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/addr_list/"</span> <span class="se">\</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://testnet.sectoken.io/wallet/eth/coin_types/"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC: "</span><span class="n">your</span> <span class="n">token</span><span class="s">"})</span><span class="err">
+</span></code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/coin_types/"</span> <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span>
 </code></pre>
 <blockquote>
@@ -1406,7 +1401,7 @@ If the platform participates in the signature, the number of public keys to be p
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-12'>HTTP Request</h3>
-<p><code>GET https://testnet.sectoken.io/wallet/eth/addr_list/</code></p>
+<p><code>GET https://testnet.sectoken.io/wallet/eth/coin_types/</code></p>
 <h3 id='no-request-parameters-3'>No Request Parameters</h3><h3 id='response-parameters-12'>Response Parameters</h3>
 <table><thead>
 <tr>

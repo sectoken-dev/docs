@@ -448,12 +448,10 @@
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x1B004A73c74aC24891a1618e8b66C7dC95716E4b"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">318062988000000000</span><span class="w">
+      </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"318062988000000000"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>获取当前账户下的费用地址</p>
-<h3 id='http-request'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://testnet.sectoken.io/wallet/eth/fee/</code></p>
 <h3 id='dcedc889dd'>无请求参数</h3><h3 id='70bdef7e25'>返回参数</h3>
 <table><thead>
@@ -496,7 +494,7 @@
 <h1 id='eth'>创建eth多签钱包</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
-    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/getkey/"</span><span class="p">,</span> 
+    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/create/"</span><span class="p">,</span> 
     <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span> 
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
         <span class="s">"pubkeys"</span><span class="p">:</span> <span class="p">[</span><span class="s">"compressed pubkey1"</span><span class="p">,</span><span class="o">...</span><span class="p">],</span>
@@ -505,7 +503,7 @@
         <span class="s">"order_type"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
     <span class="p">}</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/getkey/"</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/create/"</span> <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
@@ -563,8 +561,7 @@
 </tr>
 </tbody></table>
 
-<aside class="notice">如果平台参与签名，需要提供的公钥个数必须等于总签名数-1。如果平台不参与签名，需要提供的公钥个数必须等于总签名数。
-</aside>
+<aside class="notice">如果平台参与签名，需要提供的公钥个数必须等于总签名数-1。如果平台不参与签名，需要提供的公钥个数必须等于总签名数。</aside>
 <h3 id='70bdef7e25-2'>返回参数</h3>
 <table><thead>
 <tr>
@@ -613,9 +610,7 @@
 <td>钱包的xpub</td>
 </tr>
 </tbody></table>
-<h1 id='c2eb9677a0'>激活钱包</h1>
-<p>激活ETH钱包</p>
-<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<h1 id='c2eb9677a0'>激活钱包</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/activate/"</span><span class="p">,</span>
@@ -697,9 +692,7 @@
 <td>钱包的地址</td>
 </tr>
 </tbody></table>
-<h1 id='1e3f3182c5'>查看钱包信息</h1>
-<p>查看ETH钱包的详细信息</p>
-<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<h1 id='1e3f3182c5'>查看钱包信息</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/detail/"</span><span class="p">,</span>
@@ -715,10 +708,10 @@
         </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2cc5abb2b9932ca1ec5513ad1a9685f9"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"wallet_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TestSeven"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x32FfC556A1E1deEfE1084A0E276501d0B347bb39"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">999999999997000</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"send_max"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"999999999997000"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"send_max"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"send_day_max"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"send_day_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"send_day_max"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="s2">"freeze_overtime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -790,17 +783,17 @@
 </tr>
 <tr>
 <td>balance</td>
-<td>integer</td>
+<td>string</td>
 <td>钱包余额，单位为最小单位</td>
 </tr>
 <tr>
 <td>send_max</td>
-<td>integer</td>
+<td>string</td>
 <td>单次转账上限，0为无上限</td>
 </tr>
 <tr>
 <td>send_day_limit</td>
-<td>integer</td>
+<td>string</td>
 <td>单日转账次数上限，0为无上限</td>
 </tr>
 <tr>
@@ -814,9 +807,7 @@
 <td>钱包冻结截止时间，0为未冻结</td>
 </tr>
 </tbody></table>
-<h1 id='dd15c4c900'>查看钱包列表</h1>
-<p>查看所有的ETH钱包列表</p>
-<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<h1 id='dd15c4c900'>查看钱包列表</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/detail/wallet/, </span><span class="err">
@@ -842,17 +833,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-5'>HTTP Request</h3>
 <p><code>GET https://testnet.sectoken.io/wallet/eth/detail/wallet/</code></p>
-<h3 id='dcedc889dd-2'>无请求参数</h3>
-<table><thead>
-<tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>必填</th>
-<th>说明</th>
-</tr>
-</thead><tbody>
-</tbody></table>
-<h3 id='70bdef7e25-5'>返回参数</h3>
+<h3 id='dcedc889dd-2'>无请求参数</h3><h3 id='70bdef7e25-5'>返回参数</h3>
 <table><thead>
 <tr>
 <th>参数名</th>
@@ -900,16 +881,14 @@
 <td>钱包创建时间</td>
 </tr>
 </tbody></table>
-<h1 id='e7c28ec05c'>钱包地址列表</h1>
-<p>获取钱包下的所有地址</p>
-<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<h1 id='e7c28ec05c'>钱包地址列表</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/detail/derive/, </span><span class="err">
+    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/detail/addr_list/, </span><span class="err">
 </span><span class="s">    headers={"</span><span class="n">HMAC</span><span class="s">": "</span><span class="n">your</span> <span class="n">token</span><span class="s">"},</span><span class="err">
 </span><span class="s">    params={"</span><span class="n">wallet_id</span><span class="s">": "</span><span class="n">your</span> <span class="n">wallet</span> <span class="nb">id</span><span class="s">", "</span><span class="n">page</span><span class="s">": 1}</span><span class="err">
 </span><span class="s">)</span><span class="err">
-</span></code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/detail/derive/?wallet_id=your_wallet_id&amp;page=1"</span> <span class="se">\</span>
+</span></code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/detail/addr_list/?wallet_id=your_wallet_id&amp;page=1"</span> <span class="se">\</span>
     -X GET <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
 </code></pre>
@@ -921,7 +900,7 @@
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"0x32FfC556A1E1deEfE1084A0E276501d0B347bb39"</span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-6'>HTTP Request</h3>
-<p><code>GET https://testnet.sectoken.io/wallet/eth/detail/derive/</code></p>
+<p><code>GET https://testnet.sectoken.io/wallet/eth/detail/addr_list/</code></p>
 <h3 id='1f9ac54b15-4'>请求参数</h3>
 <table><thead>
 <tr>
@@ -963,9 +942,7 @@
 <td>返回内容，每一个元素是一个地址</td>
 </tr>
 </tbody></table>
-<h1 id='1ae0fe9133'>派生地址</h1>
-<p>派生一个新的ETH地址</p>
-<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<h1 id='1ae0fe9133'>派生地址</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/derive/"</span><span class="p">,</span>
     <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>
@@ -1052,7 +1029,7 @@
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">312672375000000000</span><span class="w">
+        </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"312672375000000000"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-8'>HTTP Request</h3>
@@ -1108,7 +1085,7 @@
 </thead><tbody>
 <tr>
 <td>balance</td>
-<td>integer</td>
+<td>string</td>
 <td>地址的余额，最小单位</td>
 </tr>
 </tbody></table>
@@ -1395,8 +1372,8 @@
 <p>获取平台支持的ETH ERC20 token列表</p>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://testnet.sectoken.io/wallet/eth/addr_list/"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC: "</span><span class="n">your</span> <span class="n">token</span><span class="s">"})</span><span class="err">
-</span></code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/addr_list/"</span> <span class="se">\</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://testnet.sectoken.io/wallet/eth/coin_types/"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC: "</span><span class="n">your</span> <span class="n">token</span><span class="s">"})</span><span class="err">
+</span></code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/coin_types/"</span> <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span>
 </code></pre>
 <blockquote>

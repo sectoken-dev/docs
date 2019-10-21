@@ -1340,21 +1340,23 @@
 <h1 id='transaction-callback'>Transaction Callback</h1>
 <p>When a transaction occurs in a wallet，Sectoken will send an Http POST request to the specified url，The content-type of the request header is application/json.。</p>
 
+<p>This url is specified by the user, who must deploy the service to receive the HTTP POST request.</p>
+
 <blockquote>
 <p>request body</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6004e156344ec27cad24a8df5bbaa5ab"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x2b4675aff7efad0c7dcee09a943f9cc501402f18b67393a47cdcfa887f5ab2da"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">4340000</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"dst_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x759ac48a2754be136d495da1a826200ab1c911f2"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"src_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x8cb9e65d6a771424dfabbda4221bdb446d9183fe"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1872340000</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000000000"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"wallet_balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100000000000"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="w">
+    </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6004e156344ec27cad24a8df5bbaa5ab"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x2b4675aff7efad0c7dcee09a943f9cc501402f18b67393a47cdcfa887f5ab2da"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">4340000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"dst_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x759ac48a2754be136d495da1a826200ab1c911f2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"src_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x8cb9e65d6a771424dfabbda4221bdb446d9183fe"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1872340000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"wallet_balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='parameters-descriptions'>Parameters descriptions</h3>
 <table><thead>

@@ -385,6 +385,20 @@
               </ul>
           </li>
           <li>
+            <a href="#c284998822" class="toc-h1 toc-link" data-title="获取交易记录">获取交易记录</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-12" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-10" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-12" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#e08c1d4f9a" class="toc-h1 toc-link" data-title="错误码">错误码</a>
           </li>
       </ul>
@@ -1415,6 +1429,138 @@
 <td>coin_type</td>
 <td>string</td>
 <td>币种类型</td>
+</tr>
+<tr>
+<td>decimal</td>
+<td>int</td>
+<td>精度</td>
+</tr>
+</tbody></table>
+<h1 id='c284998822'>获取交易记录</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://testnet.sectoken.io/flow/record/eth/"</span><span class="p">,</span> 
+            <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC: "</span><span class="n">your</span> <span class="n">token</span><span class="s">"}, </span><span class="err">
+</span><span class="s">            params={</span><span class="err">
+</span><span class="s">                "</span><span class="n">wallet_id</span><span class="s">": "</span><span class="n">b81d38f5f250c36a05da0d0e1f9bd394</span><span class="s">",</span><span class="err">
+</span><span class="s">                "</span><span class="n">year</span><span class="s">": "</span><span class="mi">2019</span><span class="s">",</span><span class="err">
+</span><span class="s">                "</span><span class="n">month</span><span class="s">": "</span><span class="mi">10</span><span class="s">"</span><span class="err">
+</span><span class="s">            }</span><span class="err">
+</span><span class="s">)</span><span class="err">
+</span></code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/flow/record/eth/?wallet_id=b81d38f5f250c36a05da0d0e1f9bd394&amp;year=2019&amp;month=10"</span> <span class="se">\</span>
+    -H <span class="s2">"HMAC:your token"</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xab5e867f7246ac484d79d9d5c73fbdf7a96227ec0d1c5f18340a860d4bf6cb72"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"src_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xcc6620eACfFe84e936285b167F0D2c7C24155363"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"dst_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xa2465290580A948063B713cFf09dD550e4C4E3DB"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-17T11:40:54Z"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">5278224</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-12'>HTTP Request</h3>
+<p><code>GET https://testnet.sectoken.io/flow/record/eth/</code></p>
+<h3 id='1f9ac54b15-10'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wallet_id</td>
+<td>string</td>
+<td>是</td>
+<td>钱包id</td>
+</tr>
+<tr>
+<td>year</td>
+<td>string</td>
+<td>是</td>
+<td>年份</td>
+</tr>
+<tr>
+<td>month</td>
+<td>string</td>
+<td>是</td>
+<td>月份</td>
+</tr>
+<tr>
+<td>day</td>
+<td>string</td>
+<td>否</td>
+<td>日期</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-12'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>array</td>
+<td>返回内容</td>
+</tr>
+</tbody></table>
+<h4 id='data-11'>data 参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>txid</td>
+<td>string</td>
+<td>交易单id</td>
+</tr>
+<tr>
+<td>src_address</td>
+<td>string</td>
+<td>交易来源地址</td>
+</tr>
+<tr>
+<td>det_address</td>
+<td>string</td>
+<td>交易目的地址</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>string</td>
+<td>交易金额</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>string</td>
+<td>交易时间</td>
+</tr>
+<tr>
+<td>state</td>
+<td>int</td>
+<td>交易状态 0转出1转入</td>
+</tr>
+<tr>
+<td>height</td>
+<td>int</td>
+<td>交易区块高度</td>
 </tr>
 <tr>
 <td>decimal</td>

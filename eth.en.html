@@ -405,7 +405,15 @@
               </ul>
           </li>
           <li>
-            <a href="#change-member-permissions" class="toc-h1 toc-link" data-title="Change Member Permissions">Change Member Permissions</a>
+            <a href="#transaction-callback" class="toc-h1 toc-link" data-title="Transaction Callback">Transaction Callback</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#parameters-descriptions" class="toc-h2 toc-link" data-title="Parameters descriptions">Parameters descriptions</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#get-transaction-records" class="toc-h1 toc-link" data-title="Get Transaction Records">Get Transaction Records</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#http-request-14" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
@@ -499,20 +507,27 @@
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/create/"</span><span class="p">,</span> 
     <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span> 
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
-        <span class="s">"pubkeys"</span><span class="p">:</span> <span class="p">[</span><span class="s">"compressed pubkey1"</span><span class="p">,</span><span class="o">...</span><span class="p">],</span>
+        <span class="s">"pubkeys"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">"user1@email.com"</span><span class="p">:</span> <span class="s">"027c9612b91ed830de2259819c85e160084fb1fb0ca5ad2d02537c085f3b93246c"</span><span class="p">,</span> 
+            <span class="s">"user2@email.com"</span><span class="p">:</span> <span class="s">"02d654b7b6829df777a32267d366b4c24fd30fc1a61d816e043104edd198678e52"</span><span class="p">,</span> 
+            <span class="s">"other"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s">"67a98523eb0d02b513a42f078cba5c4f058c88c8f70f9b2755d8278530181822"</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="s">"privkeys"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">"user1@email.com"</span><span class="p">:</span> <span class="s">"NjdhOTg1MjNlYjBkMDJiNTEzYTQyZjA3OGNiYTVjNGYwNThjODhjOGY3MGY5YjI3NTVkODI3ODUzMDE4MTgyMg=="</span><span class="p">,</span> 
+            <span class="s">"user2@email.com"</span><span class="p">:</span> <span class="s">"YTU4MWRiYjlhZjA1NGM5MGY3Y2RkYzc3NjdlN2JhZmM5YjdlNjI0MGQyNGQ0ZWRlYjc0YjM3YmQ5MjBjOWVlMg=="</span><span class="p">,</span> 
+        <span class="p">},</span>
         <span class="s">"wallet_name"</span><span class="p">:</span> <span class="s">"your wallet name"</span><span class="p">,</span>
         <span class="s">"multi_type"</span><span class="p">:</span> <span class="s">"2-3"</span><span class="p">,</span>
-        <span class="s">"order_type"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s">"order_type"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
     <span class="p">}</span>
 <span class="p">)</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/create/"</span> <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
-    -d <span class="s1">'{"pubkeys": ["compressed pubkey1",...], \
-        "wallet_name": "your wallet name", \
-        "multi_type": "2-3", \
-        "order_type": 0}'</span>
+    -d <span class="s1">'{"pubkeys": {"user1@email.com": "027c9612b91ed830de2259819c85e160084fb1fb0ca5ad2d02537c085f3b93246c", "user2@email.com": "02d654b7b6829df777a32267d366b4c24fd30fc1a61d816e043104edd198678e52", "other": ["67a98523eb0d02b513a42f078cba5c4f058c88c8f70f9b2755d8278530181822"]}, "privkeys": {"user1@email.com": "NjdhOTg1MjNlYjBkMDJiNTEzYTQyZjA3OGNiYTVjNGYwNThjODhjOGY3MGY5YjI3NTVkODI3ODUzMDE4MTgyMg==", "user2@email.com": "YTU4MWRiYjlhZjA1NGM5MGY3Y2RkYzc3NjdlN2JhZmM5YjdlNjI0MGQyNGQ0ZWRlYjc0YjM3YmQ5MjBjOWVlMg=="}, "wallet_name": "your wallet name", "multi_type": "2-3", "order_type": 1}'</span>
 </code></pre>
 <blockquote>
 <p>Response Samples</p>
@@ -539,9 +554,21 @@
 </thead><tbody>
 <tr>
 <td>pubkeys</td>
-<td>array</td>
+<td>object</td>
 <td>Yes</td>
-<td>Compressed public keys</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td>privkeys</td>
+<td>object</td>
+<td>No</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td>passwordkeys</td>
+<td>object</td>
+<td>No</td>
+<td>TODO</td>
 </tr>
 <tr>
 <td>wallet_name</td>
@@ -562,6 +589,42 @@
 <td>Whether the platform is signed or not. 0: Yes, 1: No</td>
 </tr>
 </tbody></table>
+<h4 id='pubkeys-parameters'>pubkeys Parameters</h4>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+
+<p>TODO</p>
+<h4 id='privkeys-parameters'>privkeys Parameters</h4>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+
+<p>TODO</p>
+<h4 id='passwordkeys-parameters'>passwordkeys Parameters</h4>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+
+<p>TODO</p>
 
 <aside>
 <p>If the platform participates in the signature, the number of public keys to be provided must be equal to the total signature number -1.</p>
@@ -1104,7 +1167,7 @@
     <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
         <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"your wallet id"</span><span class="p">,</span>
-        <span class="s">"to_address"</span><span class="p">:</span> <span class="s">"recipient address"</span><span class="p">,</span>
+        <span class="s">"to_address"</span><span class="p">:</span> <span class="s">"destination address"</span><span class="p">,</span>
         <span class="s">"value"</span><span class="p">:</span> <span class="s">"1000000000"</span><span class="p">,</span>
         <span class="s">"coin_type"</span><span class="p">:</span> <span class="s">"eth"</span><span class="p">,</span>
         <span class="s">"feerate"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -1114,11 +1177,7 @@
     -X POST <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
-    -d <span class="s1">'{"wallet_id": "your wallet id", \
-         "to_address": "recipient address", \
-         "value": "1000000000", \
-         "coin_type": "eth", \
-         "feerate": 1}'</span>
+    -d <span class="s1">'{"wallet_id": "your wallet id", "to_address": "destination address", "value": "1000000000", "coin_type": "eth", "feerate": 1}'</span>
 </code></pre>
 <blockquote>
 <p>Response Samples</p>
@@ -1126,8 +1185,7 @@
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:{</span><span class="w">
-        </span><span class="s2">"tx_data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3851e44d1d73cedce686642211588a1137f21d01fe772c88ab49ff7fc6fa4911"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e64ff6632dab9bba94d45b6b22143533"</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3851e44d1d73cedce686642211588a1137f21d01fe772c88ab49ff7fc6fa4911"</span><span class="p">,</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-9'>HTTP Request</h3>
@@ -1200,14 +1258,9 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>tx_data</td>
+<td>data</td>
 <td>string</td>
 <td>Data for signature.</td>
-</tr>
-<tr>
-<td>order_id</td>
-<td>string</td>
-<td>Transaction id. (not ETH transaction id)</td>
 </tr>
 </tbody></table>
 <h1 id='get-unapproval-transaction'>Get Unapproval Transaction</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
@@ -1228,8 +1281,7 @@
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"tx_data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3851e44d1d73cedce686642211588a1137f21d01fe772c88ab49ff7fc6fa4911"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"order_id"</span><span class="p">:</span><span class="s2">"e64ff6632dab9bba94d45b6b22143533"</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3851e44d1d73cedce686642211588a1137f21d01fe772c88ab49ff7fc6fa4911"</span><span class="p">,</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-10'>HTTP Request</h3>
@@ -1278,14 +1330,9 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>tx_data</td>
+<td>data</td>
 <td>string</td>
 <td>Data for signature.</td>
-</tr>
-<tr>
-<td>order_id</td>
-<td>string</td>
-<td>Transaction id. (not ETH transaction id)</td>
 </tr>
 </tbody></table>
 <h1 id='submit-signature'>Submit Signature</h1>
@@ -1297,7 +1344,7 @@
     <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
         <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"your wallet id"</span><span class="p">,</span>
-        <span class="s">"order_id"</span><span class="p">:</span> <span class="s">"order id"</span><span class="p">,</span>
+        <span class="s">"data"</span><span class="p">:</span> <span class="s">"3851e44d1d73cedce686642211588a1137f21d01fe772c88ab49ff7fc6fa4911"</span><span class="p">,</span>
         <span class="s">"signature"</span><span class="p">:</span> <span class="s">"signature data"</span>
     <span class="p">}</span>
 <span class="p">)</span>
@@ -1305,10 +1352,7 @@
     -X POST <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span>, <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
-    -d <span class="s1">'{"wallet_id": "your wallet id", \
-        "order_id": "order id", \
-        "signature": "signature data"}'</span>
-
+    -d <span class="s1">'{"wallet_id": "your wallet id", "data": "3851e44d1d73cedce686642211588a1137f21d01fe772c88ab49ff7fc6fa4911", "signature": "0b1e9cf915d8d04592c81e4accf06194ca3069c38c53ecf2fabe149e3612284532369a161599127a44e85b5a7039c9426ddd516273b07ddb82a11e10800ae01a00"}'</span>
 </code></pre>
 <blockquote>
 <p>Response Samples</p>
@@ -1316,7 +1360,7 @@
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"is_sended"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="s2">"is_sent"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-11'>HTTP Request</h3>
@@ -1337,9 +1381,9 @@
 <td>Wallet id</td>
 </tr>
 <tr>
-<td>order_id</td>
+<td>data</td>
 <td>string</td>
-<td>Transaction id. (not ETH transaction id)</td>
+<td>Data for signature</td>
 <td></td>
 </tr>
 <tr>
@@ -1377,7 +1421,7 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>is_sended</td>
+<td>is_sent</td>
 <td>bool</td>
 <td>Whether to broadcast.If the number of signatures does not reach the broadcast limit, it indicates that the final signature was not successful. Otherwise, it returns true.</td>
 </tr>
@@ -1533,35 +1577,121 @@
 <td>Email addresses of operator</td>
 </tr>
 </tbody></table>
-<h1 id='change-member-permissions'>Change Member Permissions</h1>
-<p>Modify member permissions in wallet</p>
-<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<h1 id='transaction-callback'>Transaction Callback</h1>
+<p>When a transaction occurs in a wallet，Sectoken will send an Http POST request to the specified url，The content-type of the request header is application/json.。</p>
 
-<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
-    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/authority/"</span><span class="p">,</span>
-    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>
-    <span class="n">json</span><span class="o">=</span><span class="p">{</span>
-        <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"your wallet id"</span><span class="p">,</span>
-        <span class="s">"user_email"</span><span class="p">:</span> <span class="s">"email@email.com"</span><span class="p">,</span>
-        <span class="s">"operation"</span><span class="p">:</span> <span class="s">"add"</span><span class="p">,</span>
-        <span class="s">"role"</span><span class="p">:</span> <span class="s">"observer"</span>
-    <span class="p">}</span>
-<span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/authority/"</span> <span class="se">\</span>
-    -X POST <span class="se">\</span>
-    -H <span class="s2">"Contet-Type:application/json"</span> <span class="se">\</span>
-    -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
-    -d <span class="s1">'{"wallet_id": "your wallet id",
-         "user_email": "email@email.com",
-         "operation": "add",
-         "role": "observer"}'</span>
-</code></pre>
+<p>This url is specified by the user, who must deploy the service to receive the HTTP POST request.</p>
+
 <blockquote>
-<p>Response Samples </p>
+<p>request body</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6004e156344ec27cad24a8df5bbaa5ab"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x2b4675aff7efad0c7dcee09a943f9cc501402f18b67393a47cdcfa887f5ab2da"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">4340000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"dst_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x759ac48a2754be136d495da1a826200ab1c911f2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"src_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x8cb9e65d6a771424dfabbda4221bdb446d9183fe"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1872340000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"wallet_balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='parameters-descriptions'>Parameters descriptions</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wallet_id</td>
+<td>string</td>
+<td>wallet_id</td>
+</tr>
+<tr>
+<td>txid</td>
+<td>string</td>
+<td>Transaction id</td>
+</tr>
+<tr>
+<td>height</td>
+<td>int</td>
+<td>Block height</td>
+</tr>
+<tr>
+<td>dst_address</td>
+<td>string</td>
+<td>Destination address</td>
+</tr>
+<tr>
+<td>src_address</td>
+<td>string</td>
+<td>Source address</td>
+</tr>
+<tr>
+<td>state</td>
+<td>int</td>
+<td>Transfer status, 0 pay 1 receive</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>int</td>
+<td>Block confirmation time</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>string</td>
+<td>Transfer amount</td>
+</tr>
+<tr>
+<td>wallet_balance</td>
+<td>string</td>
+<td>Coin type balance in wallet</td>
+</tr>
+<tr>
+<td>coin_type</td>
+<td>string</td>
+<td>coin type</td>
+</tr>
+<tr>
+<td>decimal</td>
+<td>int</td>
+<td>Coin balance decimal places</td>
+</tr>
+</tbody></table>
+<h1 id='get-transaction-records'>Get Transaction Records</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://testnet.sectoken.io/flow/record/eth/"</span><span class="p">,</span> 
+            <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span> 
+            <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+                <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"b81d38f5f250c36a05da0d0e1f9bd394"</span><span class="p">,</span>
+                <span class="s">"year"</span><span class="p">:</span> <span class="s">"2019"</span><span class="p">,</span>
+                <span class="s">"month"</span><span class="p">:</span> <span class="s">"10"</span>
+            <span class="p">}</span>
+<span class="p">)</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/flow/record/eth/?wallet_id=b81d38f5f250c36a05da0d0e1f9bd394&amp;year=2019&amp;month=10"</span> <span class="se">\</span>
+    -H <span class="s2">"HMAC:your token"</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xab5e867f7246ac484d79d9d5c73fbdf7a96227ec0d1c5f18340a860d4bf6cb72"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"src_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xcc6620eACfFe84e936285b167F0D2c7C24155363"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"dst_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xa2465290580A948063B713cFf09dD550e4C4E3DB"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-17T11:40:54Z"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">5278224</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-14'>HTTP Request</h3>
-<p><code>POST https://testnet.sectoken.io/wallet/eth/authority/</code></p>
+<p><code>GET https://testnet.sectoken.io/flow/record/eth/</code></p>
 <h3 id='request-parameters-11'>Request Parameters</h3>
 <table><thead>
 <tr>
@@ -1575,25 +1705,25 @@
 <td>wallet_id</td>
 <td>string</td>
 <td>Yes</td>
-<td>Wallet id</td>
+<td>wallet_id</td>
 </tr>
 <tr>
-<td>user_email</td>
+<td>year</td>
 <td>string</td>
 <td>Yes</td>
-<td>The Email of the user to be operated on</td>
+<td>year</td>
 </tr>
 <tr>
-<td>operation</td>
+<td>month</td>
 <td>string</td>
 <td>Yes</td>
-<td>Operation type. add/ remove/ change</td>
+<td>month</td>
 </tr>
 <tr>
-<td>role</td>
+<td>day</td>
 <td>string</td>
 <td>No</td>
-<td>New role. observer or operator. if operation is &quot;remove&quot;, type is not required.</td>
+<td>day</td>
 </tr>
 </tbody></table>
 <h3 id='response-parameters-14'>Response Parameters</h3>
@@ -1609,7 +1739,22 @@
 <td>integer</td>
 <td>Status code. Successful return 200. Others are <a href="#error-codes">error codes</a>.</td>
 </tr>
+<tr>
+<td>data</td>
+<td>array</td>
+<td>Response data</td>
+</tr>
 </tbody></table>
+<h4 id='data-parameters-13'>Data Parameters</h4>
+<p>Parameter Name | Type | Description
+txid|string|Transaction id
+src_address|string|Transaction source address
+det_address|string|Transaction destination address
+amount|string|Transfer amount
+timestamp|string|Transfer time
+state|int|Transfer status, 0 pay 1 receive
+height|int|Block height
+decimal|int|Coin balance decimal places</p>
 <h1 id='error-codes'>Error Codes</h1>
 <p>The error code returned when an error occurs</p>
 

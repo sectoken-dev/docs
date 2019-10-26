@@ -1022,26 +1022,26 @@
 <p>获取平台支持的ETH ERC20 token列表</p>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/coin_types/"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">})</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/coin_types/"</span> <span class="se">\</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth_single/coin_types/"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">})</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth_single/coin_types/"</span> <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span>
 </code></pre>
 <blockquote>
 <p>返回示例</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w"> </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">},</span><span class="w"> 
-        </span><span class="p">{</span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERC20_MT"</span><span class="p">,</span><span class="w"> </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">},</span><span class="w"> 
-        </span><span class="p">{</span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERC20_HT"</span><span class="p">,</span><span class="w">  </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">},</span><span class="w"> 
-        </span><span class="p">{</span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERC20_JLL"</span><span class="p">,</span><span class="w"> </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">},</span><span class="w"> 
-        </span><span class="p">{</span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERC20_FFA"</span><span class="p">,</span><span class="w"> </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">},</span><span class="w"> 
-        </span><span class="p">{</span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERC20_KOZ"</span><span class="p">,</span><span class="w"> </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">}</span><span class="w">
+        </span><span class="p">{</span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERC20_MT"</span><span class="p">,</span><span class="w"> </span><span class="s2">"contract_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x37aef616A9d15563F3267b3776f9FFDdb8797879"</span><span class="p">,</span><span class="w"> </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERC20_HT"</span><span class="p">,</span><span class="w"> </span><span class="s2">"contract_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x0f2Dac5Bfdc7Ce4aea8dfb9a085703a92998aA48"</span><span class="p">,</span><span class="w"> </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">},</span><span class="w"> 
+        </span><span class="p">{</span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERC20_JLL"</span><span class="p">,</span><span class="w"> </span><span class="s2">"contract_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x7e326A29f182544E3982CDB3E0e24e19412CA34D"</span><span class="p">,</span><span class="w"> </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERC20_FFA"</span><span class="p">,</span><span class="w"> </span><span class="s2">"contract_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xa227E7eEecc599600c767CcE8D5e0B40eB5A860e"</span><span class="p">,</span><span class="w"> </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">},</span><span class="w"> 
+        </span><span class="p">{</span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERC20_KOZ"</span><span class="p">,</span><span class="w"> </span><span class="s2">"contract_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x9d79bb99b41dbe5a3cf037ae8e8d22425c8e823d"</span><span class="p">,</span><span class="w"> </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">},</span><span class="w"> 
+        </span><span class="p">{</span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERC20_USDT"</span><span class="p">,</span><span class="w"> </span><span class="s2">"contract_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x41BaE6D3389Faf27762CFcCEdd003C6242197f5f"</span><span class="p">,</span><span class="w"> </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-8'>HTTP Request</h3>
-<p><code>GET https://testnet.sectoken.io/wallet/eth/addr_list/</code></p>
+<p><code>GET https://testnet.sectoken.io/wallet/eth_single/addr_list/</code></p>
 <h3 id='dcedc889dd-2'>无请求参数</h3><h3 id='70bdef7e25-8'>返回参数</h3>
 <table><thead>
 <tr>
@@ -1073,6 +1073,11 @@
 <td>coin_type</td>
 <td>string</td>
 <td>币种</td>
+</tr>
+<tr>
+<td>contract_address</td>
+<td>string</td>
+<td>token合约地址</td>
 </tr>
 <tr>
 <td>decimal</td>
@@ -1357,6 +1362,10 @@
 <tr>
 <td>4403</td>
 <td>钱包个数达到上限</td>
+</tr>
+<tr>
+<td>4504</td>
+<td>不允许转向此地址</td>
 </tr>
 <tr>
 <td>4507</td>

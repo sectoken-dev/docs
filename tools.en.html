@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="tools" data-languages="[&quot;shell&quot;,&quot;python&quot;,&quot;&lt;a href=&#x27;&#x2F;docs&#x2F;eth.single.cn.html&#x27;&gt;中文版本&lt;&#x2F;a&gt;&quot;]">
+  <body class="tools" data-languages="[&quot;shell&quot;,&quot;python&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -213,7 +213,6 @@
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
               <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="<a href='/docs/eth.single.cn.html'>中文版本</a>"><a href='/docs/eth.single.cn.html'>中文版本</a></a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -238,7 +237,7 @@
               </ul>
           </li>
           <li>
-            <a href="#sign-eth-transaction-with-multi-sign" class="toc-h1 toc-link" data-title="Sign ETH Transaction With Multi-sign">Sign ETH Transaction With Multi-sign</a>
+            <a href="#eth-multi-sign" class="toc-h1 toc-link" data-title="ETH Multi-sign">ETH Multi-sign</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#http-request-2" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
@@ -252,7 +251,7 @@
               </ul>
           </li>
           <li>
-            <a href="#sign-eth-transaction-with-single-sign" class="toc-h1 toc-link" data-title="Sign ETH Transaction With Single-sign">Sign ETH Transaction With Single-sign</a>
+            <a href="#eth-single-sign" class="toc-h1 toc-link" data-title="ETH Single-sign">ETH Single-sign</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#http-request-3" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
@@ -318,7 +317,7 @@
 <td>Private key</td>
 </tr>
 </tbody></table>
-<h1 id='sign-eth-transaction-with-multi-sign'>Sign ETH Transaction With Multi-sign</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span> 
+<h1 id='eth-multi-sign'>ETH Multi-sign</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span> 
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"https://internal.sectoken.io/v2/eth/signFirst"</span><span class="p">,</span> 
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
@@ -405,7 +404,7 @@
 <td>Message signature</td>
 </tr>
 </tbody></table>
-<h1 id='sign-eth-transaction-with-single-sign'>Sign ETH Transaction With Single-sign</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span> 
+<h1 id='eth-single-sign'>ETH Single-sign</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span> 
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"https://internal.sectoken.io/v2/eth/signFirst"</span><span class="p">,</span> 
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
@@ -498,7 +497,6 @@
           <div class="lang-selector">
                 <a href="#" data-language-name="shell">shell</a>
                 <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="<a href='/docs/eth.single.cn.html'>中文版本</a>"><a href='/docs/eth.single.cn.html'>中文版本</a></a>
           </div>
       </div>
     </div>

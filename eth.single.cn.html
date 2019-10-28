@@ -834,7 +834,7 @@
     -X POST <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
-    -d <span class="s1">'{"wallet_id": "your wallet id", "to_address": "recipient address", "value": "1000000000", "coin_type": "eth", "feerate": 1, "memo": "memo data"}'</span>
+    -d <span class="s1">'{"wallet_id": "your wallet id", "to_address": "recipient address", "value": "1000000000", "coin_type": "eth", "feerate": 1}'</span>
 </code></pre>
 <blockquote>
 <p>返回示例</p>
@@ -888,20 +888,12 @@
 <td>转账速度，1快速，0普通，默认为0</td>
 </tr>
 <tr>
-<td>memo</td>
-<td>string</td>
-<td>否</td>
-<td>备注信息，只有coin_type为eth时才生效。</td>
-</tr>
-<tr>
 <td>total</td>
 <td>int</td>
 <td>否</td>
 <td>全部转出，置1生效，此时value值不生效。</td>
 </tr>
 </tbody></table>
-
-<aside class="notice">填写memo会造成额外的矿工费消耗</aside>
 <h3 id='70bdef7e25-6'>返回参数</h3>
 <table><thead>
 <tr>

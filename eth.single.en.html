@@ -834,7 +834,7 @@
     -X POST <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
-    -d <span class="s1">'{"wallet_id": "your wallet id", "to_address": "recipient address", "value": "1000000000", "coin_type": "eth", "feerate": 1, "memo": "memo data"}'</span>
+    -d <span class="s1">'{"wallet_id": "your wallet id", "to_address": "recipient address", "value": "1000000000", "coin_type": "eth", "feerate": 1}'</span>
 </code></pre>
 <blockquote>
 <p>返回示例</p>
@@ -888,20 +888,12 @@
 <td>Transfer speed. 1 is fast, 0 is normal. Default is 0.</td>
 </tr>
 <tr>
-<td>memo</td>
-<td>string</td>
-<td>No</td>
-<td>This only works if the coin_type is ETH。</td>
-</tr>
-<tr>
 <td>total</td>
 <td>int</td>
 <td>No</td>
 <td>Transfer all balance. set value 1 to enbale. The value parameter is not in effect at this point.</td>
 </tr>
 </tbody></table>
-
-<aside class="notice">Filling in memo will cause extra fee</aside>
 <h3 id='response-parameters-6'>Response Parameters</h3>
 <table><thead>
 <tr>

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Documentation</title>
+    <title>ETH Tools API Documentation</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -198,10 +198,10 @@
     </style>
     <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all_nosearch.js"></script>
+      <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="tools" data-languages="[]">
+  <body class="tools" data-languages="[&quot;shell&quot;,&quot;python&quot;,&quot;&lt;a href=&#x27;&#x2F;docs&#x2F;eth.single.cn.html&#x27;&gt;中文版本&lt;&#x2F;a&gt;&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -210,6 +210,15 @@
     </a>
     <div class="toc-wrapper">
       <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="python">python</a>
+              <a href="#" data-language-name="<a href='/docs/eth.single.cn.html'>中文版本</a>"><a href='/docs/eth.single.cn.html'>中文版本</a></a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
@@ -313,7 +322,7 @@
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"https://internal.sectoken.io/v2/eth/signFirst"</span><span class="p">,</span> 
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
-        <span class="s">"data"</span><span class="p">:</span> <span class="n">ae1111</span><span class="p">,</span> 
+        <span class="s">"data"</span><span class="p">:</span> <span class="s">"ae1111"</span><span class="p">,</span> 
         <span class="s">"prikey"</span><span class="p">:</span> <span class="s">"98361e9e89320d7911153ddc23db573fcedc12da8df710af30d3977ecea3f1d1"</span><span class="p">,</span> 
         <span class="s">"message"</span><span class="p">:</span> <span class="bp">True</span>
     <span class="p">}</span>
@@ -399,7 +408,7 @@
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"https://internal.sectoken.io/v2/eth/signFirst"</span><span class="p">,</span> 
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
-        <span class="s">"data"</span><span class="p">:</span> <span class="n">f0808459682f0082546c94f90ed3984772f78e4aeb83390e2030d1fcbec98f843b9aca00896d656d6f2064617461808080</span><span class="p">,</span> 
+        <span class="s">"data"</span><span class="p">:</span> <span class="s">"f0808459682f0082546c94f90ed3984772f78e4aeb83390e2030d1fcbec98f843b9aca00896d656d6f2064617461808080"</span><span class="p">,</span> 
         <span class="s">"prikey"</span><span class="p">:</span> <span class="s">"ff147ba94e1ecc825ad83c0d2ec57e0081033e2d931e6df64b83e860f872c411"</span><span class="p">,</span> 
         <span class="s">"message"</span><span class="p">:</span> <span class="bp">False</span>
     <span class="p">}</span>
@@ -484,6 +493,11 @@
 
       </div>
       <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="python">python</a>
+                <a href="#" data-language-name="<a href='/docs/eth.single.cn.html'>中文版本</a>"><a href='/docs/eth.single.cn.html'>中文版本</a></a>
+          </div>
       </div>
     </div>
   </body>

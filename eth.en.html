@@ -349,7 +349,7 @@
               </ul>
           </li>
           <li>
-            <a href="#get-unapproval-transaction" class="toc-h1 toc-link" data-title="Get Unapproval Transaction">Get Unapproval Transaction</a>
+            <a href="#submit-signature" class="toc-h1 toc-link" data-title="Submit Signature">Submit Signature</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#http-request-10" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
@@ -363,7 +363,7 @@
               </ul>
           </li>
           <li>
-            <a href="#submit-signature" class="toc-h1 toc-link" data-title="Submit Signature">Submit Signature</a>
+            <a href="#get-contract-deployment-status" class="toc-h1 toc-link" data-title="Get contract deployment status">Get contract deployment status</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#http-request-11" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
@@ -377,44 +377,16 @@
               </ul>
           </li>
           <li>
-            <a href="#get-contract-deployment-status" class="toc-h1 toc-link" data-title="Get contract deployment status">Get contract deployment status</a>
+            <a href="#get-erc20-token-list" class="toc-h1 toc-link" data-title="Get ERC20 Token List">Get ERC20 Token List</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#http-request-12" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
                   </li>
                   <li>
-                    <a href="#request-parameters-10" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
-                  </li>
-                  <li>
-                    <a href="#response-parameters-12" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#get-coin-list" class="toc-h1 toc-link" data-title="Get Coin List">Get Coin List</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#http-request-13" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
-                  </li>
-                  <li>
                     <a href="#no-request-parameters-3" class="toc-h2 toc-link" data-title="No Request Parameters">No Request Parameters</a>
                   </li>
                   <li>
-                    <a href="#response-parameters-13" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#get-wallet-group-members" class="toc-h1 toc-link" data-title="Get Wallet Group Members">Get Wallet Group Members</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#http-request-14" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
-                  </li>
-                  <li>
-                    <a href="#request-parameters-11" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
-                  </li>
-                  <li>
-                    <a href="#response-parameters-14" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                    <a href="#response-parameters-12" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
                   </li>
               </ul>
           </li>
@@ -430,13 +402,13 @@
             <a href="#get-transaction-records" class="toc-h1 toc-link" data-title="Get Transaction Records">Get Transaction Records</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#http-request-15" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                    <a href="#http-request-13" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
                   </li>
                   <li>
-                    <a href="#request-parameters-12" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
+                    <a href="#request-parameters-10" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
                   </li>
                   <li>
-                    <a href="#response-parameters-15" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                    <a href="#response-parameters-13" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
                   </li>
               </ul>
           </li>
@@ -1295,17 +1267,24 @@
 <td>Data for signature.</td>
 </tr>
 </tbody></table>
-<h1 id='get-unapproval-transaction'>Get Unapproval Transaction</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<h1 id='submit-signature'>Submit Signature</h1>
+<p>Submit the signature result for the transaction id, and if the signature number is valid and reaches the broadcast limit, the transaction will be broadcast to the blockchain</p>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/send/"</span>
     <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>
-    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"your wallet id"</span><span class="p">}</span>
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+        <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"your wallet id"</span><span class="p">,</span>
+        <span class="s">"data"</span><span class="p">:</span> <span class="s">"3851e44d1d73cedce686642211588a1137f21d01fe772c88ab49ff7fc6fa4911"</span><span class="p">,</span>
+        <span class="s">"signature"</span><span class="p">:</span> <span class="s">"signature data"</span>
+    <span class="p">}</span>
 <span class="p">)</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/send/"</span> <span class="se">\</span>
-    -X GET <span class="se">\</span>
+    -X POST <span class="se">\</span>
+    -H <span class="s2">"Content-Type:application/json"</span>, <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
-    -d <span class="s1">'{"wallet_id": "your wallet id"}'</span>
+    -d <span class="s1">'{"wallet_id": "your wallet id", "data": "3851e44d1d73cedce686642211588a1137f21d01fe772c88ab49ff7fc6fa4911", "signature": "0b1e9cf915d8d04592c81e4accf06194ca3069c38c53ecf2fabe149e3612284532369a161599127a44e85b5a7039c9426ddd516273b07ddb82a11e10800ae01a00"}'</span>
 </code></pre>
 <blockquote>
 <p>Response Samples</p>
@@ -1313,11 +1292,11 @@
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3851e44d1d73cedce686642211588a1137f21d01fe772c88ab49ff7fc6fa4911"</span><span class="w">
+        </span><span class="s2">"is_sent"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-10'>HTTP Request</h3>
-<p><code>GET https://testnet.sectoken.io/wallet/eth/send/</code></p>
+<p><code>POST https://testnet.sectoken.io/wallet/eth/send/</code></p>
 <h3 id='request-parameters-8'>Request Parameters</h3>
 <table><thead>
 <tr>
@@ -1332,6 +1311,18 @@
 <td>string</td>
 <td>Yes</td>
 <td>Wallet id</td>
+</tr>
+<tr>
+<td>data</td>
+<td>string</td>
+<td>Data for signature</td>
+<td></td>
+</tr>
+<tr>
+<td>signature</td>
+<td>string</td>
+<td>Yes</td>
+<td>Signature</td>
 </tr>
 </tbody></table>
 <h3 id='response-parameters-10'>Response Parameters</h3>
@@ -1362,41 +1353,26 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>data</td>
-<td>string</td>
-<td>Data for signature.</td>
+<td>is_sent</td>
+<td>bool</td>
+<td>Whether to broadcast.If the number of signatures does not reach the broadcast limit, it indicates that the final signature was not successful. Otherwise, it returns true.</td>
 </tr>
 </tbody></table>
-<h1 id='submit-signature'>Submit Signature</h1>
-<p>Submit the signature result for the transaction id, and if the signature number is valid and reaches the broadcast limit, the transaction will be broadcast to the blockchain</p>
-<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<h1 id='get-contract-deployment-status'>Get contract deployment status</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
-    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/send/"</span>
-    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>
-    <span class="n">json</span><span class="o">=</span><span class="p">{</span>
-        <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"your wallet id"</span><span class="p">,</span>
-        <span class="s">"data"</span><span class="p">:</span> <span class="s">"3851e44d1d73cedce686642211588a1137f21d01fe772c88ab49ff7fc6fa4911"</span><span class="p">,</span>
-        <span class="s">"signature"</span><span class="p">:</span> <span class="s">"signature data"</span>
-    <span class="p">}</span>
-<span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/send/"</span> <span class="se">\</span>
-    -X POST <span class="se">\</span>
-    -H <span class="s2">"Content-Type:application/json"</span>, <span class="se">\</span>
-    -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
-    -d <span class="s1">'{"wallet_id": "your wallet id", "data": "3851e44d1d73cedce686642211588a1137f21d01fe772c88ab49ff7fc6fa4911", "signature": "0b1e9cf915d8d04592c81e4accf06194ca3069c38c53ecf2fabe149e3612284532369a161599127a44e85b5a7039c9426ddd516273b07ddb82a11e10800ae01a00"}'</span>
+<span class="n">reqeuests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth_single/recipt/"</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">"address"</span><span class="p">:</span> <span class="s">"0xa5f84276010fabe2017f9ecceea4720b8eca5527"</span><span class="p">})</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth_single/recipt/?address=0xa5f84276010fabe2017f9ecceea4720b8eca5527"</span> <span class="se">\</span>
+    -H <span class="s2">"HMAC:your token"</span>
 </code></pre>
 <blockquote>
-<p>Response Samples</p>
+<p>Response Sample</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"is_sent"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w">  </span><span class="mi">200</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-11'>HTTP Request</h3>
-<p><code>POST https://testnet.sectoken.io/wallet/eth/send/</code></p>
+<p><code>GET https://testnet.sectoken.io/wallet/eth/recipt/</code></p>
 <h3 id='request-parameters-9'>Request Parameters</h3>
 <table><thead>
 <tr>
@@ -1407,22 +1383,10 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>wallet_id</td>
+<td>address</td>
 <td>string</td>
-<td>Yes</td>
-<td>Wallet id</td>
-</tr>
-<tr>
-<td>data</td>
-<td>string</td>
-<td>Data for signature</td>
-<td></td>
-</tr>
-<tr>
-<td>signature</td>
-<td>string</td>
-<td>Yes</td>
-<td>Signature</td>
+<td>是</td>
+<td>合约地址</td>
 </tr>
 </tbody></table>
 <h3 id='response-parameters-11'>Response Parameters</h3>
@@ -1453,70 +1417,6 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>is_sent</td>
-<td>bool</td>
-<td>Whether to broadcast.If the number of signatures does not reach the broadcast limit, it indicates that the final signature was not successful. Otherwise, it returns true.</td>
-</tr>
-</tbody></table>
-<h1 id='get-contract-deployment-status'>Get contract deployment status</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
-
-<span class="n">reqeuests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth_single/recipt/"</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">"address"</span><span class="p">:</span> <span class="s">"0xa5f84276010fabe2017f9ecceea4720b8eca5527"</span><span class="p">})</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth_single/recipt/?address=0xa5f84276010fabe2017f9ecceea4720b8eca5527"</span> <span class="se">\</span>
-    -H <span class="s2">"HMAC:your token"</span>
-</code></pre>
-<blockquote>
-<p>Response Sample</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"code"</span><span class="p">:</span><span class="w">  </span><span class="mi">200</span><span class="p">,</span><span class="w"> 
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-12'>HTTP Request</h3>
-<p><code>GET https://testnet.sectoken.io/wallet/eth/recipt/</code></p>
-<h3 id='request-parameters-10'>Request Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter Name</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>address</td>
-<td>string</td>
-<td>是</td>
-<td>合约地址</td>
-</tr>
-</tbody></table>
-<h3 id='response-parameters-12'>Response Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>code</td>
-<td>integer</td>
-<td>Status code. Successful return 200. Others are <a href="#error-codes">error codes</a>.</td>
-</tr>
-<tr>
-<td>data</td>
-<td>object</td>
-<td>Response data.</td>
-</tr>
-</tbody></table>
-<h4 id='data-parameters-11'>Data Parameters</h4>
-<table><thead>
-<tr>
-<th>Parameter Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
 <td>status</td>
 <td>bool</td>
 <td>Contract deployment status</td>
@@ -1524,7 +1424,7 @@
 </tbody></table>
 
 <aside class="notice">Contract confirmation takes about 15 seconds</aside>
-<h1 id='get-coin-list'>Get Coin List</h1>
+<h1 id='get-erc20-token-list'>Get ERC20 Token List</h1>
 <p>Get a list of ETH ERC20 tokens supported by the platform.</p>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
@@ -1536,19 +1436,19 @@
 <p>Response Samples</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w"> </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">},</span><span class="w"> 
-        </span><span class="p">{</span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERC20_MT"</span><span class="p">,</span><span class="w"> </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">},</span><span class="w"> 
-        </span><span class="p">{</span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERC20_HT"</span><span class="p">,</span><span class="w">  </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">},</span><span class="w"> 
-        </span><span class="p">{</span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERC20_JLL"</span><span class="p">,</span><span class="w"> </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">},</span><span class="w"> 
-        </span><span class="p">{</span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERC20_FFA"</span><span class="p">,</span><span class="w"> </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">},</span><span class="w"> 
-        </span><span class="p">{</span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERC20_KOZ"</span><span class="p">,</span><span class="w"> </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">}</span><span class="w">
+        </span><span class="p">{</span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERC20_MT"</span><span class="p">,</span><span class="w"> </span><span class="s2">"contract_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x37aef616A9d15563F3267b3776f9FFDdb8797879"</span><span class="p">,</span><span class="w"> </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERC20_HT"</span><span class="p">,</span><span class="w"> </span><span class="s2">"contract_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x0f2Dac5Bfdc7Ce4aea8dfb9a085703a92998aA48"</span><span class="p">,</span><span class="w"> </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">},</span><span class="w"> 
+        </span><span class="p">{</span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERC20_JLL"</span><span class="p">,</span><span class="w"> </span><span class="s2">"contract_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x7e326A29f182544E3982CDB3E0e24e19412CA34D"</span><span class="p">,</span><span class="w"> </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERC20_FFA"</span><span class="p">,</span><span class="w"> </span><span class="s2">"contract_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xa227E7eEecc599600c767CcE8D5e0B40eB5A860e"</span><span class="p">,</span><span class="w"> </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">},</span><span class="w"> 
+        </span><span class="p">{</span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERC20_KOZ"</span><span class="p">,</span><span class="w"> </span><span class="s2">"contract_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x9d79bb99b41dbe5a3cf037ae8e8d22425c8e823d"</span><span class="p">,</span><span class="w"> </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">},</span><span class="w"> 
+        </span><span class="p">{</span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERC20_USDT"</span><span class="p">,</span><span class="w"> </span><span class="s2">"contract_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x41BaE6D3389Faf27762CFcCEdd003C6242197f5f"</span><span class="p">,</span><span class="w"> </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-13'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request-12'>HTTP Request</h3>
 <p><code>GET https://testnet.sectoken.io/wallet/eth/coin_types/</code></p>
-<h3 id='no-request-parameters-3'>No Request Parameters</h3><h3 id='response-parameters-13'>Response Parameters</h3>
+<h3 id='no-request-parameters-3'>No Request Parameters</h3><h3 id='response-parameters-12'>Response Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter Name</th>
@@ -1567,7 +1467,7 @@
 <td>Response data.</td>
 </tr>
 </tbody></table>
-<h4 id='data-parameters-12'>Data Parameters</h4>
+<h4 id='data-parameters-11'>Data Parameters</h4>
 <table><thead>
 <tr>
 <th>Parameter Name</th>
@@ -1584,95 +1484,6 @@
 <td>decimal</td>
 <td>integer</td>
 <td>Coin decimal</td>
-</tr>
-</tbody></table>
-<h1 id='get-wallet-group-members'>Get Wallet Group Members</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
-
-<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/authority/"</span><span class="p">,</span>
-    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>
-    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"your wallet id"</span><span class="p">,</span> <span class="s">"role"</span><span class="p">:</span> <span class="s">"all"</span><span class="p">}</span>
-<span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/authority/?wallet_id=your_wallet_id&amp;role=all"</span> <span class="se">\</span>
-    -X GET <span class="se">\ </span>
-    -H <span class="s2">"HMAC:your token"</span>
-</code></pre>
-<blockquote>
-<p>Response Samples</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"manager"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chzhangyue@outlook.com"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"observer_list"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"chzhangyue@gmail.com"</span><span class="p">],</span><span class="w">
-        </span><span class="s2">"operator_list"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-14'>HTTP Request</h3>
-<p><code>GET https://testnet.sectoken.io/wallet/eth/authority/</code></p>
-<h3 id='request-parameters-11'>Request Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter Name</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>wallet_id</td>
-<td>string</td>
-<td>Yes</td>
-<td>Wallet id</td>
-</tr>
-<tr>
-<td>role</td>
-<td>string</td>
-<td>No</td>
-<td>manager/ operator/ observer/ all. Default is &quot;all&quot;</td>
-</tr>
-</tbody></table>
-<h3 id='response-parameters-14'>Response Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>code</td>
-<td>integer</td>
-<td>Status code. Successful return 200. Others are <a href="#error-codes">error codes</a>.</td>
-</tr>
-<tr>
-<td>data</td>
-<td>object</td>
-<td>Response data.</td>
-</tr>
-</tbody></table>
-<h4 id='data-parameters-13'>Data Parameters</h4>
-<table><thead>
-<tr>
-<th>Parameter Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>manager</td>
-<td>string</td>
-<td>Email address of manager</td>
-</tr>
-<tr>
-<td>observer_list</td>
-<td>array</td>
-<td>Email addresses of observer</td>
-</tr>
-<tr>
-<td>operator_list</td>
-<td>array</td>
-<td>Email addresses of operator</td>
 </tr>
 </tbody></table>
 <h1 id='transaction-callback'>Transaction Callback</h1>
@@ -1788,9 +1599,9 @@
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-15'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request-13'>HTTP Request</h3>
 <p><code>GET https://testnet.sectoken.io/flow/record/eth/</code></p>
-<h3 id='request-parameters-12'>Request Parameters</h3>
+<h3 id='request-parameters-10'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter Name</th>
@@ -1824,7 +1635,7 @@
 <td>day</td>
 </tr>
 </tbody></table>
-<h3 id='response-parameters-15'>Response Parameters</h3>
+<h3 id='response-parameters-13'>Response Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter Name</th>
@@ -1843,7 +1654,7 @@
 <td>Response data</td>
 </tr>
 </tbody></table>
-<h4 id='data-parameters-14'>Data Parameters</h4>
+<h4 id='data-parameters-12'>Data Parameters</h4>
 <p>Parameter Name | Type | Description
 txid|string|Transaction id
 src_address|string|Transaction source address

@@ -944,6 +944,12 @@
 </tbody></table>
 <h1 id='generate-a-receipt-address'>Generate a receipt address</h1>
 <p>Generate a new ETH  receipt address for the wallet (It will spent about 420000 gas)</p>
+
+<p>After the address receives the eth, it is automatically transferred to the multi-sign address of the wallet.</p>
+
+<p>After receiving the ERC20 token, the address needs to manually transfer to the multi-sign address of the wallet.</p>
+
+<p>This address cannot be used to transfer funds to any external address.</p>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/derive/"</span><span class="p">,</span>
@@ -1015,7 +1021,9 @@
 </tr>
 </tbody></table>
 <h1 id='fund-collection'>Fund Collection</h1>
-<p>Collection your current wallet receipt addresses&#39;s fund to main address (eth will auto collection to main address this interface only support erc20 token)</p>
+<p>Collection your current wallet receipt addresses&#39;s fund to multi-sign address of the wallet.</p>
+
+<p>This transfer operation need about 32000 gas</p>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/flush/"</span><span class="p">,</span>

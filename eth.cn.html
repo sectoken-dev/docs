@@ -321,7 +321,7 @@
               </ul>
           </li>
           <li>
-            <a href="#ad77340e20" class="toc-h1 toc-link" data-title="归集余额">归集余额</a>
+            <a href="#e83639625f" class="toc-h1 toc-link" data-title="资金归集">资金归集</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#http-request-8" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
@@ -501,7 +501,9 @@
 <td>余额，单位为Wei</td>
 </tr>
 </tbody></table>
-<h1 id='eth'>创建eth多签钱包</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<h1 id='eth'>创建eth多签钱包</h1>
+<p>创建一个多签钱包所需成本大约 910000 gas</p>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/create/"</span><span class="p">,</span> 
@@ -940,7 +942,12 @@
 <td>返回内容，每一个元素是一个地址</td>
 </tr>
 </tbody></table>
-<h1 id='8884d1c186'>生成收款地址</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<h1 id='8884d1c186'>生成收款地址</h1>
+<p>生成收款地址,所需成本大约 420000 gas
+该地址收到eth后,自动转账到归属钱包的多签地址
+该地址收到ERC2后,需要手动触发归集转账到归属钱包的多签地址
+该地址不能对外部的任何地址进行支出转账</p>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/derive/"</span><span class="p">,</span>
     <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>
@@ -1010,7 +1017,10 @@
 <td>派生的新地址</td>
 </tr>
 </tbody></table>
-<h1 id='ad77340e20'>归集余额</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<h1 id='e83639625f'>资金归集</h1>
+<p>把收款地址上的ERC20转账到归属钱包的多签地址
+一个收款地址的ERC20归集转账操作所需成本大约 32000 gas</p>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/flush/"</span><span class="p">,</span>
     <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>

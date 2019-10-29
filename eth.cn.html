@@ -943,10 +943,13 @@
 </tr>
 </tbody></table>
 <h1 id='8884d1c186'>生成收款地址</h1>
-<p>生成收款地址,所需成本大约 420000 gas
-该地址收到eth后,自动转账到归属钱包的多签地址
-该地址收到ERC2后,需要手动触发归集转账到归属钱包的多签地址
-该地址不能对外部的任何地址进行支出转账</p>
+<p>生成收款地址,所需成本大约 420000 gas</p>
+
+<p>该地址收到eth后,自动转账到归属钱包的多签地址</p>
+
+<p>该地址收到ERC2后,需要手动触发归集转账到归属钱包的多签地址</p>
+
+<p>该地址不能对外部的任何地址进行支出转账</p>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/derive/"</span><span class="p">,</span>
@@ -1018,8 +1021,9 @@
 </tr>
 </tbody></table>
 <h1 id='e83639625f'>资金归集</h1>
-<p>把收款地址上的ERC20转账到归属钱包的多签地址
-一个收款地址的ERC20归集转账操作所需成本大约 32000 gas</p>
+<p>把收款地址上的ERC20转账到归属钱包的多签地址</p>
+
+<p>一个收款地址的ERC20归集转账操作所需成本大约 32000 gas</p>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/flush/"</span><span class="p">,</span>

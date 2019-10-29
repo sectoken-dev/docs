@@ -237,13 +237,13 @@
               </ul>
           </li>
           <li>
-            <a href="#eth-multi-sign" class="toc-h1 toc-link" data-title="ETH Multi-sign">ETH Multi-sign</a>
+            <a href="#get-btc-keys" class="toc-h1 toc-link" data-title="Get BTC Keys">Get BTC Keys</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#http-request-2" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
                   </li>
                   <li>
-                    <a href="#request-parameters" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
+                    <a href="#no-request-parameters-2" class="toc-h2 toc-link" data-title="No Request Parameters">No Request Parameters</a>
                   </li>
                   <li>
                     <a href="#response-parameters-2" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
@@ -251,16 +251,58 @@
               </ul>
           </li>
           <li>
-            <a href="#eth-single-sign" class="toc-h1 toc-link" data-title="ETH Single-sign">ETH Single-sign</a>
+            <a href="#get-usdt-keys" class="toc-h1 toc-link" data-title="Get USDT Keys">Get USDT Keys</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#http-request-3" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
                   </li>
                   <li>
-                    <a href="#request-parameters-2" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
+                    <a href="#no-request-parameters-3" class="toc-h2 toc-link" data-title="No Request Parameters">No Request Parameters</a>
                   </li>
                   <li>
                     <a href="#response-parameters-3" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#get-ltc-keys" class="toc-h1 toc-link" data-title="Get LTC Keys">Get LTC Keys</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-4" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#no-request-parameters-4" class="toc-h2 toc-link" data-title="No Request Parameters">No Request Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#response-parameters-4" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#eth-multi-sign" class="toc-h1 toc-link" data-title="ETH Multi-sign">ETH Multi-sign</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-5" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#request-parameters" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#response-parameters-5" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#eth-single-sign" class="toc-h1 toc-link" data-title="ETH Single-sign">ETH Single-sign</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-6" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#request-parameters-2" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#response-parameters-6" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
                   </li>
               </ul>
           </li>
@@ -317,6 +359,126 @@
 <td>Private key</td>
 </tr>
 </tbody></table>
+<h1 id='get-btc-keys'>Get BTC Keys</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://internal.sectoken.io/addr/btc"</span><span class="p">)</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://internal.sectoken.io/addr/btc"</span> 
+
+</code></pre>
+<blockquote>
+<p>Response Samples</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="s2">"2MwNXkoPNQe2xBeMYF2sA3fJXRvXnoTzHyS"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pubkey"</span><span class="p">:</span><span class="s2">"037d1199f850f2123b086bbc6679d3073c2ab3cbd0bcd34f827f3968383c83729c"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"prikey"</span><span class="p">:</span><span class="s2">"ab7871d727dac8ebad5fe4e5a2fbf92260f4e18d69545f1c5e05d690cd854b13"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://internal.sectoken.io/addr/btc</code></p>
+<h3 id='no-request-parameters-2'>No Request Parameters</h3><h3 id='response-parameters-2'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>BTC address</td>
+</tr>
+<tr>
+<td>pubkey</td>
+<td>string</td>
+<td>Public key</td>
+</tr>
+<tr>
+<td>prikey</td>
+<td>string</td>
+<td>Private key</td>
+</tr>
+</tbody></table>
+<h1 id='get-usdt-keys'>Get USDT Keys</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://internal.sectoken.io/addr/usdt"</span><span class="p">)</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://internal.sectoken.io/addr/usdt"</span> 
+
+</code></pre>
+<blockquote>
+<p>Response Samples</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="s2">"2N8kNft2A6u36TEGU4P5rduovXCKwM4BMJp"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pubkey"</span><span class="p">:</span><span class="s2">"027967a59fb956efc4b280ad9f98756d58b95b58510e866c80449744a67bc4d4e9"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"prikey"</span><span class="p">:</span><span class="s2">"4e65ca680f7f97452c8cf2e524936d71aa2f290aa19940d4df8d7069df060523"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://internal.sectoken.io/addr/usdt</code></p>
+<h3 id='no-request-parameters-3'>No Request Parameters</h3><h3 id='response-parameters-3'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>USDT address</td>
+</tr>
+<tr>
+<td>pubkey</td>
+<td>string</td>
+<td>Public key</td>
+</tr>
+<tr>
+<td>prikey</td>
+<td>string</td>
+<td>Private key</td>
+</tr>
+</tbody></table>
+<h1 id='get-ltc-keys'>Get LTC Keys</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://internal.sectoken.io/addr/ltc"</span><span class="p">)</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://internal.sectoken.io/addr/ltc"</span> 
+
+</code></pre>
+<blockquote>
+<p>Response Samples</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="s2">"QNUBDWtmaWAcytzmjKBzQw8f52ZUyAaZEN"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pubkey"</span><span class="p">:</span><span class="s2">"03a941c3bf4121ae1a65fe725ce3ac67ef797c86445a66438ece2934d32baa1115"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"prikey"</span><span class="p">:</span><span class="s2">"e60e050570e39753b9b5c84e3bd3db080f51bcd07b94dbeb4dd24473a2673a4c"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET https://internal.sectoken.io/addr/ltc</code></p>
+<h3 id='no-request-parameters-4'>No Request Parameters</h3><h3 id='response-parameters-4'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>LTC address</td>
+</tr>
+<tr>
+<td>pubkey</td>
+<td>string</td>
+<td>Public key</td>
+</tr>
+<tr>
+<td>prikey</td>
+<td>string</td>
+<td>Private key</td>
+</tr>
+</tbody></table>
 <h1 id='eth-multi-sign'>ETH Multi-sign</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span> 
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"https://internal.sectoken.io/v2/eth/signFirst"</span><span class="p">,</span> 
@@ -341,7 +503,7 @@
         </span><span class="s2">"signature"</span><span class="p">:</span><span class="s2">"042b6770744ecde764fdd4a8b0f4e9cdc10bf26c3894efaeeb59f2755225df962f91bf96714c59db5207c9dbd36aa93593d15747cb9d2888aa4eaea5aa7b4ee400"</span><span class="p">,</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request-5'>HTTP Request</h3>
 <p><code>POST https://internal.sectoken.io/v2/eth/signFirst</code></p>
 <h3 id='request-parameters'>Request Parameters</h3>
 <table><thead>
@@ -371,7 +533,7 @@
 <td>Sign message or transaction. If multi-sign, use true.</td>
 </tr>
 </tbody></table>
-<h3 id='response-parameters-2'>Response Parameters</h3>
+<h3 id='response-parameters-5'>Response Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter Name</th>
@@ -428,7 +590,7 @@
         </span><span class="s2">"tx"</span><span class="p">:</span><span class="s2">"f870808459682f0082546c94f90ed3984772f78e4aeb83390e2030d1fcbec98f843b9aca00896d656d6f20646174611ca0cc49cde362f3ac497e6af683bd3b51df4d2a58a21399f1985387677023ead3eba008a1c81bb70b289e37518f04546683882fe38178e2419be77b80b05681bc7efd"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-3'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request-6'>HTTP Request</h3>
 <p><code>POST https://internal.sectoken.io/v2/eth/signFirst</code></p>
 <h3 id='request-parameters-2'>Request Parameters</h3>
 <table><thead>
@@ -458,7 +620,7 @@
 <td>Sign message or transaction. If multi-sign, use false.</td>
 </tr>
 </tbody></table>
-<h3 id='response-parameters-3'>Response Parameters</h3>
+<h3 id='response-parameters-6'>Response Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter Name</th>

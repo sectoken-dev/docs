@@ -1191,7 +1191,8 @@
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:{</span><span class="w">
-        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3851e44d1d73cedce686642211588a1137f21d01fe772c88ab49ff7fc6fa4911"</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3851e44d1d73cedce686642211588a1137f21d01fe772c88ab49ff7fc6fa4911"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"privkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-10'>HTTP Request</h3>
@@ -1267,6 +1268,11 @@
 <td>data</td>
 <td>string</td>
 <td>待签名的字段</td>
+</tr>
+<tr>
+<td>privkey</td>
+<td>string</td>
+<td>创建钱包时上传的私钥密文,如果创建钱包时没有上传,则为空</td>
 </tr>
 </tbody></table>
 <h1 id='d51b06a0fe'>提交签名信息</h1>
@@ -1363,8 +1369,13 @@
 </tbody></table>
 <h1 id='eeed58d7b7'>获取合约部署状态</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">reqeuests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/recipt/"</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">"address"</span><span class="p">:</span> <span class="s">"0xa5f84276010fabe2017f9ecceea4720b8eca5527"</span><span class="p">})</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/recipt/?address=0xa5f84276010fabe2017f9ecceea4720b8eca5527"</span> <span class="se">\</span>
+<span class="n">reqeuests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/receipt/"</span><span class="p">,</span>
+    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+        <span class="s">"address"</span><span class="p">:</span> <span class="s">"0xa5f84276010fabe2017f9ecceea4720b8eca5527"</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/receipt/?address=0xa5f84276010fabe2017f9ecceea4720b8eca5527"</span> <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span>
 </code></pre>
 <blockquote>
@@ -1375,7 +1386,7 @@
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-12'>HTTP Request</h3>
-<p><code>GET https://testnet.sectoken.io/wallet/eth/recipt/</code></p>
+<p><code>GET https://testnet.sectoken.io/wallet/eth/receipt/</code></p>
 <h3 id='1f9ac54b15-10'>请求参数</h3>
 <table><thead>
 <tr>

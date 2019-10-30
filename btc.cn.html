@@ -813,7 +813,7 @@
 <td>page</td>
 <td>integer</td>
 <td>否</td>
-<td>页码，默认获取第1页，每页获取10条数据</td>
+<td>页码，默认获取全部数据，如果填写，每页获取10条数据</td>
 </tr>
 </tbody></table>
 <h3 id='70bdef7e25-5'>返回参数</h3>
@@ -941,10 +941,16 @@
 </tr>
 </thead><tbody>
 <tr>
+<td>wallet_id</td>
+<td>string</td>
+<td>是</td>
+<td>钱包id</td>
+</tr>
+<tr>
 <td>address</td>
 <td>string</td>
 <td>是</td>
-<td>查询余额的地址</td>
+<td>对应钱包下的地址</td>
 </tr>
 </tbody></table>
 <h3 id='70bdef7e25-7'>返回参数</h3>
@@ -1050,7 +1056,7 @@
       </span><span class="s2">"change"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8785"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"change_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2N5GboAcCUbyGVe5og6EPT1RrQYc2ST1UQA"</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-8'>HTTP Request</h3>
 <p><code>POST https://testnet.sectoken.io/wallet/btc/dotx/</code></p>
 <h3 id='1f9ac54b15-7'>请求参数</h3>
@@ -1070,7 +1076,7 @@
 </tr>
 <tr>
 <td>outputs</td>
-<td>list</td>
+<td>array</td>
 <td>是</td>
 <td>转账详细信息</td>
 </tr>
@@ -1090,7 +1096,7 @@
 <td>feerate</td>
 <td>int</td>
 <td>否</td>
-<td>转账速度，1-6，数字越高速度越慢,消耗的矿工费越少, 默认为3</td>
+<td>转账速度， 0：慢速， 1：快速， 默认为慢速</td>
 </tr>
 </tbody></table>
 <h3 id='outputs'>outputs 参数</h3>
@@ -1253,7 +1259,10 @@
 <p>当用户钱包发生交易时，会向指定的url发送HTTP POST请求，请求头content-type为application/json。</p>
 
 <p>此url由用户指定，用户须部署服务接收HTTP POST请求。</p>
-
+<pre class="highlight shell tab-shell"><code>curl curl http://your.server.com/diy/url  
+-X post -H <span class="s2">"content-type:application/json"</span>
+-d<span class="s1">'{"wallet_id":"6004e156344ec27cad24a8df5bbaa5ab", "txid":"0x2b4675aff7efad0c7dcee09a943f9cc501402f18b67393a47cdcfa887f5ab2da","height": 4340000,"address":"2Mv4HTdWZaSQsmqhejP4gA2ZDigCvkGvgJZ","state":1,"timestamp":1872340000,"amount":"10000000000","wallet_balance":"1000000000000","wallet_balance":"1000000000000"}'</span>
+</code></pre>
 <blockquote>
 <p>请求body示例</p>
 </blockquote>
@@ -1261,14 +1270,11 @@
     </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6004e156344ec27cad24a8df5bbaa5ab"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x2b4675aff7efad0c7dcee09a943f9cc501402f18b67393a47cdcfa887f5ab2da"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">4340000</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"dst_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x759ac48a2754be136d495da1a826200ab1c911f2"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"src_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x8cb9e65d6a771424dfabbda4221bdb446d9183fe"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2Mv4HTdWZaSQsmqhejP4gA2ZDigCvkGvgJZ"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1872340000</span><span class="p">,</span><span class="w">
     </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000000000"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"wallet_balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100000000000"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='1f233418ae'>参数说明</h3>
 <table><thead>
@@ -1294,14 +1300,9 @@
 <td>交易所在区块高度</td>
 </tr>
 <tr>
-<td>dst_address</td>
+<td>address</td>
 <td>string</td>
-<td>交易目的地址</td>
-</tr>
-<tr>
-<td>src_address</td>
-<td>string</td>
-<td>交易来源地址</td>
+<td>交易源地址，只有当收款时才有此参数</td>
 </tr>
 <tr>
 <td>state</td>
@@ -1321,22 +1322,12 @@
 <tr>
 <td>wallet_balance</td>
 <td>string</td>
-<td>钱包下coin_type币种余额</td>
-</tr>
-<tr>
-<td>coin_type</td>
-<td>string</td>
-<td>币种类型</td>
-</tr>
-<tr>
-<td>decimal</td>
-<td>int</td>
-<td>精度</td>
+<td>钱包下的余额</td>
 </tr>
 </tbody></table>
 <h1 id='c284998822'>获取交易记录</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/flow/record/eth/"</span><span class="p">,</span> 
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/flow/record/btc/"</span><span class="p">,</span> 
             <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span> 
             <span class="n">params</span><span class="o">=</span><span class="p">{</span>
                 <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"b81d38f5f250c36a05da0d0e1f9bd394"</span><span class="p">,</span>

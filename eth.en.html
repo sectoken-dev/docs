@@ -1094,9 +1094,9 @@
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/addr_balance/"</span><span class="p">,</span>
     <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>
-    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"your wallet id"</span><span class="p">}</span>
+    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">"address"</span><span class="p">:</span> <span class="s">"your address"</span><span class="p">}</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/addr_balance/?wallet_id=your_wallet_id"</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/addr_balance/?address=your_address"</span> <span class="se">\</span>
     -X GET <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span>
 </code></pre>

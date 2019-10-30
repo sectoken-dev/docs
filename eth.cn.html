@@ -1442,7 +1442,13 @@
 <p>获取平台支持的ETH ERC20 token列表</p>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://testnet.sectoken.io/wallet/eth/coin_types/"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">})</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+
+    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/coin_types/"</span><span class="p">,</span> 
+
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">}</span>
+
+    <span class="p">)</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/coin_types/"</span> <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span>
 </code></pre>

@@ -460,7 +460,15 @@
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>获取当前账户的费用地址，如果不存在，则创建一个新的</p>
+<p>获取当前账户的费用地址，如果不存在，则创建新的一个ETH地址。费用地址作用：</p>
+
+<p>用来支付创建多签钱包部署合约的矿工费</p>
+
+<p>用来支付新增收款地址合约部署的的矿工费</p>
+
+<p>用来支付多签钱包转账的矿工费</p>
+
+<p>把ERC20从钱包收款地址归集到钱包多签地址，也需要支付矿工费。</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://testnet.sectoken.io/wallet/eth/fee/</code></p>
 <h3 id='dcedc889dd'>无请求参数</h3><h3 id='70bdef7e25'>返回参数</h3>
@@ -1276,7 +1284,7 @@
 </tr>
 </tbody></table>
 <h1 id='d51b06a0fe'>提交签名信息</h1>
-<p>提交对指定交易id的签名结果，如果签名数合法且达到广播限制，将会把交易广播到区块链</p>
+<p>用户在本地对交易单进行签名，并将签名后的数据提交Sectoken，Sectoken对签名进行验证后，将交易广播到区块链上</p>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>

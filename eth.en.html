@@ -460,7 +460,7 @@
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Get fee address of the current account. Create if not exists.</p>
+<p>Get the fee address of current account. A new fee address will be created if not exists.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://testnet.sectoken.io/wallet/eth/fee/</code></p>
 <h3 id='no-request-parameters'>No Request Parameters</h3><h3 id='response-parameters'>Response Parameters</h3>
@@ -502,7 +502,7 @@
 </tr>
 </tbody></table>
 <h1 id='create-multi-sign-wallet'>Create Multi-sign Wallet</h1>
-<p>Create a new ETH wallet for current account (It&#39;s will spent about 910000 gas)</p>
+<p>Create a new ETH wallet for current account (It&#39;s will cost about 910000 gas)</p>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
@@ -810,10 +810,10 @@
 <h1 id='get-wallet-list'>Get Wallet List</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/wallet/, </span><span class="err">
+    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/wallet_list/, </span><span class="err">
 </span><span class="s">    headers={"</span><span class="n">HMAC</span><span class="s">": "</span><span class="n">your</span> <span class="n">token</span><span class="s">"}</span><span class="err">
 </span><span class="s">)</span><span class="err">
-</span></code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/wallet/"</span> <span class="se">\</span>
+</span></code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/wallet_list/"</span> <span class="se">\</span>
     -X GET <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span>
 </code></pre>
@@ -832,7 +832,7 @@
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-5'>HTTP Request</h3>
-<p><code>GET https://testnet.sectoken.io/wallet/eth/wallet/</code></p>
+<p><code>GET https://testnet.sectoken.io/wallet/eth/wallet_list/</code></p>
 <h3 id='no-request-parameters-2'>No Request Parameters</h3><h3 id='response-parameters-5'>Response Parameters</h3>
 <table><thead>
 <tr>
@@ -943,11 +943,11 @@
 </tr>
 </tbody></table>
 <h1 id='generate-a-receipt-address'>Generate a receipt address</h1>
-<p>Generate a new ETH  receipt address for the wallet (It will spent about 420000 gas)</p>
+<p>Generate a new ETH  receipt address for the wallet (It will cost about 420000 gas)</p>
 
-<p>After the address receives the eth, it is automatically transferred to the multi-sign address of the wallet.</p>
+<p>After confirming the transaction to this address, the eth will be automatically transferred to the multi-sign address of the wallet.</p>
 
-<p>After receiving the ERC20 token, must manually transfer to the multi-sign address of the wallet.</p>
+<p>With ERC20 token， transferring to the multisignature address must be done manully.</p>
 
 <p>This address cannot be used to transfer funds to any external address.</p>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
@@ -1023,7 +1023,7 @@
 <h1 id='fund-collection'>Fund Collection</h1>
 <p>Collection your current wallet receipt addresses&#39;s fund to multi-sign address of the wallet.</p>
 
-<p>This transfer operation need about 32000 gas</p>
+<p>It will cost about 32000 gas. </p>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/flush/"</span><span class="p">,</span>
@@ -1439,7 +1439,7 @@
 
 <aside class="notice">Contract confirmation takes about 15 seconds</aside>
 <h1 id='get-erc20-token-list'>Get ERC20 Token List</h1>
-<p>Get a list of ETH ERC20 tokens supported by the platform.</p>
+<p>Get a list of ERC20 tokens supported by the platform.</p>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
@@ -1507,9 +1507,9 @@
 </tr>
 </tbody></table>
 <h1 id='transaction-callback'>Transaction Callback</h1>
-<p>When a transaction occurs in a wallet，Sectoken will send an Http POST request to the specified url，The content-type of the request header is application/json.。</p>
+<p>After making a transfer， Sectoken will make a POST request to a url specified by the user,A service designed by yourself should be bind to the url to deal with the request.</p>
 
-<p>This url is specified by the user, who must deploy the service to receive the HTTP POST request.</p>
+<p>The content-type header of the request is application/json.</p>
 
 <blockquote>
 <p>request body</p>

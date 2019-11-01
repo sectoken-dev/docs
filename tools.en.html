@@ -383,9 +383,10 @@
 <p>Response Samples</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"address"</span><span class="p">:</span><span class="s2">"2MwNXkoPNQe2xBeMYF2sA3fJXRvXnoTzHyS"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"pubkey"</span><span class="p">:</span><span class="s2">"037d1199f850f2123b086bbc6679d3073c2ab3cbd0bcd34f827f3968383c83729c"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"prikey"</span><span class="p">:</span><span class="s2">"ab7871d727dac8ebad5fe4e5a2fbf92260f4e18d69545f1c5e05d690cd854b13"</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="s2">"2NC3ShFZxidf17ZvMvYbFUxnz3bHPD7CgA4"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pubkey"</span><span class="p">:</span><span class="s2">"033282ecb1a2465a336d9838d105ab4498922503f922905c50e390817e65bc251d"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"prikey"</span><span class="p">:</span><span class="s2">"a2eca9f95acb9c20ad2f0ba69da7e5a279e74f25b277416135cce17ffce2e3a7"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"wif_prikey"</span><span class="p">:</span><span class="s2">"cT3QUQxHBhwQTqmMDsYi6sjEsU3RFp8WJDNNj2u7F5PnCMaJgZVR"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://internal.sectoken.io/addr/btc</code></p>
@@ -412,6 +413,11 @@
 <td>string</td>
 <td>Private key</td>
 </tr>
+<tr>
+<td>wif_prikey</td>
+<td>string</td>
+<td>WIF Private key</td>
+</tr>
 </tbody></table>
 <h1 id='get-usdt-keys'>Get USDT Keys</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
@@ -423,9 +429,10 @@
 <p>Response Samples</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"address"</span><span class="p">:</span><span class="s2">"2N8kNft2A6u36TEGU4P5rduovXCKwM4BMJp"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"pubkey"</span><span class="p">:</span><span class="s2">"027967a59fb956efc4b280ad9f98756d58b95b58510e866c80449744a67bc4d4e9"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"prikey"</span><span class="p">:</span><span class="s2">"4e65ca680f7f97452c8cf2e524936d71aa2f290aa19940d4df8d7069df060523"</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="s2">"2NEbufJsvgQL3U85xDpeCUnSAAX2bTrQnTi"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pubkey"</span><span class="p">:</span><span class="s2">"03fbe263fec343e887bfc3fb0e1c01eb8f63b87652b1c12427d9ecabe110acf286"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"prikey"</span><span class="p">:</span><span class="s2">"5a9494042f4ce0d48d20bfb2c60654a69c094ddc210a5160a7cfc86a7c14f2ce"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"wif_prikey"</span><span class="p">:</span><span class="s2">"cQcn5gMXfnZn2n9jFM9RmoitJMB1qN6dnnnrzQ8gDcL8J4JA7kFb"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-3'>HTTP Request</h3>
 <p><code>GET https://internal.sectoken.io/addr/usdt</code></p>
@@ -452,6 +459,11 @@
 <td>string</td>
 <td>Private key</td>
 </tr>
+<tr>
+<td>wif_prikey</td>
+<td>string</td>
+<td>WIF Private key</td>
+</tr>
 </tbody></table>
 <h1 id='get-ltc-keys'>Get LTC Keys</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
@@ -463,9 +475,10 @@
 <p>Response Samples</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"address"</span><span class="p">:</span><span class="s2">"QNUBDWtmaWAcytzmjKBzQw8f52ZUyAaZEN"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"pubkey"</span><span class="p">:</span><span class="s2">"03a941c3bf4121ae1a65fe725ce3ac67ef797c86445a66438ece2934d32baa1115"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"prikey"</span><span class="p">:</span><span class="s2">"e60e050570e39753b9b5c84e3bd3db080f51bcd07b94dbeb4dd24473a2673a4c"</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="s2">"QPVSMTZ7eErfJovs8CzmR2JspYEmrvQSmp"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pubkey"</span><span class="p">:</span><span class="s2">"0349e2630c739ff06d20f30eab830fe083e2f0f975e734adcd2016a36c64c9bec4"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"prikey"</span><span class="p">:</span><span class="s2">"89b0cb6f26a52ff28d1fa9b163c525266bec1f5e212625550229f027bd9cfeaf"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"wif_prikey"</span><span class="p">:</span><span class="s2">"cSCMVisNknDSi7A4Lpf1JHj1piH932qPaESWDszxPQYSztuB1YFf"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-4'>HTTP Request</h3>
 <p><code>GET https://internal.sectoken.io/addr/ltc</code></p>
@@ -491,6 +504,11 @@
 <td>prikey</td>
 <td>string</td>
 <td>Private key</td>
+</tr>
+<tr>
+<td>wif_prikey</td>
+<td>string</td>
+<td>WIF Private key</td>
 </tr>
 </tbody></table>
 <h1 id='eth-multi-sign'>ETH Multi-sign</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span> 

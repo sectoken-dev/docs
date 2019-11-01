@@ -352,7 +352,7 @@
               </ul>
           </li>
           <li>
-            <a href="#webhook" class="toc-h1 toc-link" data-title="添加钱包WEBHOOK">添加钱包WEBHOOK</a>
+            <a href="#webhook" class="toc-h1 toc-link" data-title="添加钱包Webhook">添加钱包Webhook</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#http-request-10" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
@@ -1297,7 +1297,7 @@
 <td>广播完成后返回的txid，可以在区块浏览器上进行查询</td>
 </tr>
 </tbody></table>
-<h1 id='webhook'>添加钱包WEBHOOK</h1>
+<h1 id='webhook'>添加钱包Webhook</h1>
 <p>Add a webhook that will result in an HTTP callback at the specified URL from Sectoken when events are triggered.</p>
 
 <p>There is a limit of 10 webhooks per wallet.</p>
@@ -1320,7 +1320,7 @@
     -d  <span class="s1">'{"wallet_id": "your wallet id", "url":"https://your.server.com/webhook", "label":"test callback", "type":"receipt"}'</span>
 </code></pre>
 <blockquote>
-<p>Response Samples</p>
+<p>返回示例</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
@@ -1333,62 +1333,62 @@
 <h3 id='1f9ac54b15-9'>请求参数</h3>
 <table><thead>
 <tr>
-<th>Parameter Name</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>wallet_id</td>
 <td>string</td>
-<td>Yes</td>
-<td>Wallet id</td>
+<td>是</td>
+<td>钱包ID</td>
 </tr>
 <tr>
 <td>url</td>
 <td>string</td>
-<td>Yes</td>
-<td>URL to fire the webhook to</td>
+<td>是</td>
+<td>用户自定义url</td>
 </tr>
 <tr>
 <td>type</td>
 <td>string</td>
-<td>Yes</td>
+<td>是</td>
 <td>receipt or payment</td>
 </tr>
 <tr>
 <td>label</td>
 <td>string</td>
-<td>Optional</td>
-<td>Label of the new webhook</td>
+<td>否</td>
+<td>webhook标签</td>
 </tr>
 </tbody></table>
 <h3 id='70bdef7e25-10'>返回参数</h3>
 <table><thead>
 <tr>
-<th>Parameter Name</th>
-<th>Type</th>
-<th>Description</th>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>code</td>
 <td>integer</td>
-<td>Status code. Successful return 200. Others are <a href="#error-codes">error codes</a>.</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
 </tr>
 <tr>
 <td>data</td>
 <td>object</td>
-<td>Response data.</td>
+<td>返回内容</td>
 </tr>
 </tbody></table>
 <h4 id='data-9'>Data 参数</h4>
 <table><thead>
 <tr>
-<th>Parameter Name</th>
-<th>Type</th>
-<th>Description</th>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -1411,7 +1411,7 @@
     -X GET
 </code></pre>
 <blockquote>
-<p>Response Samples</p>
+<p>返回示例</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
@@ -1432,17 +1432,17 @@
 <h3 id='1f9ac54b15-10'>请求参数</h3>
 <table><thead>
 <tr>
-<th>Parameter Name</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>wallet_id</td>
 <td>string</td>
-<td>Yes</td>
-<td>Wallet id</td>
+<td>是</td>
+<td>钱包id</td>
 </tr>
 </tbody></table>
 <h3 id='70bdef7e25-11'>返回参数</h3>
@@ -1456,20 +1456,20 @@
 <tr>
 <td>code</td>
 <td>integer</td>
-<td>Status code. Successful return 200. Others are <a href="#error-codes">error codes</a>.</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
 </tr>
 <tr>
 <td>data</td>
 <td>array</td>
-<td>Response data.</td>
+<td>返回内容</td>
 </tr>
 </tbody></table>
 <h4 id='data-10'>Data 参数</h4>
 <table><thead>
 <tr>
-<th>Parameter Name</th>
-<th>Type</th>
-<th>Description</th>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -1526,7 +1526,7 @@
     -d  <span class="s1">'{"callbackid": "your callback id"}'</span>
 </code></pre>
 <blockquote>
-<p>Response Samples</p>
+<p>返回示例</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
@@ -1572,7 +1572,7 @@
     -d <span class="s1">'{"wallet_id": "6004e156344ec27cad24a8df5bbaa5ab", "txid": "46ab8299ed14ba7d57b57210b7756d80f67b3db2448fd4d1f1fb78039e5bfd6d", "height": 1431122, "output": [{"address": "2N4b5ham6n4y4gMkrN8R5sswvvmJdrGV3u7", "amount": "1000000000"}, {"address": "2N1DDUWKa3kdaKaPrPX5eZEMgFHxtU2JPmG", "amount": "363"}], "type": "payment", "timestamp": 1572510180, "coin_type": "BTC", "decimal": 8, "memo": "", "callbackid": "fa5dc2025e79c37b8656ef4b89619d9d"}'</span>
 </code></pre>
 <blockquote>
-<p>Request body</p>
+<p>请求内容</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6004e156344ec27cad24a8df5bbaa5ab"</span><span class="p">,</span><span class="w"> 
@@ -1666,7 +1666,11 @@
 <span class="p">)</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/flow/record/btc/?wallet_id=b81d38f5f250c36a05da0d0e1f9bd394&amp;year=2019&amp;month=10"</span> <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span>
-</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> 
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">

@@ -352,6 +352,48 @@
               </ul>
           </li>
           <li>
+            <a href="#add-wallet-webhook" class="toc-h1 toc-link" data-title="Add Wallet WebHook">Add Wallet WebHook</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-10" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#request-parameters-9" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#response-parameters-10" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#list-wallet-webhook" class="toc-h1 toc-link" data-title="List Wallet WebHook">List Wallet WebHook</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-11" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#request-parameters-10" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#response-parameters-11" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#delete-wallet-webhook" class="toc-h1 toc-link" data-title="Delete Wallet WebHook">Delete Wallet WebHook</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-12" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#request-parameters-11" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#response-parameters-12" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#transaction-callback" class="toc-h1 toc-link" data-title="Transaction Callback">Transaction Callback</a>
               <ul class="toc-list-h2">
                   <li>
@@ -363,13 +405,13 @@
             <a href="#get-transaction-records" class="toc-h1 toc-link" data-title="Get Transaction Records">Get Transaction Records</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#http-request-10" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                    <a href="#http-request-13" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
                   </li>
                   <li>
-                    <a href="#request-parameters-9" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
+                    <a href="#request-parameters-12" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
                   </li>
                   <li>
-                    <a href="#response-parameters-10" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                    <a href="#response-parameters-13" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
                   </li>
               </ul>
           </li>
@@ -1251,6 +1293,270 @@ Sectoken will then verify the transaction and broadcast it.</p>
 <td>txid of the transaction broadcasted by Sectoken</td>
 </tr>
 </tbody></table>
+<h1 id='add-wallet-webhook'>Add Wallet WebHook</h1>
+<p>Add a webhook that will result in an HTTP callback at the specified URL from Sectoken when events are triggered.</p>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/btc/webhook_add/"</span><span class="p">,</span> 
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span> 
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+        <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"your wallet id"</span><span class="p">,</span>
+        <span class="s">"url"</span><span class="p">:</span> <span class="s">"https://your.server.com/webhook"</span><span class="p">,</span>
+        <span class="s">"label"</span><span class="p">:</span> <span class="s">"test callback"</span><span class="p">,</span>
+        <span class="s">"type"</span><span class="p">:</span> <span class="s">"receipt"</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/btc/webhook_add/"</span> <span class="se">\</span>
+    -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
+    -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+    -X POST <span class="se">\</span>
+    -d  <span class="s1">'{"wallet_id": "your wallet id", "url":"https://your.server.com/webhook", "label":"test callback", "type":"receipt"}'</span>
+</code></pre>
+<blockquote>
+<p>Response Samples</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"callbackid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"da0e3f3530cb7f63695d8eaad351fdc1"</span><span class="w"> 
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-10'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/wallet/btc/webhook_add/</code></p>
+<h3 id='request-parameters-9'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wallet_id</td>
+<td>string</td>
+<td>Yes</td>
+<td>Wallet id</td>
+</tr>
+<tr>
+<td>url</td>
+<td>string</td>
+<td>Yes</td>
+<td>URL to fire the webhook to</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>Yes</td>
+<td>receipt or payment</td>
+</tr>
+<tr>
+<td>label</td>
+<td>string</td>
+<td>No</td>
+<td>Label of the new webhook</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameters-10'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>Status code. Successful return 200. Others are <a href="#error-codes">error codes</a>.</td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>Response data.</td>
+</tr>
+</tbody></table>
+<h4 id='data-parameters-9'>Data Parameters</h4>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>callbackid</td>
+<td>string</td>
+<td>callback id</td>
+</tr>
+</tbody></table>
+<h1 id='list-wallet-webhook'>List Wallet WebHook</h1>
+<p>List webhooks set up on the wallet</p>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/btc/webhook_list/"</span><span class="p">,</span> 
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span> 
+    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"your wallet id"</span><span class="p">}</span>
+<span class="p">)</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/btc/webhook_list/?wallet_id=your_wallet_id"</span> <span class="se">\</span>
+    -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
+    -X GET
+</code></pre>
+<blockquote>
+<p>Response Samples</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test callback"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://your.server.com/webhook"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"receipt"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"callbackid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"da0e3f3530cb7f63695d8eaad351fdc1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your wallet id"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"create_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-31T19:54:22.977"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-11'>HTTP Request</h3>
+<p><code>GET https://testnet.sectoken.io/wallet/btc/webhook_list/</code></p>
+<h3 id='request-parameters-10'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wallet_id</td>
+<td>string</td>
+<td>Yes</td>
+<td>Wallet id</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameters-11'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>Status code. Successful return 200. Others are <a href="#error-codes">error codes</a>.</td>
+</tr>
+<tr>
+<td>data</td>
+<td>array</td>
+<td>Response data.</td>
+</tr>
+</tbody></table>
+<h4 id='data-parameters-10'>Data Parameters</h4>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>label</td>
+<td>string</td>
+<td>label of the webhook</td>
+</tr>
+<tr>
+<td>url</td>
+<td>string</td>
+<td>URL to fire the webhook to</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>receipt or payment</td>
+</tr>
+<tr>
+<td>token</td>
+<td>string</td>
+<td>erc20 token name or eth</td>
+</tr>
+<tr>
+<td>callbackid</td>
+<td>string</td>
+<td>callback id</td>
+</tr>
+<tr>
+<td>wallet_id</td>
+<td>string</td>
+<td>Wallet id</td>
+</tr>
+<tr>
+<td>create_time</td>
+<td>string</td>
+<td>Create Timestamp</td>
+</tr>
+</tbody></table>
+<h1 id='delete-wallet-webhook'>Delete Wallet WebHook</h1>
+<p>Del a webhook.</p>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/btc/webhook_del/"</span><span class="p">,</span> 
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span> 
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+        <span class="s">"callbackid"</span><span class="p">:</span> <span class="s">"your callback id"</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/btc/webhook_del/"</span> <span class="se">\</span>
+    -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
+    -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+    -X POST <span class="se">\</span>
+    -d  <span class="s1">'{"callbackid": "your callback id"}'</span>
+</code></pre>
+<blockquote>
+<p>Response Samples</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-12'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/wallet/btc/webhook_del/</code></p>
+<h3 id='request-parameters-11'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>callbackid</td>
+<td>string</td>
+<td>Yes</td>
+<td>callback id</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameters-12'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>Status code. Successful return 200. Others are <a href="#error-codes">error codes</a>.</td>
+</tr>
+</tbody></table>
 <h1 id='transaction-callback'>Transaction Callback</h1>
 <p>After making a transfer， Sectoken will make a POST request to a url specified by the user.
 A service designed by yourself should be bind to the url to deal with the request.</p>
@@ -1348,9 +1654,9 @@ A service designed by yourself should be bind to the url to deal with the reques
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-10'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request-13'>HTTP Request</h3>
 <p><code>GET https://testnet.sectoken.io/flow/record/btc/</code></p>
-<h3 id='request-parameters-9'>Request Parameters</h3>
+<h3 id='request-parameters-12'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter Name</th>
@@ -1384,7 +1690,7 @@ A service designed by yourself should be bind to the url to deal with the reques
 <td>day</td>
 </tr>
 </tbody></table>
-<h3 id='response-parameters-10'>Response Parameters</h3>
+<h3 id='response-parameters-13'>Response Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter Name</th>
@@ -1403,7 +1709,7 @@ A service designed by yourself should be bind to the url to deal with the reques
 <td>Response data</td>
 </tr>
 </tbody></table>
-<h4 id='data-parameters-9'>data Parameters</h4>
+<h4 id='data-parameters-11'>data Parameters</h4>
 <table><thead>
 <tr>
 <th>Parameter Name</th>

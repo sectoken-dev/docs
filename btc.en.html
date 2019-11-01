@@ -637,7 +637,6 @@
         </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"df0e16ab0db9b20c9224c441051ea83a"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"wallet_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BtcTest"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2NDNGzhxexc51q9uuEcR3nxRbkDrLQGZSSF"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20000"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"confirmed"</span><span class="p">:</span><span class="s2">"20000"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"unconfirmed"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"send_max"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
@@ -864,7 +863,7 @@
 <tr>
 <td>code</td>
 <td>integer</td>
-<td>Status code.If success ,returns 200. If not，check the <a href="#error-codes">Error Codes</a></td>
+<td>Status code. If success ,returns 200. If not，check the <a href="#error-codes">Error Codes</a></td>
 </tr>
 <tr>
 <td>data</td>
@@ -922,7 +921,7 @@
 <tr>
 <td>code</td>
 <td>integer</td>
-<td>Status code.If success ,returns 200. If not，check the <a href="#error-codes">Error Codes</a></td>
+<td>Status code. If success ,returns 200. If not，check the <a href="#error-codes">Error Codes</a></td>
 </tr>
 <tr>
 <td>data</td>
@@ -961,7 +960,6 @@
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"31267237"</span><span class="w">
         </span><span class="s2">"confirmed"</span><span class="p">:</span><span class="s2">"31267237"</span><span class="w">
         </span><span class="s2">"unconfirmed"</span><span class="p">:</span><span class="s2">"0"</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -1001,7 +999,7 @@
 <tr>
 <td>code</td>
 <td>integer</td>
-<td>Status code.If success ,returns 200. If not，check the <a href="#error-codes">Error Codes</a></td>
+<td>Status code. If success ,returns 200. If not，check the <a href="#error-codes">Error Codes</a></td>
 </tr>
 <tr>
 <td>data</td>
@@ -1017,11 +1015,6 @@
 <th>Description</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>balance</td>
-<td>string</td>
-<td>Balance. (Minimum unit)</td>
-</tr>
 <tr>
 <td>confirmed</td>
 <td>string</td>
@@ -1059,7 +1052,7 @@
     -X POST <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
-    -d <span class="s1">'{"wallet_id": "your wallet id", "outputs":[{"address": "destination address", "value": "10000"},{"address": "destination address", "value": "5000"}], "feerate": 3, "memo":"your commit", "total":false}'</span>
+    -d <span class="s1">'{"wallet_id": "your wallet id", "outputs":[{"address": "destination address", "value": "10000"},{"address": "destination address", "value": "5000"}], "feerate": 1, "memo":"your commit", "total":false}'</span>
 </code></pre>
 <blockquote>
 <p>Response Samples</p>
@@ -1121,7 +1114,7 @@
 <td>memo</td>
 <td>string</td>
 <td>Optional</td>
-<td>Remark info,reocrd into blockchain</td>
+<td>Remark info, record into blockchain</td>
 </tr>
 <tr>
 <td>total</td>
@@ -1816,6 +1809,10 @@ A service designed by yourself should be bind to the url to deal with the reques
 <td>Activate code error</td>
 </tr>
 <tr>
+<td>4210</td>
+<td>The number of webhook reaches the upper limit</td>
+</tr>
+<tr>
 <td>4302</td>
 <td>The amount of a single transaction exceeds the limit</td>
 </tr>
@@ -1870,6 +1867,10 @@ A service designed by yourself should be bind to the url to deal with the reques
 <tr>
 <td>4507</td>
 <td>Private Key Must be base64 encoded</td>
+</tr>
+<tr>
+<td>4508</td>
+<td>webhook does not exist</td>
 </tr>
 </tbody></table>
 

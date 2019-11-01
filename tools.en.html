@@ -306,6 +306,20 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#btc-sign" class="toc-h1 toc-link" data-title="BTC Sign">BTC Sign</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-7" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#request-parameters-3" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#response-parameters-7" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                  </li>
+              </ul>
+          </li>
       </ul>
     </div>
     <div class="page-wrapper">
@@ -649,6 +663,114 @@
 </thead><tbody>
 <tr>
 <td>tx</td>
+<td>string</td>
+<td>Signed transaction</td>
+</tr>
+</tbody></table>
+<h1 id='btc-sign'>BTC Sign</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span> 
+
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"https://internal.sectoken.io/btc/signFirst"</span><span class="p">,</span> 
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+          <span class="s">"inputs"</span><span class="p">:[</span>
+              <span class="p">{</span><span class="s">"output"</span><span class="p">:</span> <span class="s">"97c7798d1505a0a8a196afe519ac71296a924fc57c20856a734d382d644b1931"</span><span class="p">,</span> <span class="s">"index"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">"value"</span><span class="p">:</span> <span class="s">"14899405"</span><span class="p">}</span>
+          <span class="p">],</span>
+          <span class="s">"scripts"</span><span class="p">:[</span>
+              <span class="s">"52210277d8bf1576872fca8e1300a89af37b3c064b14befdae053f2219ba2bdfefea202103a60c2cdf4edd0d112ecd670e3f606d6964186ca51ce55614aa2e909d54966e4b2102c0494bce85e7ff8f907d31df9ee52ca84a309b912089895fb78e79e880933e2c53ae"</span>
+          <span class="p">],</span>
+          <span class="s">"outputs"</span><span class="p">:[</span>
+              <span class="p">{</span><span class="s">"address"</span><span class="p">:</span> <span class="s">"tb1qdh4hsufzflyhk0sdcr4x6hmpc0p29z0a0csty4"</span><span class="p">,</span> <span class="s">"value"</span><span class="p">:</span> <span class="s">"1000000"</span><span class="p">},</span>
+              <span class="p">{</span><span class="s">"address"</span><span class="p">:</span> <span class="s">"2MyzoHwPZGUYJPSvrQG2PUrALAEVUZrKwir"</span><span class="p">,</span> <span class="s">"value"</span><span class="p">:</span> <span class="s">"12899405"</span><span class="p">}</span>
+          <span class="p">],</span>
+          <span class="s">"prikey"</span><span class="p">:</span> <span class="s">"57be9b3afa40b07771daabfdfdebf05d765219a8f6b926ca2c8cfdd6b58a9d01"</span><span class="p">,</span>
+          <span class="s">"network"</span><span class="p">:</span> <span class="s">"testnet"</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://internal.sectoken.io/v2/eth/signFirst"</span> <span class="se">\</span>
+    -X POST <span class="se">\</span>
+    -H <span class="s2">"Content-type: application/json"</span> <span class="se">\</span>
+    -d <span class="s1">'{"inputs":[{"output": "97c7798d1505a0a8a196afe519ac71296a924fc57c20856a734d382d644b1931", "index": 1, "value": "14899405"}],"scripts":["52210277d8bf1576872fca8e1300a89af37b3c064b14befdae053f2219ba2bdfefea202103a60c2cdf4edd0d112ecd670e3f606d6964186ca51ce55614aa2e909d54966e4b2102c0494bce85e7ff8f907d31df9ee52ca84a309b912089895fb78e79e880933e2c53ae"],"outputs":[{"address":"tb1qdh4hsufzflyhk0sdcr4x6hmpc0p29z0a0csty4", "value": "1000000"},{"address": "2MyzoHwPZGUYJPSvrQG2PUrALAEVUZrKwir", "value": "12899405"}],"prikey": "57be9b3afa40b07771daabfdfdebf05d765219a8f6b926ca2c8cfdd6b58a9d01","network": "testnet"}'</span> 
+
+</code></pre>
+<blockquote>
+<p>Response Samples</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="s2">"code"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:{</span><span class="w">
+        </span><span class="s2">"signed_tx"</span><span class="p">:</span><span class="s2">"02000000000101edf3a27b7a5a4bc161f1929993681cb3053c80898aef66c4fd0de99f155bc17f0100000023220020a2f417b91f2e7d97e339f5d9dd166ca6655d619be9361c6b5fad63336662353cffffffff0240548900000000001600146deb7871224fc97b3e0dc0ea6d5f61c3c2a289fdcd3d2c000000000017a914b0bf494e08dd9e9a1d7c12a768cd2e7e2f21c8c7870300473044022066388d692444a42342cc2cd428b4b1e881367323f8eabef9e591d777f9efbaf102200348fa15e90caa32f2ddb590a51363dbe493fd8067f30fb93657c5437022d5c9016952210300a7cbb08d5835ca507ab929b6daa4f4e2c440e85e1f748d08ef7ce4794e28c42103a60c2cdf4edd0d112ecd670e3f606d6964186ca51ce55614aa2e909d54966e4b2102c0494bce85e7ff8f907d31df9ee52ca84a309b912089895fb78e79e880933e2c53ae00000000"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-7'>HTTP Request</h3>
+<p><code>POST https://internal.sectoken.io/v2/eth/signFirst</code></p>
+<h3 id='request-parameters-3'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>inputs</td>
+<td>array</td>
+<td>Yes</td>
+<td>Unsigned transaction</td>
+</tr>
+<tr>
+<td>scripts</td>
+<td>array</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>outputs</td>
+<td>array</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>prikey</td>
+<td>string</td>
+<td>Yes</td>
+<td>Private key</td>
+</tr>
+<tr>
+<td>network</td>
+<td>string</td>
+<td>Yes</td>
+<td>Network type. testnet or mainnet</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameters-7'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>Status code. Successful return 200. Parameter error return 401.</td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>Response data.</td>
+</tr>
+</tbody></table>
+<h4 id='data-parameters-3'>Data Parameters</h4>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>sign_tx</td>
 <td>string</td>
 <td>Signed transaction</td>
 </tr>

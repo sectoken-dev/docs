@@ -1825,7 +1825,10 @@
 <p>After making a transfer， Sectoken will make a POST request to a url specified by the user,A service designed by yourself should be bind to the url to deal with the request.</p>
 
 <p>The content-type header of the request is application/json.</p>
-
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://your.server.com/diy/url"</span> <span class="se">\ </span> 
+    -X post -H <span class="s2">"content-type:application/json"</span> <span class="se">\</span>
+    -d <span class="s1">'{"wallet_id": "6004e156344ec27cad24a8df5bbaa5ab","txid": "0x2b4675aff7efad0c7dcee09a943f9cc501402f18b67393a47cdcfa887f5ab2da","height": 4340000,"dst_address": "0x759ac48a2754be136d495da1a826200ab1c911f2","src_address": "0x8cb9e65d6a771424dfabbda4221bdb446d9183fe","type": "receipt","timestamp": 1872340000,"amount": "10000000000","wallet_balance": "100000000000""coin_type": "ETH","decimal": 18,"callbackid": "fa5dc2025e79c37b8656ef4b89619d9d"'</span>
+</code></pre>
 <blockquote>
 <p>request body</p>
 </blockquote>

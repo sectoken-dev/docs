@@ -925,13 +925,13 @@
 </tr>
 <tr>
 <td>feerate</td>
-<td>int</td>
+<td>integer</td>
 <td>No</td>
 <td>Transfer speed. 1 is fast, 0 is normal. Default is 0.</td>
 </tr>
 <tr>
 <td>total</td>
-<td>int</td>
+<td>integer</td>
 <td>No</td>
 <td>Transfer all balance. set value 1 to enbale. The value parameter is not in effect at this point.</td>
 </tr>
@@ -1439,7 +1439,7 @@
 </tr>
 <tr>
 <td>height</td>
-<td>int</td>
+<td>integer</td>
 <td>Block height</td>
 </tr>
 <tr>
@@ -1453,13 +1453,13 @@
 <td>Source address</td>
 </tr>
 <tr>
-<td>state</td>
-<td>int</td>
-<td>Transfer status, 0 pay 1 receive</td>
+<td>type</td>
+<td>string</td>
+<td>Transfer status, receipt or payment</td>
 </tr>
 <tr>
 <td>timestamp</td>
-<td>int</td>
+<td>integer</td>
 <td>Block confirmation time</td>
 </tr>
 <tr>
@@ -1479,7 +1479,7 @@
 </tr>
 <tr>
 <td>decimal</td>
-<td>int</td>
+<td>integer</td>
 <td>Coin balance decimal places</td>
 </tr>
 </tbody></table>
@@ -1504,7 +1504,7 @@
             </span><span class="s2">"dst_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xa2465290580A948063B713cFf09dD550e4C4E3DB"</span><span class="p">,</span><span class="w"> 
             </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="p">,</span><span class="w"> 
             </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1572259477</span><span class="p">,</span><span class="w"> 
-            </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"payment"</span><span class="p">,</span><span class="w"> 
             </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">5278224</span><span class="p">,</span><span class="w"> 
             </span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="w">
@@ -1596,22 +1596,22 @@
 </tr>
 <tr>
 <td>timestamp</td>
-<td>int</td>
+<td>integer</td>
 <td>Transfer time</td>
 </tr>
 <tr>
-<td>state</td>
-<td>int</td>
-<td>Transfer status, 0 pay 1 receive</td>
+<td>type</td>
+<td>string</td>
+<td>Transfer status, receipt or payment</td>
 </tr>
 <tr>
 <td>height</td>
-<td>int</td>
+<td>integer</td>
 <td>Block height</td>
 </tr>
 <tr>
 <td>decimal</td>
-<td>int</td>
+<td>integer</td>
 <td>Coin balance decimal places</td>
 </tr>
 </tbody></table>
@@ -1635,6 +1635,10 @@
 <tr>
 <td>4203</td>
 <td>Insufficient Balance</td>
+</tr>
+<tr>
+<td>4205</td>
+<td>Wallet not exist</td>
 </tr>
 <tr>
 <td>4204</td>

@@ -883,13 +883,13 @@
 </tr>
 <tr>
 <td>feerate</td>
-<td>int</td>
+<td>integer</td>
 <td>否</td>
 <td>转账速度，1快速，0普通，默认为0</td>
 </tr>
 <tr>
 <td>total</td>
-<td>int</td>
+<td>integer</td>
 <td>否</td>
 <td>全部转出，置1生效，此时value值不生效。</td>
 </tr>
@@ -1097,7 +1097,7 @@
     </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">4340000</span><span class="p">,</span><span class="w">
     </span><span class="s2">"dst_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x759ac48a2754be136d495da1a826200ab1c911f2"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"src_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x8cb9e65d6a771424dfabbda4221bdb446d9183fe"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"payment"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1872340000</span><span class="p">,</span><span class="w">
     </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000000000"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"wallet_balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100000000000"</span><span class="p">,</span><span class="w">
@@ -1124,7 +1124,7 @@
 </tr>
 <tr>
 <td>height</td>
-<td>int</td>
+<td>integer</td>
 <td>交易所在区块高度</td>
 </tr>
 <tr>
@@ -1138,9 +1138,9 @@
 <td>交易来源地址</td>
 </tr>
 <tr>
-<td>state</td>
-<td>int</td>
-<td>交易状态，0转出，1转入</td>
+<td>type</td>
+<td>string</td>
+<td>交易状态，receipt收款 payment转账</td>
 </tr>
 <tr>
 <td>timestamp</td>
@@ -1164,7 +1164,7 @@
 </tr>
 <tr>
 <td>decimal</td>
-<td>int</td>
+<td>integer</td>
 <td>精度</td>
 </tr>
 </tbody></table>
@@ -1189,7 +1189,7 @@
             </span><span class="s2">"dst_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xa2465290580A948063B713cFf09dD550e4C4E3DB"</span><span class="p">,</span><span class="w"> 
             </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="p">,</span><span class="w"> 
             </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1572259477</span><span class="p">,</span><span class="w"> 
-            </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"receipt"</span><span class="p">,</span><span class="w"> 
             </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">5278224</span><span class="p">,</span><span class="w"> 
             </span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="w">
@@ -1285,18 +1285,18 @@
 <td>交易时间</td>
 </tr>
 <tr>
-<td>state</td>
-<td>int</td>
-<td>交易状态 0转出1转入</td>
+<td>type</td>
+<td>string</td>
+<td>交易状态，receipt收款 payment转账</td>
 </tr>
 <tr>
 <td>height</td>
-<td>int</td>
+<td>integer</td>
 <td>交易区块高度</td>
 </tr>
 <tr>
 <td>decimal</td>
-<td>int</td>
+<td>integer</td>
 <td>精度</td>
 </tr>
 </tbody></table>
@@ -1324,6 +1324,10 @@
 <tr>
 <td>4204</td>
 <td>钱包冻结中</td>
+</tr>
+<tr>
+<td>4205</td>
+<td>钱包不存在</td>
 </tr>
 <tr>
 <td>4207</td>

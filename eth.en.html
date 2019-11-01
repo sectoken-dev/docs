@@ -1550,6 +1550,8 @@
 </tbody></table>
 <h1 id='add-wallet-webhook'>Add Wallet WebHook</h1>
 <p>Add a webhook that will result in an HTTP callback at the specified URL from Sectoken when events are triggered.</p>
+
+<p>There is a limit of 10 webhooks per wallet.</p>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>

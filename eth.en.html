@@ -1834,7 +1834,7 @@
 </tr>
 </tbody></table>
 <h1 id='transaction-callback'>Transaction Callback</h1>
-<p>After making a transfer， Sectoken will make a POST request to a url specified by the user,A service designed by yourself should be bind to the url to deal with the request.</p>
+<p>After making a transfer， Sectoken will make a POST request to a url specified by the user,A service designed by yourself should be bind to the url to deal with the request.Need to add the wallet Webhook first.</p>
 
 <p>The content-type header of the request is application/json.</p>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://your.server.com/diy/url"</span> <span class="se">\ </span> 
@@ -1853,7 +1853,6 @@
     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"receipt"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1872340000</span><span class="p">,</span><span class="w">
     </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000000000"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"wallet_balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100000000000"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
     </span><span class="s2">"callbackid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fa5dc2025e79c37b8656ef4b89619d9d"</span><span class="w">
@@ -1905,11 +1904,6 @@
 <td>amount</td>
 <td>string</td>
 <td>Transfer amount</td>
-</tr>
-<tr>
-<td>wallet_balance</td>
-<td>string</td>
-<td>Coin type balance in wallet</td>
 </tr>
 <tr>
 <td>coin_type</td>

@@ -405,6 +405,48 @@
               </ul>
           </li>
           <li>
+            <a href="#webhook" class="toc-h1 toc-link" data-title="新增钱包WebHook">新增钱包WebHook</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-14" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-11" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-14" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#webhook-2" class="toc-h1 toc-link" data-title="获取钱包WebHook">获取钱包WebHook</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-15" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-12" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#response-parameters" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#webhook-3" class="toc-h1 toc-link" data-title="删除钱包WebHook">删除钱包WebHook</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-16" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-13" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-15" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#callback" class="toc-h1 toc-link" data-title="交易Callback通知">交易Callback通知</a>
               <ul class="toc-list-h2">
                   <li>
@@ -416,13 +458,13 @@
             <a href="#c284998822" class="toc-h1 toc-link" data-title="获取交易记录">获取交易记录</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#http-request-14" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                    <a href="#http-request-17" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
                   </li>
                   <li>
-                    <a href="#1f9ac54b15-11" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                    <a href="#1f9ac54b15-14" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
                   </li>
                   <li>
-                    <a href="#70bdef7e25-14" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                    <a href="#70bdef7e25-16" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
                   </li>
               </ul>
           </li>
@@ -1516,10 +1558,283 @@
 <td>精度</td>
 </tr>
 </tbody></table>
+<h1 id='webhook'>新增钱包WebHook</h1>
+<p>Add a webhook that will result in an HTTP callback at the specified URL from Sectoken when events are triggered.</p>
+
+<p>There is a limit of 10 webhooks per wallet.</p>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/webhook_add/"</span><span class="p">,</span> 
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span> 
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+        <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"your wallet id"</span><span class="p">,</span>
+        <span class="s">"url"</span><span class="p">:</span> <span class="s">"https://your.server.com/webhook"</span><span class="p">,</span>
+        <span class="s">"label"</span><span class="p">:</span> <span class="s">"test callback"</span><span class="p">,</span>
+        <span class="s">"type"</span><span class="p">:</span> <span class="s">"receipt"</span><span class="p">,</span>
+        <span class="s">"token"</span><span class="p">:</span> <span class="s">"erc20_ht"</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/webhook_add/"</span> <span class="se">\</span>
+    -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
+    -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+    -X POST <span class="se">\</span>
+    -d  <span class="s1">'{"wallet_id": "your wallet id", "url":"https://your.server.com/webhook", "label":"test callback", "type":"receipt", "token": "erc20_ht"}'</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"callbackid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"da0e3f3530cb7f63695d8eaad351fdc1"</span><span class="w"> 
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-14'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/wallet/eth/webhook_add/</code></p>
+<h3 id='1f9ac54b15-11'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wallet_id</td>
+<td>string</td>
+<td>Yes</td>
+<td>Wallet id</td>
+</tr>
+<tr>
+<td>url</td>
+<td>string</td>
+<td>Yes</td>
+<td>URL to fire the webhook to</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>Yes</td>
+<td>Transfer status. Transfer status, receipt or payment</td>
+</tr>
+<tr>
+<td>label</td>
+<td>string</td>
+<td>Optional</td>
+<td>Label of the new webhook</td>
+</tr>
+<tr>
+<td>token</td>
+<td>string</td>
+<td>Optional</td>
+<td>erc20_koz,erc20_usdt, default eth</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-14'>返回参数</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>Status code. Successful return 200. Others are <a href="#error-codes">Error Codes</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>Response data.</td>
+</tr>
+</tbody></table>
+<h4 id='data-12'>Data 参数</h4>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>callbackid</td>
+<td>string</td>
+<td>callback id</td>
+</tr>
+</tbody></table>
+<h1 id='webhook-2'>获取钱包WebHook</h1>
+<p>获取钱包的Webhook设置列表</p>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/webhook_list/"</span><span class="p">,</span> 
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span> 
+    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"your wallet id"</span><span class="p">}</span>
+<span class="p">)</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/webhook_list/?wallet_id=your_wallet_id"</span> <span class="se">\</span>
+    -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
+    -X GET
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test callback"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://your.server.com/webhook"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"receipt"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"erc20_ht"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"callbackid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"da0e3f3530cb7f63695d8eaad351fdc1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your wallet id"</span><span class="w">
+            </span><span class="s2">"create_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-31T19:54:22.977"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-15'>HTTP Request</h3>
+<p><code>GET https://testnet.sectoken.io/wallet/eth/webhook_list/</code></p>
+<h3 id='1f9ac54b15-12'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wallet_id</td>
+<td>string</td>
+<td>是</td>
+<td>钱包ID</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameters'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>array</td>
+<td>返回内容</td>
+</tr>
+</tbody></table>
+<h4 id='data-13'>Data参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>label</td>
+<td>string</td>
+<td>label of the webhook</td>
+</tr>
+<tr>
+<td>url</td>
+<td>string</td>
+<td>URL to fire the webhook to</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>Transfer status, receipt or payment</td>
+</tr>
+<tr>
+<td>token</td>
+<td>string</td>
+<td>erc20 token name or eth</td>
+</tr>
+<tr>
+<td>callbackid</td>
+<td>string</td>
+<td>callback id</td>
+</tr>
+<tr>
+<td>wallet_id</td>
+<td>string</td>
+<td>钱包ID</td>
+</tr>
+<tr>
+<td>create_time</td>
+<td>string</td>
+<td>Create Timestamp</td>
+</tr>
+</tbody></table>
+<h1 id='webhook-3'>删除钱包WebHook</h1>
+<p>删除钱包的Webhook</p>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/webhook_del/"</span><span class="p">,</span> 
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span> 
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+        <span class="s">"callbackid"</span><span class="p">:</span> <span class="s">"your callback id"</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/webhook_del/"</span> <span class="se">\</span>
+    -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
+    -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+    -X POST <span class="se">\</span>
+    -d  <span class="s1">'{"callbackid": "your callback id"}'</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-16'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/wallet/eth/webhook_del/</code></p>
+<h3 id='1f9ac54b15-13'>请求参数</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>callbackid</td>
+<td>string</td>
+<td>Yes</td>
+<td>callback id</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-15'>返回参数</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>Status code. Successful return 200. Others are <a href="#error-codes">Error Codes</a></td>
+</tr>
+</tbody></table>
 <h1 id='callback'>交易Callback通知</h1>
 <p>当用户钱包发生交易时，会向指定的url发送HTTP POST请求，请求头content-type为application/json。</p>
 
-<p>此url由用户指定，用户须部署服务接收HTTP POST请求。</p>
+<p>此url由用户指定，用户须部署服务接收HTTP POST请求。同时需先添加钱包Webhook</p>
 
 <blockquote>
 <p>请求body示例</p>
@@ -1533,7 +1848,6 @@
     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"receipt"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1872340000</span><span class="p">,</span><span class="w">
     </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000000000"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"wallet_balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100000000000"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1586,11 +1900,6 @@
 <td>交易金额</td>
 </tr>
 <tr>
-<td>wallet_balance</td>
-<td>string</td>
-<td>钱包下coin_type币种余额</td>
-</tr>
-<tr>
 <td>coin_type</td>
 <td>string</td>
 <td>币种类型</td>
@@ -1629,9 +1938,9 @@
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-14'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request-17'>HTTP Request</h3>
 <p><code>GET https://testnet.sectoken.io/flow/record/eth/</code></p>
-<h3 id='1f9ac54b15-11'>请求参数</h3>
+<h3 id='1f9ac54b15-14'>请求参数</h3>
 <table><thead>
 <tr>
 <th>参数名</th>
@@ -1665,7 +1974,7 @@
 <td>日期</td>
 </tr>
 </tbody></table>
-<h3 id='70bdef7e25-14'>返回参数</h3>
+<h3 id='70bdef7e25-16'>返回参数</h3>
 <table><thead>
 <tr>
 <th>参数名</th>
@@ -1684,7 +1993,7 @@
 <td>返回内容</td>
 </tr>
 </tbody></table>
-<h4 id='data-12'>data 参数</h4>
+<h4 id='data-14'>data 参数</h4>
 <table><thead>
 <tr>
 <th>参数名</th>

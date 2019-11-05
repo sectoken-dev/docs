@@ -703,7 +703,7 @@
 <tr>
 <td>address</td>
 <td>string</td>
-<td>钱包默认的收款地址</td>
+<td>钱包的地址</td>
 </tr>
 <tr>
 <td>confirmed</td>
@@ -1065,31 +1065,31 @@
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"tx_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"inputs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"output"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5723324415edefe13668e18cf6e93dea786f629ec841a24bb31303e87ddf0a79:0"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">],</span><span class="w">
-        </span><span class="s2">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="s2">"5221020fcbb44ff4a1f423499b1eb9b2bd9cbe467934467d4857451c7eab7f8cb2885b21038f2d1612ae08a9595fbe1d30c9b13e748a4ae55c06d5d3fa5c0b2e59712d3b6b21033276655f29e3ca36a5c8dbf0996fd3267f56c03cfdc092f53972269c1abf97ff53ae"</span><span class="w">
-        </span><span class="p">],</span><span class="w">
-        </span><span class="s2">"outputs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2MwEzXjhj4DtCG6HaUmqBxKzsLCYhac3fGe"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2N5GboAcCUbyGVe5og6EPT1RrQYc2ST1UQA"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8785"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="s2">"fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"215"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"privkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"change"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8785"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"change_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2N5GboAcCUbyGVe5og6EPT1RrQYc2ST1UQA"</span><span class="w">
+        </span><span class="s2">"unsigned_tx"</span><span class="p">:{</span><span class="w">
+            </span><span class="s2">"inputs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"output"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5723324415edefe13668e18cf6e93dea786f629ec841a24bb31303e87ddf0a79:0"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"5221020fcbb44ff4a1f423499b1eb9b2bd9cbe467934467d4857451c7eab7f8cb2885b21038f2d1612ae08a9595fbe1d30c9b13e748a4ae55c06d5d3fa5c0b2e59712d3b6b21033276655f29e3ca36a5c8dbf0996fd3267f56c03cfdc092f53972269c1abf97ff53ae"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"outputs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2MwEzXjhj4DtCG6HaUmqBxKzsLCYhac3fGe"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2N5GboAcCUbyGVe5og6EPT1RrQYc2ST1UQA"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8785"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"215"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"privkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"change"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8785"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"change_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2N5GboAcCUbyGVe5og6EPT1RrQYc2ST1UQA"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-8'>HTTP Request</h3>
@@ -1869,6 +1869,10 @@
 <tr>
 <td>4508</td>
 <td>webhook 不存在</td>
+</tr>
+<tr>
+<td>4512</td>
+<td>交易单不能重复提交</td>
 </tr>
 </tbody></table>
 

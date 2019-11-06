@@ -1229,7 +1229,8 @@ Sectoken will then verify the transaction and broadcast it.</p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ee1e39a44ed45db1693123439cb496c300194221a644a04883933c8adf141b8c"</span><span class="w">
+        </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ee1e39a44ed45db1693123439cb496c300194221a644a04883933c8adf141b8c"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"is_sent"</span><span class="w"> </span><span class="p">:</span><span class="s2">"True"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-9'>HTTP Request</h3>
@@ -1287,6 +1288,11 @@ Sectoken will then verify the transaction and broadcast it.</p>
 <td>txid</td>
 <td>bool</td>
 <td>txid of the transaction broadcasted by Sectoken</td>
+</tr>
+<tr>
+<td>is_sent</td>
+<td>bool</td>
+<td>Whether to broadcast.If the number of signatures does not reach the broadcast limit, it indicates that the final signature was not successful. Otherwise, it returns true.</td>
 </tr>
 </tbody></table>
 <h1 id='add-wallet-webhook'>Add Wallet WebHook</h1>

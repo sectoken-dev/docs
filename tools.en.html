@@ -690,7 +690,7 @@
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"https://internal.sectoken.io/btc/signFirst"</span><span class="p">,</span> 
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
           <span class="s">"inputs"</span><span class="p">:[</span>
-              <span class="p">{</span><span class="s">"output"</span><span class="p">:</span> <span class="s">"97c7798d1505a0a8a196afe519ac71296a924fc57c20856a734d382d644b1931"</span><span class="p">,</span> <span class="s">"index"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">"value"</span><span class="p">:</span> <span class="s">"14899405"</span><span class="p">}</span>
+              <span class="p">{</span><span class="s">"txid"</span><span class="p">:</span> <span class="s">"97c7798d1505a0a8a196afe519ac71296a924fc57c20856a734d382d644b1931"</span><span class="p">,</span> <span class="s">"index"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">"value"</span><span class="p">:</span> <span class="s">"14899405"</span><span class="p">}</span>
           <span class="p">],</span>
           <span class="s">"scripts"</span><span class="p">:[</span>
               <span class="s">"52210277d8bf1576872fca8e1300a89af37b3c064b14befdae053f2219ba2bdfefea202103a60c2cdf4edd0d112ecd670e3f606d6964186ca51ce55614aa2e909d54966e4b2102c0494bce85e7ff8f907d31df9ee52ca84a309b912089895fb78e79e880933e2c53ae"</span>
@@ -706,7 +706,7 @@
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://internal.sectoken.io/btc/signFirst"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
     -H <span class="s2">"Content-type: application/json"</span> <span class="se">\</span>
-    -d <span class="s1">'{"inputs":[{"output": "97c7798d1505a0a8a196afe519ac71296a924fc57c20856a734d382d644b1931", "index": 1, "value": "14899405"}],"scripts":["52210277d8bf1576872fca8e1300a89af37b3c064b14befdae053f2219ba2bdfefea202103a60c2cdf4edd0d112ecd670e3f606d6964186ca51ce55614aa2e909d54966e4b2102c0494bce85e7ff8f907d31df9ee52ca84a309b912089895fb78e79e880933e2c53ae"],"outputs":[{"address":"tb1qdh4hsufzflyhk0sdcr4x6hmpc0p29z0a0csty4", "value": "1000000"},{"address": "2MyzoHwPZGUYJPSvrQG2PUrALAEVUZrKwir", "value": "12899405"}],"prikey": "57be9b3afa40b07771daabfdfdebf05d765219a8f6b926ca2c8cfdd6b58a9d01","network": "testnet"}'</span> 
+    -d <span class="s1">'{"inputs":[{"txid": "97c7798d1505a0a8a196afe519ac71296a924fc57c20856a734d382d644b1931", "index": 1, "value": "14899405"}],"scripts":["52210277d8bf1576872fca8e1300a89af37b3c064b14befdae053f2219ba2bdfefea202103a60c2cdf4edd0d112ecd670e3f606d6964186ca51ce55614aa2e909d54966e4b2102c0494bce85e7ff8f907d31df9ee52ca84a309b912089895fb78e79e880933e2c53ae"],"outputs":[{"address":"tb1qdh4hsufzflyhk0sdcr4x6hmpc0p29z0a0csty4", "value": "1000000"},{"address": "2MyzoHwPZGUYJPSvrQG2PUrALAEVUZrKwir", "value": "12899405"}],"prikey": "57be9b3afa40b07771daabfdfdebf05d765219a8f6b926ca2c8cfdd6b58a9d01","network": "testnet"}'</span> 
 
 </code></pre>
 <blockquote>

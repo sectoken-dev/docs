@@ -640,8 +640,8 @@
         </span><span class="s2">"confirmed"</span><span class="p">:</span><span class="s2">"20000"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"unconfirmed"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"send_max"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"send_daymax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"send_daylimit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"send_day_max"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"send_day_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="s2">"freeze_overtime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -721,12 +721,12 @@
 <td>单次转账上限，&quot;0&quot;为无上限</td>
 </tr>
 <tr>
-<td>send_daylimit</td>
+<td>send_day_limit</td>
 <td>integer</td>
 <td>单日转账次数上限，0为无上限</td>
 </tr>
 <tr>
-<td>send_daymax</td>
+<td>send_day_max</td>
 <td>string</td>
 <td>单日转账上限，&quot;0&quot;为无上限</td>
 </tr>
@@ -1047,7 +1047,7 @@
                 <span class="s">"address"</span><span class="p">:</span> <span class="s">"destination address"</span><span class="p">,</span>
                 <span class="s">"value"</span><span class="p">:</span> <span class="s">"5000"</span>
             <span class="p">}</span>
-        <span class="p">]</span>
+        <span class="p">],</span>
         <span class="s">"feerate"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s">"memo"</span><span class="p">:</span> <span class="s">"your commit"</span><span class="p">,</span>
         <span class="s">"total"</span><span class="p">:</span> <span class="p">:</span> <span class="bp">False</span>
@@ -1290,7 +1290,7 @@
 <td>广播完成后返回的txid，可以在区块浏览器上进行查询</td>
 </tr>
 <tr>
-<td>sent</td>
+<td>is_sent</td>
 <td>bool</td>
 <td>是否广播。如果签名数量未达到广播限制，说明未最终签名成功，返回false，否则返回true。</td>
 </tr>
@@ -1808,79 +1808,23 @@
 <td>4204</td>
 <td>钱包余额不足</td>
 </tr>
-<tr>
-<td>4208</td>
-<td>钱包地址过多，禁止派生</td>
-</tr>
-<tr>
-<td>4209</td>
-<td>钱包激活码错误</td>
-</tr>
-<tr>
-<td>4302</td>
-<td>单笔交易金额超出上限</td>
-</tr>
-<tr>
-<td>4303</td>
-<td>当日交易金额超出上限</td>
-</tr>
-<tr>
-<td>4304</td>
-<td>当日交易次数超出上限</td>
-</tr>
-<tr>
-<td>4305</td>
-<td>收款地址不在白名单中</td>
-</tr>
-<tr>
-<td>4401</td>
-<td>账户认证失败</td>
-</tr>
-<tr>
-<td>4402</td>
-<td>账户下没有此钱包</td>
-</tr>
-<tr>
-<td>4403</td>
-<td>该账户下同币种钱包个数达到上限</td>
-</tr>
-<tr>
-<td>4404</td>
-<td>没有操作权限</td>
-</tr>
-<tr>
-<td>4502</td>
-<td>禁止转向当前地址</td>
-</tr>
-<tr>
-<td>4503</td>
-<td>目标地址不能为自己</td>
-</tr>
-<tr>
-<td>4504</td>
-<td>签名错误</td>
-</tr>
-<tr>
-<td>4505</td>
-<td>全部转出只能有一个目标地址</td>
-</tr>
-<tr>
-<td>4506</td>
-<td>公钥格式不正确</td>
-</tr>
-<tr>
-<td>4507</td>
-<td>私钥密文必须是base64格式</td>
-</tr>
-<tr>
-<td>4508</td>
-<td>webhook 不存在</td>
-</tr>
-<tr>
-<td>4512</td>
-<td>不能广播已经广播了的交易单</td>
-</tr>
 </tbody></table>
+
+<p>4209|钱包激活码错误</p>
+
+<p>4401|账户认证失败</p>
+
+<p>4403|钱包个数达到上限
+4404|没有操作权限
+4502|禁止转向当前地址
+4503|目标地址不能为自己
+4504|签名错误
+4505|全部转出只能有一个收款地址
+4506|公钥格式不正确
+4507|私钥密文必须是base64格式
+4508|webhook 不存在
+4512|交易单重复提交
+4513|unspent已经被使用</p>
 
       </div>
       <div class="dark-box">

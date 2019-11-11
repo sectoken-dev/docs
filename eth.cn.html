@@ -1600,9 +1600,7 @@
 </tr>
 </tbody></table>
 <h1 id='webhook'>新增钱包WebHook</h1>
-<p>Add a webhook that will result in an HTTP callback at the specified URL from Sectoken when events are triggered.</p>
-
-<p>There is a limit of 10 webhooks per wallet.</p>
+<p>添加 一个 webhook, 当触发指定类型的事件的时候,Sectoken 将会向指定的URL发送一条请求信息，每个钱包最多绑定10条webhook</p>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
@@ -1880,7 +1878,8 @@
 <blockquote>
 <p>请求body示例</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="err">Receipt</span><span class="w"> </span><span class="err">Example</span><span class="p">:</span><span class="w">
+</span><span class="p">{</span><span class="w">
     </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6004e156344ec27cad24a8df5bbaa5ab"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x2b4675aff7efad0c7dcee09a943f9cc501402f18b67393a47cdcfa887f5ab2da"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">4340000</span><span class="p">,</span><span class="w">
@@ -1892,6 +1891,21 @@
     </span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
+</span><span class="err">Payment</span><span class="w"> </span><span class="err">Example</span><span class="p">:</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6004e156344ec27cad24a8df5bbaa5ab"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x2b4675aff7efad0c7dcee09a943f9cc501402f18b67393a47cdcfa887f5ab2da"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">4340000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"dst_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x759ac48a2754be136d495da1a826200ab1c911f2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"src_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x8cb9e65d6a771424dfabbda4221bdb446d9183fe"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"payment"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1872340000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
 </span></code></pre><h3 id='1f233418ae'>参数说明</h3>
 <table><thead>
 <tr>

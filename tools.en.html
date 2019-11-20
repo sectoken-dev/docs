@@ -527,14 +527,14 @@
 </tbody></table>
 <h1 id='eth-multi-sign'>ETH Multi-sign</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span> 
 
-<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"https://internal.sectoken.io/v2/eth/signFirst"</span><span class="p">,</span> 
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"https://internal.sectoken.io/eth/signFirst"</span><span class="p">,</span> 
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
         <span class="s">"data"</span><span class="p">:</span> <span class="s">"ae1111"</span><span class="p">,</span> 
         <span class="s">"prikey"</span><span class="p">:</span> <span class="s">"98361e9e89320d7911153ddc23db573fcedc12da8df710af30d3977ecea3f1d1"</span><span class="p">,</span> 
         <span class="s">"message"</span><span class="p">:</span> <span class="bp">True</span>
     <span class="p">}</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://internal.sectoken.io/v2/eth/signFirst"</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://internal.sectoken.io/eth/signFirst"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
     -H <span class="s2">"Content-type: application/json"</span> <span class="se">\</span>
     -d <span class="s1">'{"data": "ae1111", "prikey": "98361e9e89320d7911153ddc23db573fcedc12da8df710af30d3977ecea3f1d1", "message":true}'</span> 
@@ -550,7 +550,7 @@
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-5'>HTTP Request</h3>
-<p><code>POST https://internal.sectoken.io/v2/eth/signFirst</code></p>
+<p><code>POST https://internal.sectoken.io/eth/signFirst</code></p>
 <h3 id='request-parameters'>Request Parameters</h3>
 <table><thead>
 <tr>
@@ -614,14 +614,14 @@
 </tbody></table>
 <h1 id='eth-single-sign'>ETH Single-sign</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span> 
 
-<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"https://internal.sectoken.io/v2/eth/signFirst"</span><span class="p">,</span> 
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"https://internal.sectoken.io/eth/signFirst"</span><span class="p">,</span> 
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
         <span class="s">"data"</span><span class="p">:</span> <span class="s">"f0808459682f0082546c94f90ed3984772f78e4aeb83390e2030d1fcbec98f843b9aca00896d656d6f2064617461808080"</span><span class="p">,</span> 
         <span class="s">"prikey"</span><span class="p">:</span> <span class="s">"ff147ba94e1ecc825ad83c0d2ec57e0081033e2d931e6df64b83e860f872c411"</span><span class="p">,</span> 
         <span class="s">"message"</span><span class="p">:</span> <span class="bp">False</span>
     <span class="p">}</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://internal.sectoken.io/v2/eth/signFirst"</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://internal.sectoken.io/eth/signFirst"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
     -H <span class="s2">"Content-type: application/json"</span> <span class="se">\</span>
     -d <span class="s1">'{"data": "f0808459682f0082546c94f90ed3984772f78e4aeb83390e2030d1fcbec98f843b9aca00896d656d6f2064617461808080", "prikey": "ff147ba94e1ecc825ad83c0d2ec57e0081033e2d931e6df64b83e860f872c411", "message": false}'</span> 
@@ -637,7 +637,7 @@
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-6'>HTTP Request</h3>
-<p><code>POST https://internal.sectoken.io/v2/eth/signFirst</code></p>
+<p><code>POST https://internal.sectoken.io/eth/signFirst</code></p>
 <h3 id='request-parameters-2'>Request Parameters</h3>
 <table><thead>
 <tr>

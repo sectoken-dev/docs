@@ -1579,7 +1579,34 @@
 <p>当用户钱包发生交易时，会向指定的url发送HTTP POST请求，请求头content-type为application/json。</p>
 
 <p>此url由用户指定，用户须部署服务接收HTTP POST请求。同时需先添加钱包Webhook</p>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://your.server.com/diy/url"</span> <span class="se">\</span>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="n">url</span><span class="o">=</span><span class="s">"http://your.server.com/diy/url"</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>
+    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+        <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"6004e156344ec27cad24a8df5bbaa5ab"</span><span class="p">,</span>
+        <span class="s">"txid"</span><span class="p">:</span> <span class="s">"46ab8299ed14ba7d57b57210b7756d80f67b3db2448fd4d1f1fb78039e5bfd6d"</span>
+        <span class="s">"height"</span><span class="p">:</span> <span class="mi">1431122</span><span class="p">,</span>
+        <span class="s">"output"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s">"address"</span><span class="p">:</span> <span class="s">"2N4b5ham6n4y4gMkrN8R5sswvvmJdrGV3u7"</span><span class="p">,</span>
+                <span class="s">"value"</span><span class="p">:</span> <span class="s">"1000000000"</span>                                                                         
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s">"address"</span><span class="p">:</span> <span class="s">"2N1DDUWKa3kdaKaPrPX5eZEMgFHxtU2JPmG"</span><span class="p">,</span>
+                <span class="s">"value"</span><span class="p">:</span> <span class="s">"363"</span>
+            <span class="p">}</span>                                       
+        <span class="p">],</span>
+        <span class="s">"type"</span><span class="p">:</span> <span class="s">"payment"</span><span class="p">,</span>
+        <span class="s">"timestamp"</span><span class="p">:</span> <span class="mi">1572510180</span><span class="p">,</span>
+        <span class="s">"coin_type"</span><span class="p">:</span> <span class="s">"BTC"</span><span class="p">,</span>
+        <span class="s">"decimal"</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+        <span class="s">"memo"</span><span class="p">:</span> <span class="s">""</span><span class="p">,</span>
+        <span class="s">"callbackid"</span><span class="p">:</span> <span class="s">"fa5dc2025e79c37b8656ef4b89619d9d"</span>                                                                                             
+    <span class="p">}</span>
+<span class="p">)</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://your.server.com/diy/url"</span> <span class="se">\</span>
     -X post -H <span class="s2">"content-type:application/json"</span>
     -d <span class="s1">'{"wallet_id": "6004e156344ec27cad24a8df5bbaa5ab", "txid": "46ab8299ed14ba7d57b57210b7756d80f67b3db2448fd4d1f1fb78039e5bfd6d", "height": 1431122, "output": [{"address": "2N4b5ham6n4y4gMkrN8R5sswvvmJdrGV3u7", "amount": "1000000000"}, {"address": "2N1DDUWKa3kdaKaPrPX5eZEMgFHxtU2JPmG", "amount": "363"}], "type": "payment", "timestamp": 1572510180, "coin_type": "BTC", "decimal": 8, "memo": "", "callbackid": "fa5dc2025e79c37b8656ef4b89619d9d"}'</span>
 </code></pre>

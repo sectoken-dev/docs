@@ -402,15 +402,11 @@
 <h1 id='cb0c245c65'>获取当前账户的费用地址</h1>
 <p>获取当前账户的费用地址，如果不存在，则创建新的BTC地址。费用地址作用：</p>
 
-<p>用来支付创建多签钱包部署合约的矿工费</p>
-
-<p>用来支付新增收款地址合约部署的的矿工费</p>
-
 <p>用来支付多签钱包转账的矿工费</p>
 
 <p>当转出钱包内全部的USDT的时候, 钱包内剩余的 BTC 余额将全部转入到 费用地址中</p>
 
-<p>建议费用地址充值 20000 聪</p>
+<p>建议费用地址充值 200000 聪</p>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>

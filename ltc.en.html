@@ -1584,37 +1584,7 @@ A service designed by yourself should be bind to the url to deal with the reques
 Need to add the wallet Webhook first.</p>
 
 <p>The content-type header of the request is application/json.</p>
-<pre class="highlight plaintext"><code>import requests
 
-requests.get(
-    url="http://your.server.com/diy/url",
-    headers={"HMAC": "your token"},
-    params={
-        "wallet_id": "6004e156344ec27cad24a8df5bbaa5ab",
-        "txid": "46ab8299ed14ba7d57b57210b7756d80f67b3db2448fd4d1f1fb78039e5bfd6d",
-        "height": 1431122,
-        "output": [
-            {
-                "address": "QYtCEtddmgDsY38EBrdDZEJgydaGXbCatz",
-                "value": "1000000000"
-            },
-            {
-                "address": "QZiKCr5uKxtMzs19i93K8y1nZ3aUJqoawz",
-                "value": "3630"                                                                                     
-            }
-        ],
-        "type": "withdraw",
-        "timestamp": 1572510180,
-        "coin_type": "LTC",
-        "decimal": 8,
-        "memo": "",
-        "callbackid": "fa5dc2025e79c37b8656ef4b89619d9d"
-    }                             
-)
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://your.server.com/diy/url"</span> <span class="se">\</span>
-    -X post -H <span class="s2">"content-type:application/json"</span>
-    -d <span class="s1">'{"wallet_id": "6004e156344ec27cad24a8df5bbaa5ab", "txid": "46ab8299ed14ba7d57b57210b7756d80f67b3db2448fd4d1f1fb78039e5bfd6d", "height": 1431122, "output": [{"address": "2N4b5ham6n4y4gMkrN8R5sswvvmJdrGV3u7", "value": "1000000000"}, {"address": "2N1DDUWKa3kdaKaPrPX5eZEMgFHxtU2JPmG", "value": "363"}], "type": "withdraw", "timestamp": 1572510180, "coin_type": "LTC", "decimal": 8, "memo": "", "callbackid": "fa5dc2025e79c37b8656ef4b89619d9d"}'</span>
-</code></pre>
 <blockquote>
 <p>Request body</p>
 </blockquote>

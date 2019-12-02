@@ -1500,19 +1500,7 @@
 <td>Callback id</td>
 </tr>
 </tbody></table>
-<h1 id='get-transaction-records'>Get Transaction Records</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
-
-<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://testnet.sectoken.io/flow/record/usdt/"</span><span class="p">,</span> 
-            <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span> 
-            <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-                <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"b81d38f5f250c36a05da0d0e1f9bd394"</span><span class="p">,</span>
-                <span class="s">"year"</span><span class="p">:</span> <span class="s">"2019"</span><span class="p">,</span>
-                <span class="s">"month"</span><span class="p">:</span> <span class="s">"10"</span>
-            <span class="p">}</span>
-<span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/flow/record/usdt/?wallet_id=b81d38f5f250c36a05da0d0e1f9bd394&amp;year=2019&amp;month=10"</span> <span class="se">\</span>
-    -H <span class="s2">"HMAC:your token"</span>
-</code></pre>
+<h1 id='get-transaction-records'>Get Transaction Records</h1>
 <blockquote>
 <p>Response Samples</p>
 </blockquote>

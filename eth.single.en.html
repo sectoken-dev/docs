@@ -1437,6 +1437,8 @@ Need to add the wallet Webhook first.</p>
 
 <p>This url is specified by the user, who must deploy the service to receive the HTTP POST request.</p>
 
+<p>Sectoken servers will make a POST http request to the URL defined with a JSON payload, and expect a HTTP 200 OK. If a successful response is not received, Sectoken will attempt to retry the webhook with an increasing delay between each retry.</p>
+
 <blockquote>
 <p>request body</p>
 </blockquote>

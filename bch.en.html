@@ -632,7 +632,7 @@
 <tr>
 <td>address</td>
 <td>string</td>
-<td>BTC address of the wallet</td>
+<td>BCH address of the wallet</td>
 </tr>
 </tbody></table>
 <h1 id='get-wallet-details'>Get Wallet Details</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
@@ -721,22 +721,22 @@
 <tr>
 <td>address</td>
 <td>string</td>
-<td>BTC default deposit address of the wallet</td>
+<td>BCH default deposit address of the wallet</td>
 </tr>
 <tr>
 <td>confirmed</td>
 <td>string</td>
-<td>amount of confirmed btc in the wallet</td>
+<td>amount of confirmed bch in the wallet</td>
 </tr>
 <tr>
 <td>unconfirmed</td>
 <td>string</td>
-<td>amount of unconfirmed btc in the wallet</td>
+<td>amount of unconfirmed bch in the wallet</td>
 </tr>
 <tr>
 <td>send_max</td>
 <td>string</td>
-<td>Maximum amount of btc per transaction，&quot;0&quot; for unlimited</td>
+<td>Maximum amount of bch per transaction，&quot;0&quot; for unlimited</td>
 </tr>
 <tr>
 <td>send_day_limit</td>
@@ -746,7 +746,7 @@
 <tr>
 <td>send_day_max</td>
 <td>string</td>
-<td>Maximum amount of btc allowed to be transferred per day. &quot;0&quot; for unlimited.</td>
+<td>Maximum amount of bch allowed to be transferred per day. &quot;0&quot; for unlimited.</td>
 </tr>
 <tr>
 <td>freeze_overtime</td>
@@ -836,7 +836,7 @@
 <tr>
 <td>address</td>
 <td>string</td>
-<td>BTC address of the wallet</td>
+<td>BCH address of the wallet</td>
 </tr>
 <tr>
 <td>create_time</td>
@@ -906,7 +906,7 @@
 <tr>
 <td>data</td>
 <td>array</td>
-<td>Response data. Each element is a BTC receipt address.</td>
+<td>Response data. Each element is a BCH receipt address.</td>
 </tr>
 </tbody></table>
 <h1 id='generate-a-receipt-address'>Generate a receipt address</h1>
@@ -980,7 +980,7 @@
 <tr>
 <td>address</td>
 <td>string</td>
-<td>Derived BTC address</td>
+<td>Derived BCH address</td>
 </tr>
 </tbody></table>
 <h1 id='get-balance-of-bch-address'>Get Balance of BCH Address</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">reqeusts</span>
@@ -1026,7 +1026,7 @@
 <td>address</td>
 <td>string</td>
 <td>Yes</td>
-<td>BTC address under the wallet</td>
+<td>BCH address under the wallet</td>
 </tr>
 </tbody></table>
 <h3 id='response-parameters-7'>Response Parameters</h3>
@@ -1420,12 +1420,12 @@ Sectoken will then verify the transaction and broadcast it.</p>
     <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span> 
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
         <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"your wallet id"</span><span class="p">,</span>
-        <span class="s">"url"</span><span class="p">:</span> <span class="s">"https://your.server.com/webhook"</span><span class="p">,</span>
-        <span class="s">"label"</span><span class="p">:</span> <span class="s">"test callback"</span><span class="p">,</span>
-        <span class="s">"type"</span><span class="p">:</span> <span class="s">"deposit"</span><span class="p">,</span>
-    <span class="p">}</span>
-<span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/bch/webhook_add/"</span> <span class="se">\</span>
+        <span class="n">url</span><span class="s">": "</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">your</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">webhook</span><span class="s">",</span><span class="err">
+</span><span class="s">        "</span><span class="n">label</span><span class="s">": "</span><span class="n">test</span> <span class="n">callback</span><span class="s">",</span><span class="err">
+</span><span class="s">        "</span><span class="nb">type</span><span class="s">": "</span><span class="n">deposit</span><span class="s">",</span><span class="err">
+</span><span class="s">    }</span><span class="err">
+</span><span class="s">)</span><span class="err">
+</span></code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/bch/webhook_add/"</span> <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
@@ -1602,7 +1602,7 @@ Sectoken will then verify the transaction and broadcast it.</p>
 <tr>
 <td>token</td>
 <td>string</td>
-<td>btc</td>
+<td>bch</td>
 </tr>
 <tr>
 <td>callbackid</td>

@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="eth" data-languages="[&quot;shell&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="eth" data-languages="[&quot;shell&quot;,&quot;python&quot;,&quot;Node.js&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -213,7 +213,7 @@
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
               <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="Node.js">Node.js</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -424,7 +424,25 @@
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
     -d <span class="s1">'{"pubkey": "03976717038a5c6967535cc469acb6d7a43dee00568b9c4d4f2bbccb287503787c", "wallet_name": "your wallet name"}'</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code>    <span class="nx">test</span><span class="p">...</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/wallet/eth_single/create/"</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
+        <span class="na">dataType</span><span class="p">:</span> <span class="s2">"jsonp"</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
+            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+            <span class="s1">'pubkey'</span><span class="p">:</span> <span class="s1">'02c21fa2c5e7f10ee87b22dd33dc1e6eabe3416a9cb117e4f344d590eda7fd3088'</span><span class="p">,</span>
+            <span class="s1">'wallet_name'</span><span class="p">:</span> <span class="s1">'your wallet name'</span>
+        <span class="p">})</span>
+    <span class="p">},</span>
+    <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">);</span>
 
 </code></pre>
 <blockquote>
@@ -526,6 +544,25 @@
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
     -d <span class="s1">'{"wallet_id": "your wallet id", "activate_code": "your activate code"}'</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/wallet/eth_single/activate/'</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
+        <span class="na">dataType</span><span class="p">:</span> <span class="s2">"jsonp"</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
+            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+            <span class="s1">'wallet_id'</span><span class="p">:</span> <span class="s1">'your wallet id'</span><span class="p">,</span>
+            <span class="s1">'activate_code'</span><span class="p">:</span> <span class="s1">'your activate code'</span>
+        <span class="p">})</span>
+    <span class="p">},</span>
+    <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">);</span>
 </code></pre>
 <blockquote>
 <p>返回示例</p>
@@ -603,7 +640,26 @@
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth_single/detail/?wallet_id=your_wallet_id&amp;coin_type=eth"</span> <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
     -X GET    
-</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/wallet/eth_single/detail/?wallet_id=your_wallet_id'</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
+        <span class="na">dataType</span><span class="p">:</span> <span class="s2">"jsonp"</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
+            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2cc5abb2b9932ca1ec5513ad1a9685f9"</span><span class="p">,</span><span class="w">
@@ -717,6 +773,20 @@
 </span></code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth_single/wallet_list/?page=1"</span> <span class="se">\</span>
     -X GET <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/wallet/eth_single/wallet_list/?page=1'</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
+        <span class="na">dataType</span><span class="p">:</span> <span class="s2">"jsonp"</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
+            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">);</span>
 </code></pre>
 <blockquote>
 <p>返回示例</p>
@@ -805,9 +875,23 @@
     <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>                                                                
     <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">"address"</span><span class="p">:</span> <span class="s">"0xc467089a6f3b60c6bff81fc2784406bdccf63913"</span><span class="p">,</span> <span class="s">"coin_type"</span><span class="p">:</span> <span class="s">"eth"</span><span class="p">}</span>           
 <span class="p">)</span>                                                                                                  
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth_single/addr_balance/?address=0xc467089a6f3b60c6bff81fc2784406bdccf63913&amp;coin_type=eth"</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth_single/addr_balance/?address=your addr&amp;coin_type=eth"</span> <span class="se">\</span>
     -X GET <span class="se">\ </span>                     
     -H <span class="s2">"HMAC:your token"</span>                                                                           
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/wallet/eth_single/addr_balance/?address=your addr&amp;coin_type=eth'</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
+        <span class="na">dataType</span><span class="p">:</span> <span class="s2">"jsonp"</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
+            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">);</span>
 </code></pre>
 <blockquote>
 <p>返回示例</p>
@@ -893,6 +977,27 @@
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
     -d <span class="s1">'{"wallet_id": "your wallet id", "to_address": "recipient address", "value": "1000000000", "coin_type": "eth", "feerate": 1}'</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/wallet/eth_single/dotx/'</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
+        <span class="na">dataType</span><span class="p">:</span> <span class="s2">"jsonp"</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
+            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+            <span class="s1">'wallet_id'</span><span class="p">:</span> <span class="s1">'your wallet id'</span><span class="p">,</span>
+            <span class="s1">'to_address'</span><span class="p">:</span> <span class="s1">'recipient address'</span><span class="p">,</span>
+            <span class="s1">'value'</span><span class="p">:</span> <span class="s1">'1000000000'</span><span class="p">,</span>
+            <span class="s1">'coin_type'</span><span class="p">:</span> <span class="s1">'eth'</span><span class="p">,</span>
+            <span class="s1">'feerate'</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">})</span>
+    <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span> 
+    <span class="p">}</span>
+<span class="p">);</span>
 </code></pre>
 <blockquote>
 <p>返回示例</p>
@@ -900,7 +1005,7 @@
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> 
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"unsigned_tx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f9060980843b9aca008307a1208080b905b7608060405234801561001057600080fd5b506040516020806105978339810180604052810190808051906020019092919050505060008090508073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415151561007357600080fd5b816000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050506104d3806100c46000396000f300608060405260043610610056576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168062821de31461014e5780633ef13367146101a55780636b9f96ea146101e8575b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc349081150290604051600060405180830381858888f193505050501580156100bd573d6000803e3d6000fd5b507f69b31548dea9b3b707b4dff357d326e3e9348b24e7a6080a218a6edeeec48f9b3334600036604051808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200184815260200180602001828103825284848281815260200192508082843782019150509550505050505060405180910390a1005b34801561015a57600080fd5b506101636101ff565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156101b157600080fd5b506101e6600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610224565b005b3480156101f457600080fd5b506101fd610426565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60008060008392503091508273ffffffffffffffffffffffffffffffffffffffff166370a08231836040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b1580156102ca57600080fd5b505af11580156102de573d6000803e3d6000fd5b505050506040513d60208110156102f457600080fd5b81019080805190602001909291905050509050600081141561031557610420565b8273ffffffffffffffffffffffffffffffffffffffff1663a9059cbb6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff16836040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182815260200192505050602060405180830381600087803b1580156103d957600080fd5b505af11580156103ed573d6000803e3d6000fd5b505050506040513d602081101561040357600080fd5b8101908080519060200190929190505050151561041f57600080fd5b5b50505050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc3073ffffffffffffffffffffffffffffffffffffffff16319081150290604051600060405180830381858888f193505050501580156104a4573d6000803e3d6000fd5b505600a165627a7a72305820ac185d91fc563a9806d15c6d3c303ff97f89777aa6408a4e357bcb100ab3f4920029000000000000000000000000c3bbe1daf24557ed98f5c6e76c4914f3d833c9421ba00b1b5f8212f4f4ae471f795b2246682c5bbd22178d21b8eb356302e76fb2ff4fa0588bb2115c78739a5ddb854c126e7a74b3465eafa1e432e103d3d0356496b322"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"unsigned_tx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f863808459682f008252089405c1fcbf26b0fa3f6a107dd3d496faccb55644da01801ca05aa02750896c8581304a7e0de9f2a4f7674ef275a033c006ce5f70cd58ca7b6ba07998e979e5c918d4e0a1b047788c43636ed3627d265a875c464f1c1c8ede095e"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"privkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -997,15 +1102,37 @@
     <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
         <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"your wallet id"</span><span class="p">,</span> 
-        <span class="s">"signed_tx"</span><span class="p">:</span> <span class="s">"f9060980843b9aca008307a1208080b905b7608060405234801561001057600080fd5b506040516020806105978339810180604052810190808051906020019092919050505060008090508073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415151561007357600080fd5b816000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050506104d3806100c46000396000f300608060405260043610610056576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168062821de31461014e5780633ef13367146101a55780636b9f96ea146101e8575b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc349081150290604051600060405180830381858888f193505050501580156100bd573d6000803e3d6000fd5b507f69b31548dea9b3b707b4dff357d326e3e9348b24e7a6080a218a6edeeec48f9b3334600036604051808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200184815260200180602001828103825284848281815260200192508082843782019150509550505050505060405180910390a1005b34801561015a57600080fd5b506101636101ff565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156101b157600080fd5b506101e6600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610224565b005b3480156101f457600080fd5b506101fd610426565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60008060008392503091508273ffffffffffffffffffffffffffffffffffffffff166370a08231836040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b1580156102ca57600080fd5b505af11580156102de573d6000803e3d6000fd5b505050506040513d60208110156102f457600080fd5b81019080805190602001909291905050509050600081141561031557610420565b8273ffffffffffffffffffffffffffffffffffffffff1663a9059cbb6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff16836040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182815260200192505050602060405180830381600087803b1580156103d957600080fd5b505af11580156103ed573d6000803e3d6000fd5b505050506040513d602081101561040357600080fd5b8101908080519060200190929190505050151561041f57600080fd5b5b50505050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc3073ffffffffffffffffffffffffffffffffffffffff16319081150290604051600060405180830381858888f193505050501580156104a4573d6000803e3d6000fd5b505600a165627a7a72305820ac185d91fc563a9806d15c6d3c303ff97f89777aa6408a4e357bcb100ab3f4920029000000000000000000000000c3bbe1daf24557ed98f5c6e76c4914f3d833c9421ba00b1b5f8212f4f4ae471f795b2246682c5bbd22178d21b8eb356302e76fb2ff4fa0588bb2115c78739a5ddb854c126e7a74b3465eafa1e432e103d3d0356496b322"</span><span class="p">,</span> 
+        <span class="s">"signed_tx"</span><span class="p">:</span> <span class="s">"f863808459682f008252089405c1fcbf26b0fa3f6a107dd3d496faccb55644da01801ca05aa02750896c8581304a7e0de9f2a4f7674ef275a033c006ce5f70cd58ca7b6ba07998e979e5c918d4e0a1b047788c43636ed3627d265a875c464f1c1c8ede095e"</span><span class="p">,</span> 
     <span class="p">}</span>
 <span class="p">)</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth_single/send/"</span> <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
-    -d <span class="s1">'{"wallet_id": "your wallet id", "signed_tx": "f9060980843b9aca008307a1208080b905b7608060405234801561001057600080fd5b506040516020806105978339810180604052810190808051906020019092919050505060008090508073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415151561007357600080fd5b816000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050506104d3806100c46000396000f300608060405260043610610056576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168062821de31461014e5780633ef13367146101a55780636b9f96ea146101e8575b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc349081150290604051600060405180830381858888f193505050501580156100bd573d6000803e3d6000fd5b507f69b31548dea9b3b707b4dff357d326e3e9348b24e7a6080a218a6edeeec48f9b3334600036604051808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200184815260200180602001828103825284848281815260200192508082843782019150509550505050505060405180910390a1005b34801561015a57600080fd5b506101636101ff565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156101b157600080fd5b506101e6600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610224565b005b3480156101f457600080fd5b506101fd610426565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60008060008392503091508273ffffffffffffffffffffffffffffffffffffffff166370a08231836040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b1580156102ca57600080fd5b505af11580156102de573d6000803e3d6000fd5b505050506040513d60208110156102f457600080fd5b81019080805190602001909291905050509050600081141561031557610420565b8273ffffffffffffffffffffffffffffffffffffffff1663a9059cbb6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff16836040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182815260200192505050602060405180830381600087803b1580156103d957600080fd5b505af11580156103ed573d6000803e3d6000fd5b505050506040513d602081101561040357600080fd5b8101908080519060200190929190505050151561041f57600080fd5b5b50505050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc3073ffffffffffffffffffffffffffffffffffffffff16319081150290604051600060405180830381858888f193505050501580156104a4573d6000803e3d6000fd5b505600a165627a7a72305820ac185d91fc563a9806d15c6d3c303ff97f89777aa6408a4e357bcb100ab3f4920029000000000000000000000000c3bbe1daf24557ed98f5c6e76c4914f3d833c9421ba00b1b5f8212f4f4ae471f795b2246682c5bbd22178d21b8eb356302e76fb2ff4fa0588bb2115c78739a5ddb854c126e7a74b3465eafa1e432e103d3d0356496b322"}'</span>
-</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    -d <span class="s1">'{"wallet_id": "your wallet id", "signed_tx": "f863808459682f008252089405c1fcbf26b0fa3f6a107dd3d496faccb55644da01801ca05aa02750896c8581304a7e0de9f2a4f7674ef275a033c006ce5f70cd58ca7b6ba07998e979e5c918d4e0a1b047788c43636ed3627d265a875c464f1c1c8ede095e"}'</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/wallet/eth_single/send/'</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
+        <span class="na">dataType</span><span class="p">:</span> <span class="s2">"jsonp"</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
+            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+            <span class="s1">'wallet_id'</span><span class="p">:</span> <span class="s1">'your_wallet_id'</span><span class="p">,</span>
+            <span class="s1">'signed_tx'</span><span class="p">:</span> <span class="s1">'f863808459682f008252089405c1fcbf26b0fa3f6a107dd3d496faccb55644da01801ca05aa02750896c8581304a7e0de9f2a4f7674ef275a033c006ce5f70cd58ca7b6ba07998e979e5c918d4e0a1b047788c43636ed3627d265a875c464f1c1c8ede095e'</span><span class="p">,</span>
+        <span class="p">})</span>
+    <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span> 
+    <span class="p">}</span>
+<span class="p">);</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> 
      </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
          </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xc03c4a9dba55a239c165a4cbcf1eddcfa9cc7673ea1c6d492105d0145ff6f0ee"</span><span class="w">
@@ -1081,6 +1208,20 @@
     <span class="p">)</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth_single/coin_types/"</span> <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/wallet/eth_single/coin_types/'</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
+        <span class="na">dataType</span><span class="p">:</span> <span class="s2">"jsonp"</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
+            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">);</span>
 </code></pre>
 <blockquote>
 <p>返回示例</p>
@@ -1161,6 +1302,27 @@
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
     -d  <span class="s1">'{"wallet_id": "your wallet id", "url":"https://your.server.com/webhook", "label":"test callback", "type":"deposit", "token": "erc20_ht"}'</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/wallet/eth/webhook_add/'</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
+        <span class="na">dataType</span><span class="p">:</span> <span class="s2">"jsonp"</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
+            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+            <span class="s1">'wallet_id'</span><span class="p">:</span> <span class="s1">'your_wallet_id'</span><span class="p">,</span>
+            <span class="s1">'url'</span><span class="p">:</span> <span class="s1">'https://your.server.com/webhook'</span><span class="p">,</span>
+            <span class="s1">'type'</span><span class="p">:</span> <span class="s1">'deposit'</span><span class="p">,</span>
+            <span class="s1">'label'</span><span class="p">:</span> <span class="s1">'callback'</span><span class="p">,</span>
+            <span class="s1">'token'</span><span class="p">:</span> <span class="s1">'erc20_koz'</span>
+        <span class="p">})</span>
+    <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">);</span>
 </code></pre>
 <blockquote>
 <p>返回示例</p>
@@ -1225,6 +1387,20 @@
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/webhook_list/?wallet_id=your_wallet_id"</span> <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
     -X GET
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/wallet/eth/webhook_list/?wallet_id=41a0975d13ed85093fc4702cb44a0e94'</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
+        <span class="na">dataType</span><span class="p">:</span> <span class="s2">"jsonp"</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
+            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">);</span>
 </code></pre>
 <blockquote>
 <p>返回示例</p>
@@ -1340,9 +1516,26 @@
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
     -d  <span class="s1">'{"callbackid": "your callback id"}'</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/wallet/eth/webhook_del/'</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
+        <span class="na">dataType</span><span class="p">:</span> <span class="s2">"jsonp"</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
+            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+            <span class="s1">'callbackid'</span><span class="p">:</span> <span class="s1">'your callback id'</span><span class="p">,</span>
+        <span class="p">})</span>
+    <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">);</span>
 </code></pre>
 <blockquote>
-<p>返回示例</p>
+<p>请求示例</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
@@ -1486,6 +1679,20 @@
 <span class="p">)</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/flow/record/eth/?wallet_id=b81d38f5f250c36a05da0d0e1f9bd394&amp;year=2019&amp;month=10"</span> <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/flow/record/eth/?wallet_id=your_wallet_id&amp;&amp;year=2019&amp;&amp;month=12'</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
+        <span class="na">dataType</span><span class="p">:</span> <span class="s2">"jsonp"</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
+            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">);</span>
 </code></pre>
 <blockquote>
 <p>返回示例</p>
@@ -1703,7 +1910,7 @@
           <div class="lang-selector">
                 <a href="#" data-language-name="shell">shell</a>
                 <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="Node.js">Node.js</a>
           </div>
       </div>
     </div>

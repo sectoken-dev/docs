@@ -2215,8 +2215,10 @@ requests.get(url="https://testnet.sectoken.io/flow/record/eth/",
                 "month": "10"
             }
 )
+
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/flow/record/eth/?wallet_id=b81d38f5f250c36a05da0d0e1f9bd394&amp;year=2019&amp;month=10"</span> <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span>
+
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
@@ -2231,6 +2233,7 @@ requests.get(url="https://testnet.sectoken.io/flow/record/eth/",
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
     <span class="p">}</span>
 <span class="p">);</span>
+
 </code></pre>
 <blockquote>
 <p>返回示例</p>

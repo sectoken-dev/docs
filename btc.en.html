@@ -461,7 +461,7 @@
         <span class="na">dataType</span><span class="p">:</span> <span class="s2">"jsonp"</span><span class="p">,</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
             <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
-            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'MTdmYWM4ZmMyZjk3YmZhNTkzZTdhNWYyMjk1MTE1ZTk='</span><span class="p">,</span>
+            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
         <span class="p">},</span>
         <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
             <span class="s1">'pubkeys'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'02f9ecb53c10e999fd2ca3a8f4503d2c5df3521e38cef44570e34f7bdc23219c70'</span><span class="p">,</span>
@@ -584,10 +584,10 @@
         <span class="na">dataType</span><span class="p">:</span> <span class="s2">"jsonp"</span><span class="p">,</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
             <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
-            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'MTdmYWM4ZmMyZjk3YmZhNTkzZTdhNWYyMjk1MTE1ZTk='</span><span class="p">,</span>
+            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
         <span class="p">},</span>
         <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-            <span class="s1">'wallet_id'</span><span class="p">:</span> <span class="s1">'a399855021ccdbc2820de597952a54c9'</span><span class="p">,</span>
+            <span class="s1">'wallet_id'</span><span class="p">:</span> <span class="s1">'your_wallet_id'</span><span class="p">,</span>
             <span class="s1">'activate_code'</span><span class="p">:</span> <span class="s1">'218456'</span>
 
         <span class="p">})</span>
@@ -677,12 +677,12 @@
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
-        <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/wallet/btc/detail/?wallet_id=a399855021ccdbc2820de597952a54c9"</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/wallet/btc/detail/?wallet_id=your_wallet_id"</span><span class="p">,</span>
         <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
         <span class="na">dataType</span><span class="p">:</span> <span class="s2">"jsonp"</span><span class="p">,</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
             <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
-            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'MTdmYWM4ZmMyZjk3YmZhNTkzZTdhNWYyMjk1MTE1ZTk='</span><span class="p">,</span>
+            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
         <span class="p">},</span>
     <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
 
@@ -816,7 +816,7 @@
         <span class="na">dataType</span><span class="p">:</span> <span class="s2">"jsonp"</span><span class="p">,</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
             <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
-            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'MTdmYWM4ZmMyZjk3YmZhNTkzZTdhNWYyMjk1MTE1ZTk='</span><span class="p">,</span>
+            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
         <span class="p">},</span>
     <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
@@ -916,12 +916,12 @@
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
-        <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/wallet/btc/addr_list/?wallet_id=a399855021ccdbc2820de597952a54c9'</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/wallet/btc/addr_list/?wallet_id=your_wallet_id'</span><span class="p">,</span>
         <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
         <span class="na">dataType</span><span class="p">:</span> <span class="s2">"jsonp"</span><span class="p">,</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
             <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
-            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'MTdmYWM4ZmMyZjk3YmZhNTkzZTdhNWYyMjk1MTE1ZTk='</span><span class="p">,</span>
+            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
         <span class="p">},</span>
     <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
@@ -999,10 +999,10 @@
         <span class="na">dataType</span><span class="p">:</span> <span class="s2">"jsonp"</span><span class="p">,</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
             <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
-            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'MTdmYWM4ZmMyZjk3YmZhNTkzZTdhNWYyMjk1MTE1ZTk='</span><span class="p">,</span>
+            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
         <span class="p">},</span>
         <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-            <span class="s1">'wallet_id'</span><span class="p">:</span> <span class="s1">'a399855021ccdbc2820de597952a54c9'</span><span class="p">,</span>
+            <span class="s1">'wallet_id'</span><span class="p">:</span> <span class="s1">'your_wallet_id'</span><span class="p">,</span>
         <span class="p">})</span>
     <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
@@ -1085,7 +1085,7 @@
         <span class="na">dataType</span><span class="p">:</span> <span class="s2">"jsonp"</span><span class="p">,</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
             <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
-            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'MTdmYWM4ZmMyZjk3YmZhNTkzZTdhNWYyMjk1MTE1ZTk='</span><span class="p">,</span>
+            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
         <span class="p">},</span>
     <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
@@ -1197,10 +1197,10 @@
         <span class="na">dataType</span><span class="p">:</span> <span class="s2">"jsonp"</span><span class="p">,</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
             <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
-            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'MTdmYWM4ZmMyZjk3YmZhNTkzZTdhNWYyMjk1MTE1ZTk='</span><span class="p">,</span>
+            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
         <span class="p">},</span>
         <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-            <span class="s1">'wallet_id'</span><span class="p">:</span> <span class="s1">'a399855021ccdbc2820de597952a54c9'</span><span class="p">,</span>
+            <span class="s1">'wallet_id'</span><span class="p">:</span> <span class="s1">'your_wallet_id'</span><span class="p">,</span>
             <span class="s1">'outputs'</span><span class="p">:</span> <span class="p">[{</span>
                 <span class="s1">'address'</span><span class="p">:</span> <span class="s1">'2MwUf9ud3AfpES6Ey8yAMVzWggC2W9njKzL'</span><span class="p">,</span>
                 <span class="s1">'value'</span><span class="p">:</span> <span class="s1">'1100'</span>
@@ -1387,10 +1387,10 @@ Sectoken will then verify the transaction and broadcast it.</p>
         <span class="c1">// dataType: "jsonp",</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
             <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
-            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'MTdmYWM4ZmMyZjk3YmZhNTkzZTdhNWYyMjk1MTE1ZTk='</span><span class="p">,</span>
+            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
         <span class="p">},</span>
         <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-            <span class="s1">'wallet_id'</span><span class="p">:</span> <span class="s1">'a399855021ccdbc2820de597952a54c9'</span><span class="p">,</span>
+            <span class="s1">'wallet_id'</span><span class="p">:</span> <span class="s1">'your_wallet_id'</span><span class="p">,</span>
             <span class="s1">'signed_tx'</span><span class="p">:</span> <span class="s1">'02000000000101132d77b5c81222720a4e113134e3612a722eeeac701ffe56efbaaad1c562d44e0000000023220020e6f5b27d5fafe65b3c9378be73e58977ad7065e22538cfac96a5f327dd16efedffffffff034c0400000000000017a9142e6aeb08b38fb94d17e09ac910c3c50d935e38a087073d0f000000000017a914467b69558dc8c89231172ae109f7c7d9e9505e398700000000000000000d6a0b796f757220636f6d6d69740300473044022077223d4dede35577ac8359024bb95c84ecc17e81614a9fe014d7ca88ba73de9302204ae8f2ccc0ca027cb9ef53f759473b0361772589a1053ea8f97b1e33c57c4b140169522102f9ecb53c10e999fd2ca3a8f4503d2c5df3521e38cef44570e34f7bdc23219c7021023a602328d823875cd8a00393dbade47bd1f16dab100ad89ee35b1bc61607f10c2103e8c77de3773dc6da5d105c2d2b23c5cfe3b5cc559ed72436ab180f6ad23bf48f53ae00000000'</span>
         <span class="p">})</span>
     <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
@@ -1499,10 +1499,10 @@ Sectoken will then verify the transaction and broadcast it.</p>
         <span class="na">dataType</span><span class="p">:</span> <span class="s2">"jsonp"</span><span class="p">,</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
             <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
-            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'MTdmYWM4ZmMyZjk3YmZhNTkzZTdhNWYyMjk1MTE1ZTk='</span><span class="p">,</span>
+            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
         <span class="p">},</span>
         <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-            <span class="s1">'wallet_id'</span><span class="p">:</span> <span class="s1">'a399855021ccdbc2820de597952a54c9'</span><span class="p">,</span>
+            <span class="s1">'wallet_id'</span><span class="p">:</span> <span class="s1">'your_wallet_id'</span><span class="p">,</span>
             <span class="s1">'url'</span><span class="p">:</span> <span class="s1">'https://your.server.com/webhook'</span><span class="p">,</span>
             <span class="s1">'type'</span><span class="p">:</span> <span class="s1">'deposit'</span><span class="p">,</span>
             <span class="s1">'label'</span><span class="p">:</span> <span class="s1">'test callback'</span>
@@ -1607,12 +1607,12 @@ Sectoken will then verify the transaction and broadcast it.</p>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
-        <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/wallet/btc/webhook_list/?wallet_id=a399855021ccdbc2820de597952a54c9'</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/wallet/btc/webhook_list/?wallet_id=your_wallet_id'</span><span class="p">,</span>
         <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
         <span class="na">dataType</span><span class="p">:</span> <span class="s2">"jsonp"</span><span class="p">,</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
             <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
-            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'MTdmYWM4ZmMyZjk3YmZhNTkzZTdhNWYyMjk1MTE1ZTk='</span><span class="p">,</span>
+            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
         <span class="p">},</span>
     <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
@@ -1741,7 +1741,7 @@ Sectoken will then verify the transaction and broadcast it.</p>
         <span class="na">dataType</span><span class="p">:</span> <span class="s2">"jsonp"</span><span class="p">,</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
             <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
-            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'MTdmYWM4ZmMyZjk3YmZhNTkzZTdhNWYyMjk1MTE1ZTk='</span><span class="p">,</span>
+            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
         <span class="p">},</span>
         <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
             <span class="s1">'callbackid'</span><span class="p">:</span> <span class="s1">'1ffbb2494120425ca191f84e207dccbc'</span><span class="p">,</span>
@@ -1909,12 +1909,12 @@ Need to add the wallet Webhook first.</p>
     -H <span class="s2">"HMAC:your token"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
 <span class="nx">request</span><span class="p">({</span>
-        <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/flow/record/btc/?wallet_id=a399855021ccdbc2820de597952a54c9&amp;&amp;year=2019&amp;&amp;month=12'</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/flow/record/btc/?wallet_id=your_wallet_id&amp;&amp;year=2019&amp;&amp;month=12'</span><span class="p">,</span>
         <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
         <span class="na">dataType</span><span class="p">:</span> <span class="s2">"jsonp"</span><span class="p">,</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
             <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
-            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'MTdmYWM4ZmMyZjk3YmZhNTkzZTdhNWYyMjk1MTE1ZTk='</span><span class="p">,</span>
+            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
         <span class="p">},</span>
     <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>

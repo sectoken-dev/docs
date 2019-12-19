@@ -717,6 +717,24 @@
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
     -d <span class="s1">'{"wallet_id": "your wallet id", "activate_code": "your activate code"}'</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/wallet/eth/activate/'</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
+        <span class="na">dataType</span><span class="p">:</span> <span class="s2">"jsonp"</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
+            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'MTdmYWM4ZmMyZjk3YmZhNTkzZTdhNWYyMjk1MTE1ZTk='</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+            <span class="s1">'wallet_id'</span><span class="p">:</span> <span class="s1">'fbff0c98881b4b20b3368e1fa1e64b85'</span><span class="p">,</span>
+            <span class="s1">'activate_code'</span><span class="p">:</span> <span class="s1">'298301'</span>
+        <span class="p">})</span>
+    <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">);</span>
 </code></pre>
 <blockquote>
 <p>Response Samples</p>

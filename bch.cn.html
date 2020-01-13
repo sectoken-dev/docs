@@ -1295,7 +1295,7 @@
             <span class="p">}</span>
         <span class="p">],</span>
         <span class="s">"feerate"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s">"memo"</span><span class="p">:</span> <span class="s">"your commit"</span><span class="p">,</span>
+        <span class="s">"memo"</span><span class="p">:</span> <span class="s">"your comment"</span><span class="p">,</span>
         <span class="s">"total"</span><span class="p">:</span>  <span class="bp">False</span>
     <span class="p">}</span>
 <span class="p">)</span>
@@ -1303,7 +1303,7 @@
     -X POST <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
-    -d <span class="s1">'{"wallet_id": "your wallet id", "outputs":[{"address": "destination address", "value": "10000"},{"address": "destination address", "value": "5000"}], "feerate": 1, "memo":"your commit", "total":false}'</span>
+    -d <span class="s1">'{"wallet_id": "your wallet id", "outputs":[{"address": "destination address", "value": "10000"},{"address": "destination address", "value": "5000"}], "feerate": 1, "memo":"your comment", "total":false}'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
@@ -1319,7 +1319,7 @@
                 <span class="s1">'address'</span><span class="p">:</span> <span class="s1">'bchtest:qq8wrt4vs5ljgkrd92uytqm6p5vcahpc5qqspgm0fh'</span><span class="p">,</span>
                 <span class="s1">'value'</span><span class="p">:</span> <span class="s1">'1100'</span>
             <span class="p">},],</span>
-            <span class="s1">'memo'</span><span class="p">:</span> <span class="s1">'your commit'</span><span class="p">,</span>
+            <span class="s1">'memo'</span><span class="p">:</span> <span class="s1">'your comment'</span><span class="p">,</span>
             <span class="s1">'total'</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
             <span class="s2">"feerate"</span><span class="p">:</span> <span class="mi">1</span>
         <span class="p">})</span>

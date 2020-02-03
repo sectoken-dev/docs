@@ -1500,7 +1500,31 @@
 <td>Callback id</td>
 </tr>
 </tbody></table>
-<h1 id='get-transaction-records'>Get Transaction Records</h1>
+<h1 id='get-transaction-records'>Get Transaction Records</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/flow/record/usdt/"</span><span class="p">,</span>
+            <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>
+            <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+                <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"b81d38f5f250c36a05da0d0e1f9bd394"</span><span class="p">,</span>
+                <span class="s">"year"</span><span class="p">:</span> <span class="s">"2019"</span><span class="p">,</span>
+                <span class="s">"month"</span><span class="p">:</span> <span class="s">"10"</span>
+            <span class="p">}</span>
+<span class="p">)</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/flow/record/usdt/?wallet_id=b81d38f5f250c36a05da0d0e1f9bd394&amp;year=2019&amp;month=10"</span> <span class="se">\</span>
+    -H <span class="s2">"HMAC:your token"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
+<span class="nx">request</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/flow/record/usdt/?wallet_id=your_wallet_id&amp;&amp;year=2019&amp;&amp;month=12'</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
+            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</code></pre>
 <blockquote>
 <p>Response Samples</p>
 </blockquote>

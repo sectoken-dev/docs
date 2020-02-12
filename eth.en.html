@@ -322,7 +322,7 @@
               </ul>
           </li>
           <li>
-            <a href="#fund-collection" class="toc-h1 toc-link" data-title="Fund Collection">Fund Collection</a>
+            <a href="#get-balance-of-eth-address" class="toc-h1 toc-link" data-title="Get Balance of ETH Address">Get Balance of ETH Address</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#http-request-8" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
@@ -333,13 +333,10 @@
                   <li>
                     <a href="#response-parameters-8" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
                   </li>
-                  <li>
-                    <a href="#data-parameters-7" class="toc-h2 toc-link" data-title="Data Parameters">Data Parameters</a>
-                  </li>
               </ul>
           </li>
           <li>
-            <a href="#get-balance-of-eth-address" class="toc-h1 toc-link" data-title="Get Balance of ETH Address">Get Balance of ETH Address</a>
+            <a href="#fund-collection" class="toc-h1 toc-link" data-title="Fund Collection">Fund Collection</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#http-request-9" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
@@ -349,6 +346,9 @@
                   </li>
                   <li>
                     <a href="#response-parameters-9" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#data-parameters-8" class="toc-h2 toc-link" data-title="Data Parameters">Data Parameters</a>
                   </li>
               </ul>
           </li>
@@ -1230,6 +1230,96 @@
 <td>Transaction id</td>
 </tr>
 </tbody></table>
+<h1 id='get-balance-of-eth-address'>Get Balance of ETH Address</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">reqeusts</span>
+
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/addr_balance/"</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>
+    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">"address"</span><span class="p">:</span> <span class="s">"your address"</span><span class="p">}</span>
+<span class="p">)</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/addr_balance/?address=your_address"</span> <span class="se">\</span>
+    -X GET <span class="se">\</span>
+    -H <span class="s2">"HMAC:your token"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/wallet/eth/addr_balance/?address=0x215a21ec6562b08e0123147AbD28f3Dd7B2c565f'</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
+            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'MTdmYWM4ZmMyZjk3YmZhNTkzZTdhNWYyMjk1MTE1ZTk='</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</code></pre>
+<blockquote>
+<p>Response Samples</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"312672375000000000"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-8'>HTTP Request</h3>
+<p><code>GET https://testnet.sectoken.io/wallet/eth/addr_balance/</code></p>
+<h3 id='request-parameters-7'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>Yes</td>
+<td>ETH address</td>
+</tr>
+<tr>
+<td>coin_type</td>
+<td>string</td>
+<td>Optional</td>
+<td>Coin type. ETH or other ERC20 token supported by the platform. Default is &quot;ETH&quot;.</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameters-8'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>Status code. Successful return 200. Others are <a href="#error-codes">Error Codes</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>Response data.</td>
+</tr>
+</tbody></table>
+<h4 id='data-parameters-7'>Data Parameters</h4>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>balance</td>
+<td>string</td>
+<td>Balance. (Minimum unit)</td>
+</tr>
+</tbody></table>
 <h1 id='fund-collection'>Fund Collection</h1>
 <p>Collection your current wallet receipt addresses&#39;s fund to multi-sign address of the wallet.</p>
 
@@ -1274,9 +1364,9 @@
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
     </span><span class="s2">"txids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"0xc99629ab2d9472aea0450f3f881e07d5c3d8d9444131430df2e7fb3a95dbb44b"</span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-8'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request-9'>HTTP Request</h3>
 <p><code>POST https://testnet.sectoken.io/wallet/eth/flush/</code></p>
-<h3 id='request-parameters-7'>Request Parameters</h3>
+<h3 id='request-parameters-8'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter Name</th>
@@ -1304,96 +1394,6 @@
 <td>Receipt address for your current wallet . It&#39;s will collection all receipt address for current wallet if empty</td>
 </tr>
 </tbody></table>
-<h3 id='response-parameters-8'>Response Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>code</td>
-<td>integer</td>
-<td>Status code. Successful return 200. Others are <a href="#error-codes">Error Codes</a></td>
-</tr>
-<tr>
-<td>data</td>
-<td>object</td>
-<td>Response data</td>
-</tr>
-</tbody></table>
-<h3 id='data-parameters-7'>Data Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>txids</td>
-<td>array</td>
-<td>Transaction id array</td>
-</tr>
-</tbody></table>
-<h1 id='get-balance-of-eth-address'>Get Balance of ETH Address</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">reqeusts</span>
-
-<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/addr_balance/"</span><span class="p">,</span>
-    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>
-    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">"address"</span><span class="p">:</span> <span class="s">"your address"</span><span class="p">}</span>
-<span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/addr_balance/?address=your_address"</span> <span class="se">\</span>
-    -X GET <span class="se">\</span>
-    -H <span class="s2">"HMAC:your token"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
-
-<span class="nx">request</span><span class="p">({</span>
-        <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/wallet/eth/addr_balance/?address=0x215a21ec6562b08e0123147AbD28f3Dd7B2c565f'</span><span class="p">,</span>
-        <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
-        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
-            <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'MTdmYWM4ZmMyZjk3YmZhNTkzZTdhNWYyMjk1MTE1ZTk='</span><span class="p">,</span>
-        <span class="p">},</span>
-    <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>Response Samples</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"312672375000000000"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-9'>HTTP Request</h3>
-<p><code>GET https://testnet.sectoken.io/wallet/eth/addr_balance/</code></p>
-<h3 id='request-parameters-8'>Request Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter Name</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>address</td>
-<td>string</td>
-<td>Yes</td>
-<td>ETH address</td>
-</tr>
-<tr>
-<td>coin_type</td>
-<td>string</td>
-<td>Optional</td>
-<td>Coin type. ETH or other ERC20 token supported by the platform. Default is &quot;ETH&quot;.</td>
-</tr>
-</tbody></table>
 <h3 id='response-parameters-9'>Response Parameters</h3>
 <table><thead>
 <tr>
@@ -1407,13 +1407,10 @@
 <td>integer</td>
 <td>Status code. Successful return 200. Others are <a href="#error-codes">Error Codes</a></td>
 </tr>
-<tr>
-<td>data</td>
-<td>object</td>
-<td>Response data.</td>
-</tr>
 </tbody></table>
-<h4 id='data-parameters-8'>Data Parameters</h4>
+
+<p>| data           | object  | Response data</p>
+<h3 id='data-parameters-8'>Data Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter Name</th>
@@ -1422,9 +1419,9 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>balance</td>
-<td>string</td>
-<td>Balance. (Minimum unit)</td>
+<td>txids</td>
+<td>array</td>
+<td>Transaction id array</td>
 </tr>
 </tbody></table>
 <h1 id='build-transaction'>Build Transaction</h1><pre class="highlight python tab-python"><code><span class="n">impor</span> <span class="n">requests</span>
@@ -1440,7 +1437,7 @@
         <span class="s">"feerate"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
     <span class="p">}</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/dotx/"</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/batch_dotx/"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
@@ -1612,7 +1609,7 @@
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-11'>HTTP Request</h3>
-<p><code>POST https://testnet.sectoken.io/wallet/eth/dotx/</code></p>
+<p><code>POST https://testnet.sectoken.io/wallet/eth/batch_dotx/</code></p>
 <h3 id='request-parameters-10'>Request Parameters</h3>
 <table><thead>
 <tr>

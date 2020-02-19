@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>eos API 文档</title>
+    <title>eos API Documentation</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -221,173 +221,16 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#a6b537a819" class="toc-h1 toc-link" data-title="介绍说明">介绍说明</a>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
           </li>
           <li>
-            <a href="#eos" class="toc-h1 toc-link" data-title="快速创建eos多签钱包">快速创建eos多签钱包</a>
+            <a href="#quick-creation-eos-wallet" class="toc-h1 toc-link" data-title="Quick Creation EOS Wallet">Quick Creation EOS Wallet</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#http-request" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
                   </li>
                   <li>
-                    <a href="#1f9ac54b15" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
-                  </li>
-                  <li>
-                    <a href="#70bdef7e25" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#eos-2" class="toc-h1 toc-link" data-title="创建eos多用户钱包">创建eos多用户钱包</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#http-request-2" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
-                  </li>
-                  <li>
-                    <a href="#1f9ac54b15-2" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
-                  </li>
-                  <li>
-                    <a href="#70bdef7e25-2" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#bf42d7a5f0" class="toc-h1 toc-link" data-title="加入多用户钱包">加入多用户钱包</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#http-request-3" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
-                  </li>
-                  <li>
-                    <a href="#1f9ac54b15-3" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
-                  </li>
-                  <li>
-                    <a href="#70bdef7e25-3" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#c2eb9677a0" class="toc-h1 toc-link" data-title="激活钱包">激活钱包</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#http-request-4" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
-                  </li>
-                  <li>
-                    <a href="#1f9ac54b15-4" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
-                  </li>
-                  <li>
-                    <a href="#70bdef7e25-4" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#1e3f3182c5" class="toc-h1 toc-link" data-title="查看钱包信息">查看钱包信息</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#http-request-5" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
-                  </li>
-                  <li>
-                    <a href="#1f9ac54b15-5" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
-                  </li>
-                  <li>
-                    <a href="#70bdef7e25-5" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#dd15c4c900" class="toc-h1 toc-link" data-title="查看钱包列表">查看钱包列表</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#http-request-6" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
-                  </li>
-                  <li>
-                    <a href="#1f9ac54b15-6" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
-                  </li>
-                  <li>
-                    <a href="#70bdef7e25-6" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#5192238983" class="toc-h1 toc-link" data-title="构建交易单">构建交易单</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#http-request-7" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
-                  </li>
-                  <li>
-                    <a href="#1f9ac54b15-7" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
-                  </li>
-                  <li>
-                    <a href="#outputs" class="toc-h2 toc-link" data-title="Outputs 参数">Outputs 参数</a>
-                  </li>
-                  <li>
-                    <a href="#70bdef7e25-7" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#8efa5837ff" class="toc-h1 toc-link" data-title="获取待签名的交易单">获取待签名的交易单</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#http-request-8" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
-                  </li>
-                  <li>
-                    <a href="#1f9ac54b15-8" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
-                  </li>
-                  <li>
-                    <a href="#70bdef7e25-8" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#d51b06a0fe" class="toc-h1 toc-link" data-title="提交签名信息">提交签名信息</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#http-request-9" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
-                  </li>
-                  <li>
-                    <a href="#1f9ac54b15-9" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
-                  </li>
-                  <li>
-                    <a href="#70bdef7e25-9" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#c03ba17d08" class="toc-h1 toc-link" data-title="获取代币列表">获取代币列表</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#http-request-10" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
-                  </li>
-                  <li>
-                    <a href="#dcedc889dd" class="toc-h2 toc-link" data-title="无请求参数">无请求参数</a>
-                  </li>
-                  <li>
-                    <a href="#70bdef7e25-10" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#webhook" class="toc-h1 toc-link" data-title="新增钱包WebHook">新增钱包WebHook</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#http-request-11" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
-                  </li>
-                  <li>
-                    <a href="#1f9ac54b15-10" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
-                  </li>
-                  <li>
-                    <a href="#70bdef7e25-11" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#webhook-2" class="toc-h1 toc-link" data-title="获取钱包WebHook">获取钱包WebHook</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#http-request-12" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
-                  </li>
-                  <li>
-                    <a href="#1f9ac54b15-11" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                    <a href="#request-parameters" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
                   </li>
                   <li>
                     <a href="#response-parameters" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
@@ -395,55 +238,217 @@
               </ul>
           </li>
           <li>
-            <a href="#webhook-3" class="toc-h1 toc-link" data-title="删除钱包WebHook">删除钱包WebHook</a>
+            <a href="#create-eos-multi_user-wallet" class="toc-h1 toc-link" data-title="Create EOS Multi_User  Wallet">Create EOS Multi_User  Wallet</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-2" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#request-parameters-2" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#response-parameters-2" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#join-multi-user-wallet" class="toc-h1 toc-link" data-title="Join Multi User Wallet">Join Multi User Wallet</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-3" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#request-parameters-3" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#response-parameters-3" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#data-parameters-3" class="toc-h2 toc-link" data-title="Data Parameters">Data Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#activate-wallet" class="toc-h1 toc-link" data-title="Activate Wallet">Activate Wallet</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-4" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#request-parameters-4" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#response-parameters-4" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#get-wallet-details" class="toc-h1 toc-link" data-title="Get Wallet Details">Get Wallet Details</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-5" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#request-parameters-5" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#response-parameters-5" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#get-wallet-list" class="toc-h1 toc-link" data-title="Get Wallet List">Get Wallet List</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-6" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#request-parameters-6" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#response-parameters-6" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#build-transaction" class="toc-h1 toc-link" data-title="Build Transaction">Build Transaction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-7" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#request-parameters-7" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#outputs-parameters" class="toc-h2 toc-link" data-title="Outputs Parameters">Outputs Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#get-unsigned-sig_payload" class="toc-h1 toc-link" data-title="Get Unsigned Sig_payload">Get Unsigned Sig_payload</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-8" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#request-parameters-8" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#response-parameters-8" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#data-parameters-8" class="toc-h2 toc-link" data-title="Data Parameters">Data Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#submit-signature" class="toc-h1 toc-link" data-title="Submit Signature">Submit Signature</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-9" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#request-parameters-9" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#response-parameters-9" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#get-token-list" class="toc-h1 toc-link" data-title="Get  Token List">Get  Token List</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-10" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#no-request-parameters" class="toc-h2 toc-link" data-title="No Request Parameters">No Request Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#response-parameters-10" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#add-wallet-webhook" class="toc-h1 toc-link" data-title="Add Wallet WebHook">Add Wallet WebHook</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-11" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#request-parameters-10" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#response-parameters-11" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#list-wallet-webhook" class="toc-h1 toc-link" data-title="List Wallet WebHook">List Wallet WebHook</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-12" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#request-parameters-11" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#response-parameters-12" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#delete-wallet-webhook" class="toc-h1 toc-link" data-title="Delete Wallet WebHook">Delete Wallet WebHook</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#http-request-13" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
                   </li>
                   <li>
-                    <a href="#1f9ac54b15-12" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                    <a href="#request-parameters-12" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
                   </li>
                   <li>
-                    <a href="#70bdef7e25-12" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                    <a href="#response-parameters-13" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#callback" class="toc-h1 toc-link" data-title="交易Callback通知">交易Callback通知</a>
+            <a href="#transaction-callback" class="toc-h1 toc-link" data-title="Transaction Callback">Transaction Callback</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#1f233418ae" class="toc-h2 toc-link" data-title="参数说明">参数说明</a>
+                    <a href="#parameters-descriptions" class="toc-h2 toc-link" data-title="Parameters descriptions">Parameters descriptions</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#c284998822" class="toc-h1 toc-link" data-title="获取交易记录">获取交易记录</a>
+            <a href="#get-transaction-records" class="toc-h1 toc-link" data-title="Get Transaction Records">Get Transaction Records</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#http-request-14" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
                   </li>
                   <li>
-                    <a href="#1f9ac54b15-13" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                    <a href="#request-parameters-13" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
                   </li>
                   <li>
-                    <a href="#70bdef7e25-13" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                    <a href="#response-parameters-14" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#e08c1d4f9a" class="toc-h1 toc-link" data-title="错误码">错误码</a>
+            <a href="#error-codes" class="toc-h1 toc-link" data-title="Error Codes">Error Codes</a>
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='/docs/v1/eos.en.html'>English Version</a></li>
+            <li><a href='/docs/v1/eos.cn.html'>中文文档</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='a6b537a819'>介绍说明</h1>
+        <h1 id='introduction'>Introduction</h1>
 <p><a href="https://testnet.sectoken.io/">https://testnet.sectoken.io/</a></p>
-<h1 id='eos'>快速创建eos多签钱包</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<h1 id='quick-creation-eos-wallet'>Quick Creation EOS Wallet</h1>
+<p>Import a new EOS account for current account</p>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/eos/create/"</span><span class="p">,</span> 
@@ -460,6 +465,7 @@
         <span class="s">"wallet_name"</span><span class="p">:</span> <span class="s">"your wallet name"</span><span class="p">,</span>
     <span class="p">}</span>
 <span class="p">)</span>
+
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/eos/create/"</span>
     -H <span class="s2">"HMAC:your token"</span>
     -H <span class="s2">"Content-Type:application/json"</span>
@@ -471,7 +477,7 @@
     "02d654b7b6829df777a32267d366b4c24fd30fc1a61d816e043104edd198678e52"
     ],
     "privkeys":[
-    "NjdhOTg1MjNlYjBkMDJiNTEzYTQyZjA3OGNiYTVjNGYwNThjODhjOGY3MGY5YjI3NTVkODI3ODUzMDE4MTgyMg==",          "YTU4MWRiYjlhZjA1NGM5MGY3Y2RkYzc3NjdlN2JhZmM5YjdlNjI0MGQyNGQ0ZWRlYjc0YjM3YmQ5MjBjOWVlMg=="
+  "NjdhOTg1MjNlYjBkMDJiNTEzYTQyZjA3OGNiYTVjNGYwNThjODhjOGY3MGY5YjI3NTVkODI3ODUzMDE4MTgyMg==",        "YTU4MWRiYjlhZjA1NGM5MGY3Y2RkYzc3NjdlN2JhZmM5YjdlNjI0MGQyNGQ0ZWRlYjc0YjM3YmQ5MjBjOWVlMg=="
     ], 
     "wallet_name": "your wallet name"
     }'</span>
@@ -498,7 +504,7 @@
 <span class="p">);</span>
 </code></pre>
 <blockquote>
-<p>返回示例</p>
+<p>Response Samples</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
@@ -511,89 +517,91 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request'>HTTP Request</h3>
 <p><code>POST https://testnet.sectoken.io/api/v1/wallet/eos/create/</code></p>
-<h3 id='1f9ac54b15'>请求参数</h3>
+<h3 id='request-parameters'>Request Parameters</h3>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>必填</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>pubkeys</td>
 <td>array</td>
-<td>是</td>
-<td>公钥列表</td>
+<td>Yes</td>
+<td>Pubkey list</td>
 </tr>
 <tr>
 <td>privkeys</td>
 <td>array</td>
-<td>否</td>
-<td>私钥列表</td>
+<td>Optional</td>
+<td>Privkey list</td>
 </tr>
 <tr>
 <td>wallet_name</td>
 <td>string</td>
-<td>是</td>
-<td>钱包名</td>
+<td>Yes</td>
+<td>Wallet name</td>
 </tr>
 <tr>
 <td>eos_account</td>
 <td>string</td>
-<td>是</td>
-<td>要导入的eos账户</td>
+<td>Yes</td>
+<td>The eos account you want to import</td>
 </tr>
 </tbody></table>
-<h3 id='70bdef7e25'>返回参数</h3>
+<h3 id='response-parameters'>Response Parameters</h3>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>code</td>
 <td>integer</td>
-<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+<td>Status code. Successful return 200. Others are <a href="#error-codes">Error Codes</a></td>
 </tr>
 <tr>
 <td>data</td>
 <td>object</td>
-<td>返回内容</td>
+<td>Response data.</td>
 </tr>
 </tbody></table>
-<h4 id='data'>data 参数</h4>
+<h4 id='data-parameters'>Data Parameters</h4>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>wallet_id</td>
 <td>string</td>
-<td>钱包的id</td>
+<td>Wallet id</td>
 </tr>
 <tr>
 <td>activate_code</td>
 <td>string</td>
-<td>钱包激活码</td>
+<td>Activate code</td>
 </tr>
 <tr>
 <td>server_pubkey</td>
 <td>string</td>
-<td>钱包的xpub</td>
+<td>HD pubkey</td>
 </tr>
 <tr>
 <td>sig_payload</td>
 <td>string</td>
-<td>待签名的信息</td>
+<td>The data for signature</td>
 </tr>
 </tbody></table>
-<h1 id='eos-2'>创建eos多用户钱包</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<h1 id='create-eos-multi_user-wallet'>Create EOS Multi_User  Wallet</h1>
+<p>Import a new EOS account for current account, This wallet can invite other user join it. </p>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/eos/share_create/"</span><span class="p">,</span> 
@@ -642,7 +650,7 @@
 <span class="p">);</span>
 </code></pre>
 <blockquote>
-<p>返回示例</p>
+<p>Response Samples</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
@@ -651,87 +659,89 @@
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
-<p><code>POST https://testnet.sectoken.io/api/v1/wallet/eos/share_create/</code></p>
-<h3 id='1f9ac54b15-2'>请求参数</h3>
+<p><code>POST https://testnet.sectoken.io/api/v1/wallet/eos/create/</code></p>
+<h3 id='request-parameters-2'>Request Parameters</h3>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>必填</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>pubkey</td>
-<td>array</td>
-<td>是</td>
-<td>公钥列表</td>
+<td>string</td>
+<td>Yes</td>
+<td>Pubkey list</td>
 </tr>
 <tr>
 <td>privkey</td>
-<td>array</td>
-<td>否</td>
-<td>私钥列表</td>
+<td>string</td>
+<td>Optional</td>
+<td>Privkey list</td>
 </tr>
 <tr>
 <td>wallet_name</td>
 <td>string</td>
-<td>是</td>
-<td>钱包名</td>
+<td>Yes</td>
+<td>Wallet name</td>
 </tr>
 <tr>
 <td>eos_account</td>
 <td>string</td>
-<td>是</td>
-<td>要导入的eos账户</td>
+<td>Yes</td>
+<td>The eos account you want to import</td>
 </tr>
 <tr>
 <td>multi_type</td>
 <td>string</td>
-<td>是</td>
-<td>多钱类型, 如 2-2, 3-4 等</td>
+<td>Yes</td>
+<td>the multi type of current wallet</td>
 </tr>
 <tr>
 <td>control</td>
 <td>integer</td>
-<td>是</td>
-<td>0,平台参与签名; 1,平台不参与签名</td>
+<td>Yes</td>
+<td>1: sectoken will join your wallet and sign up         0: sectoken won&#39;t join your wallet</td>
 </tr>
 </tbody></table>
-<h3 id='70bdef7e25-2'>返回参数</h3>
+<h3 id='response-parameters-2'>Response Parameters</h3>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>code</td>
 <td>integer</td>
-<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+<td>Status code. Successful return 200. Others are <a href="#error-codes">Error Codes</a></td>
 </tr>
 <tr>
 <td>data</td>
 <td>object</td>
-<td>返回内容</td>
+<td>Response data.</td>
 </tr>
 </tbody></table>
-<h4 id='data-2'>data 参数</h4>
+<h4 id='data-parameters-2'>Data Parameters</h4>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>invitation_code</td>
 <td>string</td>
-<td>分享码，其他用户输入此码可加入此多用户钱包</td>
+<td>invitation code, other  user can join this wallet from it</td>
 </tr>
 </tbody></table>
-<h1 id='bf42d7a5f0'>加入多用户钱包</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<h1 id='join-multi-user-wallet'>Join Multi User Wallet</h1>
+<p>from this api, you can join other user&#39;s wallet from their invitation code</p>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/eos/join_wallet/"</span><span class="p">,</span>
@@ -742,7 +752,7 @@
         <span class="s">"privkey"</span><span class="p">:</span> <span class="s">"your encrypted privkey"</span><span class="p">,</span>
     <span class="p">}</span> 
 <span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/eos/join_wallet/"</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/eos/activate/"</span> <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
@@ -754,7 +764,7 @@
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
-        <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/api/v1/wallet/eos/join_wallet/'</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/api/v1/wallet/eos/activate/'</span><span class="p">,</span>
         <span class="na">meosod</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
             <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
@@ -771,96 +781,96 @@
 <span class="p">);</span>
 </code></pre>
 <blockquote>
-<p>返回示例</p>
+<p>Response Simple</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
         </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"joined"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"invitation_code"</span><span class="p">:</span><span class="s2">"957314"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"activate_code"</span><span class="p">:</span><span class="s2">"957314"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"server_pubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xpub6AZMDpGgTSsnXRfapb7wm3fMppz38ayMmHePm7A27noBxiiBV7YzPqX71dZMgHkRQZWSC2WK2dXQs6tGBqqXvo3TTUWW6BmSNucv5iVRDfa"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"sig_payload"</span><span class="p">:</span><span class="s2">"cab5eb3962e88056dedbc96c4389bd26b20bb2ac3b044f80fd477ad942ca8661"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-3'>HTTP Request</h3>
 <p><code>POST https://testnet.sectoken.io/api/v1/wallet/eos/join_wallet/</code></p>
-<h3 id='1f9ac54b15-3'>请求参数</h3>
+<h3 id='request-parameters-3'>Request Parameters</h3>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>必填</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>wallet_id</td>
 <td>string</td>
-<td>是</td>
-<td>钱包id</td>
+<td>Yes</td>
+<td>wallet id</td>
 </tr>
 <tr>
-<td>invitation_code</td>
+<td>activate_code</td>
 <td>string</td>
-<td>是</td>
+<td>Yes</td>
 <td>钱包激活码</td>
 </tr>
 </tbody></table>
-<h3 id='70bdef7e25-3'>返回参数</h3>
+<h3 id='response-parameters-3'>Response Parameters</h3>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>code</td>
 <td>integer</td>
-<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+<td>Status code. Successful return 200. Others are <a href="#error-codes">Error Codes</a></td>
 </tr>
 <tr>
 <td>data</td>
 <td>object</td>
-<td>返回内容</td>
+<td>Response data.</td>
 </tr>
 </tbody></table>
-<h4 id='data-3'>data 参数</h4>
+<h3 id='data-parameters-3'>Data Parameters</h3>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>wallet_id</td>
 <td>string</td>
-<td>创建的钱包id</td>
+<td>joined wallet id</td>
 </tr>
 <tr>
 <td>status</td>
 <td>string</td>
-<td>修改钱包多钱类型所完成的交易单id</td>
+<td>the wallet status</td>
 </tr>
 <tr>
 <td>activate_code</td>
 <td>string</td>
-<td>钱包激活码，只有达到创建条件后此项不为空，其他情况下为空字符串</td>
+<td>activate code, This option is only available if the creation conditions are met</td>
 </tr>
 <tr>
 <td>server_pubkey</td>
 <td>string</td>
-<td>Xpubkey，只有达到创建条件后此项不为空，其他情况下为空字符串</td>
+<td>xpubkey, This option is only available if the creation conditions are met</td>
 </tr>
 <tr>
 <td>sig_payload</td>
 <td>string</td>
-<td>待签名字段，只有达到创建条件后此项不为空，其他情况下为空字符串</td>
+<td>The data for signature, This option is only available if the creation conditions are met</td>
 </tr>
 </tbody></table>
-<h1 id='c2eb9677a0'>激活钱包</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<h1 id='activate-wallet'>Activate Wallet</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/eos/activate/"</span><span class="p">,</span>
@@ -900,7 +910,7 @@
 <span class="p">);</span>
 </code></pre>
 <blockquote>
-<p>返回示例</p>
+<p>Response Samples</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
@@ -911,67 +921,67 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-4'>HTTP Request</h3>
 <p><code>POST https://testnet.sectoken.io/api/v1/wallet/eos/activate/</code></p>
-<h3 id='1f9ac54b15-4'>请求参数</h3>
+<h3 id='request-parameters-4'>Request Parameters</h3>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>必填</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>wallet_id</td>
 <td>string</td>
-<td>是</td>
-<td>钱包id</td>
+<td>Yes</td>
+<td>Wallet id</td>
 </tr>
 <tr>
 <td>activate_code</td>
 <td>string</td>
-<td>是</td>
-<td>钱包激活码</td>
+<td>Yes</td>
+<td>Activate code</td>
 </tr>
 </tbody></table>
-<h3 id='70bdef7e25-4'>返回参数</h3>
+<h3 id='response-parameters-4'>Response Parameters</h3>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>code</td>
 <td>integer</td>
-<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+<td>Status code. Successful return 200. Others are <a href="#error-codes">Error Codes</a></td>
 </tr>
 <tr>
 <td>data</td>
 <td>object</td>
-<td>返回内容</td>
+<td>Response data.</td>
 </tr>
 </tbody></table>
-<h4 id='data-4'>data 参数</h4>
+<h4 id='data-parameters-4'>Data Parameters</h4>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>account</td>
 <td>string</td>
-<td>导入的eos_account</td>
+<td>your eos account</td>
 </tr>
 <tr>
 <td>txid</td>
 <td>string</td>
-<td>修改钱包多钱类型所完成的交易单id</td>
+<td>txid</td>
 </tr>
 </tbody></table>
-<h1 id='1e3f3182c5'>查看钱包信息</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<h1 id='get-wallet-details'>Get Wallet Details</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/eos/detail/"</span><span class="p">,</span>
@@ -1001,7 +1011,7 @@
 <span class="p">);</span>
 </code></pre>
 <blockquote>
-<p>返回示例</p>
+<p>Response Samples</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
@@ -1019,102 +1029,102 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-5'>HTTP Request</h3>
 <p><code>GET https://testnet.sectoken.io/api/v1/wallet/eos/detail/</code></p>
-<h3 id='1f9ac54b15-5'>请求参数</h3>
+<h3 id='request-parameters-5'>Request Parameters</h3>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>必填</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>wallet_id</td>
 <td>string</td>
-<td>是</td>
-<td>钱包id</td>
+<td>Yes</td>
+<td>Wallet id</td>
 </tr>
 <tr>
 <td>coin_type</td>
 <td>string</td>
-<td>否</td>
-<td>币种，默认为eos，可以指定为平台支持的代币,如jungle</td>
+<td>Optional</td>
+<td>Coin type. eos or other  token supported by the platform. Default is &quot;eos&quot;.</td>
 </tr>
 </tbody></table>
-<h3 id='70bdef7e25-5'>返回参数</h3>
+<h3 id='response-parameters-5'>Response Parameters</h3>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>code</td>
 <td>integer</td>
-<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+<td>Status code. Successful return 200. Others are <a href="#error-codes">Error Codes</a></td>
 </tr>
 <tr>
 <td>data</td>
 <td>object</td>
-<td>返回内容</td>
+<td>Response data.</td>
 </tr>
 </tbody></table>
-<h4 id='data-5'>data 参数</h4>
+<h4 id='data-parameters-5'>Data Parameters</h4>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>wallet_id</td>
 <td>string</td>
-<td>钱包id</td>
+<td>Wallet id</td>
 </tr>
 <tr>
 <td>wallet_name</td>
 <td>string</td>
-<td>钱包名</td>
+<td>Wallet name</td>
 </tr>
 <tr>
 <td>account</td>
 <td>string</td>
-<td>导入的eos account</td>
+<td>eos account</td>
 </tr>
 <tr>
 <td>balance</td>
 <td>string</td>
-<td>钱包余额，单位为最小单位</td>
+<td>Balance. (Minimum unit)</td>
 </tr>
 <tr>
 <td>send_max</td>
 <td>string</td>
-<td>单次转账上限，&quot;0&quot;为无上限</td>
+<td>Maximum amount per transfer. &quot;0&quot; is unlimited.</td>
 </tr>
 <tr>
 <td>send_day_limit</td>
 <td>integer</td>
-<td>单日转账次数上限，0为无上限</td>
+<td>Maximum number of transfers per day. 0 is unlimited.</td>
 </tr>
 <tr>
 <td>send_day_max</td>
 <td>string</td>
-<td>单日转账上限，&quot;0&quot;为无上限</td>
+<td>Maximum number of transfers per day. &quot;0&quot; is unlimited.</td>
 </tr>
 <tr>
 <td>freeze_overtime</td>
 <td>integer</td>
-<td>钱包冻结截止时间，0为未冻结</td>
+<td>Wallet freeze deadline. 0 is not frozen.</td>
 </tr>
 <tr>
 <td>approval_txs</td>
 <td>array</td>
-<td>未完成签名的订单号列表, 只有共享钱包有此项,快速创建的钱包没有此项</td>
+<td>The signed order number list has not been completed, only shared wallets have this item, and quickly created wallets do not have this item.</td>
 </tr>
 </tbody></table>
-<h1 id='dd15c4c900'>查看钱包列表</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<h1 id='get-wallet-list'>Get Wallet List</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/eos/wallet_list/?page=1&amp;multi=false"</span><span class="p">,</span> 
@@ -1138,7 +1148,7 @@
 <span class="p">);</span>
 </code></pre>
 <blockquote>
-<p>返回示例</p>
+<p>Response Samples</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
@@ -1157,97 +1167,97 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-6'>HTTP Request</h3>
 <p><code>GET https://testnet.sectoken.io/api/v1/wallet/eos/wallet_list/</code></p>
-<h3 id='1f9ac54b15-6'>请求参数</h3>
+<h3 id='request-parameters-6'>Request Parameters</h3>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>必填</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>page</td>
 <td>integer</td>
-<td>否</td>
-<td>页码,默认显示所有钱包列表</td>
+<td>Optional</td>
+<td>Page number. Default get all addresses.</td>
 </tr>
 <tr>
 <td>multi</td>
 <td>bool</td>
-<td>否</td>
-<td>只查看多用户钱包选项</td>
+<td>Optional</td>
+<td>The multi user wallet filter, if true, will only return multi user wallet list</td>
 </tr>
 </tbody></table>
-<h3 id='70bdef7e25-6'>返回参数</h3>
+<h3 id='response-parameters-6'>Response Parameters</h3>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>code</td>
 <td>integer</td>
-<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+<td>Status code. Successful return 200. Others are <a href="#error-codes">Error Codes</a></td>
 </tr>
 <tr>
 <td>data</td>
 <td>array</td>
-<td>返回内容</td>
+<td>Response data</td>
 </tr>
 </tbody></table>
-<h4 id='data-6'>data 参数</h4>
+<h4 id='data-parameters-6'>Data Parameters</h4>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th style="text-align: left">Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>wallet_id</td>
 <td>string</td>
-<td>钱包的id</td>
+<td style="text-align: left">Wallet id</td>
 </tr>
 <tr>
 <td>wallet_name</td>
 <td>string</td>
-<td>钱包名</td>
+<td style="text-align: left">Wallet name</td>
 </tr>
 <tr>
 <td>account</td>
 <td>string</td>
-<td>钱包地址</td>
+<td style="text-align: left">eos account</td>
 </tr>
 <tr>
 <td>create_time</td>
 <td>string</td>
-<td>钱包创建时间</td>
+<td style="text-align: left">Creation time of wallet</td>
 </tr>
 <tr>
 <td>status</td>
 <td>integer</td>
-<td>钱包状态,只有有multi参数才有此项</td>
+<td style="text-align: left">wallet status, This parameter is only available if multi is True</td>
 </tr>
 <tr>
 <td>multi_type</td>
 <td>string</td>
-<td>多钱类型, 只有有multi参数才有此项</td>
+<td style="text-align: left">wallet multi_type, This parameter is only available if multi is True</td>
 </tr>
 <tr>
 <td>joined</td>
 <td>integer</td>
-<td>已加入人数,只有有multi参数才有此项</td>
+<td style="text-align: left">wallet joined mumber, This parameter is only available if multi is True</td>
 </tr>
 <tr>
 <td>activate_code</td>
 <td>string</td>
-<td>钱包激活码,只有有multi参数才有此项</td>
+<td style="text-align: left">activate_code, This parameter is only available if multi is True and wallet to be activate</td>
 </tr>
 </tbody></table>
-<h1 id='5192238983'>构建交易单</h1><pre class="highlight python tab-python"><code><span class="n">impor</span> <span class="n">requests</span>
+<h1 id='build-transaction'>Build Transaction</h1><pre class="highlight python tab-python"><code><span class="n">impor</span> <span class="n">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/eos/dotx/"</span><span class="p">,</span>
@@ -1291,7 +1301,7 @@
 <span class="p">);</span>
 </code></pre>
 <blockquote>
-<p>返回示例</p>
+<p>Response Samples</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
@@ -1302,95 +1312,95 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-7'>HTTP Request</h3>
 <p><code>POST https://testnet.sectoken.io/api/v1/wallet/eos/dotx/</code></p>
-<h3 id='1f9ac54b15-7'>请求参数</h3>
+<h3 id='request-parameters-7'>Request Parameters</h3>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>必填</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>wallet_id</td>
 <td>string</td>
-<td>是</td>
-<td>钱包id</td>
+<td>Yes</td>
+<td>Wallet id</td>
 </tr>
 <tr>
 <td>outputs</td>
-<td>array</td>
-<td>是</td>
-<td>转账目标及转账金额信息</td>
+<td>string</td>
+<td>Yes</td>
+<td>Destination address.</td>
 </tr>
 <tr>
 <td>coin_type</td>
 <td>string</td>
-<td>否</td>
-<td>币种，默认为eos，可以指定为平台支持的代币,如jungle</td>
+<td>Optional</td>
+<td>Coin type. eos or other  token supported by the platform. Default is &quot;eos&quot;.</td>
 </tr>
 </tbody></table>
-<h3 id='outputs'>Outputs 参数</h3>
+<h3 id='outputs-parameters'>Outputs Parameters</h3>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>必填</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>account</td>
 <td>string</td>
-<td>是</td>
-<td>收款的eos_account</td>
+<td>Yes</td>
+<td>Target eos account</td>
 </tr>
 <tr>
 <td>value</td>
 <td>string</td>
-<td>是</td>
-<td>转账金额</td>
+<td>Yes</td>
+<td>Transfer amount</td>
 </tr>
 </tbody></table>
-<h3 id='70bdef7e25-7'>返回参数</h3>
+<h4 id='response-parameters-7'>Response Parameters</h4>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>code</td>
 <td>integer</td>
-<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+<td>Status code. Successful return 200. Others are <a href="#error-codes">Error Codes</a></td>
 </tr>
 <tr>
 <td>data</td>
 <td>object</td>
-<td>返回内容</td>
+<td>Response data.</td>
 </tr>
 </tbody></table>
-<h4 id='data-7'>data 参数</h4>
+<h4 id='data-parameters-7'>Data Parameters</h4>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>sig_payload</td>
 <td>string</td>
-<td>待签名的字段</td>
+<td>Data for signature.</td>
 </tr>
 <tr>
 <td>privkey</td>
 <td>string</td>
-<td>创建钱包时上传的私钥密文,如果创建钱包时没有上传,则为空</td>
+<td>the string of encrypted privkey,if no this parameter when you created wallet,it&#39;s will be a null string</td>
 </tr>
 </tbody></table>
-<h1 id='8efa5837ff'>获取待签名的交易单</h1><pre class="highlight python tab-python"><code><span class="n">impor</span> <span class="n">requests</span>
+<h1 id='get-unsigned-sig_payload'>Get Unsigned Sig_payload</h1><pre class="highlight python tab-python"><code><span class="n">impor</span> <span class="n">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/eos/unsigned_tx/"</span><span class="p">,</span>
@@ -1428,7 +1438,7 @@
 <span class="p">);</span>
 </code></pre>
 <blockquote>
-<p>返回示例</p>
+<p>Response Simple</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
@@ -1442,83 +1452,83 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-8'>HTTP Request</h3>
 <p><code>POST https://testnet.sectoken.io/api/v1/wallet/eos/unsigned_tx/</code></p>
-<h3 id='1f9ac54b15-8'>请求参数</h3>
+<h3 id='request-parameters-8'>Request Parameters</h3>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>必填</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>wallet_id</td>
 <td>string</td>
-<td>是</td>
-<td>钱包id</td>
+<td>Yes</td>
+<td>wallet id</td>
 </tr>
 <tr>
 <td>order_id</td>
 <td>integer</td>
-<td>是</td>
-<td>未签名交易单的订单号</td>
+<td>Yes</td>
+<td>unsigned tx order id</td>
 </tr>
 </tbody></table>
-<h3 id='70bdef7e25-8'>返回参数</h3>
+<h3 id='response-parameters-8'>Response Parameters</h3>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>code</td>
 <td>integer</td>
-<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+<td>Status code. Successful return 200. Others are <a href="#error-codes">Error Codes</a></td>
 </tr>
 <tr>
 <td>data</td>
 <td>object</td>
-<td>返回内容</td>
+<td>Response data</td>
 </tr>
 </tbody></table>
-<h4 id='data-8'>data 参数</h4>
+<h3 id='data-parameters-8'>Data Parameters</h3>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>sig_payload</td>
 <td>string</td>
-<td>待签名的字段</td>
+<td>unsigned tx</td>
 </tr>
 <tr>
 <td>privkey</td>
 <td>string</td>
-<td>创建钱包时上传的私钥密文,如果创建钱包时没有上传,则为空</td>
+<td>the string of encrypted privkey, if no this parameter when you join wallet,it&#39;s will be a null string</td>
 </tr>
 <tr>
 <td>maker</td>
 <td>string</td>
-<td>构建交易单的成员</td>
+<td>the transfer maker</td>
 </tr>
 <tr>
 <td>value</td>
 <td>string</td>
-<td>交易金额</td>
+<td>transfer amout</td>
 </tr>
 <tr>
 <td>coin</td>
 <td>string</td>
-<td>交易币种</td>
+<td>transfer coin type</td>
 </tr>
 </tbody></table>
-<h1 id='d51b06a0fe'>提交签名信息</h1>
-<p>用户在本地对交易单进行签名，并将签名后的数据提交Sectoken，Sectoken对签名进行验证后，将交易广播到区块链上</p>
+<h1 id='submit-signature'>Submit Signature</h1>
+<p>Submit the signature result for the transaction id, and if the signature number is valid and reaches the broadcast limit, the transaction will be broadcast to the blockchain</p>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
@@ -1560,7 +1570,7 @@
 <span class="p">);</span>
 </code></pre>
 <blockquote>
-<p>返回示例</p>
+<p>Response Samples</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
@@ -1571,74 +1581,74 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-9'>HTTP Request</h3>
 <p><code>POST https://testnet.sectoken.io/api/v1/wallet/eos/send/</code></p>
-<h3 id='1f9ac54b15-9'>请求参数</h3>
+<h3 id='request-parameters-9'>Request Parameters</h3>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>必填</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>wallet_id</td>
 <td>string</td>
-<td>是</td>
-<td>钱包id</td>
+<td>Yes</td>
+<td>Wallet id</td>
 </tr>
 <tr>
 <td>order_id</td>
 <td>integer</td>
-<td>是</td>
-<td>已签名交易单的order id</td>
+<td>Yes</td>
+<td>Data for signature&#39;s order_id</td>
 </tr>
 <tr>
 <td>signature</td>
 <td>string</td>
-<td>是</td>
-<td>签名结果</td>
+<td>Yes</td>
+<td>Signature</td>
 </tr>
 </tbody></table>
-<h3 id='70bdef7e25-9'>返回参数</h3>
+<h3 id='response-parameters-9'>Response Parameters</h3>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>code</td>
 <td>integer</td>
-<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+<td>Status code. Successful return 200. Others are <a href="#error-codes">Error Codes</a></td>
 </tr>
 <tr>
 <td>data</td>
 <td>object</td>
-<td>返回内容</td>
+<td>Response data.</td>
 </tr>
 </tbody></table>
-<h4 id='data-9'>data 参数</h4>
+<h4 id='data-parameters-9'>Data Parameters</h4>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>is_sent</td>
 <td>bool</td>
-<td>是否广播。如果签名数量未达到广播限制，说明未最终签名成功，返回false，否则返回true。</td>
+<td>Wheoser to broadcast.If the number of signatures does not reach the broadcast limit, it indicates that the final signature was not successful. Otherwise, it returns true.</td>
 </tr>
 <tr>
 <td>txid</td>
 <td>string</td>
-<td>交易单的txid,可以在区块浏览器上进行查找</td>
+<td>Transaction id</td>
 </tr>
 </tbody></table>
-<h1 id='c03ba17d08'>获取代币列表</h1>
-<p>获取平台支持的 token列表</p>
+<h1 id='get-token-list'>Get  Token List</h1>
+<p>Get a list of  tokens supported by the platform.</p>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
@@ -1665,56 +1675,58 @@
 <span class="p">);</span>
 </code></pre>
 <blockquote>
-<p>返回示例</p>
+<p>Response Samples</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JUNGLE"</span><span class="p">,</span><span class="w"> </span><span class="s2">"contract_account"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eosio.token"</span><span class="p">,</span><span class="w"> </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">},</span><span class="w"> 
+        </span><span class="p">{</span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JUNGLE"</span><span class="p">,</span><span class="w"> </span><span class="s2">"contract_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eosio.token"</span><span class="p">,</span><span class="w"> </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">},</span><span class="w"> 
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-10'>HTTP Request</h3>
 <p><code>GET https://testnet.sectoken.io/api/v1/wallet/eos/coin_types/</code></p>
-<h3 id='dcedc889dd'>无请求参数</h3><h3 id='70bdef7e25-10'>返回参数</h3>
+<h3 id='no-request-parameters'>No Request Parameters</h3><h3 id='response-parameters-10'>Response Parameters</h3>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>code</td>
 <td>integer</td>
-<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+<td>Status code. Successful return 200. Others are <a href="#error-codes">Error Codes</a></td>
 </tr>
 <tr>
 <td>data</td>
 <td>array</td>
-<td>返回内容</td>
+<td>Response data.</td>
 </tr>
 </tbody></table>
-<h4 id='data-10'>data 参数</h4>
+<h4 id='data-parameters-10'>Data Parameters</h4>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>coin_type</td>
 <td>string</td>
-<td>币种</td>
+<td>Coin type</td>
 </tr>
 <tr>
 <td>decimal</td>
 <td>integer</td>
-<td>精度</td>
+<td>Coin decimal</td>
 </tr>
 </tbody></table>
-<h1 id='webhook'>新增钱包WebHook</h1>
-<p>添加 一个 webhook, 当触发指定类型的事件的时候,Sectoken 将会向指定的URL发送一条请求信息，每个钱包最多绑定10条webhook</p>
+<h1 id='add-wallet-webhook'>Add Wallet WebHook</h1>
+<p>Add a webhook that will result in an HTTP callback at the specified URL from Sectoken when events are triggered.</p>
+
+<p>There is a limit of 10 webhooks per wallet.</p>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
@@ -1764,7 +1776,7 @@
 <span class="p">);</span>
 </code></pre>
 <blockquote>
-<p>返回示例</p>
+<p>Response Samples</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
@@ -1774,53 +1786,53 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-11'>HTTP Request</h3>
 <p><code>POST https://testnet.sectoken.io/api/v1/wallet/eos/webhook_add/</code></p>
-<h3 id='1f9ac54b15-10'>请求参数</h3>
+<h3 id='request-parameters-10'>Request Parameters</h3>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>必填</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>wallet_id</td>
 <td>string</td>
-<td>是</td>
-<td>钱包id</td>
+<td>Yes</td>
+<td>Wallet id</td>
 </tr>
 <tr>
 <td>url</td>
 <td>string</td>
-<td>是</td>
-<td>接受通知的url地址, 必须使用HTTP或者HTTPS协议</td>
+<td>Yes</td>
+<td>URL to fire the webhook to, the protocol must be HTTP or HTTPS</td>
 </tr>
 <tr>
 <td>type</td>
 <td>string</td>
-<td>是</td>
-<td>交易类型, deposit or withdraw</td>
+<td>Yes</td>
+<td>Transfer status. Transfer status, deposit or withdraw</td>
 </tr>
 <tr>
 <td>label</td>
 <td>string</td>
-<td>否</td>
-<td>webhook 的标签</td>
+<td>Optional</td>
+<td>Label of the new webhook</td>
 </tr>
 <tr>
 <td>token</td>
 <td>string</td>
-<td>否</td>
-<td>默认为 eos</td>
+<td>Optional</td>
+<td>erc20_usdt,erc20_usdt, default eos</td>
 </tr>
 <tr>
 <td>secret_key</td>
 <td>string</td>
-<td>否</td>
-<td>callback密钥，如果添加，callback时会通过此密钥进行加密</td>
+<td>Optional</td>
+<td>The callback key, if added, will be used for encryption during callback.</td>
 </tr>
 </tbody></table>
-<h3 id='70bdef7e25-11'>返回参数</h3>
+<h3 id='response-parameters-11'>Response Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter Name</th>
@@ -1831,15 +1843,15 @@
 <tr>
 <td>code</td>
 <td>integer</td>
-<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+<td>Status code. Successful return 200. Others are <a href="#error-codes">Error Codes</a></td>
 </tr>
 <tr>
 <td>data</td>
 <td>object</td>
-<td>返回内容</td>
+<td>Response data.</td>
 </tr>
 </tbody></table>
-<h4 id='data-11'>Data 参数</h4>
+<h4 id='data-parameters-11'>Data Parameters</h4>
 <table><thead>
 <tr>
 <th>Parameter Name</th>
@@ -1853,8 +1865,8 @@
 <td>callback id</td>
 </tr>
 </tbody></table>
-<h1 id='webhook-2'>获取钱包WebHook</h1>
-<p>获取钱包的Webhook设置列表</p>
+<h1 id='list-wallet-webhook'>List Wallet WebHook</h1>
+<p>List webhooks set up on the wallet</p>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
@@ -1880,7 +1892,7 @@
 <span class="p">);</span>
 </code></pre>
 <blockquote>
-<p>返回示例</p>
+<p>Response Samples</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
@@ -1889,7 +1901,7 @@
             </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test callback"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://your.server.com/webhook"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deposit"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jungle"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"erc20_ht"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"callbackid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"da0e3f3530cb7f63695d8eaad351fdc1"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your wallet id"</span><span class="w">
             </span><span class="s2">"create_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-31T19:54:22.977"</span><span class="w">
@@ -1898,68 +1910,68 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-12'>HTTP Request</h3>
 <p><code>GET https://testnet.sectoken.io/api/v1/wallet/eos/webhook_list/</code></p>
-<h3 id='1f9ac54b15-11'>请求参数</h3>
+<h3 id='request-parameters-11'>Request Parameters</h3>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>必填</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>wallet_id</td>
 <td>string</td>
-<td>是</td>
-<td>钱包ID</td>
+<td>Yes</td>
+<td>Wallet id</td>
 </tr>
 </tbody></table>
-<h3 id='response-parameters'>Response Parameters</h3>
+<h3 id='response-parameters-12'>Response Parameters</h3>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>code</td>
 <td>integer</td>
-<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+<td>Status code. Successful return 200. Others are <a href="#error-codes">Error Codes</a></td>
 </tr>
 <tr>
 <td>data</td>
 <td>array</td>
-<td>返回内容</td>
+<td>Response data.</td>
 </tr>
 </tbody></table>
-<h4 id='data-12'>Data参数</h4>
+<h4 id='data-parameters-12'>Data Parameters</h4>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>label</td>
 <td>string</td>
-<td>webhook的标签</td>
+<td>label of the webhook</td>
 </tr>
 <tr>
 <td>url</td>
 <td>string</td>
-<td>回调的URL</td>
+<td>URL to fire the webhook to</td>
 </tr>
 <tr>
 <td>type</td>
 <td>string</td>
-<td>交易单状态, deposit 或 withdraw</td>
+<td>Transfer status, deposit or withdraw</td>
 </tr>
 <tr>
 <td>token</td>
 <td>string</td>
-<td>eos代币名称</td>
+<td>erc20 token name or eos</td>
 </tr>
 <tr>
 <td>callbackid</td>
@@ -1969,16 +1981,16 @@
 <tr>
 <td>wallet_id</td>
 <td>string</td>
-<td>钱包ID</td>
+<td>Wallet id</td>
 </tr>
 <tr>
 <td>create_time</td>
 <td>string</td>
-<td>创建时间</td>
+<td>Create Timestamp</td>
 </tr>
 </tbody></table>
-<h1 id='webhook-3'>删除钱包WebHook</h1>
-<p>删除钱包的Webhook</p>
+<h1 id='delete-wallet-webhook'>Delete Wallet WebHook</h1>
+<p>Del a webhook.</p>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
@@ -2012,14 +2024,14 @@
 <span class="p">);</span>
 </code></pre>
 <blockquote>
-<p>返回示例</p>
+<p>Response Samples</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-13'>HTTP Request</h3>
 <p><code>POST https://testnet.sectoken.io/api/v1/wallet/eos/webhook_del/</code></p>
-<h3 id='1f9ac54b15-12'>请求参数</h3>
+<h3 id='request-parameters-12'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter Name</th>
@@ -2035,7 +2047,7 @@
 <td>callback id</td>
 </tr>
 </tbody></table>
-<h3 id='70bdef7e25-12'>返回参数</h3>
+<h3 id='response-parameters-13'>Response Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter Name</th>
@@ -2049,13 +2061,13 @@
 <td>Status code. Successful return 200. Others are <a href="#error-codes">Error Codes</a></td>
 </tr>
 </tbody></table>
-<h1 id='callback'>交易Callback通知</h1>
-<p>当用户钱包发生交易时，会向指定的url发送HTTP POST请求，请求头content-type为application/json。</p>
+<h1 id='transaction-callback'>Transaction Callback</h1>
+<p>After making a transfer， Sectoken will make a POST request to a url specified by the user,A service designed by yourself should be bind to the url to deal with the request.Need to add the wallet Webhook first.</p>
 
-<p>此url由用户指定，用户须部署服务接收HTTP POST请求。同时需先添加钱包Webhook</p>
+<p>The content-type header of the request is application/json.</p>
 
 <blockquote>
-<p>请求body示例</p>
+<p>request body</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="err">Deposit</span><span class="w"> </span><span class="err">Example</span><span class="p">:</span><span class="w">
 </span><span class="p">{</span><span class="w">
@@ -2086,67 +2098,71 @@
     </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
     </span><span class="s2">"callbackid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fa5dc2025e79c37b8656ef4b89619d9d"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-
-</span></code></pre><h3 id='1f233418ae'>参数说明</h3>
+</span></code></pre><h3 id='parameters-descriptions'>Parameters descriptions</h3>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>wallet_id</td>
 <td>string</td>
-<td>用户钱包id</td>
+<td>wallet_id</td>
 </tr>
 <tr>
 <td>txid</td>
 <td>string</td>
-<td>交易id</td>
+<td>Transaction id</td>
 </tr>
 <tr>
 <td>height</td>
 <td>integer</td>
-<td>交易所在区块高度</td>
+<td>Block height</td>
 </tr>
 <tr>
 <td>dst_account</td>
 <td>string</td>
-<td>交易目的eos account</td>
+<td>Destination account</td>
 </tr>
 <tr>
 <td>src_account</td>
 <td>string</td>
-<td>交易来源 eos account</td>
+<td>Source account</td>
 </tr>
 <tr>
 <td>type</td>
 <td>string</td>
-<td>交易状态，withdraw 转出 deposit收款</td>
+<td>Transfer status, deposit or withdraw</td>
 </tr>
 <tr>
 <td>timestamp</td>
 <td>integer</td>
-<td>交易时间戳</td>
+<td>Block confirmation time</td>
 </tr>
 <tr>
 <td>value</td>
 <td>string</td>
-<td>交易金额</td>
+<td>Transfer amount</td>
 </tr>
 <tr>
 <td>coin_type</td>
 <td>string</td>
-<td>币种类型</td>
+<td>coin type</td>
 </tr>
 <tr>
 <td>decimal</td>
 <td>integer</td>
-<td>精度</td>
+<td>Coin balance decimal places</td>
+</tr>
+<tr>
+<td>callbackid</td>
+<td>string</td>
+<td>Callback id</td>
 </tr>
 </tbody></table>
-<h1 id='c284998822'>获取交易记录</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<h1 id='get-transaction-records'>Get Transaction Records</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/flow/record/eos/"</span><span class="p">,</span> 
             <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span> 
@@ -2173,9 +2189,10 @@
 <span class="p">);</span>
 </code></pre>
 <blockquote>
-<p>返回示例</p>
+<p>Response Samples</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+ </span><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> 
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
@@ -2193,200 +2210,205 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-14'>HTTP Request</h3>
 <p><code>GET https://testnet.sectoken.io/flow/record/eos/</code></p>
-<h3 id='1f9ac54b15-13'>请求参数</h3>
+<h3 id='request-parameters-13'>Request Parameters</h3>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>必填</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>wallet_id</td>
 <td>string</td>
-<td>是</td>
-<td>钱包id</td>
+<td>Yes</td>
+<td>wallet_id</td>
 </tr>
 <tr>
 <td>year</td>
 <td>string</td>
-<td>是</td>
-<td>年份</td>
+<td>Yes</td>
+<td>year</td>
 </tr>
 <tr>
 <td>month</td>
 <td>string</td>
-<td>是</td>
-<td>月份</td>
+<td>Yes</td>
+<td>month</td>
 </tr>
 <tr>
 <td>day</td>
 <td>string</td>
-<td>否</td>
-<td>日期</td>
+<td>Optional</td>
+<td>day</td>
 </tr>
 </tbody></table>
-<h3 id='70bdef7e25-13'>返回参数</h3>
+<h3 id='response-parameters-14'>Response Parameters</h3>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>code</td>
 <td>integer</td>
-<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+<td>Status code. Successful return 200. Others are <a href="#error-codes">Error Codes</a></td>
 </tr>
 <tr>
 <td>data</td>
 <td>array</td>
-<td>返回内容</td>
+<td>Response data</td>
 </tr>
 </tbody></table>
-<h4 id='data-13'>data 参数</h4>
+<h4 id='data-parameters-13'>Data Parameters</h4>
 <table><thead>
 <tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>说明</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>txid</td>
 <td>string</td>
-<td>交易单id</td>
+<td>Transaction id</td>
 </tr>
 <tr>
 <td>src_account</td>
 <td>string</td>
-<td>交易来源地址</td>
+<td>Transaction source address</td>
 </tr>
 <tr>
 <td>det_account</td>
 <td>string</td>
-<td>交易目的地址</td>
+<td>Transaction destination address</td>
 </tr>
 <tr>
 <td>value</td>
 <td>string</td>
-<td>交易金额</td>
+<td>Transfer amount</td>
 </tr>
 <tr>
 <td>timestamp</td>
 <td>integer</td>
-<td>交易时间</td>
+<td>Transfer time</td>
 </tr>
 <tr>
 <td>type</td>
 <td>string</td>
-<td>交易状态，withdraw 转出 deposit收款</td>
+<td>Transfer status, deposit or withdraw</td>
 </tr>
 <tr>
 <td>height</td>
 <td>integer</td>
-<td>交易区块高度</td>
+<td>Block height</td>
 </tr>
 <tr>
 <td>decimal</td>
 <td>integer</td>
-<td>精度</td>
+<td>Coin balance decimal places</td>
+</tr>
+<tr>
+<td>coin_type</td>
+<td>string</td>
+<td>Coin Types erc20 token name or eos</td>
 </tr>
 </tbody></table>
-<h1 id='e08c1d4f9a'>错误码</h1>
-<p>当发生错误时返回的错误码</p>
+<h1 id='error-codes'>Error Codes</h1>
+<p>The error code returned when an error occurs</p>
 
 <table><thead>
 <tr>
-<th>错误码</th>
-<th>错误说明</th>
+<th>Error code</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>4000</td>
-<td>请求参数错误</td>
+<td>Invalid params</td>
 </tr>
 <tr>
 <td>5000</td>
-<td>未知错误, 请联系Sectoken</td>
+<td>Unknown error, Please contact Sectoken.</td>
 </tr>
 <tr>
 <td>4201</td>
-<td>钱包不存在</td>
+<td>Wallet not exist</td>
 </tr>
 <tr>
 <td>4202</td>
-<td>钱包冻结中</td>
+<td>Wallet frozen</td>
 </tr>
 <tr>
 <td>4204</td>
-<td>钱包余额不足</td>
+<td>Wallet insufficient balance</td>
 </tr>
 <tr>
 <td>4209</td>
-<td>钱包激活码错误</td>
+<td>Activate code error</td>
 </tr>
 <tr>
 <td>4210</td>
-<td>钱包Webhook数目超限</td>
+<td>The number of webhook reaches an upper limit</td>
 </tr>
 <tr>
 <td>4401</td>
-<td>非法操作</td>
+<td>Illegal operation</td>
 </tr>
 <tr>
 <td>4402</td>
-<td>此钱包不存在</td>
+<td>The wallet not exists</td>
 </tr>
 <tr>
 <td>4403</td>
-<td>钱包个数达到上限</td>
+<td>The number of wallets reached the limit</td>
 </tr>
 <tr>
 <td>4404</td>
-<td>用户权限不足</td>
+<td>No operation permissions</td>
 </tr>
 <tr>
 <td>4503</td>
-<td>不能转账给钱包自己</td>
+<td>Can&#39;t transfer funds to yourself</td>
 </tr>
 <tr>
 <td>4504</td>
-<td>签名错误</td>
+<td>Signature error</td>
 </tr>
 <tr>
 <td>4506</td>
-<td>无效公钥</td>
+<td>Invalid public key</td>
 </tr>
 <tr>
 <td>4507</td>
-<td>私钥密文必须base64</td>
+<td>Private Key Must be base64 format</td>
 </tr>
 <tr>
 <td>4508</td>
-<td>Webhook不存在</td>
+<td>Webhook not exist</td>
 </tr>
 <tr>
 <td>4512</td>
-<td>无法广播已经广播过的交易单</td>
+<td>Can not send already sent transaction</td>
 </tr>
 <tr>
 <td>4601</td>
-<td>当前用户没有费用地址</td>
+<td>There is no fee address for the current account</td>
 </tr>
 <tr>
 <td>4602</td>
-<td>费用地址余额不足</td>
+<td>Fee addr insufficient balance</td>
 </tr>
 <tr>
 <td>4605</td>
-<td>不支持的代币</td>
+<td>ERC20 Token not suport</td>
 </tr>
 <tr>
 <td>4606</td>
-<td>未确认的交易过多</td>
+<td>Too many unconfirmed transactions</td>
 </tr>
 </tbody></table>
 

@@ -525,7 +525,7 @@
 
 <span class="nx">request</span><span class="p">({</span>
     <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/api/v1/wallet/eos/create/'</span><span class="p">,</span>
-    <span class="na">meosod</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
+    <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
         <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
@@ -553,7 +553,7 @@
         </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"activate_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"712968"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"server_pubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xpub6AZMDpGgTSsnXRfapb7wm3fMppz38ayMmHePm7A27noBxiiBV7YzPqX71dZMgHkRQZWSC2WK2dXQs6tGBqqXvo3TTUWW6BmSNucv5iVRDfa"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sig_payload"</span><span class="p">:</span><span class="s2">"cab5eb3962e88056dedbc96c4389bd26b20bb2ac3b044f80fd477ad942ca8661"</span><span class="w">
+        </span><span class="s2">"sig_payload"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cab5eb3962e88056dedbc96c4389bd26b20bb2ac3b044f80fd477ad942ca8661"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request'>HTTP Request</h3>
@@ -577,7 +577,7 @@
 <td>privkeys</td>
 <td>array</td>
 <td>否</td>
-<td>私钥列表</td>
+<td>私钥列表,私钥必须为base64格式</td>
 </tr>
 <tr>
 <td>wallet_name</td>
@@ -652,8 +652,8 @@
             <span class="s">"account"</span><span class="p">:</span><span class="s">"sectoken1114"</span><span class="p">,</span>
             <span class="s">"pubkeys"</span><span class="p">:</span><span class="s">"02d654b7b6829df777a32267d366b4c24fd30fc1a61d816e043104edd198678e52"</span><span class="p">,</span> 
             <span class="s">"privkeys"</span><span class="p">:</span> <span class="s">"your encrypted privkey"</span><span class="p">,</span>
-            <span class="s">"threshold"</span><span class="p">:</span><span class="s">"2"</span><span class="p">,</span>
-            <span class="s">"limit"</span><span class="p">:</span><span class="s">"2"</span><span class="p">,</span>
+            <span class="s">"threshold"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="s">"limit"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
             <span class="s">"control"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
             <span class="s">"wallet_name"</span><span class="p">:</span> <span class="s">"EosTestWallet"</span><span class="p">,</span>
             <span class="s">"multi"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -667,8 +667,8 @@
         "account":"sectoken1114",
         "pubkeys":"02d654b7b6829df777a32267d366b4c24fd30fc1a61d816e043104edd198678e52", 
         "privkeys": "your encrypted privkey",
-        "threshold":"2",
-        "limit":"2",
+        "threshold": 2,
+        "limit": 2,
         "control": 1,
         "wallet_name": "EosTestWallet",
         "multi": 0,
@@ -677,17 +677,17 @@
 
 <span class="nx">request</span><span class="p">({</span>
     <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/api/v1/wallet/eos/share_create/'</span><span class="p">,</span>
-    <span class="na">meosod</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
+    <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
         <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-        <span class="s2">"account"</span><span class="p">:</span><span class="s2">"sectoken1114"</span><span class="p">,</span>
-        <span class="s2">"pubkeys"</span><span class="p">:</span><span class="s2">"02d654b7b6829df777a32267d366b4c24fd30fc1a61d816e043104edd198678e52"</span><span class="p">,</span> 
-        <span class="s2">"privkeys"</span><span class="p">:</span> <span class="s2">"your encrypted privkey"</span><span class="p">,</span>
-        <span class="s2">"threshold"</span><span class="p">:</span><span class="s2">"2"</span><span class="p">,</span>
-        <span class="s2">"limit"</span><span class="p">:</span><span class="s2">"2"</span><span class="p">,</span>
+        <span class="s2">"account"</span><span class="p">:</span> <span class="s2">"sectoken1114"</span><span class="p">,</span>
+        <span class="s2">"pubkey"</span><span class="p">:</span> <span class="s2">"02d654b7b6829df777a32267d366b4c24fd30fc1a61d816e043104edd198678e52"</span><span class="p">,</span> 
+        <span class="s2">"privkey"</span><span class="p">:</span> <span class="s2">"your encrypted privkey"</span><span class="p">,</span>
+        <span class="s2">"threshold"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">"limit"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
         <span class="s2">"control"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"wallet_name"</span><span class="p">:</span> <span class="s2">"EosTestWallet"</span><span class="p">,</span>
         <span class="s2">"multi"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -724,7 +724,7 @@
 <td>privkey</td>
 <td>string</td>
 <td>否</td>
-<td>私钥</td>
+<td>私钥，必须为base64格式</td>
 </tr>
 <tr>
 <td>wallet_name</td>
@@ -822,7 +822,7 @@
 
 <span class="nx">request</span><span class="p">({</span>
         <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/api/v1/wallet/eos/join_wallet/'</span><span class="p">,</span>
-        <span class="na">meosod</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
             <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
             <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
@@ -944,7 +944,7 @@
 
 <span class="nx">request</span><span class="p">({</span>
         <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/api/v1/wallet/eos/activate/'</span><span class="p">,</span>
-        <span class="na">meosod</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
             <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
             <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
@@ -1048,7 +1048,7 @@
 
 <span class="nx">request</span><span class="p">({</span>
         <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/api/v1/wallet/eos/detail/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07&amp;coin_type=eos'</span><span class="p">,</span>
-        <span class="na">meosod</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
             <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
             <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
@@ -1219,7 +1219,7 @@
 
 <span class="nx">request</span><span class="p">({</span>
         <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/eos/wallet_list/?page=1&amp;multi=false"</span><span class="p">,</span>
-        <span class="na">meosod</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
             <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
             <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
@@ -1265,7 +1265,7 @@
 <td>multi</td>
 <td>bool</td>
 <td>否</td>
-<td>只查看多用户钱包选项</td>
+<td>只查看多用户钱包。默认false，只查看2-3单用户多签钱包。</td>
 </tr>
 </tbody></table>
 <h3 id='70bdef7e25-6'>返回参数</h3>
@@ -1355,7 +1355,7 @@
 
 <span class="nx">request</span><span class="p">({</span>
     <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/api/v1/wallet/eos/dotx/'</span><span class="p">,</span>
-    <span class="na">meosod</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
+    <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
         <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
@@ -1495,7 +1495,7 @@
 
 <span class="nx">request</span><span class="p">({</span>
     <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/api/v1/wallet/eos/unsigned_tx/'</span><span class="p">,</span>
-    <span class="na">meosod</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
+    <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
         <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
@@ -1623,7 +1623,7 @@
 
 <span class="nx">request</span><span class="p">({</span>
     <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/api/v1/wallet/eos/send/'</span><span class="p">,</span>
-    <span class="na">meosod</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
+    <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
         <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
@@ -1718,11 +1718,8 @@
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/eos/coin_list/"</span><span class="p">,</span> 
-
     <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">}</span>
-
     <span class="p">)</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/eos/coin_list/"</span> <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span>
@@ -1730,7 +1727,7 @@
 
 <span class="nx">request</span><span class="p">({</span>
         <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/api/v1/wallet/eos/coin_list/'</span><span class="p">,</span>
-        <span class="na">meosod</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
             <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
             <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
@@ -1800,7 +1797,7 @@
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
         <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"788da6819ec461dd99accdeffc1831e4"</span><span class="p">,</span>
         <span class="s">"url"</span><span class="p">:</span> <span class="s">"https://your_webhook_server.com/"</span><span class="p">,</span> 
-        <span class="s">"label"</span><span class="p">:</span> <span class="s">"Receipt"</span><span class="p">,</span> 
+        <span class="s">"label"</span><span class="p">:</span> <span class="s">"testwebhook"</span><span class="p">,</span> 
         <span class="s">"event_type"</span><span class="p">:</span> <span class="s">"withdraw"</span><span class="p">,</span> 
         <span class="s">"coin_type"</span><span class="p">:</span> <span class="s">"eos"</span><span class="p">,</span>
         <span class="s">"secret_key"</span><span class="p">:</span><span class="s">"abc123"</span>
@@ -1814,7 +1811,7 @@
     -d  <span class="s1">'{
             "wallet_id": "788da6819ec461dd99accdeffc1831e4",
             "url": "https://your_webhook_server.com/", 
-            "label": "Receipt", 
+            "label": "testwebhook", 
             "event_type": "withdraw", 
             "coin_type": "eos",
             "secret_key":"abc123"
@@ -1823,7 +1820,7 @@
 
 <span class="nx">request</span><span class="p">({</span>
     <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/api/v1/wallet/webhook/add/'</span><span class="p">,</span>
-    <span class="na">meosod</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
+    <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
         <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
@@ -1831,7 +1828,7 @@
     <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
         <span class="s2">"wallet_id"</span><span class="p">:</span> <span class="s2">"788da6819ec461dd99accdeffc1831e4"</span><span class="p">,</span>
         <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://your_webhook_server.com/"</span><span class="p">,</span> 
-        <span class="s2">"label"</span><span class="p">:</span> <span class="s2">"Receipt"</span><span class="p">,</span> 
+        <span class="s2">"label"</span><span class="p">:</span> <span class="s2">"testwebhook"</span><span class="p">,</span> 
         <span class="s2">"event_type"</span><span class="p">:</span> <span class="s2">"withdraw"</span><span class="p">,</span> 
         <span class="s2">"coin_type"</span><span class="p">:</span> <span class="s2">"eos"</span><span class="p">,</span>
         <span class="s2">"secret_key"</span><span class="p">:</span><span class="s2">"abc123"</span>
@@ -1871,7 +1868,7 @@
 <td>接受通知的url地址, 必须使用HTTP或者HTTPS协议</td>
 </tr>
 <tr>
-<td>coin</td>
+<td>coin_type</td>
 <td>string</td>
 <td>是</td>
 <td>要添加的币种</td>
@@ -1943,7 +1940,7 @@
 
 <span class="nx">request</span><span class="p">({</span>
     <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/api/v1/wallet/webhook/list/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07'</span><span class="p">,</span>
-    <span class="na">meosod</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
+    <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
         <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
@@ -1957,10 +1954,10 @@
   </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tasdfda"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tastwebhook"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://testnet.sectoken.io/"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"withdraw"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xrp"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eos"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"secret_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
       </span><span class="s2">"webhook_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"073c0372a955c14f49fd88e499fbae2e"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="w">
@@ -2056,12 +2053,12 @@
     -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
-    -d  <span class="s1">'{ "webhook_id": "073c0372a955c14f49fd88e499fbae2e",}'</span>
+    -d  <span class="s1">'{"webhook_id": "073c0372a955c14f49fd88e499fbae2e"}'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
     <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/api/v1/wallet/eos/del/'</span><span class="p">,</span>
-    <span class="na">meosod</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
+    <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
         <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
@@ -2465,7 +2462,7 @@
 
 <span class="nx">request</span><span class="p">({</span>
         <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/flow/record/eos/?wallet_id=788da6819ec461dd99accdeffc1831e4&amp;&amp;year=2019&amp;&amp;month=12'</span><span class="p">,</span>
-        <span class="na">meosod</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
             <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
             <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>

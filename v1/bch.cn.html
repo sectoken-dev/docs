@@ -1723,7 +1723,8 @@
           </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9998626"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2003170000027038</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w"> 
 </span></code></pre><h3 id='http-request-11'>HTTP Request</h3>
@@ -1837,6 +1838,11 @@
 <td>string</td>
 <td>创建钱包时上传的私钥密文</td>
 </tr>
+<tr>
+<td>fee</td>
+<td>int</td>
+<td>矿工费</td>
+</tr>
 </tbody></table>
 <h1 id='8efa5837ff'>获取待签名的交易单</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
@@ -1892,7 +1898,7 @@
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-12'>HTTP Request</h3>
-<p><code>POST https://testnet.sectoken.io/api/v1/wallet/bch/unsigned_tx/</code></p>
+<p><code>GET https://testnet.sectoken.io/api/v1/wallet/bch/unsigned_tx/</code></p>
 <h3 id='1f9ac54b15-12'>请求参数</h3>
 <table><thead>
 <tr>
@@ -2107,7 +2113,7 @@
             "url": "https://your_webhook_server.com/", 
             "label": "Receipt", 
             "type": "withdraw", 
-            '</span>coin_type<span class="s1">': "bch",
+            "coin_type": "bch",
             "secret_key":"abc123"
     }'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>

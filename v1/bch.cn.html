@@ -390,9 +390,6 @@
                     <a href="#1f9ac54b15-12" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
                   </li>
                   <li>
-                    <a href="#outputs-2" class="toc-h2 toc-link" data-title="outputs 参数">outputs 参数</a>
-                  </li>
-                  <li>
                     <a href="#70bdef7e25-12" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
                   </li>
               </ul>
@@ -688,10 +685,10 @@
             <span class="s">"wallet_name"</span><span class="p">:</span> <span class="s">"BCHTestWallet"</span><span class="p">,</span>
     <span class="p">}</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/share_create/"</span>
-    -H <span class="s2">"HMAC:your token"</span>
-    -H <span class="s2">"Content-Type:application/json"</span>
-    -X POST
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/share_create/"</span> <span class="se">\</span>
+    -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
+    -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+    -X POST <span class="se">\</span>
     -d <span class="s1">'{   
         "pubkey":"02d654b7b6829df777a32267d366b4c24fd30fc1a61d816e043104edd198678e52", 
         "privkey": "your encrypted privkey",
@@ -774,6 +771,12 @@
 <td>integer</td>
 <td>是</td>
 <td>0:平台参与签名; 1:平台不参与签名</td>
+</tr>
+<tr>
+<td>multi</td>
+<td>integer</td>
+<td>否</td>
+<td>1:允许单用户提供多个公钥，默认为0</td>
 </tr>
 </tbody></table>
 <h3 id='70bdef7e25-2'>返回参数</h3>
@@ -922,7 +925,7 @@
 <tr>
 <td>server_pubkey</td>
 <td>string</td>
-<td>Xpubkey，只有达到创建条件后此项不为空，其他情况下为空字符串</td>
+<td>Xpubkey，只有达到创建条件后此项不为空，其他情况下为空字符串，user_control=1时此参数为空字符串</td>
 </tr>
 </tbody></table>
 <h1 id='c2eb9677a0'>激活钱包</h1>
@@ -1206,8 +1209,6 @@
       </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bbd3dd9bcfb68aa6737daeabac9b111e"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bchtest:pq5swaa5x0k43gxtczeastt00rekstv4qq76qkdmv8"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"create_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-12-13"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"joined"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"To be Activated"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"activated_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"124673"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
@@ -1282,16 +1283,6 @@
 <td>create_time</td>
 <td>string</td>
 <td>钱包创建时间</td>
-</tr>
-<tr>
-<td>status</td>
-<td>string</td>
-<td>当前的钱包状态</td>
-</tr>
-<tr>
-<td>joined</td>
-<td>integer</td>
-<td>已加入的用户个数</td>
 </tr>
 <tr>
 <td>activate_code</td>
@@ -1849,33 +1840,24 @@
 </tbody></table>
 <h1 id='8efa5837ff'>获取待签名的交易单</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/bch/unsigned_tx/"</span><span class="p">,</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/bch/unsigned_tx/"</span><span class="p">,</span>
     <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
         <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
-        <span class="s">"order_id"</span><span class="p">:</span>  <span class="s">"20031000071574"</span>
+        <span class="s">"order_id"</span><span class="p">:</span>  <span class="mi">20031000071574</span>
     <span class="p">}</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/dotx/"</span> <span class="se">\</span>
-    -X POST <span class="se">\</span>
-    -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
-    -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
-    -d <span class="s1">'{
-            "wallet_id": "cf761ad1b6c5f30a1557d942cb557b07", 
-            "order_id": "20031000071574"
-</span></code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/unsigned_tx/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07&amp;order_id=20031000071574"</span> <span class="se">\</span>
+    -H <span class="s2">"HMAC:your token"</span> 
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
-        <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/api/v1/wallet/bch/dotx/'</span><span class="p">,</span>
-        <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/api/v1/wallet/bch/unsigned_tx/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07&amp;order_id=20031000071574'</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
             <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
             <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
-        <span class="p">},</span>
-        <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-            <span class="s2">"wallet_id"</span><span class="p">:</span> <span class="s2">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
-            <span class="s2">"order_id"</span><span class="p">:</span>  <span class="s2">"20031000071574"</span>
-        <span class="p">})</span>
+        <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">);</span>
 </code></pre>
@@ -1888,7 +1870,8 @@
         </span><span class="s2">"unsigned_tx"</span><span class="p">:{</span><span class="w">
             </span><span class="s2">"inputs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"output"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5723324415edefe13668e18cf6e93dea786f629ec841a24bb31303e87ddf0a79:0"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5723324415edefe13668e18cf6e93dea786f629ec841a24bb31303e87ddf0a79"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"index"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="w">
                 </span><span class="p">}</span><span class="w">
             </span><span class="p">],</span><span class="w">
@@ -1897,18 +1880,15 @@
             </span><span class="p">],</span><span class="w">
             </span><span class="s2">"outputs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2MwEzXjhj4DtCG6HaUmqBxKzsLCYhac3fGe"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bchtest:qzg9q2x3mfqjq4c35qfvavwq59q6r4qulgvstwzqxa"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2N5GboAcCUbyGVe5og6EPT1RrQYc2ST1UQA"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8785"</span><span class="w">
                 </span><span class="p">}</span><span class="w">
             </span><span class="p">]</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="s2">"maker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wd6Q3RPKdyCrwzA53R7diP"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"privkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your encrypted privkey"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000"</span><span class="w">
+        </span><span class="s2">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bch"</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-12'>HTTP Request</h3>
@@ -1930,31 +1910,9 @@
 </tr>
 <tr>
 <td>order_id</td>
-<td>string</td>
+<td>integer</td>
 <td>是</td>
 <td>待签名交易单的order_id</td>
-</tr>
-</tbody></table>
-<h3 id='outputs-2'>outputs 参数</h3>
-<table><thead>
-<tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>必填</th>
-<th>说明</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>address</td>
-<td>string</td>
-<td>是</td>
-<td>转账目标地址</td>
-</tr>
-<tr>
-<td>value</td>
-<td>string</td>
-<td>是</td>
-<td>转账金额</td>
 </tr>
 </tbody></table>
 <h3 id='70bdef7e25-12'>返回参数</h3>
@@ -2004,6 +1962,11 @@
 <td>string</td>
 <td>构建交易单的金额</td>
 </tr>
+<tr>
+<td>coin</td>
+<td>string</td>
+<td>币种</td>
+</tr>
 </tbody></table>
 <h1 id='d51b06a0fe'>提交签名信息</h1>
 <p>用户在本地对交易单进行签名，并将签名后的数据提交Sectoken，Sectoken对签名进行验证后，将交易广播到区块链上</p>
@@ -2014,14 +1977,15 @@
     <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
         <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"your wallet id"</span><span class="p">,</span>
-        <span class="s">"signed_tx"</span><span class="p">:</span><span class="s">"signature data"</span>
+        <span class="s">"signed_tx"</span><span class="p">:</span><span class="s">"signature data"</span><span class="p">,</span>
+        <span class="s">"order_id"</span><span class="p">:</span> <span class="mi">2003170000027038</span>
     <span class="p">}</span>
 <span class="p">)</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/send/"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
-    -d <span class="s1">'{"wallet_id": "your wallet id", "signed_tx":"0200000001a37d26c3c24821138cf35193846bacd049b0bbb50524ff7a1d13d2d3472cf6ef01000000b500483045022100ad6dc52e14447f3252e805f16363df8174a2ecd026ead616e4b95711d668e6e5022060d934e0638a510604e5da6255fefc78e91568b2b82ba7612e0dabb36e026f2b414c695221020fcbb44ff4a1f423499b1eb9b2bd9cbe467934467d4857451c7eab7f8cb2885b21038f2d1612ae08a9595fbe1d30c9b13e748a4ae55c06d5d3fa5c0b2e59712d3b6b21030c216c58cd8cc67ba503262319cba05626d89cce4264062729533b1bc6d2931553aeffffffff02e8030000000000001976a9140ee1aeac853f24586d2ab845837a0d198edc38a088ac229198000000000017a914a729e00c0e7d6f8fd3efbd65d48e7e1e483fe6cc8700000000"}'</span>
+    -d <span class="s1">'{"order_id": 2003170000027038,"wallet_id": "your wallet id", "signed_tx":"0200000001a37d26c3c24821138cf35193846bacd049b0bbb50524ff7a1d13d2d3472cf6ef01000000b500483045022100ad6dc52e14447f3252e805f16363df8174a2ecd026ead616e4b95711d668e6e5022060d934e0638a510604e5da6255fefc78e91568b2b82ba7612e0dabb36e026f2b414c695221020fcbb44ff4a1f423499b1eb9b2bd9cbe467934467d4857451c7eab7f8cb2885b21038f2d1612ae08a9595fbe1d30c9b13e748a4ae55c06d5d3fa5c0b2e59712d3b6b21030c216c58cd8cc67ba503262319cba05626d89cce4264062729533b1bc6d2931553aeffffffff02e8030000000000001976a9140ee1aeac853f24586d2ab845837a0d198edc38a088ac229198000000000017a914a729e00c0e7d6f8fd3efbd65d48e7e1e483fe6cc8700000000"}'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
 
@@ -2034,6 +1998,7 @@
         <span class="p">},</span>
         <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
             <span class="s1">'wallet_id'</span><span class="p">:</span> <span class="s1">'your_wallet_id'</span><span class="p">,</span>
+            <span class="s1">'order_id'</span><span class="p">:</span> <span class="mi">2003170000027038</span><span class="p">,</span>
             <span class="s1">'signed_tx'</span><span class="p">:</span> <span class="s1">'02000000000101132d77b5c81222720a4e113134e3612a722eeeac701ffe56efbaaad1c562d44e0000000023220020e6f5b27d5fafe65b3c9378be73e58977ad7065e22538cfac96a5f327dd16efedffffffff034c0400000000000017a9142e6aeb08b38fb94d17e09ac910c3c50d935e38a087073d0f000000000017a914467b69558dc8c89231172ae109f7c7d9e9505e398700000000000000000d6a0b796f757220636f6d6d69740300473044022077223d4dede35577ac8359024bb95c84ecc17e81614a9fe014d7ca88ba73de9302204ae8f2ccc0ca027cb9ef53f759473b0361772589a1053ea8f97b1e33c57c4b140169522102f9ecb53c10e999fd2ca3a8f4503d2c5df3521e38cef44570e34f7bdc23219c7021023a602328d823875cd8a00393dbade47bd1f16dab100ad89ee35b1bc61607f10c2103e8c77de3773dc6da5d105c2d2b23c5cfe3b5cc559ed72436ab180f6ad23bf48f53ae00000000'</span>
         <span class="p">})</span>
     <span class="p">}</span>
@@ -2072,6 +2037,12 @@
 <td>是</td>
 <td>签名完的字符串</td>
 </tr>
+<tr>
+<td>order_id</td>
+<td>integer</td>
+<td>是</td>
+<td>交易对应的订单id</td>
+</tr>
 </tbody></table>
 <h3 id='70bdef7e25-13'>返回参数</h3>
 <table><thead>
@@ -2102,7 +2073,7 @@
 </thead><tbody>
 <tr>
 <td>txid</td>
-<td>bool</td>
+<td>string</td>
 <td>广播完成后返回的txid，可以在区块浏览器上进行查询</td>
 </tr>
 <tr>

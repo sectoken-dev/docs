@@ -1129,7 +1129,7 @@
 <tr>
 <td>approval_txs</td>
 <td>array</td>
-<td>待签名的交易单的order_id, 只有多用户钱包有此项</td>
+<td>待签名的交易单的sequence_id, 只有多用户钱包有此项</td>
 </tr>
 </tbody></table>
 <h1 id='dd15c4c900'>查看钱包列表</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
@@ -1306,7 +1306,7 @@
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"sig_payload"</span><span class="p">:</span><span class="s2">"120000240000000561400000000000271068400000000000001e8114390fc47cd05b43d9de66f68f3df8c22d9e074dcb831436277bd4470b1c746d1c41c264e318cc8216cfb8f9ea7d0474657374e1f1"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"privkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your encrypted privkey"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20031412548879</span><span class="w">
+        </span><span class="s2">"sequence_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20031412548879</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-7'>HTTP Request</h3>
@@ -1384,7 +1384,7 @@
 <td>待签名的数据</td>
 </tr>
 <tr>
-<td>order_id</td>
+<td>sequence_id</td>
 <td>integer</td>
 <td>订单号id</td>
 </tr>
@@ -1400,7 +1400,7 @@
     <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
         <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
-        <span class="s">"order_id"</span><span class="p">:</span>  <span class="mi">20031000071574</span>
+        <span class="s">"sequence_id"</span><span class="p">:</span>  <span class="mi">20031000071574</span>
     <span class="p">}</span>
 <span class="p">)</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/xrp/dotx/"</span> <span class="se">\</span>
@@ -1409,7 +1409,7 @@
     -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
     -d <span class="s1">'{
             "wallet_id": "cf761ad1b6c5f30a1557d942cb557b07", 
-            "order_id": 20031000071574
+            "sequence_id": 20031000071574
 </span></code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
@@ -1421,7 +1421,7 @@
         <span class="p">},</span>
         <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
             <span class="s2">"wallet_id"</span><span class="p">:</span> <span class="s2">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
-            <span class="s2">"order_id"</span><span class="p">:</span>  <span class="mi">20031000071574</span>
+            <span class="s2">"sequence_id"</span><span class="p">:</span>  <span class="mi">20031000071574</span>
         <span class="p">})</span>
     <span class="p">}</span>
 <span class="p">);</span>
@@ -1455,10 +1455,10 @@
 <td>钱包id</td>
 </tr>
 <tr>
-<td>order_id</td>
+<td>sequence_id</td>
 <td>string</td>
 <td>是</td>
-<td>待签名交易单的order_id</td>
+<td>待签名交易单的sequence_id</td>
 </tr>
 </tbody></table>
 <h3 id='70bdef7e25-8'>返回参数</h3>
@@ -1514,7 +1514,7 @@
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
         <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
         <span class="s">"signature"</span><span class="p">:</span><span class="s">"signature data"</span><span class="p">,</span>
-        <span class="s">"order_id"</span><span class="p">:</span> <span class="mi">20031400011247</span>
+        <span class="s">"sequence_id"</span><span class="p">:</span> <span class="mi">20031400011247</span>
     <span class="p">}</span>
 <span class="p">)</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/xrp/send/"</span> <span class="se">\</span>
@@ -1524,7 +1524,7 @@
     -d <span class="s1">'{
         "wallet_id": "cf761ad1b6c5f30a1557d942cb557b07",
         "signature":"signature data",
-        "order_id": 20031400011247
+        "sequence_id": 20031400011247
     }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
@@ -1539,7 +1539,7 @@
     <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
         <span class="s2">"wallet_id"</span><span class="p">:</span> <span class="s2">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
         <span class="s2">"signature"</span><span class="p">:</span><span class="s2">"signature data"</span><span class="p">,</span>
-        <span class="s2">"order_id"</span><span class="p">:</span> <span class="mi">20031400011247</span>
+        <span class="s2">"sequence_id"</span><span class="p">:</span> <span class="mi">20031400011247</span>
     <span class="p">})</span>
 <span class="p">});</span>
 </code></pre>
@@ -1577,7 +1577,7 @@
 <td>签名完的字符串</td>
 </tr>
 <tr>
-<td>order_id</td>
+<td>sequence_id</td>
 <td>integer</td>
 <td>是</td>
 <td>订单号id</td>

@@ -862,22 +862,22 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>wallet_id</td>
+<td>invitation_code</td>
 <td>string</td>
 <td>是</td>
-<td>钱包id</td>
+<td>钱包邀请码</td>
 </tr>
 <tr>
 <td>pubkey</td>
 <td>string</td>
 <td>是</td>
-<td>钱包公钥</td>
+<td>用户公钥</td>
 </tr>
 <tr>
-<td>invitation_code</td>
+<td>privkey</td>
 <td>string</td>
-<td>是</td>
-<td>钱包邀请码</td>
+<td>否</td>
+<td>用户加密私钥</td>
 </tr>
 </tbody></table>
 <h3 id='70bdef7e25-3'>返回参数</h3>
@@ -1170,7 +1170,7 @@
 <tr>
 <td>approval_txs</td>
 <td>array</td>
-<td>待签名的交易单的, 多用户钱包相关</td>
+<td>多用户钱包待签名的交易单的</td>
 </tr>
 </tbody></table>
 <h1 id='dd15c4c900'>查看钱包列表</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>

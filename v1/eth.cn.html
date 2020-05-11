@@ -1317,16 +1317,16 @@
 <h1 id='dd15c4c900'>查看钱包列表</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/eth/wallet_list/?page=1&amp;multi=true"</span><span class="p">,</span> 
+    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/eth/wallet_list/?page=1&amp;multi=1"</span><span class="p">,</span> 
     <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">}</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/eth/wallet_list/?page=1&amp;multi=true"</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/eth/wallet_list/?page=1&amp;multi=1"</span> <span class="se">\</span>
     -X GET <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
-        <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/api/v1/wallet/eth/wallet_list/?page=1&amp;multi=true'</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/api/v1/wallet/eth/wallet_list/?page=1&amp;multi=1'</span><span class="p">,</span>
         <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
             <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
@@ -1370,9 +1370,9 @@
 </tr>
 <tr>
 <td>multi</td>
-<td>bool</td>
+<td>integer</td>
 <td>否</td>
-<td>只查看多签标记，当此项为true时，只查看账户钱多用户钱包</td>
+<td>只查看多签标记，当此项为1时，只查看账户钱多用户钱包</td>
 </tr>
 </tbody></table>
 <h3 id='70bdef7e25-7'>返回参数</h3>
@@ -2190,7 +2190,7 @@
 </thead><tbody>
 <tr>
 <td>is_sent</td>
-<td>bool</td>
+<td>boolean</td>
 <td>是否广播。如果签名数量未达到广播限制，说明未最终签名成功，返回false，否则返回true。</td>
 </tr>
 <tr>
@@ -2273,7 +2273,7 @@
 </thead><tbody>
 <tr>
 <td>status</td>
-<td>bool</td>
+<td>boolean</td>
 <td>合约部署状态</td>
 </tr>
 </tbody></table>

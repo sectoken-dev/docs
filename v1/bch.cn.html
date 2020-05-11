@@ -1186,16 +1186,16 @@
 <h1 id='dd15c4c900'>查看钱包列表</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/bch/wallet_list/?page=1&amp;multi=true"</span><span class="p">,</span> 
+    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/bch/wallet_list/?page=1&amp;multi=1"</span><span class="p">,</span> 
     <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">}</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/wallet_list/?page=1&amp;multi=true"</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/wallet_list/?page=1&amp;multi=1"</span> <span class="se">\</span>
     -X GET <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
-        <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/wallet_list/?page=1&amp;multi=true"</span><span class="p">,</span> 
+        <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/wallet_list/?page=1&amp;multi=1"</span><span class="p">,</span> 
         <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
             <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
@@ -1232,9 +1232,9 @@
 </thead><tbody>
 <tr>
 <td>multi</td>
-<td>boolean</td>
+<td>integer</td>
 <td>否</td>
-<td>默认为false, false只查看普通2-3钱包, true只查看多用户钱包列表</td>
+<td>默认为0, 0只查看普通2-3钱包, 1只查看多用户钱包列表</td>
 </tr>
 <tr>
 <td>page</td>
@@ -1765,13 +1765,13 @@
 </tr>
 <tr>
 <td>total</td>
-<td>boolean</td>
+<td>integer</td>
 <td>否</td>
-<td>是否全部转出，当此项为True时，output只能指定一个转账地址，且转账金额失效（失效不代表可以不填，必须填写，给任意一个数字即可）</td>
+<td>是否全部转出，当此项为1时，output只能指定一个转账地址，且转账金额失效（失效不代表可以不填，必须填写，给任意一个数字即可）</td>
 </tr>
 <tr>
 <td>feerate</td>
-<td>int</td>
+<td>integer</td>
 <td>否</td>
 <td>转账速度， 0：普通， 1：快速， 默认为普通</td>
 </tr>
@@ -1847,7 +1847,7 @@
 </tr>
 <tr>
 <td>fee</td>
-<td>int</td>
+<td>integer</td>
 <td>矿工费</td>
 </tr>
 <tr>
@@ -2096,7 +2096,7 @@
 </tr>
 <tr>
 <td>is_sent</td>
-<td>bool</td>
+<td>boolean</td>
 <td>是否已广播。如果签名数量未达到设置的签名数，签名数量不够，返回false，否则返回true。</td>
 </tr>
 </tbody></table>

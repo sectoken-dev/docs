@@ -1122,9 +1122,9 @@
 </tr>
 <tr>
 <td>info</td>
-<td>bool</td>
+<td>integer</td>
 <td>否</td>
-<td>查看cpu, net等信息, 默认为False, 为True时会返回 cpu等信息</td>
+<td>查看cpu, net等信息, 默认为0, 为1时会返回 cpu等信息</td>
 </tr>
 </tbody></table>
 <h3 id='70bdef7e25-5'>返回参数</h3>
@@ -1268,9 +1268,9 @@
 </tr>
 <tr>
 <td>multi</td>
-<td>bool</td>
+<td>integer</td>
 <td>否</td>
-<td>只查看多用户钱包。默认false，只查看2-3单用户多签钱包。</td>
+<td>只查看多用户钱包。默认0，只查看2-3单用户多签钱包。</td>
 </tr>
 </tbody></table>
 <h3 id='70bdef7e25-6'>返回参数</h3>
@@ -1695,7 +1695,7 @@
 </thead><tbody>
 <tr>
 <td>is_sent</td>
-<td>bool</td>
+<td>boolean</td>
 <td>是否广播。如果签名数量未达到广播限制，说明未最终签名成功，返回false，否则返回true。</td>
 </tr>
 <tr>

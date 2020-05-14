@@ -2265,7 +2265,7 @@
 </tbody></table>
 <h1 id='c284998822'>获取交易记录</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/flow/record/xrp/"</span><span class="p">,</span> 
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/record/xrp/"</span><span class="p">,</span> 
             <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span> 
             <span class="n">params</span><span class="o">=</span><span class="p">{</span>
                 <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"b81d38f5f250c36a05da0d0e1f9bd394"</span><span class="p">,</span>
@@ -2273,11 +2273,11 @@
                 <span class="s">"month"</span><span class="p">:</span> <span class="s">"10"</span>
             <span class="p">}</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/flow/record/xrp/?wallet_id=b81d38f5f250c36a05da0d0e1f9bd394&amp;year=2019&amp;month=10"</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/record/xrp/?wallet_id=b81d38f5f250c36a05da0d0e1f9bd394&amp;year=2019&amp;month=10"</span> <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
 <span class="nx">request</span><span class="p">({</span>
-        <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/flow/record/xrp/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07&amp;&amp;year=2019&amp;&amp;month=12'</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s1">'https://testnet.sectoken.io/api/v1/record/xrp/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07&amp;&amp;year=2019&amp;&amp;month=12'</span><span class="p">,</span>
         <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
             <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
@@ -2306,7 +2306,7 @@
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-16'>HTTP Request</h3>
-<p><code>GET https://testnet.sectoken.io/flow/record/xrp/</code></p>
+<p><code>GET https://testnet.sectoken.io/api/v1/record/xrp/</code></p>
 <h3 id='1f9ac54b15-16'>请求参数</h3>
 <table><thead>
 <tr>

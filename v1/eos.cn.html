@@ -493,7 +493,7 @@
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/eos/create/"</span><span class="p">,</span> 
     <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span> 
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
-        <span class="s">"account"</span><span class="p">:</span><span class="s">"sectoken1114"</span><span class="p">,</span>
+        <span class="s">"address"</span><span class="p">:</span><span class="s">"sectoken1114"</span><span class="p">,</span>
         <span class="s">"pubkeys"</span><span class="p">:</span> <span class="p">[</span>
             <span class="s">"027c9612b91ed830de2259819c85e160084fb1fb0ca5ad2d02537c085f3b93246c"</span><span class="p">,</span> 
             <span class="s">"02d654b7b6829df777a32267d366b4c24fd30fc1a61d816e043104edd198678e52"</span>
@@ -510,7 +510,7 @@
 -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
 -X POST <span class="se">\</span>
 -d <span class="s1">'{
-    "account":"sectoken1114",
+    "address":"sectoken1114",
     "pubkeys": [
         "027c9612b91ed830de2259819c85e160084fb1fb0ca5ad2d02537c085f3b93246c",
         "02d654b7b6829df777a32267d366b4c24fd30fc1a61d816e043104edd198678e52"
@@ -540,7 +540,7 @@
             <span class="s2">"your encrypted privkey2"</span><span class="p">,</span> 
         <span class="p">],</span>
         <span class="s1">'wallet_name'</span><span class="p">:</span> <span class="s1">'EosTestWallet'</span><span class="p">,</span>
-        <span class="s2">"account"</span><span class="p">:</span><span class="s2">"sectoken1114"</span>
+        <span class="s2">"address"</span><span class="p">:</span><span class="s2">"sectoken1114"</span>
     <span class="p">})</span>
 <span class="p">});</span>
 </code></pre>
@@ -586,7 +586,7 @@
 <td>钱包名</td>
 </tr>
 <tr>
-<td>account</td>
+<td>address</td>
 <td>string</td>
 <td>是</td>
 <td>要导入的eos账户</td>
@@ -649,7 +649,7 @@
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/eos/share_create/"</span><span class="p">,</span> 
     <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span> 
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
-            <span class="s">"account"</span><span class="p">:</span><span class="s">"sectoken1114"</span><span class="p">,</span>
+            <span class="s">"address"</span><span class="p">:</span><span class="s">"sectoken1114"</span><span class="p">,</span>
             <span class="s">"pubkey"</span><span class="p">:</span><span class="s">"02d654b7b6829df777a32267d366b4c24fd30fc1a61d816e043104edd198678e52"</span><span class="p">,</span> 
             <span class="s">"privkey"</span><span class="p">:</span> <span class="s">"your encrypted privkey"</span><span class="p">,</span>
             <span class="s">"threshold"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -664,7 +664,7 @@
     -H <span class="s2">"Content-Type:application/json"</span>
     -X POST
     -d <span class="s1">'{   
-        "account":"sectoken1114",
+        "address":"sectoken1114",
         "pubkey":"02d654b7b6829df777a32267d366b4c24fd30fc1a61d816e043104edd198678e52", 
         "privkey": "your encrypted privkey",
         "threshold": 2,
@@ -683,7 +683,7 @@
         <span class="s1">'HMAC'</span><span class="p">:</span> <span class="s1">'your token'</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-        <span class="s2">"account"</span><span class="p">:</span> <span class="s2">"sectoken1114"</span><span class="p">,</span>
+        <span class="s2">"address"</span><span class="p">:</span> <span class="s2">"sectoken1114"</span><span class="p">,</span>
         <span class="s2">"pubkey"</span><span class="p">:</span> <span class="s2">"02d654b7b6829df777a32267d366b4c24fd30fc1a61d816e043104edd198678e52"</span><span class="p">,</span> 
         <span class="s2">"privkey"</span><span class="p">:</span> <span class="s2">"your encrypted privkey"</span><span class="p">,</span>
         <span class="s2">"threshold"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -733,7 +733,7 @@
 <td>钱包名</td>
 </tr>
 <tr>
-<td>account</td>
+<td>address</td>
 <td>string</td>
 <td>是</td>
 <td>要导入的eos账户</td>
@@ -968,7 +968,7 @@
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"account"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sectoken1114"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sectoken1114"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"txid"</span><span class="p">:</span><span class="s2">"8cc575f56e014cbe38e01c8cf3a92ae0507322f2b7f713359b7cd324ae89575d"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1030,9 +1030,9 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>account</td>
+<td>address</td>
 <td>string</td>
-<td>导入的account</td>
+<td>导入的address</td>
 </tr>
 <tr>
 <td>txid</td>
@@ -1069,7 +1069,7 @@
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"wallet_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EOSTESTA"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"account"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sectoken1114"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sectoken1114"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"999560"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"threshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
     </span><span class="s2">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
@@ -1165,9 +1165,9 @@
 <td>钱包名</td>
 </tr>
 <tr>
-<td>account</td>
+<td>address</td>
 <td>string</td>
-<td>导入的eos account</td>
+<td>导入的eos address</td>
 </tr>
 <tr>
 <td>balance</td>
@@ -1332,7 +1332,7 @@
     <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
         <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
-        <span class="s">"outputs"</span><span class="p">:</span> <span class="p">[{</span><span class="s">"account"</span><span class="p">:</span><span class="s">"sectoken1214"</span><span class="p">,</span> <span class="s">"value"</span><span class="p">:</span><span class="s">"500"</span><span class="p">}],</span>
+        <span class="s">"outputs"</span><span class="p">:</span> <span class="p">[{</span><span class="s">"address"</span><span class="p">:</span><span class="s">"sectoken1214"</span><span class="p">,</span> <span class="s">"value"</span><span class="p">:</span><span class="s">"500"</span><span class="p">}],</span>
         <span class="s">"coin"</span><span class="p">:</span> <span class="s">"eos"</span><span class="p">,</span>
     <span class="p">}</span>
 <span class="p">)</span>
@@ -1342,7 +1342,7 @@
     -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
     -d <span class="s1">'{
         "wallet_id": "cf761ad1b6c5f30a1557d942cb557b07", 
-        "outputs": [{"account":"sectoken1214", "value":"500"}],
+        "outputs": [{"address":"sectoken1214", "value":"500"}],
         "coin": "eos"
     }'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
@@ -1356,7 +1356,7 @@
     <span class="p">},</span>
     <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
        <span class="s2">"wallet_id"</span><span class="p">:</span> <span class="s2">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
-       <span class="s2">"outputs"</span><span class="p">:</span> <span class="p">[{</span><span class="s2">"account"</span><span class="p">:</span><span class="s2">"sectoken1214"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">:</span><span class="s2">"500"</span><span class="p">}],</span>
+       <span class="s2">"outputs"</span><span class="p">:</span> <span class="p">[{</span><span class="s2">"address"</span><span class="p">:</span><span class="s2">"sectoken1214"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">:</span><span class="s2">"500"</span><span class="p">}],</span>
        <span class="s2">"coin"</span><span class="p">:</span> <span class="s2">"eos"</span><span class="p">,</span>
     <span class="p">})</span>
 <span class="p">});</span>
@@ -1412,10 +1412,10 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>account</td>
+<td>address</td>
 <td>string</td>
 <td>是</td>
-<td>收款的account</td>
+<td>收款的address</td>
 </tr>
 <tr>
 <td>value</td>
@@ -1788,7 +1788,7 @@
         <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"788da6819ec461dd99accdeffc1831e4"</span><span class="p">,</span>
         <span class="s">"url"</span><span class="p">:</span> <span class="s">"https://your_webhook_server.com/"</span><span class="p">,</span> 
         <span class="s">"label"</span><span class="p">:</span> <span class="s">"testwebhook"</span><span class="p">,</span> 
-        <span class="s">"event_type"</span><span class="p">:</span> <span class="s">"withdraw"</span><span class="p">,</span> 
+        <span class="s">"type"</span><span class="p">:</span> <span class="s">"withdraw"</span><span class="p">,</span> 
         <span class="s">"coin"</span><span class="p">:</span> <span class="s">"eos"</span><span class="p">,</span>
         <span class="s">"secret_key"</span><span class="p">:</span><span class="s">"abc123"</span>
     <span class="p">},</span>
@@ -1802,7 +1802,7 @@
             "wallet_id": "788da6819ec461dd99accdeffc1831e4",
             "url": "https://your_webhook_server.com/", 
             "label": "testwebhook", 
-            "event_type": "withdraw", 
+            "type": "withdraw", 
             "coin": "eos",
             "secret_key":"abc123"
     }'</span>
@@ -1819,7 +1819,7 @@
         <span class="s2">"wallet_id"</span><span class="p">:</span> <span class="s2">"788da6819ec461dd99accdeffc1831e4"</span><span class="p">,</span>
         <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://your_webhook_server.com/"</span><span class="p">,</span> 
         <span class="s2">"label"</span><span class="p">:</span> <span class="s2">"testwebhook"</span><span class="p">,</span> 
-        <span class="s2">"event_type"</span><span class="p">:</span> <span class="s2">"withdraw"</span><span class="p">,</span> 
+        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"withdraw"</span><span class="p">,</span> 
         <span class="s2">"coin"</span><span class="p">:</span> <span class="s2">"eos"</span><span class="p">,</span>
         <span class="s2">"secret_key"</span><span class="p">:</span><span class="s2">"abc123"</span>
     <span class="p">})</span>
@@ -1864,7 +1864,7 @@
 <td>要添加的币种，如eos,jungle</td>
 </tr>
 <tr>
-<td>event_type</td>
+<td>type</td>
 <td>string</td>
 <td>是</td>
 <td>交易类型, deposit or withdraw</td>
@@ -1947,7 +1947,7 @@
       </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tastwebhook"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://testnet.sectoken.io/"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"withdraw"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eos"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eos"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"secret_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
       </span><span class="s2">"webhook_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"073c0372a955c14f49fd88e499fbae2e"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="w">
@@ -2367,12 +2367,12 @@
     </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6004e156344ec27cad24a8df5bbaa5ab"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8cc575f56e014cbe38e01c8cf3a92ae0507322f2b7f713359b7cd324ae89575d"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">4340000</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"dst_account"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sectoken1214"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"src_account"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sectoken1114"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"dst_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sectoken1214"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"src_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sectoken1114"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"withdraw"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1872340000</span><span class="p">,</span><span class="w">
     </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000000000"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eos"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eos"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
     </span><span class="s2">"webhook_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fa5dc2025e79c37b8656ef4b89619d9d"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -2401,14 +2401,14 @@
 <td>交易所在区块高度</td>
 </tr>
 <tr>
-<td>dst_account</td>
+<td>dst_address</td>
 <td>string</td>
-<td>交易目的eos account</td>
+<td>交易目的eos address</td>
 </tr>
 <tr>
-<td>src_account</td>
+<td>src_address</td>
 <td>string</td>
-<td>交易来源 eos account</td>
+<td>交易来源 eos address</td>
 </tr>
 <tr>
 <td>type</td>
@@ -2468,8 +2468,8 @@
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8cc575f56e014cbe38e01c8cf3a92ae0507322f2b7f713359b7cd324ae89575d"</span><span class="p">,</span><span class="w"> 
-            </span><span class="s2">"src_account"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sectoken1114"</span><span class="p">,</span><span class="w"> 
-            </span><span class="s2">"dst_account"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sectoken1114"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"src_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sectoken1114"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"dst_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sectoken1114"</span><span class="p">,</span><span class="w"> 
             </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="p">,</span><span class="w"> 
             </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1572259477</span><span class="p">,</span><span class="w"> 
             </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"withdraw"</span><span class="p">,</span><span class="w"> 
@@ -2548,12 +2548,12 @@
 <td>交易单id</td>
 </tr>
 <tr>
-<td>src_account</td>
+<td>src_address</td>
 <td>string</td>
 <td>交易来源地址</td>
 </tr>
 <tr>
-<td>det_account</td>
+<td>det_address</td>
 <td>string</td>
 <td>交易目的地址</td>
 </tr>

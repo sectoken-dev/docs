@@ -1878,11 +1878,11 @@
       <span class="s">"signed_txs"</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
           <span class="s">"sequence_id"</span><span class="p">:</span> <span class="mi">2005220000237618</span><span class="p">,</span>
-          <span class="s">"signed_tx"</span><span class="p">:</span> <span class="s">"8f28fd1703883b24958dfb9cbd3395762e4c367cd63a30da3b41d538f2df589f"</span>
+          <span class="s">"tx"</span><span class="p">:</span> <span class="s">"8f28fd1703883b24958dfb9cbd3395762e4c367cd63a30da3b41d538f2df589f"</span>
         <span class="p">},</span>
         <span class="p">{</span>
           <span class="s">"sequence_id"</span><span class="p">:</span> <span class="mi">2005220000248596</span><span class="p">,</span>
-          <span class="s">"signed_tx"</span><span class="p">:</span> <span class="s">"80581bf503e91f1c4300ad0ad1a0cf5dc2e10ba09d362f0371b619e87b1c44d8"</span>
+          <span class="s">"tx"</span><span class="p">:</span> <span class="s">"80581bf503e91f1c4300ad0ad1a0cf5dc2e10ba09d362f0371b619e87b1c44d8"</span>
         <span class="p">}</span>
       <span class="p">]</span>
     <span class="p">}</span>
@@ -1896,11 +1896,11 @@
         "signed_txs": [
             {
                 "sequence_id": 2005220000237618,
-                "signed_tx": "8f28fd1703883b24958dfb9cbd3395762e4c367cd63a30da3b41d538f2df589f"
+                "tx": "8f28fd1703883b24958dfb9cbd3395762e4c367cd63a30da3b41d538f2df589f"
             },
             {
                 "sequence_id": 2005220000248596,
-                "signed_tx": "80581bf503e91f1c4300ad0ad1a0cf5dc2e10ba09d362f0371b619e87b1c44d8"
+                "tx": "80581bf503e91f1c4300ad0ad1a0cf5dc2e10ba09d362f0371b619e87b1c44d8"
             }
         ]
     }'</span>
@@ -1918,11 +1918,11 @@
             <span class="s2">"signed_txs"</span><span class="p">:</span> <span class="p">[</span>
                 <span class="p">{</span>
                   <span class="s2">"sequence_id"</span><span class="p">:</span> <span class="mi">2005220000237618</span><span class="p">,</span>
-                  <span class="s2">"signed_tx"</span><span class="p">:</span> <span class="s2">"8f28fd1703883b24958dfb9cbd3395762e4c367cd63a30da3b41d538f2df589f"</span>
+                  <span class="s2">"tx"</span><span class="p">:</span> <span class="s2">"8f28fd1703883b24958dfb9cbd3395762e4c367cd63a30da3b41d538f2df589f"</span>
                 <span class="p">},</span>
                 <span class="p">{</span>
                   <span class="s2">"sequence_id"</span><span class="p">:</span> <span class="mi">2005220000248596</span><span class="p">,</span>
-                  <span class="s2">"signed_tx"</span><span class="p">:</span> <span class="s2">"80581bf503e91f1c4300ad0ad1a0cf5dc2e10ba09d362f0371b619e87b1c44d8"</span>
+                  <span class="s2">"tx"</span><span class="p">:</span> <span class="s2">"80581bf503e91f1c4300ad0ad1a0cf5dc2e10ba09d362f0371b619e87b1c44d8"</span>
                 <span class="p">}</span>
             <span class="p">]</span>
        <span class="p">})</span>
@@ -1967,7 +1967,7 @@
 </tr>
 <tr>
 <td>signed_txs</td>
-<td>arrays</td>
+<td>array</td>
 <td>是</td>
 <td>完成签名的交易单,有授权交易单时应有两个签名,没有授权交易单时为一个签名</td>
 </tr>
@@ -1988,7 +1988,7 @@
 <td>订单号id</td>
 </tr>
 <tr>
-<td>signed_tx</td>
+<td>tx</td>
 <td>string</td>
 <td>是</td>
 <td>完成签名的交易单</td>
@@ -2294,7 +2294,7 @@
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRC20_HT"</span><span class="p">,</span><span class="w"> </span><span class="s2">"contract_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TDVZ4LWRcgpHqnmJhGAZknXK4ptzbhPuQB"</span><span class="p">,</span><span class="w"> </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">}</span><span class="w">
+        </span><span class="p">{</span><span class="s2">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRC20_HT"</span><span class="p">,</span><span class="w"> </span><span class="s2">"contract_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TDVZ4LWRcgpHqnmJhGAZknXK4ptzbhPuQB"</span><span class="p">,</span><span class="w"> </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-14'>HTTP Request</h3>
@@ -2327,7 +2327,7 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>coin_type</td>
+<td>coin</td>
 <td>string</td>
 <td>币种</td>
 </tr>
@@ -2599,7 +2599,7 @@
         <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"788da6819ec461dd99accdeffc1831e4"</span><span class="p">,</span>
         <span class="s">"url"</span><span class="p">:</span> <span class="s">"https://your_webhook_server.com/"</span><span class="p">,</span> 
         <span class="s">"label"</span><span class="p">:</span> <span class="s">"Receipt"</span><span class="p">,</span> 
-        <span class="s">"event_type"</span><span class="p">:</span> <span class="s">"withdraw"</span><span class="p">,</span> 
+        <span class="s">"type"</span><span class="p">:</span> <span class="s">"withdraw"</span><span class="p">,</span> 
         <span class="s">"coin"</span><span class="p">:</span> <span class="s">"trc20_mt"</span><span class="p">,</span>
         <span class="s">"secret_key"</span><span class="p">:</span><span class="s">"abc123"</span>
     <span class="p">},</span>
@@ -2613,7 +2613,7 @@
             "wallet_id": "788da6819ec461dd99accdeffc1831e4",
             "url": "https://your_webhook_server.com/", 
             "label": "Receipt", 
-            "event_type": "withdraw", 
+            "type": "withdraw", 
             "coin": "trc20_mt",
             "secret_key":"abc123"
     }'</span>
@@ -2630,7 +2630,7 @@
         <span class="s2">"wallet_id"</span><span class="p">:</span> <span class="s2">"788da6819ec461dd99accdeffc1831e4"</span><span class="p">,</span>
         <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://your_webhook_server.com/"</span><span class="p">,</span> 
         <span class="s2">"label"</span><span class="p">:</span> <span class="s2">"Receipt"</span><span class="p">,</span> 
-        <span class="s2">"event_type"</span><span class="p">:</span> <span class="s2">"withdraw"</span><span class="p">,</span> 
+        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"withdraw"</span><span class="p">,</span> 
         <span class="s2">"coin"</span><span class="p">:</span> <span class="s2">"trc20_mt"</span><span class="p">,</span>
         <span class="s2">"secret_key"</span><span class="p">:</span><span class="s2">"abc123"</span>
     <span class="p">})</span>
@@ -2675,7 +2675,7 @@
 <td>要添加的币种</td>
 </tr>
 <tr>
-<td>event_type</td>
+<td>type</td>
 <td>string</td>
 <td>是</td>
 <td>交易类型, deposit or withdraw</td>
@@ -2758,7 +2758,7 @@
       </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tasdfda"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://testnet.sectoken.io/"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"withdraw"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trc20_mt"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trc20_mt"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"secret_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
       </span><span class="s2">"webhook_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"073c0372a955c14f49fd88e499fbae2e"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="w">
@@ -2935,7 +2935,7 @@
     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deposit"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1872340000</span><span class="p">,</span><span class="w">
     </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000000000"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trc20_mt"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trc20_mt"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
     </span><span class="s2">"callbackid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fa5dc2025e79c37b8656ef4b89619d9d"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -2988,7 +2988,7 @@
 <td>交易金额</td>
 </tr>
 <tr>
-<td>coin_type</td>
+<td>coin</td>
 <td>string</td>
 <td>币种类型</td>
 </tr>
@@ -3036,7 +3036,7 @@
             </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1572259477</span><span class="p">,</span><span class="w"> 
             </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"withdraw"</span><span class="p">,</span><span class="w"> 
             </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">5278224</span><span class="p">,</span><span class="w"> 
-            </span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRX"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRX"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">

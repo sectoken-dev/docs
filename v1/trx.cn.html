@@ -1096,16 +1096,18 @@
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2cc5abb2b9932ca1ec5513ad1a9685f9"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"wallet_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TestSeven"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TXorxEGAgkMbbKy4HRjtuCZcDsfXmdz55n"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9997000"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"238ea438717861cd694085d8b6659b83"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"wallet_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trxTestWallet"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TTumi4B9fyLsjXZ9s4G2duexrXtasSuYPH"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"99600"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"net"</span><span class="p">:</span><span class="w"> </span><span class="s2">"253"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"threshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
         </span><span class="s2">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
         </span><span class="s2">"send_max"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"send_day_max"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"send_day_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"freeze_overtime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="s2">"freeze_overtime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"approval_txs"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-5'>HTTP Request</h3>
@@ -1178,6 +1180,11 @@
 <td>balance</td>
 <td>string</td>
 <td>钱包余额，单位为最小单位</td>
+</tr>
+<tr>
+<td>net</td>
+<td>string</td>
+<td>剩余的免费带宽</td>
 </tr>
 <tr>
 <td>threshold</td>
@@ -1735,7 +1742,7 @@
             <span class="p">{</span><span class="s2">"address"</span><span class="p">:</span><span class="s2">"recipient address"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">:</span><span class="s2">"1000"</span><span class="p">},</span>
             <span class="p">{</span><span class="s2">"address"</span><span class="p">:</span><span class="s2">"recipient address"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">:</span><span class="s2">"1000"</span><span class="p">}</span>
         <span class="p">],</span>
-        <span class="s2">"coin"</span><span class="p">:</span> <span class="s2">"eth"</span><span class="p">,</span>
+        <span class="s2">"coin"</span><span class="p">:</span> <span class="s2">"trx"</span><span class="p">,</span>
         <span class="p">})</span>
     <span class="p">}</span>
 <span class="p">);</span>

@@ -1560,14 +1560,14 @@
         <span class="p">],</span>
         <span class="s">"feerate"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s">"memo"</span><span class="p">:</span> <span class="s">"your comment"</span><span class="p">,</span>
-        <span class="s">"total"</span><span class="p">:</span>  <span class="bp">False</span>
+        <span class="s">"total"</span><span class="p">:</span>  <span class="mi">0</span>
     <span class="p">}</span>
 <span class="p">)</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/btc/dotx/"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
-    -d <span class="s1">'{"wallet_id": "cf761ad1b6c5f30a1557d942cb557b07", "outputs":[{"address": "destination address", "value": "10000"},{"address": "destination address", "value": "5000"}], "feerate": 1, "memo":"your comment", "total":false}'</span>
+    -d <span class="s1">'{"wallet_id": "cf761ad1b6c5f30a1557d942cb557b07", "outputs":[{"address": "destination address", "value": "10000"},{"address": "destination address", "value": "5000"}], "feerate": 1, "memo":"your comment", "total":0}'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'request'</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
@@ -1584,7 +1584,7 @@
                 <span class="s1">'value'</span><span class="p">:</span> <span class="s1">'1100'</span>
             <span class="p">},],</span>
             <span class="s1">'memo'</span><span class="p">:</span> <span class="s1">'your comment'</span><span class="p">,</span>
-            <span class="s1">'total'</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="s1">'total'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
             <span class="s2">"feerate"</span><span class="p">:</span> <span class="mi">1</span>
         <span class="p">})</span>
     <span class="p">}</span>

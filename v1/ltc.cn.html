@@ -599,13 +599,13 @@
 <td>pubkeys</td>
 <td>array</td>
 <td>是</td>
-<td>公钥列表</td>
+<td>公钥数组</td>
 </tr>
 <tr>
 <td>privkeys</td>
 <td>array</td>
 <td>否</td>
-<td>经过base64编码后的私钥密文列表</td>
+<td>私钥数组,私钥必须为Base64格式</td>
 </tr>
 <tr>
 <td>wallet_name</td>
@@ -614,6 +614,8 @@
 <td>钱包名</td>
 </tr>
 </tbody></table>
+
+<aside class="notice">向服务端提交私钥时, 建议客户端本地加密后再Base64编码</aside>
 <h3 id='70bdef7e25'>返回参数</h3>
 <table><thead>
 <tr>
@@ -735,7 +737,7 @@
 <td>privkey</td>
 <td>array</td>
 <td>否</td>
-<td>经过base64编码后的私钥密文</td>
+<td>私钥, 必须为Base64格式</td>
 </tr>
 <tr>
 <td>wallet_name</td>
@@ -758,14 +760,14 @@
 <tr>
 <td>control</td>
 <td>integer</td>
-<td>是</td>
-<td>0:平台参与签名; 1:平台不参与签名, 默认为 0</td>
+<td>否</td>
+<td>0:平台与用户都需要签名; 1:仅用户签名, 默认为 0</td>
 </tr>
 <tr>
 <td>multi</td>
 <td>integer</td>
 <td>否</td>
-<td>0:用户不能持有多个公钥; 1:用户允许持有多个公钥, 默认为0</td>
+<td>0:用户只能持有一个公钥; 1:用户允许持有多个公钥, 默认为0</td>
 </tr>
 </tbody></table>
 <h3 id='70bdef7e25-2'>返回参数</h3>
@@ -871,13 +873,13 @@
 <td>pubkey</td>
 <td>string</td>
 <td>是</td>
-<td>用户公钥</td>
+<td>公钥</td>
 </tr>
 <tr>
 <td>privkey</td>
 <td>string</td>
 <td>否</td>
-<td>用户加密私钥</td>
+<td>私钥, 必须为Base64格式</td>
 </tr>
 </tbody></table>
 <h3 id='70bdef7e25-3'>返回参数</h3>
@@ -1224,13 +1226,13 @@
 <td>page</td>
 <td>integer</td>
 <td>否</td>
-<td>页码,默认显示所有钱包列表</td>
+<td>页码,默认为1</td>
 </tr>
 <tr>
 <td>multi</td>
 <td>integer</td>
 <td>否</td>
-<td>1:只查看多用户钱包, 0:查看普通钱包</td>
+<td>1:只查看多用户钱包, 0:查看普通钱包, 默认为0</td>
 </tr>
 </tbody></table>
 <h3 id='70bdef7e25-6'>返回参数</h3>
@@ -1335,7 +1337,7 @@
 <td>page</td>
 <td>integer</td>
 <td>否</td>
-<td>页码, 每页获取10条数据</td>
+<td>页码,默认为1</td>
 </tr>
 </tbody></table>
 <h3 id='70bdef7e25-7'>返回参数</h3>
@@ -1452,13 +1454,13 @@
         <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
         <span class="s">"address"</span><span class="p">:</span><span class="s">"QcbueFYvfBgJhm8tW1W62AeRyfNkjXXQUS"</span>
 <span class="p">})</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/ltc/addr_balance/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07&amp;address=2NAzW4YXbtVJkF4mxNfjLJcKorCrvcvkce9"</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/ltc/addr_balance/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07&amp;address=QcbueFYvfBgJhm8tW1W62AeRyfNkjXXQUS"</span> <span class="se">\</span>
     -X GET <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
-    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/ltc/addr_balance/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07&amp;&amp;address=your_address"</span><span class="p">,</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/ltc/addr_balance/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07&amp;&amp;address=QcbueFYvfBgJhm8tW1W62AeRyfNkjXXQUS"</span><span class="p">,</span>
     <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -1651,13 +1653,13 @@
 <td>memo</td>
 <td>string</td>
 <td>否</td>
-<td>备注信息，记录到区块链</td>
+<td>备注信息，记录到区块链, 默认为空字符串</td>
 </tr>
 <tr>
 <td>total</td>
 <td>integer</td>
 <td>否</td>
-<td>全部转出,  0: 否, 1:是, 为1时 value失效</td>
+<td>全部转出标记, 0: 否, 1:是, 默认为0</td>
 </tr>
 <tr>
 <td>feerate</td>
@@ -1685,7 +1687,7 @@
 <td>value</td>
 <td>string</td>
 <td>是</td>
-<td>转账金额</td>
+<td>转账金额, 当total为1时,可以任意金额</td>
 </tr>
 </tbody></table>
 <h3 id='70bdef7e25-10'>返回参数</h3>
@@ -1743,7 +1745,7 @@
 <tr>
 <td>fee</td>
 <td>integer</td>
-<td>矿工费，单位聪</td>
+<td>矿工费</td>
 </tr>
 </tbody></table>
 <h1 id='8efa5837ff'>获取待签名的交易单</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
@@ -2110,11 +2112,9 @@
 <td>secret_key</td>
 <td>string</td>
 <td>否</td>
-<td>callback密钥</td>
+<td>hash key, 上传后会用此key对callback内容做hash, 默认为空字符串</td>
 </tr>
 </tbody></table>
-
-<aside class="notice">添加secret_key后,callback会通过此key进行加密</aside>
 <h3 id='70bdef7e25-13'>返回参数</h3>
 <table><thead>
 <tr>
@@ -2841,10 +2841,6 @@
 <td>钱包不存在</td>
 </tr>
 <tr>
-<td>4202</td>
-<td>钱包冻结中</td>
-</tr>
-<tr>
 <td>4203</td>
 <td>钱包下没有此地址</td>
 </tr>
@@ -2853,8 +2849,8 @@
 <td>钱包余额不足</td>
 </tr>
 <tr>
-<td>4209</td>
-<td>钱包激活码错误</td>
+<td>4207</td>
+<td>公钥地址已被使用</td>
 </tr>
 <tr>
 <td>4210</td>
@@ -2894,15 +2890,7 @@
 </tr>
 <tr>
 <td>4503</td>
-<td>不能转账给钱包自己</td>
-</tr>
-<tr>
-<td>4502</td>
-<td>禁止转向当前地址</td>
-</tr>
-<tr>
-<td>4503</td>
-<td>目标地址不能为自己</td>
+<td>目标地址不能是自己</td>
 </tr>
 <tr>
 <td>4504</td>
@@ -2918,23 +2906,39 @@
 </tr>
 <tr>
 <td>4507</td>
-<td>私钥密文必须是base64格式</td>
+<td>私钥密文必须是Base64格式</td>
 </tr>
 <tr>
 <td>4508</td>
 <td>webhook 不存在</td>
 </tr>
 <tr>
+<td>4509</td>
+<td>不能提交重复签名</td>
+</tr>
+<tr>
+<td>4510</td>
+<td>每个用户只能签名一次</td>
+</tr>
+<tr>
 <td>4511</td>
-<td>签名所用私钥与绑定的不一致</td>
+<td>非当前用户所属私钥签名</td>
 </tr>
 <tr>
 <td>4512</td>
-<td>交易单重复提交</td>
+<td>无法广播已完成的交易单</td>
 </tr>
 <tr>
 <td>4513</td>
 <td>unspent 已经被使用</td>
+</tr>
+<tr>
+<td>4608</td>
+<td>用户全部控制的钱包无法派生地址</td>
+</tr>
+<tr>
+<td>4609</td>
+<td>当前用户持有的公钥数量已达上限</td>
 </tr>
 </tbody></table>
 

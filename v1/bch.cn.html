@@ -912,7 +912,7 @@
 <tr>
 <td>wallet_id</td>
 <td>string</td>
-<td>创建的钱包id</td>
+<td>创建的钱包的id</td>
 </tr>
 <tr>
 <td>activate_code</td>
@@ -986,7 +986,7 @@
 <td>wallet_id</td>
 <td>string</td>
 <td>是</td>
-<td>钱包id</td>
+<td>钱包的id</td>
 </tr>
 <tr>
 <td>activate_code</td>
@@ -1084,7 +1084,7 @@
 <td>wallet_id</td>
 <td>string</td>
 <td>是</td>
-<td>钱包id</td>
+<td>钱包的id</td>
 </tr>
 </tbody></table>
 <h3 id='70bdef7e25-5'>返回参数</h3>
@@ -1117,7 +1117,7 @@
 <tr>
 <td>wallet_id</td>
 <td>string</td>
-<td>钱包id</td>
+<td>钱包的id</td>
 </tr>
 <tr>
 <td>wallet_name</td>
@@ -1331,7 +1331,7 @@
 <td>wallet_id</td>
 <td>string</td>
 <td>是</td>
-<td>钱包id</td>
+<td>钱包的id</td>
 </tr>
 <tr>
 <td>page</td>
@@ -1409,7 +1409,7 @@
 <td>wallet_id</td>
 <td>string</td>
 <td>是</td>
-<td>钱包id</td>
+<td>钱包的id</td>
 </tr>
 </tbody></table>
 <h3 id='70bdef7e25-8'>返回参数</h3>
@@ -1493,7 +1493,7 @@
 <td>wallet_id</td>
 <td>string</td>
 <td>是</td>
-<td>钱包id</td>
+<td>钱包的id</td>
 </tr>
 <tr>
 <td>address</td>
@@ -1529,11 +1529,6 @@
 <th>说明</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>balance</td>
-<td>string</td>
-<td>地址的余额，最小单位</td>
-</tr>
 <tr>
 <td>confirmed</td>
 <td>string</td>
@@ -1641,7 +1636,7 @@
 <td>wallet_id</td>
 <td>string</td>
 <td>是</td>
-<td>钱包id</td>
+<td>钱包的id</td>
 </tr>
 <tr>
 <td>outputs</td>
@@ -1818,7 +1813,7 @@
 <td>wallet_id</td>
 <td>string</td>
 <td>是</td>
-<td>钱包id</td>
+<td>钱包的id</td>
 </tr>
 <tr>
 <td>sequence_id</td>
@@ -1958,7 +1953,7 @@
 <td>wallet_id</td>
 <td>string</td>
 <td>是</td>
-<td>钱包id</td>
+<td>钱包的id</td>
 </tr>
 <tr>
 <td>sequence_id</td>
@@ -2031,15 +2026,15 @@
     -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
-    -d  <span class="s2">"{
-            "</span>wallet_id<span class="s2">": "</span>cf761ad1b6c5f30a1557d942cb557b07<span class="s2">",
-            "</span>url<span class="s2">": "</span>https://your_webhook_server.com/<span class="s2">", 
-            "</span>label<span class="s2">": "</span>Receipt<span class="s2">", 
-            "</span><span class="nb">type</span><span class="s2">": "</span>withdraw<span class="s2">", 
-            "</span>coin<span class="s2">": "</span>bch<span class="s2">",
-            "</span>secret_key<span class="s2">":"</span>abc123<span class="s2">"
-    }'
-</span></code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
+    -d <span class="s1">'{
+            "wallet_id": "cf761ad1b6c5f30a1557d942cb557b07",
+            "url": "https://your_webhook_server.com/", 
+            "label": "Receipt", 
+            "type": "withdraw", 
+            "coin": "bch",
+            "secret_key":"abc123"
+    }'</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
     <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/webhook/add/"</span><span class="p">,</span>
@@ -2082,7 +2077,7 @@
 <td>wallet_id</td>
 <td>string</td>
 <td>是</td>
-<td>钱包id</td>
+<td>钱包的id</td>
 </tr>
 <tr>
 <td>url</td>
@@ -2202,7 +2197,7 @@
 <td>wallet_id</td>
 <td>string</td>
 <td>是</td>
-<td>钱包id</td>
+<td>钱包的id</td>
 </tr>
 </tbody></table>
 <h3 id='70bdef7e25-14'>返回参数</h3>
@@ -2260,7 +2255,7 @@
 <tr>
 <td>wallet_id</td>
 <td>string</td>
-<td>钱包id</td>
+<td>钱包的id</td>
 </tr>
 </tbody></table>
 <h1 id='webhook-3'>删除钱包WebHook</h1>
@@ -2276,8 +2271,8 @@
     -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
-    -d  <span class="s2">"{ "</span>webhook_id<span class="s2">": "</span>073c0372a955c14f49fd88e499fbae2e<span class="s2">",}'
-</span></code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
+    -d <span class="s1">'{ "webhook_id": "073c0372a955c14f49fd88e499fbae2e",}'</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
     <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/webhook/del/"</span><span class="p">,</span>
@@ -2377,7 +2372,7 @@
 <td>wallet_id</td>
 <td>string</td>
 <td>是</td>
-<td>钱包id</td>
+<td>钱包的id</td>
 </tr>
 </tbody></table>
 <h3 id='70bdef7e25-16'>返回参数</h3>
@@ -2476,7 +2471,7 @@
 <td>wallet_id</td>
 <td>string</td>
 <td>是</td>
-<td>钱包id</td>
+<td>钱包的id</td>
 </tr>
 <tr>
 <td>observer</td>
@@ -2552,7 +2547,7 @@
 <td>wallet_id</td>
 <td>string</td>
 <td>是</td>
-<td>钱包id</td>
+<td>钱包的id</td>
 </tr>
 <tr>
 <td>observer</td>
@@ -2731,7 +2726,7 @@
 <td>wallet_id</td>
 <td>string</td>
 <td>是</td>
-<td>钱包id</td>
+<td>钱包的id</td>
 </tr>
 <tr>
 <td>year</td>
@@ -2849,10 +2844,6 @@
 <td>钱包余额不足</td>
 </tr>
 <tr>
-<td>4207</td>
-<td>公钥地址已被使用</td>
-</tr>
-<tr>
 <td>4210</td>
 <td>钱包Webhook数目超限</td>
 </tr>
@@ -2931,6 +2922,10 @@
 <tr>
 <td>4513</td>
 <td>unspent 已经被使用</td>
+</tr>
+<tr>
+<td>4607</td>
+<td>公钥地址已被使用</td>
 </tr>
 <tr>
 <td>4608</td>

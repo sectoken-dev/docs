@@ -560,7 +560,7 @@
             <span class="s">"your encrypted privkey1"</span><span class="p">,</span> 
             <span class="s">"your encrypted privkey2"</span><span class="p">,</span> 
         <span class="p">],</span>
-        <span class="s">"wallet_name"</span><span class="p">:</span> <span class="s">"EthTestWallet"</span><span class="p">,</span>
+        <span class="s">"wallet_name"</span><span class="p">:</span> <span class="s">"TestWallet"</span><span class="p">,</span>
     <span class="p">}</span>
 <span class="p">)</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/trx/create/"</span> <span class="se">\</span>
@@ -576,7 +576,7 @@
             "your encrypted privkey1",
             "your encrypted privkey2"
         ], 
-        "wallet_name": "EthTestWallet"
+        "wallet_name": "TestWallet"
     }'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
 
@@ -596,7 +596,7 @@
             <span class="s2">"your encrypted privkey1"</span><span class="p">,</span>
             <span class="s2">"your encrypted privkey2"</span>
         <span class="p">],</span> 
-        <span class="s2">"wallet_name"</span><span class="p">:</span> <span class="s2">"EthTestWallet"</span>
+        <span class="s2">"wallet_name"</span><span class="p">:</span> <span class="s2">"TestWallet"</span>
     <span class="p">})</span>
 <span class="p">});</span>
 </code></pre>
@@ -700,7 +700,7 @@
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
         <span class="s">"pubkey"</span><span class="p">:</span>  <span class="s">"027c9612b91ed830de2259819c85e160084fb1fb0ca5ad2d02537c085f3b93246c"</span><span class="p">,</span>  
         <span class="s">"privkey"</span><span class="p">:</span><span class="s">"your encrypted privkey"</span><span class="p">,</span> 
-        <span class="s">"wallet_name"</span><span class="p">:</span> <span class="s">"EthTestWallet"</span><span class="p">,</span>
+        <span class="s">"wallet_name"</span><span class="p">:</span> <span class="s">"TestWallet"</span><span class="p">,</span>
         <span class="s">"threshold"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
         <span class="s">"limit"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
         <span class="s">"control"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -713,7 +713,7 @@
     -d <span class="s1">'{
         "pubkey":  "027c9612b91ed830de2259819c85e160084fb1fb0ca5ad2d02537c085f3b93246c",  
         "privkey":"your encrypted privkey", 
-        "wallet_name": "EthTestWallet",
+        "wallet_name": "TestWallet",
         "threshold": 2,
         "limit": 2,
         "control": 1,
@@ -730,7 +730,7 @@
     <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
         <span class="s2">"pubkey"</span><span class="p">:</span>  <span class="s2">"027c9612b91ed830de2259819c85e160084fb1fb0ca5ad2d02537c085f3b93246c"</span><span class="p">,</span>  
         <span class="s2">"privkey"</span><span class="p">:</span><span class="s2">"your encrypted privkey"</span><span class="p">,</span> 
-        <span class="s2">"wallet_name"</span><span class="p">:</span> <span class="s2">"EthTestWallet"</span><span class="p">,</span>
+        <span class="s2">"wallet_name"</span><span class="p">:</span> <span class="s2">"TestWallet"</span><span class="p">,</span>
         <span class="s2">"threshold"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
         <span class="s2">"limit"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
         <span class="s2">"control"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -1097,7 +1097,7 @@
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"238ea438717861cd694085d8b6659b83"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"wallet_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trxTestWallet"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"wallet_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TestWallet"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TXorxEGAgkMbbKy4HRjtuCZcDsfXmdz55n"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"99600"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"net"</span><span class="p">:</span><span class="w"> </span><span class="s2">"253"</span><span class="p">,</span><span class="w">
@@ -1250,7 +1250,7 @@
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"wallet_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TestSeven"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"wallet_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TestWallet"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2cc5abb2b9932ca1ec5513ad1a9685f9"</span><span class="p">,</span><span class="w"> 
             </span><span class="s2">"address"</span><span class="p">:</span><span class="s2">"TXorxEGAgkMbbKy4HRjtuCZcDsfXmdz55n"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"create_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-09T02:27:18.465"</span><span class="p">,</span><span class="w">

@@ -1259,7 +1259,7 @@
         <span class="s">"value"</span><span class="p">:</span> <span class="s">"1000000000"</span><span class="p">,</span>
         <span class="s">"feerate"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s">"memo"</span><span class="p">:</span><span class="s">"abcdefg"</span><span class="p">,</span>
-        <span class="s">"total"</span><span class="p">:</span><span class="bp">False</span><span class="p">,</span>
+        <span class="s">"total"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
     <span class="p">}</span>
 <span class="p">)</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/usdt/dotx/"</span> <span class="se">\</span>
@@ -1272,7 +1272,7 @@
             "value": "1000000000", 
             "feerate": 1, 
             "memo":"abcdefg",
-            "total":false
+            "total":0
 }'</span>
 </code></pre>
 <blockquote>
@@ -1360,9 +1360,9 @@
 </tr>
 <tr>
 <td>total</td>
-<td>boolean</td>
+<td>integer</td>
 <td>否</td>
-<td>全部转出,  默认为 False</td>
+<td>全部转出,  默认为 0, 为1时value失效</td>
 </tr>
 </tbody></table>
 <h3 id='70bdef7e25-8'>返回参数</h3>

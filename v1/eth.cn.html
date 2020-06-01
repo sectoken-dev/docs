@@ -535,7 +535,7 @@
               </ul>
           </li>
           <li>
-            <a href="#callback" class="toc-h1 toc-link" data-title="交易Callback通知">交易Callback通知</a>
+            <a href="#webhook-4" class="toc-h1 toc-link" data-title="交易Webhook通知">交易Webhook通知</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#1f233418ae" class="toc-h2 toc-link" data-title="参数说明">参数说明</a>
@@ -544,17 +544,6 @@
           </li>
           <li>
             <a href="#c284998822" class="toc-h1 toc-link" data-title="获取交易记录">获取交易记录</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#http-request-23" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
-                  </li>
-                  <li>
-                    <a href="#1f9ac54b15-21" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
-                  </li>
-                  <li>
-                    <a href="#70bdef7e25-23" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
-                  </li>
-              </ul>
           </li>
           <li>
             <a href="#e08c1d4f9a" class="toc-h1 toc-link" data-title="错误码">错误码</a>
@@ -2898,7 +2887,7 @@
 <td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
 </tr>
 </tbody></table>
-<h1 id='callback'>交易Callback通知</h1>
+<h1 id='webhook-4'>交易Webhook通知</h1>
 <p>当用户钱包发生交易时，会向指定的url发送HTTP POST请求，请求头content-type为application/json。</p>
 
 <p>此url由用户指定，用户须部署服务接收HTTP POST请求。同时需先添加钱包Webhook。</p>
@@ -2922,14 +2911,15 @@
     </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xc99629ab2d9472aea0450f3f881e07d5c3d8d9444131430df2e7fb3a95dbb44b"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">4340000</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"dst_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x3A857010Bd2CdEDF6d0a6C90aBe7C50f34038a62"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"src_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x3A857010Bd2CdEDF6d0a6C90aBe7C50f34038a62"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"outputs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="s2">"dst_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xbEFC9F6DeA4E5fF30615d7651C42Db98866912Bf"</span><span class="p">,</span><span class="w"> </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000000000"</span><span class="p">},</span><span class="w"> 
+    </span><span class="p">],</span><span class="w"> 
     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deposit"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1872340000</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000000000"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"erc20_mt"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eth"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"callbackid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fa5dc2025e79c37b8656ef4b89619d9d"</span><span class="w">
+    </span><span class="s2">"webhook_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fa5dc2025e79c37b8656ef4b89619d9d"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='1f233418ae'>参数说明</h3>
 <table><thead>
@@ -2942,52 +2932,52 @@
 <tr>
 <td>wallet_id</td>
 <td>string</td>
-<td>用户钱包的id</td>
+<td>钱包id</td>
 </tr>
 <tr>
 <td>txid</td>
 <td>string</td>
-<td>交易单的txid,可以在区块浏览器上进行查找</td>
+<td>交易单id</td>
 </tr>
 <tr>
 <td>height</td>
 <td>integer</td>
-<td>交易所在区块高度</td>
-</tr>
-<tr>
-<td>dst_address</td>
-<td>string</td>
-<td>交易目的地址</td>
+<td>交易所在的区块高度</td>
 </tr>
 <tr>
 <td>src_address</td>
 <td>string</td>
-<td>交易来源地址</td>
+<td>交易转出地址</td>
+</tr>
+<tr>
+<td>outputs</td>
+<td>array</td>
+<td>收款地址及金额</td>
 </tr>
 <tr>
 <td>type</td>
 <td>string</td>
-<td>交易状态，withdraw 转出 deposit收款</td>
+<td>交易类型,收款或付款</td>
 </tr>
 <tr>
 <td>timestamp</td>
 <td>integer</td>
-<td>交易时间戳</td>
-</tr>
-<tr>
-<td>value</td>
-<td>string</td>
-<td>交易金额</td>
+<td>交易所在区块生成时间</td>
 </tr>
 <tr>
 <td>coin</td>
 <td>string</td>
-<td>币种类型</td>
+<td>币种</td>
 </tr>
 <tr>
 <td>decimal</td>
 <td>integer</td>
-<td>精度</td>
+<td>币种的小数位</td>
+</tr>
+<tr>
+<td>webhook_id</td>
+<td>string</td>
+<td>webhook 的 id</td>
 </tr>
 </tbody></table>
 <h1 id='c284998822'>获取交易记录</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
@@ -3002,10 +2992,10 @@
 <span class="p">)</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/flow/record/eth/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07&amp;year=2019&amp;month=10"</span> <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
-        <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/flow/record/eth/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07&amp;year=2019&amp;month=12"</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/flow/record/eth/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07&amp;&amp;year=2019&amp;&amp;month=12"</span><span class="p">,</span>
         <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
             <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -3023,121 +3013,18 @@
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xc99629ab2d9472aea0450f3f881e07d5c3d8d9444131430df2e7fb3a95dbb44b"</span><span class="p">,</span><span class="w"> 
             </span><span class="s2">"src_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x3A857010Bd2CdEDF6d0a6C90aBe7C50f34038a62"</span><span class="p">,</span><span class="w"> 
-            </span><span class="s2">"dst_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x3A857010Bd2CdEDF6d0a6C90aBe7C50f34038a62"</span><span class="p">,</span><span class="w"> 
-            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"outputs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="s2">"dst_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xbEFC9F6DeA4E5fF30615d7651C42Db98866912Bf"</span><span class="p">,</span><span class="w"> </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000000000"</span><span class="p">},</span><span class="w"> 
+            </span><span class="p">],</span><span class="w"> 
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deposit"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1572259477</span><span class="p">,</span><span class="w"> 
-            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"withdraw"</span><span class="p">,</span><span class="w"> 
             </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">5278224</span><span class="p">,</span><span class="w"> 
             </span><span class="s2">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eth"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-23'>HTTP Request</h3>
-<p><code>GET https://testnet.sectoken.io/flow/record/eth/</code></p>
-<h3 id='1f9ac54b15-21'>请求参数</h3>
-<table><thead>
-<tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>必填</th>
-<th>说明</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>wallet_id</td>
-<td>string</td>
-<td>是</td>
-<td>钱包的id</td>
-</tr>
-<tr>
-<td>year</td>
-<td>string</td>
-<td>是</td>
-<td>年份</td>
-</tr>
-<tr>
-<td>month</td>
-<td>string</td>
-<td>是</td>
-<td>月份</td>
-</tr>
-<tr>
-<td>day</td>
-<td>string</td>
-<td>否</td>
-<td>日期</td>
-</tr>
-</tbody></table>
-<h3 id='70bdef7e25-23'>返回参数</h3>
-<table><thead>
-<tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>说明</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>code</td>
-<td>integer</td>
-<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
-</tr>
-<tr>
-<td>data</td>
-<td>array</td>
-<td>返回内容</td>
-</tr>
-</tbody></table>
-<h4 id='data-19'>Data 参数</h4>
-<table><thead>
-<tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>说明</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>txid</td>
-<td>string</td>
-<td>交易单的txid,可以在区块浏览器上进行查找</td>
-</tr>
-<tr>
-<td>src_address</td>
-<td>string</td>
-<td>交易来源地址</td>
-</tr>
-<tr>
-<td>det_address</td>
-<td>string</td>
-<td>交易目的地址</td>
-</tr>
-<tr>
-<td>value</td>
-<td>string</td>
-<td>交易金额</td>
-</tr>
-<tr>
-<td>timestamp</td>
-<td>integer</td>
-<td>交易时间</td>
-</tr>
-<tr>
-<td>type</td>
-<td>string</td>
-<td>交易状态，withdraw 转出 deposit收款</td>
-</tr>
-<tr>
-<td>height</td>
-<td>integer</td>
-<td>交易区块高度</td>
-</tr>
-<tr>
-<td>decimal</td>
-<td>integer</td>
-<td>精度</td>
-</tr>
-</tbody></table>
-<h1 id='e08c1d4f9a'>错误码</h1>
+</span></code></pre><h1 id='e08c1d4f9a'>错误码</h1>
 <p>当发生错误时返回的错误码</p>
 
 <table><thead>

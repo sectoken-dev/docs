@@ -448,7 +448,7 @@
               </ul>
           </li>
           <li>
-            <a href="#callback" class="toc-h1 toc-link" data-title="交易Callback通知">交易Callback通知</a>
+            <a href="#webhook-4" class="toc-h1 toc-link" data-title="交易Webhook通知">交易Webhook通知</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#1f233418ae" class="toc-h2 toc-link" data-title="参数说明">参数说明</a>
@@ -2340,7 +2340,7 @@
 <td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
 </tr>
 </tbody></table>
-<h1 id='callback'>交易Callback通知</h1>
+<h1 id='webhook-4'>交易Webhook通知</h1>
 <p>当用户钱包发生交易时，会向指定的url发送HTTP POST请求，请求头content-type为application/json。</p>
 
 <p>此url由用户指定，用户须部署服务接收HTTP POST请求。同时需先添加钱包Webhook。</p>
@@ -2364,14 +2364,16 @@
 </span><span class="p">{</span><span class="w">
     </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8cc575f56e014cbe38e01c8cf3a92ae0507322f2b7f713359b7cd324ae89575d"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"src_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sectoken1111"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"outputs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="s2">"dst_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sectoken1213"</span><span class="p">,</span><span class="w"> </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000"</span><span class="p">},</span><span class="w"> 
+    </span><span class="p">],</span><span class="w">
     </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">4340000</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"dst_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sectoken1214"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"src_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sectoken1114"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"withdraw"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1872340000</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000000000"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eos"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"memo"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
     </span><span class="s2">"webhook_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fa5dc2025e79c37b8656ef4b89619d9d"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
@@ -2386,52 +2388,57 @@
 <tr>
 <td>wallet_id</td>
 <td>string</td>
-<td>用户钱包id</td>
+<td>钱包id</td>
 </tr>
 <tr>
 <td>txid</td>
 <td>string</td>
-<td>交易id</td>
+<td>交易单id</td>
 </tr>
 <tr>
 <td>height</td>
 <td>integer</td>
-<td>交易所在区块高度</td>
-</tr>
-<tr>
-<td>dst_address</td>
-<td>string</td>
-<td>交易目的eos address</td>
+<td>交易所在的区块高度</td>
 </tr>
 <tr>
 <td>src_address</td>
 <td>string</td>
-<td>交易来源 eos address</td>
+<td>交易转出地址</td>
+</tr>
+<tr>
+<td>outputs</td>
+<td>array</td>
+<td>收款地址及金额</td>
 </tr>
 <tr>
 <td>type</td>
 <td>string</td>
-<td>交易状态，withdraw 转出 deposit收款</td>
+<td>交易类型,收款或付款</td>
 </tr>
 <tr>
 <td>timestamp</td>
 <td>integer</td>
-<td>交易时间戳</td>
-</tr>
-<tr>
-<td>value</td>
-<td>string</td>
-<td>交易金额</td>
+<td>交易所在区块生成时间</td>
 </tr>
 <tr>
 <td>coin</td>
 <td>string</td>
-<td>币种类型</td>
+<td>币种</td>
 </tr>
 <tr>
 <td>decimal</td>
 <td>integer</td>
-<td>币种精度</td>
+<td>币种的小数位</td>
+</tr>
+<tr>
+<td>memo</td>
+<td>string</td>
+<td>交易单附带的备注信息</td>
+</tr>
+<tr>
+<td>webhook_id</td>
+<td>string</td>
+<td>webhook 的 id</td>
 </tr>
 </tbody></table>
 <h1 id='c284998822'>获取交易记录</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
@@ -2465,15 +2472,18 @@
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> 
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8cc575f56e014cbe38e01c8cf3a92ae0507322f2b7f713359b7cd324ae89575d"</span><span class="p">,</span><span class="w"> 
-            </span><span class="s2">"src_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sectoken1114"</span><span class="p">,</span><span class="w"> 
-            </span><span class="s2">"dst_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sectoken1114"</span><span class="p">,</span><span class="w"> 
-            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="p">,</span><span class="w"> 
-            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1572259477</span><span class="p">,</span><span class="w"> 
-            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"withdraw"</span><span class="p">,</span><span class="w"> 
-            </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">5278224</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8cc575f56e014cbe38e01c8cf3a92ae0507322f2b7f713359b7cd324ae89575d"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"src_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sectoken1111"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"outputs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="s2">"dst_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sectoken1213"</span><span class="p">,</span><span class="w"> </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000"</span><span class="p">},</span><span class="w"> 
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">4340000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"withdraw"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1872340000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000000000"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eos"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="w">
+            </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"memo"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -2535,7 +2545,7 @@
 <h4 id='data-14'>data 参数</h4>
 <table><thead>
 <tr>
-<th>参数名</th>
+<th>参数名称</th>
 <th>参数类型</th>
 <th>说明</th>
 </tr>
@@ -2548,37 +2558,42 @@
 <tr>
 <td>src_address</td>
 <td>string</td>
-<td>交易来源地址</td>
+<td>交易转出地址</td>
 </tr>
 <tr>
-<td>det_address</td>
-<td>string</td>
-<td>交易目的地址</td>
-</tr>
-<tr>
-<td>value</td>
-<td>string</td>
-<td>交易金额</td>
-</tr>
-<tr>
-<td>timestamp</td>
-<td>integer</td>
-<td>交易时间</td>
+<td>outputs</td>
+<td>object</td>
+<td>收款地址及金额</td>
 </tr>
 <tr>
 <td>type</td>
 <td>string</td>
-<td>交易状态，withdraw 转出 deposit收款</td>
+<td>交易类型,收款(deposit)或付款(withdraw)</td>
+</tr>
+<tr>
+<td>coin</td>
+<td>string</td>
+<td>币种</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>integer</td>
+<td>交易所在区块生成时间</td>
 </tr>
 <tr>
 <td>height</td>
 <td>integer</td>
-<td>交易区块高度</td>
+<td>交易所在区块高度</td>
+</tr>
+<tr>
+<td>memo</td>
+<td>string</td>
+<td>交易单附带的备注信息</td>
 </tr>
 <tr>
 <td>decimal</td>
 <td>integer</td>
-<td>精度</td>
+<td>币种的小数位</td>
 </tr>
 </tbody></table>
 <h1 id='e08c1d4f9a'>错误码</h1>

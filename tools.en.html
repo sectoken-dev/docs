@@ -537,8 +537,7 @@
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"address"</span><span class="p">:</span><span class="s2">"0xE1e8Bf38E9f8716ea9589885a2EF5EAf4bDcB16B"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"pubkey"</span><span class="p">:</span><span class="s2">"046a3078476a1f9d4cbf1d0f91a3c92c2600378e959355bea37bd7a1fb80c5095286c5aeb57b185e4a397b4bb9f984c15a87182965865b60ad45b1f54798a5ba47"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"compresspubkey"</span><span class="p">:</span><span class="s2">"036a3078476a1f9d4cbf1d0f91a3c92c2600378e959355bea37bd7a1fb80c50952"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pubkey"</span><span class="p">:</span><span class="s2">"036a3078476a1f9d4cbf1d0f91a3c92c2600378e959355bea37bd7a1fb80c50952"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"prikey"</span><span class="p">:</span><span class="s2">"bbbbc680ac9376a26d392bdadc07186e554959f9fc699fa68380602fd4eaeb56"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request'>HTTP Request</h3>
@@ -562,11 +561,6 @@
 <td>Public key</td>
 </tr>
 <tr>
-<td>compresspubkey</td>
-<td>string</td>
-<td>Compressed public key</td>
-</tr>
-<tr>
 <td>prikey</td>
 <td>string</td>
 <td>Private key</td>
@@ -582,10 +576,11 @@
 <p>Response Samples</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"address"</span><span class="p">:</span><span class="s2">"2NC3ShFZxidf17ZvMvYbFUxnz3bHPD7CgA4"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"pubkey"</span><span class="p">:</span><span class="s2">"033282ecb1a2465a336d9838d105ab4498922503f922905c50e390817e65bc251d"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"prikey"</span><span class="p">:</span><span class="s2">"a2eca9f95acb9c20ad2f0ba69da7e5a279e74f25b277416135cce17ffce2e3a7"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"wif_prikey"</span><span class="p">:</span><span class="s2">"cT3QUQxHBhwQTqmMDsYi6sjEsU3RFp8WJDNNj2u7F5PnCMaJgZVR"</span><span class="w">
+    </span><span class="s2">"prikey"</span><span class="p">:</span><span class="s2">"d970f93cf3847064a65409a21b4335539d493cbd358488104f2b46546190b7d1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"wif_prikey"</span><span class="p">:</span><span class="s2">"cUsNwcSScM73RsXt2F718jTQHuuhH8E4QUbFxGjrhtmBySh8RtQA"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pubkey"</span><span class="p">:</span><span class="s2">"039c5b7e13bf503f04844701300a98aa9749d2aef8d9037372ad1e9471226c3af2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"legacy_address"</span><span class="p">:</span><span class="s2">"mkieLi8sK71oXoRVU4YTguxbwC8zvBJaaR"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"p2sh_address"</span><span class="p">:</span><span class="s2">"2NAGwdZmpTXQMKBv46Sg6AgJkwyoPeqrGk3"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://internal.sectoken.io/addr/btc</code></p>
@@ -598,9 +593,14 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>address</td>
+<td>p2sh_address</td>
 <td>string</td>
-<td>BTC address</td>
+<td>BTC p2sh address</td>
+</tr>
+<tr>
+<td>legacy_address</td>
+<td>string</td>
+<td>BTC legacy address</td>
 </tr>
 <tr>
 <td>pubkey</td>
@@ -628,10 +628,11 @@
 <p>Response Samples</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"address"</span><span class="p">:</span><span class="s2">"2NEbufJsvgQL3U85xDpeCUnSAAX2bTrQnTi"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"pubkey"</span><span class="p">:</span><span class="s2">"03fbe263fec343e887bfc3fb0e1c01eb8f63b87652b1c12427d9ecabe110acf286"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"prikey"</span><span class="p">:</span><span class="s2">"5a9494042f4ce0d48d20bfb2c60654a69c094ddc210a5160a7cfc86a7c14f2ce"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"wif_prikey"</span><span class="p">:</span><span class="s2">"cQcn5gMXfnZn2n9jFM9RmoitJMB1qN6dnnnrzQ8gDcL8J4JA7kFb"</span><span class="w">
+    </span><span class="s2">"prikey"</span><span class="p">:</span><span class="s2">"d970f93cf3847064a65409a21b4335539d493cbd358488104f2b46546190b7d1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"wif_prikey"</span><span class="p">:</span><span class="s2">"cUsNwcSScM73RsXt2F718jTQHuuhH8E4QUbFxGjrhtmBySh8RtQA"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pubkey"</span><span class="p">:</span><span class="s2">"039c5b7e13bf503f04844701300a98aa9749d2aef8d9037372ad1e9471226c3af2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"legacy_address"</span><span class="p">:</span><span class="s2">"mkieLi8sK71oXoRVU4YTguxbwC8zvBJaaR"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"p2sh_address"</span><span class="p">:</span><span class="s2">"2NAGwdZmpTXQMKBv46Sg6AgJkwyoPeqrGk3"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-3'>HTTP Request</h3>
 <p><code>GET https://internal.sectoken.io/addr/usdt</code></p>
@@ -644,9 +645,14 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>address</td>
+<td>p2sh_address</td>
 <td>string</td>
-<td>USDT address</td>
+<td>USDT p2sh address</td>
+</tr>
+<tr>
+<td>legacy_address</td>
+<td>string</td>
+<td>USDT legacy address</td>
 </tr>
 <tr>
 <td>pubkey</td>
@@ -674,10 +680,11 @@
 <p>Response Samples</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"address"</span><span class="p">:</span><span class="s2">"QPVSMTZ7eErfJovs8CzmR2JspYEmrvQSmp"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"pubkey"</span><span class="p">:</span><span class="s2">"0349e2630c739ff06d20f30eab830fe083e2f0f975e734adcd2016a36c64c9bec4"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"prikey"</span><span class="p">:</span><span class="s2">"89b0cb6f26a52ff28d1fa9b163c525266bec1f5e212625550229f027bd9cfeaf"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"wif_prikey"</span><span class="p">:</span><span class="s2">"cSCMVisNknDSi7A4Lpf1JHj1piH932qPaESWDszxPQYSztuB1YFf"</span><span class="w">
+    </span><span class="s2">"prikey"</span><span class="p">:</span><span class="s2">"d970f93cf3847064a65409a21b4335539d493cbd358488104f2b46546190b7d1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"wif_prikey"</span><span class="p">:</span><span class="s2">"cUsNwcSScM73RsXt2F718jTQHuuhH8E4QUbFxGjrhtmBySh8RtQA"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pubkey"</span><span class="p">:</span><span class="s2">"039c5b7e13bf503f04844701300a98aa9749d2aef8d9037372ad1e9471226c3af2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"legacy_address"</span><span class="p">:</span><span class="s2">"mkieLi8sK71oXoRVU4YTguxbwC8zvBJaaR"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"p2sh_address"</span><span class="p">:</span><span class="s2">"QfDtprsGCCkSj21rbXnTDtnntgGZkYo9Eh"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-4'>HTTP Request</h3>
 <p><code>GET https://internal.sectoken.io/addr/ltc</code></p>
@@ -690,9 +697,14 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>address</td>
+<td>p2sh_address</td>
 <td>string</td>
-<td>LTC address</td>
+<td>LTC p2sh address</td>
+</tr>
+<tr>
+<td>legacy_address</td>
+<td>string</td>
+<td>LTC legacy address</td>
 </tr>
 <tr>
 <td>pubkey</td>
@@ -720,10 +732,11 @@
 <p>Response Samples</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"address"</span><span class="p">:</span><span class="s2">"bchtest:qpd8m8hm9q5ldwdw68tml9u0q203rjfyjcu3xxkres"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"pubkey"</span><span class="p">:</span><span class="s2">"0349e2630c739ff06d20f30eab830fe083e2f0f975e734adcd2016a36c64c9bec4"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"prikey"</span><span class="p">:</span><span class="s2">"89b0cb6f26a52ff28d1fa9b163c525266bec1f5e212625550229f027bd9cfeaf"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"wif_prikey"</span><span class="p">:</span><span class="s2">"cSCMVisNknDSi7A4Lpf1JHj1piH932qPaESWDszxPQYSztuB1YFf"</span><span class="w">
+    </span><span class="s2">"prikey"</span><span class="p">:</span><span class="s2">"d970f93cf3847064a65409a21b4335539d493cbd358488104f2b46546190b7d1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"wif_prikey"</span><span class="p">:</span><span class="s2">"cUsNwcSScM73RsXt2F718jTQHuuhH8E4QUbFxGjrhtmBySh8RtQA"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pubkey"</span><span class="p">:</span><span class="s2">"039c5b7e13bf503f04844701300a98aa9749d2aef8d9037372ad1e9471226c3af2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"legacy_address"</span><span class="p">:</span><span class="s2">"mkieLi8sK71oXoRVU4YTguxbwC8zvBJaaR"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"cash_address"</span><span class="p">:</span><span class="s2">"bchtest:qqq8jqez7mgfdu3wh7jq96k6wwmd6vq9dyhs7p5tha"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-5'>HTTP Request</h3>
 <p><code>GET https://internal.sectoken.io/addr/bch</code></p>
@@ -736,9 +749,14 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>address</td>
+<td>cash_address</td>
 <td>string</td>
-<td>BCH address</td>
+<td>BCH cash address</td>
+</tr>
+<tr>
+<td>legacy_address</td>
+<td>string</td>
+<td>BCH legacy address</td>
 </tr>
 <tr>
 <td>pubkey</td>
@@ -765,11 +783,12 @@
 <blockquote>
 <p>Response Samples</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">   
-    </span><span class="s2">"address"</span><span class="p">:</span><span class="s2">"yMPUWp5gr8WEqurVMpLpxd4u2oRFwfCY7W"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"pubkey"</span><span class="p">:</span><span class="s2">"0349e2630c739ff06d20f30eab830fe083e2f0f975e734adcd2016a36c64c9bec4"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"prikey"</span><span class="p">:</span><span class="s2">"89b0cb6f26a52ff28d1fa9b163c525266bec1f5e212625550229f027bd9cfeaf"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"wif_prikey"</span><span class="p">:</span><span class="s2">"cSCMVisNknDSi7A4Lpf1JHj1piH932qPaESWDszxPQYSztuB1YFf"</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"prikey"</span><span class="p">:</span><span class="s2">"d970f93cf3847064a65409a21b4335539d493cbd358488104f2b46546190b7d1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"wif_prikey"</span><span class="p">:</span><span class="s2">"cUsNwcSScM73RsXt2F718jTQHuuhH8E4QUbFxGjrhtmBySh8RtQA"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pubkey"</span><span class="p">:</span><span class="s2">"039c5b7e13bf503f04844701300a98aa9749d2aef8d9037372ad1e9471226c3af2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"legacy_address"</span><span class="p">:</span><span class="s2">"yU5ak562RMKLupLTHqrHzjNkgppfPTP6Br"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"p2sh_address"</span><span class="p">:</span><span class="s2">"8tyGvZ1W6fHKPMRdNJHwjHHBJnTtUrpcns"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-6'>HTTP Request</h3>
 <p><code>GET https://internal.sectoken.io/addr/dash</code></p>
@@ -782,9 +801,14 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>address</td>
+<td>p2sh_address</td>
 <td>string</td>
-<td>DASH address</td>
+<td>DASH p2sh address</td>
+</tr>
+<tr>
+<td>legacy_address</td>
+<td>string</td>
+<td>DASH legacy address</td>
 </tr>
 <tr>
 <td>pubkey</td>
@@ -938,10 +962,10 @@
 <p>Response Samples</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"prikey"</span><span class="p">:</span><span class="s2">"5KNk4cAekcw2mhkJPAGinbWg8eidnmAyuJJ5fpHQTgXdgcpvC8S"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"prikey_hex"</span><span class="p">:</span><span class="s2">"cd64899a7edef6501053a28d34a7b64afb5530264cbc22602e492c545e392ee3"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"pubkey"</span><span class="p">:</span><span class="s2">"EOS84eji8MtcvRJfm63sS672pDYWpVRAfMrw4jQJBawZx34dsSemB"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"prikey"</span><span class="p">:</span><span class="s2">"cd64899a7edef6501053a28d34a7b64afb5530264cbc22602e492c545e392ee3"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"wif_prikey"</span><span class="p">:</span><span class="s2">"5KNk4cAekcw2mhkJPAGinbWg8eidnmAyuJJ5fpHQTgXdgcpvC8S"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"pubkey_hex"</span><span class="p">:</span><span class="s2">"03a2296fcefc20b8d6850cbee9b0db22a4c3ea090b3c39d049b12718bfe035f294"</span><span class="w">
+    </span><span class="s2">"base58_pubkey"</span><span class="p">:</span><span class="s2">"EOS84eji8MtcvRJfm63sS672pDYWpVRAfMrw4jQJBawZx34dsSemB"</span><span class="p">,</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-10'>HTTP Request</h3>
 <p><code>GET https://internal.sectoken.io/addr/eos</code></p>
@@ -956,22 +980,22 @@
 <tr>
 <td>prikey</td>
 <td>string</td>
-<td>base58 private key</td>
+<td>Private key</td>
 </tr>
 <tr>
-<td>prikey_hex</td>
+<td>wif_prikey</td>
 <td>string</td>
-<td>hex private key</td>
+<td>WIF Private key</td>
 </tr>
 <tr>
 <td>pubkey</td>
 <td>string</td>
-<td>base58 public key</td>
+<td>Public key</td>
 </tr>
 <tr>
-<td>pubkey_hex</td>
+<td>base58_pubkey</td>
 <td>string</td>
-<td>hex public key</td>
+<td>Base58 Public key</td>
 </tr>
 </tbody></table>
 <h1 id='eth-multi-sign'>ETH Multi-sign</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span> 

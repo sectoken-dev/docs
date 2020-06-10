@@ -917,15 +917,15 @@
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>                     
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/eth_single/addr_balance/"</span><span class="p">,</span>                             
     <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>                                                                
-    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">"address"</span><span class="p">:</span> <span class="s">"0xc99629ab2d9472aea0450f3f881e07d5c3d8d9444131430df2e7fb3a95dbb44b    </span><span class="err">
-</span><span class="s">)                                                                                                  </span><span class="err">
-</span></code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/eth_single/addr_balance/?address=your addr&amp;coin=eth"</span> <span class="se">\</span>
+    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">"address"</span><span class="p">:</span> <span class="s">"0xa020434a4404c9924a971E116c7099e5A9eCd238"</span><span class="p">,</span> <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"785314aa42f95c98b5ee3fdd1c2df8f4"</span><span class="p">}</span>
+<span class="p">)</span>                                                                                                  
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/eth_single/addr_balance/?wallet_id=785314aa42f95c98b5ee3fdd1c2df8f4&amp;address=0xa020434a4404c9924a971E116c7099e5A9eCd238&amp;coin=eth"</span> <span class="se">\</span>
      <span class="se">\ </span>                     
     -H <span class="s2">"HMAC:your token"</span>                                                                           
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
-    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/eth_single/addr_balance/?address=your addr&amp;coin=eth"</span><span class="p">,</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/eth_single/addr_balance/?wallet_id=785314aa42f95c98b5ee3fdd1c2df8f4&amp;address=0xa020434a4404c9924a971E116c7099e5A9eCd238&amp;coin=eth"</span><span class="p">,</span>
     <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -958,6 +958,12 @@
 <td>string</td>
 <td>是</td>
 <td>查询余额的地址</td>
+</tr>
+<tr>
+<td>wallet_id</td>
+<td>string</td>
+<td>是</td>
+<td>地址所属的wallet id</td>
 </tr>
 <tr>
 <td>coin</td>

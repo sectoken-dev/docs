@@ -274,6 +274,11 @@
                   <li>
                     <a href="#70bdef7e25-4" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
                   </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#d1b09b6b80" class="toc-h1 toc-link" data-title="查询地址余额">查询地址余额</a>
+              <ul class="toc-list-h2">
                   <li>
                     <a href="#http-request-5" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
                   </li>
@@ -735,7 +740,7 @@
 <td>coin</td>
 <td>string</td>
 <td>否</td>
-<td>币种，默认为eth，可以指定为平台支持的erc20 token，如erc20_ht，erc20_koz</td>
+<td>币种，默认为eth，可以指定为平台支持的erc20 token，如erc20_ht，erc20_usdt</td>
 </tr>
 </tbody></table>
 <h3 id='70bdef7e25-3'>返回参数</h3>
@@ -907,7 +912,7 @@
 <td>钱包创建时间</td>
 </tr>
 </tbody></table>
-<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<h1 id='d1b09b6b80'>查询地址余额</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>                     
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/eth_single/addr_balance/"</span><span class="p">,</span>                             
@@ -958,7 +963,7 @@
 <td>coin</td>
 <td>string</td>
 <td>否</td>
-<td>币种，默认为eth，可以指定为平台支持的erc20 token，如erc20_ht，erc20_koz</td>
+<td>币种，默认为eth，可以指定为平台支持的erc20 token，如erc20_ht，erc20_usdt</td>
 </tr>
 </tbody></table>
 <h3 id='70bdef7e25-5'>返回参数</h3>
@@ -1082,7 +1087,7 @@
 <td>coin</td>
 <td>string</td>
 <td>否</td>
-<td>币种，默认为 eth，可以指定为平台支持的 erc20 token，如 erc20_ht，erc20_koz</td>
+<td>币种，默认为 eth，可以指定为平台支持的 erc20 token，如 erc20_ht，erc20_usdt</td>
 </tr>
 <tr>
 <td>gas_price</td>
@@ -1218,6 +1223,12 @@
 <td>string</td>
 <td>是</td>
 <td>完成签名的交易单</td>
+</tr>
+<tr>
+<td>sequence_id</td>
+<td>int</td>
+<td>是</td>
+<td>交易序列号</td>
 </tr>
 </tbody></table>
 <h3 id='70bdef7e25-7'>返回参数</h3>
@@ -1356,7 +1367,7 @@
 <td>coin</td>
 <td>string</td>
 <td>否</td>
-<td>币种，默认为eth，可以指定为平台支持的erc20 token，如erc20_ht，erc20_koz</td>
+<td>币种，默认为eth，可以指定为平台支持的erc20 token，如erc20_ht，erc20_usdt</td>
 </tr>
 <tr>
 <td>gas_price</td>

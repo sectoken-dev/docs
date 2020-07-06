@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Btc API 文档</title>
 
-    <style>
+    <style media="screen">
       .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
 .highlight .gh {
@@ -150,9 +150,6 @@
 .highlight .nn {
   color: #ffffff;
 }
-.highlight .nl {
-  color: #ffffff;
-}
 .highlight .ni {
   color: #ffffff;
 }
@@ -177,6 +174,9 @@
 .highlight .n, .highlight .py, .highlight .nx {
   color: #ffffff;
 }
+.highlight .nl {
+  color: #f92672;
+}
 .highlight .ow {
   color: #f92672;
 }
@@ -196,20 +196,103 @@
   color: #f92672;
 }
     </style>
-    <link href="../stylesheets/screen.css" rel="stylesheet" media="screen" />
-    <link href="../stylesheets/print.css" rel="stylesheet" media="print" />
-      <script src="../javascripts/all.js"></script>
+    <style media="print">
+      * {
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="../stylesheets/screen-bde86515.css" rel="stylesheet" media="screen" />
+    <link href="../stylesheets/print-5687a71c.css" rel="stylesheet" media="print" />
+      <script src="../javascripts/all-e9bde216.js"></script>
+
   </head>
 
   <body class="v1 v1_btc" data-languages="[&quot;shell&quot;,&quot;python&quot;,&quot;javascript&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
-        <img src="../images/navbar.png" alt="Navbar" />
+        <img src="../images/navbar-cad8cdcb.png" alt="Navbar" />
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="../images/logo.png" class="logo" alt="Logo" />
+      <img src="../images/logo-2956005c.png" class="logo" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
               <a href="#" data-language-name="python">python</a>
@@ -1038,7 +1121,6 @@
         <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/btc/detail/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
         <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
             <span class="s2">"HMAC"</span><span class="p">:</span> <span class="s2">"your token"</span><span class="p">,</span>
         <span class="p">},</span>
     <span class="p">});</span>
@@ -1052,7 +1134,7 @@
         </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"wallet_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TestWallet"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2NDNGzhxexc51q9uuEcR3nxRbkDrLQGZSSF"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"confirmed"</span><span class="p">:</span><span class="s2">"20000"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"available"</span><span class="p">:</span><span class="s2">"20000"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"unconfirmed"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"threshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
         </span><span class="s2">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
@@ -1124,14 +1206,14 @@
 <td>钱包的地址</td>
 </tr>
 <tr>
-<td>confirmed</td>
+<td>available</td>
 <td>string</td>
-<td>已确认可用的钱包余额</td>
+<td>可用的钱包余额,最小单位</td>
 </tr>
 <tr>
 <td>unconfirmed</td>
 <td>string</td>
-<td>未确认尚未可用的余额</td>
+<td>不可用的钱包余额,最小单位</td>
 </tr>
 <tr>
 <td>threshold</td>
@@ -1183,7 +1265,6 @@
         <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/btc/wallet_list/?page=1&amp;multi=1"</span><span class="p">,</span>
         <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
             <span class="s2">"HMAC"</span><span class="p">:</span> <span class="s2">"your token"</span><span class="p">,</span>
         <span class="p">},</span>
     <span class="p">}</span>
@@ -1296,7 +1377,6 @@
     <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/btc/addr_list/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
     <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
         <span class="s2">"HMAC"</span><span class="p">:</span> <span class="s2">"your token"</span><span class="p">,</span>
     <span class="p">},</span>
 <span class="p">});</span>
@@ -1454,7 +1534,6 @@
     <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/btc/addr_balance/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07&amp;&amp;address=2NDNGzhxexc51q9uuEcR3nxRbkDrLQGZSSF"</span><span class="p">,</span>
     <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
         <span class="s2">"HMAC"</span><span class="p">:</span> <span class="s2">"your token"</span><span class="p">,</span>
     <span class="p">},</span>
 <span class="p">});</span>
@@ -1465,7 +1544,7 @@
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"confirmed"</span><span class="p">:</span><span class="s2">"31267237"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"available"</span><span class="p">:</span><span class="s2">"31267237"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"unconfirmed"</span><span class="p">:</span><span class="s2">"0"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1521,14 +1600,14 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>confirmed</td>
+<td>available</td>
 <td>string</td>
-<td>已确认可用的地址余额，最小单位</td>
+<td>可用的地址余额，最小单位</td>
 </tr>
 <tr>
 <td>unconfirmed</td>
 <td>string</td>
-<td>尚未确认的地址余额，最小单位</td>
+<td>不可用的地址余额，最小单位</td>
 </tr>
 </tbody></table>
 <h1 id='5192238983'>构建交易单</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
@@ -1547,6 +1626,7 @@
             <span class="p">}</span>
         <span class="p">],</span>
         <span class="s">"feerate"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s">"confirm_target"</span><span class="p">:</span><span class="mi">100</span>
         <span class="s">"memo"</span><span class="p">:</span> <span class="s">"your comment"</span><span class="p">,</span>
         <span class="s">"total"</span><span class="p">:</span>  <span class="mi">0</span>
     <span class="p">}</span>
@@ -1555,7 +1635,7 @@
     -X POST <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
-    -d <span class="s1">'{"wallet_id": "cf761ad1b6c5f30a1557d942cb557b07", "outputs":[{"address": "destination address", "value": "10000"},{"address": "destination address", "value": "5000"}], "feerate": 1, "memo":"your comment", "total":0}'</span>
+    -d <span class="s1">'{"wallet_id": "cf761ad1b6c5f30a1557d942cb557b07", "outputs":[{"address": "destination address", "value": "10000"},{"address": "destination address", "value": "5000"}], "feerate": 1, "confirm_target":100, "memo":"your comment", "total":0}'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
@@ -1570,10 +1650,11 @@
             <span class="s2">"outputs"</span><span class="p">:</span> <span class="p">[{</span>
                 <span class="s2">"address"</span><span class="p">:</span> <span class="s2">"2NDNGzhxexc51q9uuEcR3nxRbkDrLQGZSSF"</span><span class="p">,</span>
                 <span class="s2">"value"</span><span class="p">:</span> <span class="s2">"1100"</span>
-            <span class="p">},],</span>
+            <span class="p">}],</span>
             <span class="s2">"memo"</span><span class="p">:</span> <span class="s2">"your comment"</span><span class="p">,</span>
             <span class="s2">"total"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-            <span class="s2">"feerate"</span><span class="p">:</span> <span class="mi">1</span>
+            <span class="s2">"feerate"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s2">"confirm_target"</span><span class="p">:</span><span class="mi">100</span>
         <span class="p">})</span>
     <span class="p">}</span>
 <span class="p">);</span>
@@ -1651,7 +1732,13 @@
 <td>feerate</td>
 <td>integer</td>
 <td>否</td>
-<td>转账速度， 0：普通， 1：快速， 默认为0</td>
+<td>范围 1-5 矿工费，单位 sat/byte</td>
+</tr>
+<tr>
+<td>confirm_target</td>
+<td>integer</td>
+<td>否</td>
+<td>范围 1-1000，指定矿工费为最近n个区块平均值</td>
 </tr>
 </tbody></table>
 <h3 id='outputs'>outputs 参数</h3>
@@ -1907,10 +1994,7 @@
 <span class="nx">request</span><span class="p">({</span>
         <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/btc/send/"</span><span class="p">,</span>
         <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
-        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
-            <span class="s2">"HMAC"</span><span class="p">:</span> <span class="s2">"your token"</span><span class="p">,</span>
-        <span class="p">},</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span><span class="s2">"HMAC"</span><span class="p">:</span> <span class="s2">"your token"</span><span class="p">},</span>
         <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
             <span class="s2">"wallet_id"</span><span class="p">:</span> <span class="s2">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
             <span class="s2">"sequence_id"</span><span class="p">:</span> <span class="mi">2003140000064057</span><span class="p">,</span>
@@ -2030,10 +2114,7 @@
 <span class="nx">request</span><span class="p">({</span>
     <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/webhook/add/"</span><span class="p">,</span>
     <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
-    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
-        <span class="s2">"HMAC"</span><span class="p">:</span> <span class="s2">"your token"</span><span class="p">,</span>
-    <span class="p">},</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span><span class="s2">"HMAC"</span><span class="p">:</span> <span class="s2">"your token"</span><span class="p">},</span>
     <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
         <span class="s2">"wallet_id"</span><span class="p">:</span> <span class="s2">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
         <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://your_webhook_server.com/"</span><span class="p">,</span> 
@@ -2149,10 +2230,7 @@
 <span class="nx">request</span><span class="p">({</span>
     <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/webhook/list/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
     <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
-    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
-        <span class="s2">"HMAC"</span><span class="p">:</span> <span class="s2">"your token"</span><span class="p">,</span>
-    <span class="p">},</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span><span class="s2">"HMAC"</span><span class="p">:</span> <span class="s2">"your token"</span><span class="p">},</span>
 <span class="p">});</span>
 </code></pre>
 <blockquote>
@@ -2334,10 +2412,7 @@
 <span class="nx">request</span><span class="p">({</span>
     <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/btc/role_list/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
     <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
-    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
-        <span class="s2">"HMAC"</span><span class="p">:</span> <span class="s2">"your token"</span><span class="p">,</span>
-    <span class="p">},</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span><span class="s2">"HMAC"</span><span class="p">:</span> <span class="s2">"your token"</span><span class="p">,},</span>
 <span class="p">});</span>
 </code></pre>
 <blockquote>
@@ -2674,10 +2749,7 @@
 <span class="nx">request</span><span class="p">({</span>
         <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/record/btc/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07&amp;&amp;year=2019&amp;&amp;month=12"</span><span class="p">,</span>
         <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
-        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
-            <span class="s2">"HMAC"</span><span class="p">:</span> <span class="s2">"your token"</span><span class="p">,</span>
-        <span class="p">},</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span><span class="s2">"HMAC"</span><span class="p">:</span> <span class="s2">"your token"</span><span class="p">},</span>
     <span class="p">}</span>
 <span class="p">);</span>
 </code></pre>

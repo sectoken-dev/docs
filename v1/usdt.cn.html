@@ -574,11 +574,11 @@
 
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/usdt/fee/"</span><span class="p">,</span> 
-    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">}</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">}</span>
 <span class="p">)</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/usdt/fee/"</span> <span class="se">\</span>
      <span class="se">\</span>
-    -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
 </code></pre>
 <blockquote>
 <p>返回示例</p>
@@ -642,21 +642,21 @@
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/usdt/create/"</span><span class="p">,</span> 
-    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span> 
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">},</span> 
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
         <span class="s">"pubkeys"</span><span class="p">:</span> <span class="p">[</span>
             <span class="s">"020fcbb44ff4a1f423499b1eb9b2bd9cbe467934467d4857451c7eab7f8cb2885b"</span><span class="p">,</span> 
             <span class="s">"038f2d1612ae08a9595fbe1d30c9b13e748a4ae55c06d5d3fa5c0b2e59712d3b6b"</span>
         <span class="p">],</span>
         <span class="s">"privkeys"</span><span class="p">:[</span>
-            <span class="s">"your encrypted privkey1"</span><span class="p">,</span> 
-            <span class="s">"your encrypted privkey2"</span><span class="p">,</span> 
+            <span class="s">"NGRjMjdkYWZkYjY3YWY2Y2M4MDNiNWMwYWQyMjIxNzlmMjlkZmNkNWM5NmVhNzY5NTRlNTUxZDY1M2Q3NGM3Zg=="</span><span class="p">,</span> 
+            <span class="s">"ZmI0YTdkNDY2MzRmODYyZDg5ZmNmMDdjZDFmMWMxMmZlMTBlNDNkNmNmYThmNjcwZjUwY2U0N2FhMjk1OTI0OA=="</span><span class="p">,</span> 
         <span class="p">],</span>
         <span class="s">"wallet_name"</span><span class="p">:</span> <span class="s">"TestWallet"</span><span class="p">,</span>
     <span class="p">}</span>
 <span class="p">)</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/usdt/create/"</span> <span class="se">\</span>
-    -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
     -d <span class="s1">'{
@@ -665,8 +665,8 @@
         "038f2d1612ae08a9595fbe1d30c9b13e748a4ae55c06d5d3fa5c0b2e59712d3b6b"
     ],
     "privkeys": [
-        "your encrypted privkey1",
-        "your encrypted privkey2"
+        "NGRjMjdkYWZkYjY3YWY2Y2M4MDNiNWMwYWQyMjIxNzlmMjlkZmNkNWM5NmVhNzY5NTRlNTUxZDY1M2Q3NGM3Zg==",
+        "ZmI0YTdkNDY2MzRmODYyZDg5ZmNmMDdjZDFmMWMxMmZlMTBlNDNkNmNmYThmNjcwZjUwY2U0N2FhMjk1OTI0OA=="
     ], 
     "wallet_name": "TestWallet",
 }'</span>
@@ -764,10 +764,10 @@
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/usdt/share_create/"</span><span class="p">,</span> 
-    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span> 
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">},</span> 
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
             <span class="s">"pubkey"</span><span class="p">:</span><span class="s">"020fcbb44ff4a1f423499b1eb9b2bd9cbe467934467d4857451c7eab7f8cb2885b"</span><span class="p">,</span> 
-            <span class="s">"privkey"</span><span class="p">:</span> <span class="s">"your encrypted privkey"</span><span class="p">,</span>
+            <span class="s">"privkey"</span><span class="p">:</span> <span class="s">"NGRjMjdkYWZkYjY3YWY2Y2M4MDNiNWMwYWQyMjIxNzlmMjlkZmNkNWM5NmVhNzY5NTRlNTUxZDY1M2Q3NGM3Zg=="</span><span class="p">,</span>
             <span class="s">"threshold"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span>
             <span class="s">"limit"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span>
             <span class="s">"control"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -775,12 +775,12 @@
     <span class="p">}</span>
 <span class="p">)</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/usdt/share_create/"</span> <span class="se">\</span>
-    -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
     -d <span class="s1">'{
         "pubkey": "020fcbb44ff4a1f423499b1eb9b2bd9cbe467934467d4857451c7eab7f8cb2885b",
-        "privkey": "your encrypted privkey",
+        "privkey": "NGRjMjdkYWZkYjY3YWY2Y2M4MDNiNWMwYWQyMjIxNzlmMjlkZmNkNWM5NmVhNzY5NTRlNTUxZDY1M2Q3NGM3Zg==",
         "threshold": 2,
         "limit": 2,
         "control": 1,
@@ -889,21 +889,21 @@
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/usdt/join_wallet/"</span><span class="p">,</span>
-    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">},</span>
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
         <span class="s">"invitation_code"</span><span class="p">:</span> <span class="s">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
         <span class="s">"pubkey"</span><span class="p">:</span> <span class="s">"038f2d1612ae08a9595fbe1d30c9b13e748a4ae55c06d5d3fa5c0b2e59712d3b6b"</span><span class="p">,</span> 
-        <span class="s">"privkey"</span><span class="p">:</span> <span class="s">"your encrypted privkey"</span><span class="p">,</span>
+        <span class="s">"privkey"</span><span class="p">:</span> <span class="s">"NGRjMjdkYWZkYjY3YWY2Y2M4MDNiNWMwYWQyMjIxNzlmMjlkZmNkNWM5NmVhNzY5NTRlNTUxZDY1M2Q3NGM3Zg=="</span><span class="p">,</span>
     <span class="p">}</span> 
 <span class="p">)</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/usdt/join_wallet/"</span> <span class="se">\</span>
-    -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
     -d <span class="s1">'{
         "invitation_code": "cf761ad1b6c5f30a1557d942cb557b07",
         "pubkey": "038f2d1612ae08a9595fbe1d30c9b13e748a4ae55c06d5d3fa5c0b2e59712d3b6b", 
-        "privkey": "your encrypted privkey",
+        "privkey": "NGRjMjdkYWZkYjY3YWY2Y2M4MDNiNWMwYWQyMjIxNzlmMjlkZmNkNWM5NmVhNzY5NTRlNTUxZDY1M2Q3NGM3Zg==",
     }'</span>
 </code></pre>
 <blockquote>
@@ -996,14 +996,14 @@
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/usdt/activate/"</span><span class="p">,</span>
-    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">},</span>
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
         <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
         <span class="s">"activate_code"</span><span class="p">:</span> <span class="s">"957314"</span><span class="p">,</span>
     <span class="p">}</span> 
 <span class="p">)</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/usdt/activate/"</span> <span class="se">\</span>
-    -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
     -d <span class="s1">'{
@@ -1081,11 +1081,11 @@
 
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/usdt/detail/"</span><span class="p">,</span>
-    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span> 
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">},</span> 
     <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">}</span>
 <span class="p">)</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/usdt/detail/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07"</span> <span class="se">\</span>
-    -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
 
 </code></pre>
 <blockquote>
@@ -1218,11 +1218,11 @@
 
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/usdt/wallet_list/?page=1"</span><span class="p">,</span> 
-    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">}</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">}</span>
 <span class="p">)</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/usdt/wallet_list/?page=1"</span> <span class="se">\</span>
      <span class="se">\</span>
-    -H <span class="s2">"HMAC:your token"</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span>
 </code></pre>
 <blockquote>
 <p>返回示例</p>
@@ -1328,7 +1328,7 @@
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/usdt/dotx/"</span><span class="p">,</span>
-    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">},</span>
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
         <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
         <span class="s">"to_address"</span><span class="p">:</span> <span class="s">"destination address"</span><span class="p">,</span>
@@ -1341,7 +1341,7 @@
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/usdt/dotx/"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
-    -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
     -d <span class="s1">'{
             "wallet_id": "cf761ad1b6c5f30a1557d942cb557b07",
             "to_address": "destination address",
@@ -1390,7 +1390,7 @@
       </span><span class="p">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">349</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"privkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your encrypted privkey"</span><span class="w">
+    </span><span class="s2">"privkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NGRjMjdkYWZkYjY3YWY2Y2M4MDNiNWMwYWQyMjIxNzlmMjlkZmNkNWM5NmVhNzY5NTRlNTUxZDY1M2Q3NGM3Zg=="</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w"> 
 </span></code></pre><h3 id='http-request-8'>HTTP Request</h3>
@@ -1482,21 +1482,21 @@
 <h1 id='8efa5837ff'>获取待签名的交易单</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/usdt/unsigned_tx/"</span><span class="p">,</span>
-    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">},</span>
     <span class="n">params</span><span class="o">=</span><span class="p">{</span>
         <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
         <span class="s">"sequence_id"</span><span class="p">:</span>  <span class="mi">20031000071574</span>
     <span class="p">}</span>
 <span class="p">)</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/usdt/unsigned_tx/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07&amp;sequence_id=20031000071574"</span> <span class="se">\</span>
-    -H <span class="s2">"HMAC:your token"</span> 
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> 
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
         <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/usdt/unsigned_tx/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07&amp;sequence_id=20031000071574"</span><span class="p">,</span>
         <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">"HMAC"</span><span class="p">:</span> <span class="s2">"your token"</span><span class="p">,</span>
+            <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">,</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">);</span>
@@ -1530,7 +1530,7 @@
             </span><span class="p">]</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="s2">"maker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wd6Q3RPKdyCrwzA53R7diP"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"privkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your encrypted privkey"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"privkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NGRjMjdkYWZkYjY3YWY2Y2M4MDNiNWMwYWQyMjIxNzlmMjlkZmNkNWM5NmVhNzY5NTRlNTUxZDY1M2Q3NGM3Zg=="</span><span class="p">,</span><span class="w">
         </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1634,7 +1634,7 @@
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/usdt/send/"</span><span class="p">,</span>
-    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">},</span>
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
         <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
         <span class="s">"signed_tx"</span><span class="p">:</span> <span class="s">"02000000000101790adf7de80313b34ba241c89e626f78ea3de9f68ce16836e1efed15443223570000000023220020865ec173fbfbda5bce5fb16cb8ac053b589818b7b6674b325d72649665bad354ffffffff02e80300000000000017a9142bd544eadc59f3fc42aeaf1f9c83dc0e5aa7471687512200000000000017a91483e42149f975d13d09e49a17409ec60823985545870300483045022100c5cdeefce82742e331bf1b459221314d6c785a2023bea7d13d622c51c7edef5302206710d526fc925b029510bf4119e86fa2873e6fb4b851810423038b8b2d25ebe301695221020fcbb44ff4a1f423499b1eb9b2bd9cbe467934467d4857451c7eab7f8cb2885b21038f2d1612ae08a9595fbe1d30c9b13e748a4ae55c06d5d3fa5c0b2e59712d3b6b21033276655f29e3ca36a5c8dbf0996fd3267f56c03cfdc092f53972269c1abf97ff53ae00000000"</span><span class="p">,</span>
@@ -1644,7 +1644,7 @@
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/usdt/send/"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
-    -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
     -d <span class="s1">'{
         "wallet_id": "cf761ad1b6c5f30a1557d942cb557b07", 
         "signed_tx": "02000000000101790adf7de80313b34ba241c89e626f78ea3de9f68ce16836e1efed15443223570000000023220020865ec173fbfbda5bce5fb16cb8ac053b589818b7b6674b325d72649665bad354ffffffff02e80300000000000017a9142bd544eadc59f3fc42aeaf1f9c83dc0e5aa7471687512200000000000017a91483e42149f975d13d09e49a17409ec60823985545870300483045022100c5cdeefce82742e331bf1b459221314d6c785a2023bea7d13d622c51c7edef5302206710d526fc925b029510bf4119e86fa2873e6fb4b851810423038b8b2d25ebe301695221020fcbb44ff4a1f423499b1eb9b2bd9cbe467934467d4857451c7eab7f8cb2885b21038f2d1612ae08a9595fbe1d30c9b13e748a4ae55c06d5d3fa5c0b2e59712d3b6b21033276655f29e3ca36a5c8dbf0996fd3267f56c03cfdc092f53972269c1abf97ff53ae00000000",
@@ -1737,21 +1737,21 @@
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/webhook/add/"</span><span class="p">,</span>
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
         <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
-        <span class="s">"url"</span><span class="p">:</span> <span class="s">"https://your_webhook_server.com/"</span><span class="p">,</span> 
+        <span class="s">"url"</span><span class="p">:</span><span class="s">"https://example.com/callback/"</span><span class="p">,</span> 
         <span class="s">"label"</span><span class="p">:</span> <span class="s">"Receipt"</span><span class="p">,</span> 
         <span class="s">"type"</span><span class="p">:</span> <span class="s">"withdraw"</span><span class="p">,</span> 
         <span class="s">"coin"</span><span class="p">:</span> <span class="s">"usdt"</span><span class="p">,</span>
         <span class="s">"secret_key"</span><span class="p">:</span><span class="s">"abc123"</span>
     <span class="p">},</span>
-    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">}</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">}</span>
 <span class="p">)</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/webhook/add/"</span> <span class="se">\</span>
-    -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
     -d <span class="s1">'{
             "wallet_id": "cf761ad1b6c5f30a1557d942cb557b07",
-            "url": "https://your_webhook_server.com/", 
+            "url":"https://example.com/callback/", 
             "label": "Receipt", 
             "type": "withdraw", 
             "coin": "usdt",
@@ -1764,11 +1764,11 @@
     <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
-        <span class="s2">"HMAC"</span><span class="p">:</span> <span class="s2">"your token"</span><span class="p">,</span>
+        <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
         <span class="s2">"wallet_id"</span><span class="p">:</span> <span class="s2">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
-        <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://your_webhook_server.com/"</span><span class="p">,</span> 
+        <span class="s2">"url"</span><span class="p">:</span><span class="s2">"https://example.com/callback/"</span><span class="p">,</span> 
         <span class="s2">"label"</span><span class="p">:</span> <span class="s2">"Receipt"</span><span class="p">,</span> 
         <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"withdraw"</span><span class="p">,</span> 
         <span class="s2">"coin"</span><span class="p">:</span> <span class="s2">"usdt"</span><span class="p">,</span>
@@ -1872,10 +1872,10 @@
 
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/webhook/list/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span> 
-    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">}</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">}</span>
 <span class="p">)</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/webhook/list/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07"</span> <span class="se">\</span>
-    -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
@@ -1883,7 +1883,7 @@
     <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
-        <span class="s2">"HMAC"</span><span class="p">:</span> <span class="s2">"your token"</span><span class="p">,</span>
+        <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">,</span>
     <span class="p">},</span>
 <span class="p">});</span>
 </code></pre>
@@ -1991,11 +1991,11 @@
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/webhook/del/"</span><span class="p">,</span> 
-    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span> 
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">},</span> 
     <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s">"webhook_id"</span><span class="p">:</span> <span class="s">"073c0372a955c14f49fd88e499fbae2e"</span><span class="p">}</span>
 <span class="p">)</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/webhook/del/"</span> <span class="se">\</span>
-    -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
     -d <span class="s1">'{ "webhook_id": "073c0372a955c14f49fd88e499fbae2e",}'</span>
@@ -2006,7 +2006,7 @@
     <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
-        <span class="s2">"HMAC"</span><span class="p">:</span> <span class="s2">"your token"</span><span class="p">,</span>
+        <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
          <span class="s2">"webhook_id"</span><span class="p">:</span> <span class="s2">"073c0372a955c14f49fd88e499fbae2e"</span><span class="p">,</span>
@@ -2056,11 +2056,11 @@
 
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/usdt/role_list/"</span><span class="p">,</span> 
-    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span> 
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">},</span> 
     <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">}</span>
 <span class="p">)</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/usdt/role_list/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07"</span> <span class="se">\</span>
-    -H <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
@@ -2068,7 +2068,7 @@
     <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
-        <span class="s2">"HMAC"</span><span class="p">:</span> <span class="s2">"your token"</span><span class="p">,</span>
+        <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">,</span>
     <span class="p">},</span>
 <span class="p">});</span>
 </code></pre>
@@ -2150,14 +2150,14 @@
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/usdt/role_add/"</span><span class="p">,</span> 
-    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span> 
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">},</span> 
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
         <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span> 
         <span class="s">"observer"</span><span class="p">:</span><span class="s">"wd6Q3RPKdyCrwzA53R7diP"</span>
     <span class="p">}</span>
 <span class="p">)</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/usdt/role_add/"</span> 
-    -H <span class="s2">"HMAC:your token"</span> 
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> 
     -X POST
     -d <span class="s1">'{
             "wallet_id":"cf761ad1b6c5f30a1557d942cb557b07",
@@ -2170,7 +2170,7 @@
     <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
-        <span class="s2">"HMAC"</span><span class="p">:</span> <span class="s2">"MTdmYWM4ZmMyZjk3YmZhNTkzZTdhNWYyMjk1MTE1ZTk="</span><span class="p">,</span>
+        <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
         <span class="s2">"wallet_id"</span><span class="p">:</span><span class="s2">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
@@ -2226,14 +2226,14 @@
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/usdt/role_del/"</span><span class="p">,</span> 
-    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span> 
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">},</span> 
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
         <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span> 
         <span class="s">"observer"</span><span class="p">:</span><span class="s">"wd6Q3RPKdyCrwzA53R7diP"</span>
     <span class="p">}</span>
 <span class="p">)</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/usdt/role_del/"</span> 
-    -H <span class="s2">"HMAC:your token"</span> 
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> 
     -X POST
     -d <span class="s1">'{
             "wallet_id":"cf761ad1b6c5f30a1557d942cb557b07",
@@ -2246,7 +2246,7 @@
     <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
-        <span class="s2">"HMAC"</span><span class="p">:</span> <span class="s2">"MTdmYWM4ZmMyZjk3YmZhNTkzZTdhNWYyMjk1MTE1ZTk="</span><span class="p">,</span>
+        <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
         <span class="s2">"wallet_id"</span><span class="p">:</span><span class="s2">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
@@ -2403,7 +2403,7 @@
 <span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/record/usdt/"</span><span class="p">,</span> 
-            <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span> 
+            <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">},</span> 
             <span class="n">params</span><span class="o">=</span><span class="p">{</span>
                 <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
                 <span class="s">"year"</span><span class="p">:</span> <span class="s">"2019"</span><span class="p">,</span>
@@ -2411,7 +2411,7 @@
             <span class="p">}</span>
 <span class="p">)</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/record/usdt/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07&amp;year=2019&amp;month=10"</span> <span class="se">\</span>
-    -H <span class="s2">"HMAC:your token"</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span>
 </code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">

@@ -1234,7 +1234,7 @@
             </span><span class="s2">"wallet_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TestWallet"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span><span class="w"> 
             </span><span class="s2">"address"</span><span class="p">:</span><span class="s2">"2NDNGzhxexc51q9uuEcR3nxRbkDrLQGZSSF"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"create_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-09 02:27:18.465"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"create_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-29T10:45:02.781Z"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"To be Activated"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"activate_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"986143"</span><span class="w">
         </span><span class="p">}</span><span class="w">
@@ -1334,6 +1334,7 @@
         <span class="s">"to_address"</span><span class="p">:</span> <span class="s">"destination address"</span><span class="p">,</span>
         <span class="s">"value"</span><span class="p">:</span> <span class="s">"1000000000"</span><span class="p">,</span>
         <span class="s">"feerate"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s">"confirm_target"</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
         <span class="s">"memo"</span><span class="p">:</span><span class="s">"abcdefg"</span><span class="p">,</span>
         <span class="s">"total"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
     <span class="p">}</span>
@@ -1347,6 +1348,7 @@
             "to_address": "destination address",
             "value": "1000000000", 
             "feerate": 1, 
+            "confirm_target":100,
             "memo":"abcdefg",
             "total":0
 }'</span>
@@ -1432,7 +1434,13 @@
 <td>feerate</td>
 <td>integer</td>
 <td>否</td>
-<td>转账速度，1快速0普通，默认为0</td>
+<td>范围 1-5 矿工费，单位 sat/byte</td>
+</tr>
+<tr>
+<td>confirm_target</td>
+<td>integer</td>
+<td>否</td>
+<td>范围 1-1000，指定矿工费为最近n个区块平均值</td>
 </tr>
 <tr>
 <td>total</td>

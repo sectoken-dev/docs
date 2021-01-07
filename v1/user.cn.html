@@ -1,0 +1,1595 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Documentation</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="../stylesheets/screen-bde86515.css" rel="stylesheet" media="screen" />
+    <link href="../stylesheets/print-5687a71c.css" rel="stylesheet" media="print" />
+      <script src="../javascripts/all_nosearch-ea811c3e.js"></script>
+
+  </head>
+
+  <body class="v1 v1_user" data-languages="[]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="../images/navbar-cad8cdcb.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="../images/logo-2956005c.png" class="logo" alt="Logo" />
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#wallet_user-api" class="toc-h1 toc-link" data-title="Wallet_User API接口文档">Wallet_User API接口文档</a>
+          </li>
+          <li>
+            <a href="#9898c0bdd1" class="toc-h1 toc-link" data-title="获取图片验证码">获取图片验证码</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#ae86317f46" class="toc-h1 toc-link" data-title="注册用户">注册用户</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-2" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-2" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-2" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#6cabcf502f" class="toc-h1 toc-link" data-title="激活账户">激活账户</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-3" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-3" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-3" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#bdbb808a3e" class="toc-h1 toc-link" data-title="重发激活邮件">重发激活邮件</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-4" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-4" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-4" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#21f1e88275" class="toc-h1 toc-link" data-title="登录">登录</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-5" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-5" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-5" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#2302b6bcba" class="toc-h1 toc-link" data-title="绑定谷歌验证码(第一步)">绑定谷歌验证码(第一步)</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-6" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-6" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-6" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#4771d8cb22" class="toc-h1 toc-link" data-title="绑定谷歌验证码(第二步)">绑定谷歌验证码(第二步)</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-7" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-7" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-7" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#9ecbfb31f0" class="toc-h1 toc-link" data-title="查看谷歌验证码列表">查看谷歌验证码列表</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-8" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-8" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-8" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#8c498219d2" class="toc-h1 toc-link" data-title="删除谷歌验证器">删除谷歌验证器</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-9" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-9" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-9" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#fc4b411285" class="toc-h1 toc-link" data-title="查看用户信息">查看用户信息</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-10" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-10" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-10" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#33d58827d1" class="toc-h1 toc-link" data-title="查看登录记录">查看登录记录</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-11" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-11" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-11" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#dev-token" class="toc-h1 toc-link" data-title="添加DEV Token">添加DEV Token</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-12" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-12" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-12" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#devtoken" class="toc-h1 toc-link" data-title="查看DevToken列表">查看DevToken列表</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-13" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-13" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-13" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#devtoken-2" class="toc-h1 toc-link" data-title="删除DevToken">删除DevToken</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-14" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-14" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-14" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#75876f824a" class="toc-h1 toc-link" data-title="登出操作">登出操作</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-15" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-15" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-15" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#e08c1d4f9a" class="toc-h1 toc-link" data-title="错误码">错误码</a>
+          </li>
+      </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='wallet_user-api'>Wallet_User API接口文档</h1><h1 id='9898c0bdd1'>获取图片验证码</h1>
+<p>获取一个图片验证码, 用于验证</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/user/captcha_code/"</span> <span class="se">\</span>
+    -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"iVBORw0KGgoAAAANSUhEUgAAAFAAAAAjCAIAAACMxRqVAAADLUlEQVR4nO1ZIU8sMRD+Sl4ICWswBBCHwAC/AUEOgsGeQmFJUGBI+AMQNBoDloAkIECgcRcE5hLMyQuCgJknutdtt9N2dtmDPPK+bC677cw383Xa0mUVEaEJKKUkVEKz0WGs9KyUqkcklPGzauEL/vGERo2y4F+P/4Lrwl78tTcCllajMcIGF61Jy+cMbc7fs2nbURSbX4MBmjWuDRNlbBTBiEg+CYuxb27estD8o9q0KmluBPFwRJRXuIZzpSRqlLoehO7BCvuJKuVc6+sJ6q0tPahkXJ6e2EDBayQgAc7OCAhePiLGvn3cWJZgBYj4krna6PWcdntMkU+8MsnOjpT860jzxaP6aQ11OoKvr/N7f1axwubmiq7tbZESIRKCz88TI832bm4WLf6q8UWn+Jus8lcrzBpIpqI71UN7Acx8sb0AnJ4WjpUWfMJEswwGaRsbFxfi8MNVndz8bHtzc3BQGLRa6XAkFBzH4SGV6kDD4gj2c5FglzbfFOpt7A0IXllJCO714iGYoTHX8nIisZeXcmM85waOlq0WgPI5YagEAObnY8cJ29JHt8u46BYidDpYWLCpoMlilPHqybaf/DfL0pahCgB6QTopydc228tCVOGPj4TB1BQAvL3xvfqUmjwqDgblFl2oyEmzxuk7/S5q5s/nJ8bHeZuZGfT76HaxtMQyOFEMoR/F5JN0CZAYd6ZXI1Hhy8vinlXb7xe/rFp4q/ThAQD29mKWFHi7TL5+JV/OpBUGsLaGu7uYgXCCmeFXqnDxSZz/y1gV0+3xoLFed7mXW/xN4vaWaWQ3oRBYrzBPntTwMgeP/Pf9vexi3l5mZ8mXIzqmbmwENTw+BgWz9ru7sTFiXTqdtEuoyxf8RzIJb24wOelMFW+a8O2RBXV8XNw/P2NxkXHRtFmWz/8Q7KVhk+iDnJ9rBfgnodVV3c7z3N8TER0d0cQETU+nV0HqKicM0Otr0J6XUElwCKxgLokslkpYqlKJcO02AZRlBFC7XbAxUWrI+34AdHJiPzppX10RQPv7xQBp5Sx++Gttbei/tyb50mPM8R8S7H+jkOs0+A1fD0NnMtb4L3+SOLodb+E/AAAAAElFTkSuQmCC"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fedc8325edd4bc2aefb8f904043153f7"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/api/v1/wallet/user/captcha_code/</code></p>
+<h3 id='1f9ac54b15'>请求参数</h3>
+<p>无需请求参数</p>
+<h3 id='70bdef7e25'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>返回内容</td>
+</tr>
+</tbody></table>
+<h4 id='data'>data 参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>image</td>
+<td>string</td>
+<td>base64格式的图片</td>
+</tr>
+<tr>
+<td>key</td>
+<td>string</td>
+<td>图片验证码对应的key</td>
+</tr>
+</tbody></table>
+<h1 id='ae86317f46'>注册用户</h1>
+<p>通过该接口可以注册用户</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/user/register/"</span> <span class="se">\</span>
+    -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+    -X POST <span class="se">\</span>
+    -d <span class="s1">'{
+        "email": "$EMAIL",
+        "password": "$PASSWORD", 
+        "captcha_code": "wlar",
+        "captcha_key": "30c4327d90e9d41bf0f078933a1a3f7c"
+    }'</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/api/v1/wallet/user/register/</code></p>
+<h3 id='1f9ac54b15-2'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>是</td>
+<td>邮箱名称</td>
+</tr>
+<tr>
+<td>password</td>
+<td>string</td>
+<td>是</td>
+<td>密码</td>
+</tr>
+<tr>
+<td>captcha_code</td>
+<td>string</td>
+<td>是</td>
+<td>图片验证码</td>
+</tr>
+<tr>
+<td>captcha_key</td>
+<td>string</td>
+<td>是</td>
+<td>图片验证码对应的key</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-2'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+</tbody></table>
+<h1 id='6cabcf502f'>激活账户</h1>
+<p>通过邮箱获取邮件验证码,然后可以激活用户</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/user/active/"</span> <span class="se">\</span>
+    -X POST <span class="se">\ </span>
+    -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+    -d <span class="s1">'{"email":"$EMAIL", "activate_code":"$ACTIVATE_CODE"}'</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/api/v1/wallet/user/active/</code></p>
+<h3 id='1f9ac54b15-3'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>是</td>
+<td>要激活的邮箱</td>
+</tr>
+<tr>
+<td>activate_code</td>
+<td>string</td>
+<td>是</td>
+<td>公钥</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-3'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+</tbody></table>
+<h1 id='bdbb808a3e'>重发激活邮件</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/user/active/?email=</span><span class="nv">$EMAIL</span><span class="s2">"</span> <span class="se">\</span>
+
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET https://testnet.sectoken.io/api/v1/wallet/user/active/</code></p>
+<h3 id='1f9ac54b15-4'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>是</td>
+<td>需要重发邮件的邮箱</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-4'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+</tbody></table>
+<h1 id='21f1e88275'>登录</h1>
+<p>通过邮箱和密码可以进行登录操作</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/user/login/"</span> <span class="se">\</span>
+
+    -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+    -X POST <span class="se">\</span>
+    -d <span class="s1">'{
+           "email": "$EMAIL",
+           "password": "$PASSWORD",
+    }'</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">   
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:{</span><span class="w">
+        </span><span class="s2">"tk"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wtk17b431a5fb99d72e4cf84d8e959c15d1"</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63054779"</span><span class="w">
+    </span><span class="p">}</span><span class="w">   
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-5'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/api/v1/wallet/user/login/</code></p>
+<h3 id='1f9ac54b15-5'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>是</td>
+<td>要激活的邮箱</td>
+</tr>
+<tr>
+<td>activate_code</td>
+<td>string</td>
+<td>是</td>
+<td>邮箱激活码</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-5'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>返回内容</td>
+</tr>
+</tbody></table>
+<h4 id='data-2'>data 参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>钱包的主地址</td>
+</tr>
+</tbody></table>
+<h1 id='2302b6bcba'>绑定谷歌验证码(第一步)</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/user/googleauth_add/?label=test"</span> <span class="se">\</span>
+-H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span>
+
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"QR_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"otpauth://totp/SecToken-alpha:63054779%40qq.com?secret=JJDHSZTCJM2HMZTDKE3FQ43PHB4ECNLTNZLCWNRTGA2TINZXHFAHC4JOMNXW2KZRGU4TSMBRGA2DGNBOGE3DCNBXG4ZQ&amp;issuer=SecToken-alpha"</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"secret_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JJDHSZTCJM2HMZTDKE3FQ43PHB4ECNLTNZLCWNRTGA2TINZXHFAHC4JOMNXW2KZRGU4TSMBRGA2DGNBOGE3DCNBXG4ZQ"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-6'>HTTP Request</h3>
+<p><code>GET https://testnet.sectoken.io/api/v1/wallet/user/googleauth_add/</code></p>
+<h3 id='1f9ac54b15-6'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>label</td>
+<td>string</td>
+<td>否</td>
+<td>标签名称</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-6'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>返回内容</td>
+</tr>
+</tbody></table>
+<h4 id='data-3'>data 参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>QR_code</td>
+<td>string</td>
+<td>二维码信息</td>
+</tr>
+<tr>
+<td>secret_key</td>
+<td>string</td>
+<td>手机可以通过文本输入该信息绑定谷歌二维码</td>
+</tr>
+</tbody></table>
+<h1 id='4771d8cb22'>绑定谷歌验证码(第二步)</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/user/googleauth_add/"</span> <span class="se">\</span>
+    -X POST <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
+    -d <span class="s1">'{"totp_code":"000000"}'</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-7'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/api/v1/wallet/user/googleauth_add/</code></p>
+<h3 id='1f9ac54b15-7'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>totp_code</td>
+<td>string</td>
+<td>是</td>
+<td>绑定所需要的验证码</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-7'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+</tbody></table>
+<h1 id='9ecbfb31f0'>查看谷歌验证码列表</h1>
+<p>查看谷歌验证码列表</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/user/googleauth_list/"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"identid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24b81397faebb2dbff7a10d6f1c58ff3"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"google authenticator"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-8'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/api/v1/wallet/user/googleauth_list/</code></p>
+<h3 id='1f9ac54b15-8'>请求参数</h3>
+<p>无需请求参数</p>
+<h3 id='70bdef7e25-8'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>返回内容</td>
+</tr>
+</tbody></table>
+<h4 id='data-4'>data 参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>identid</td>
+<td>string</td>
+<td>新生成的收款地址</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>验证器类型</td>
+</tr>
+<tr>
+<td>label</td>
+<td>string</td>
+<td>验证器标签</td>
+</tr>
+</tbody></table>
+<h1 id='8c498219d2'>删除谷歌验证器</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/user/googleauth_del/"</span> <span class="se">\</span>
+    -X POST <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
+    -d <span class="s1">'{"ident_id":"5a0b4948e8c08363bd98b6b2974d6f58","totp_code":"000000"}'</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-9'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/api/v1/wallet/user/googleauth_del/</code></p>
+<h3 id='1f9ac54b15-9'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ident_id</td>
+<td>string</td>
+<td>是</td>
+<td>要删除的谷歌验证器的id</td>
+</tr>
+<tr>
+<td>totp_code</td>
+<td>string</td>
+<td>是</td>
+<td>谷歌验证码</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-9'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+</tbody></table>
+<h1 id='fc4b411285'>查看用户信息</h1>
+<p>用于查看用户的基本信息</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/user/ip_log/"</span> <span class="se">\</span>
+-H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> 
+
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63054779"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63054779@qq.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"c_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-01"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"suid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JFyfbK4vfcQ6Xso8xA5snV"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-10'>HTTP Request</h3>
+<p><code>GET https://testnet.sectoken.io/api/v1/wallet/user/ip_log/</code></p>
+<h3 id='1f9ac54b15-10'>请求参数</h3>
+<p>无需请求参数</p>
+<h3 id='70bdef7e25-10'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>返回内容</td>
+</tr>
+</tbody></table>
+<h4 id='data-5'>data 参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>avatar</td>
+<td>string</td>
+<td>头像url</td>
+</tr>
+<tr>
+<td>username</td>
+<td>string</td>
+<td>用户名</td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>用户邮箱</td>
+</tr>
+<tr>
+<td>c_time</td>
+<td>string</td>
+<td>创建日期</td>
+</tr>
+<tr>
+<td>suid</td>
+<td>string</td>
+<td>用户的suid</td>
+</tr>
+</tbody></table>
+<h1 id='33d58827d1'>查看登录记录</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/user/ip_log/"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> 
+
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"agent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Other/Python Requests"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"192.168.1.123"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US San Andreas"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"login"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1598953120</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-11'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/api/v1/wallet/user/ip_log/</code></p>
+<h3 id='1f9ac54b15-11'>请求参数</h3>
+<p>无需请求参数</p>
+<h3 id='70bdef7e25-11'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>返回内容</td>
+</tr>
+</tbody></table>
+<h4 id='data-6'>data 参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>agent</td>
+<td>string</td>
+<td>用户登录使用的user-agent</td>
+</tr>
+<tr>
+<td>ip</td>
+<td>string</td>
+<td>用户登录所使用的 ip</td>
+</tr>
+<tr>
+<td>city</td>
+<td>string</td>
+<td>用户登录城市</td>
+</tr>
+<tr>
+<td>remark</td>
+<td>string</td>
+<td>登录类型</td>
+</tr>
+<tr>
+<td>time</td>
+<td>integer</td>
+<td>登录时间戳</td>
+</tr>
+</tbody></table>
+<h1 id='dev-token'>添加DEV Token</h1>
+<p>通过该接口可以生成一个devtoken, 该令牌只返回一次, 应妥善保管</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/user/token_add"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
+    -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+    -d <span class="s1">'{
+    "label": "test",
+    "expire_time": 15552000,
+    "ip_white": ["192.168.39/24", "222.173.28.158"],
+    "scopes": ["view", "spend", "create", "admin"],
+    "totp_code": "000000"
+    }'</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> 
+    </span><span class="p">{</span><span class="w">
+     </span><span class="s2">"devtoken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Atk32053d7edd643b762ccc5c82a62c3273"</span><span class="p">,</span><span class="w"> 
+     </span><span class="s2">"token_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"88a100c1fef2500423e72069e499f3e7"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-12'>HTTP Request</h3>
+<p><code>GET https://testnet.sectoken.io/api/v1/wallet/user/token_add/</code></p>
+<h3 id='1f9ac54b15-12'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wallet_ids</td>
+<td>array</td>
+<td>否</td>
+<td>允许token访问的钱包列表</td>
+</tr>
+<tr>
+<td>label</td>
+<td>string</td>
+<td>是</td>
+<td>token的备注名称</td>
+</tr>
+<tr>
+<td>expire_time</td>
+<td>integer</td>
+<td>是</td>
+<td>token的有效时长(单位: 秒)</td>
+</tr>
+<tr>
+<td>scopes</td>
+<td>array</td>
+<td>是</td>
+<td>允许token的访问权限类型</td>
+</tr>
+<tr>
+<td>ip_white</td>
+<td>array</td>
+<td>否</td>
+<td>允许访问的ip地址, 可以使用 IP簇</td>
+</tr>
+<tr>
+<td>totp_code</td>
+<td>string</td>
+<td>是</td>
+<td>谷歌验证码, 当没有绑定时会要求先绑定谷歌验证码</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-12'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>返回内容</td>
+</tr>
+</tbody></table>
+<h4 id='data-7'>data 参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>devtoken</td>
+<td>string</td>
+<td>访问令牌</td>
+</tr>
+<tr>
+<td>token_id</td>
+<td>string</td>
+<td>token的标识ID</td>
+</tr>
+</tbody></table>
+<h1 id='devtoken'>查看DevToken列表</h1>
+<p>通过该接口可以查看当前账户下已有的devtoken信息，该操作只能在页面进行操作</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/user/token_opt/"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
+
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"token_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"195f35581d725c9b0d45f71e04c5a2ca"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"create_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-11-29"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ip_white"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"192.168.182.168"</span><span class="p">,</span><span class="s2">"192.168.1/24"</span><span class="p">],</span><span class="w">
+            </span><span class="s2">"overtime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-05-29"</span><span class="w">
+        </span><span class="p">}</span><span class="w">   
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-13'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/api/v1/wallet/user/token_opt/</code></p>
+<h3 id='1f9ac54b15-13'>请求参数</h3>
+<p>无需请求参数</p>
+<h3 id='70bdef7e25-13'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>返回内容</td>
+</tr>
+</tbody></table>
+<h4 id='data-8'>data 参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>label</td>
+<td>string</td>
+<td>交易单的 txid,可以在区块浏览器上进行查找</td>
+</tr>
+<tr>
+<td>token_id</td>
+<td>string</td>
+<td>token的唯一标识id</td>
+</tr>
+<tr>
+<td>create_time</td>
+<td>string</td>
+<td>token的创建时间</td>
+</tr>
+<tr>
+<td>ip_white</td>
+<td>string</td>
+<td>token的ip白名单</td>
+</tr>
+<tr>
+<td>overtime</td>
+<td>string</td>
+<td>token的结束时间</td>
+</tr>
+</tbody></table>
+<h1 id='devtoken-2'>删除DevToken</h1>
+<p>通过该接口可以删除一个devtoken, 被删除的devtoken将无法再进行任何操作。该操作只能在页面进行操作</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/user/token_opt/"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
+    -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+    -X POST <span class="se">\</span>
+    -d <span class="s1">'{
+            "wallet_id": "cf761ad1b6c5f30a1557d942cb557b07",
+            "url": "$WEBHOOK_URL", 
+            "label": "Receipt", 
+            "type": "withdraw", 
+            "coin": "user",
+            "secret_key":"abc123"
+    }'</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"webhook_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"da0e3f3530cb7f63695d8eaad351fdc1"</span><span class="w"> 
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-14'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/api/v1/wallet/user/token_opt/</code></p>
+<h3 id='1f9ac54b15-14'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>token_id</td>
+<td>string</td>
+<td>是</td>
+<td>令牌唯一标识id</td>
+</tr>
+<tr>
+<td>totp_code</td>
+<td>string</td>
+<td>是</td>
+<td>接受通知的url地址, 必须使用HTTP或者HTTPS协议</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-14'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+</tbody></table>
+<h1 id='75876f824a'>登出操作</h1>
+<p>通过该接口可以进行登出操作， 登出后登录获得的webtoken将无法继续使用，该操作只能使用webtoken进行操作</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/user/logout/"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-15'>HTTP Request</h3>
+<p><code>GET https://testnet.sectoken.io/api/v1/wallet/webhook/list/</code></p>
+<h3 id='1f9ac54b15-15'>请求参数</h3>
+<p>无需请求参数</p>
+<h3 id='70bdef7e25-15'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+</tbody></table>
+<h1 id='e08c1d4f9a'>错误码</h1>
+<p>当发生错误时返回的错误码</p>
+
+<table><thead>
+<tr>
+<th>错误码</th>
+<th>错误说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>4000</td>
+<td>请求参数错误</td>
+</tr>
+<tr>
+<td>4004</td>
+<td>未找到请求资源</td>
+</tr>
+<tr>
+<td>5000</td>
+<td>未知错误, 请联系Sectoken</td>
+</tr>
+<tr>
+<td>4201</td>
+<td>钱包不存在</td>
+</tr>
+<tr>
+<td>4203</td>
+<td>钱包下没有此地址</td>
+</tr>
+<tr>
+<td>4204</td>
+<td>钱包余额不足</td>
+</tr>
+<tr>
+<td>4210</td>
+<td>钱包Webhook数目超限</td>
+</tr>
+<tr>
+<td>4211</td>
+<td>地址格式错误</td>
+</tr>
+<tr>
+<td>4401</td>
+<td>非法操作</td>
+</tr>
+<tr>
+<td>4402</td>
+<td>此钱包不存在</td>
+</tr>
+<tr>
+<td>4403</td>
+<td>钱包个数达到上限</td>
+</tr>
+<tr>
+<td>4404</td>
+<td>用户权限不足</td>
+</tr>
+<tr>
+<td>4405</td>
+<td>用户不存在</td>
+</tr>
+<tr>
+<td>4406</td>
+<td>用户已在钱包中</td>
+</tr>
+<tr>
+<td>4407</td>
+<td>用户不在钱包中</td>
+</tr>
+<tr>
+<td>4503</td>
+<td>目标地址不能是自己</td>
+</tr>
+<tr>
+<td>4504</td>
+<td>签名错误</td>
+</tr>
+<tr>
+<td>4505</td>
+<td>全部转出只能有一个收款地址</td>
+</tr>
+<tr>
+<td>4506</td>
+<td>公钥格式不正确</td>
+</tr>
+<tr>
+<td>4507</td>
+<td>私钥密文必须是Base64格式</td>
+</tr>
+<tr>
+<td>4508</td>
+<td>webhook 不存在</td>
+</tr>
+<tr>
+<td>4509</td>
+<td>不能提交重复签名</td>
+</tr>
+<tr>
+<td>4510</td>
+<td>每个用户只能签名一次</td>
+</tr>
+<tr>
+<td>4511</td>
+<td>非当前用户所属私钥签名</td>
+</tr>
+<tr>
+<td>4512</td>
+<td>无法广播已完成的交易单</td>
+</tr>
+<tr>
+<td>4513</td>
+<td>unspent 已经被使用</td>
+</tr>
+<tr>
+<td>4607</td>
+<td>公钥地址已被使用</td>
+</tr>
+<tr>
+<td>4608</td>
+<td>用户全部控制的钱包无法派生地址</td>
+</tr>
+<tr>
+<td>4609</td>
+<td>当前用户持有的公钥数量已达上限</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+      </div>
+    </div>
+  </body>
+</html>

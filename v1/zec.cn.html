@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Bch API 文档</title>
+    <title>Zec API 文档</title>
 
     <style media="screen">
       .highlight table td { padding: 5px; }
@@ -284,7 +284,7 @@
 
   </head>
 
-  <body class="v1 v1_bch" data-languages="[&quot;shell&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="v1 v1_zec" data-languages="[&quot;shell&quot;,&quot;python&quot;,&quot;javascript&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -430,7 +430,7 @@
               </ul>
           </li>
           <li>
-            <a href="#1d733f4e05" class="toc-h1 toc-link" data-title="地址格式转换">地址格式转换</a>
+            <a href="#5192238983" class="toc-h1 toc-link" data-title="构建交易单">构建交易单</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#http-request-10" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
@@ -439,12 +439,15 @@
                     <a href="#1f9ac54b15-10" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
                   </li>
                   <li>
+                    <a href="#outputs" class="toc-h2 toc-link" data-title="outputs 参数">outputs 参数</a>
+                  </li>
+                  <li>
                     <a href="#70bdef7e25-10" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#5192238983" class="toc-h1 toc-link" data-title="构建交易单">构建交易单</a>
+            <a href="#8efa5837ff" class="toc-h1 toc-link" data-title="获取待签名的交易单">获取待签名的交易单</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#http-request-11" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
@@ -453,7 +456,7 @@
                     <a href="#1f9ac54b15-11" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
                   </li>
                   <li>
-                    <a href="#outputs" class="toc-h2 toc-link" data-title="outputs 参数">outputs 参数</a>
+                    <a href="#outputs-2" class="toc-h2 toc-link" data-title="outputs 参数">outputs 参数</a>
                   </li>
                   <li>
                     <a href="#70bdef7e25-11" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
@@ -461,7 +464,7 @@
               </ul>
           </li>
           <li>
-            <a href="#8efa5837ff" class="toc-h1 toc-link" data-title="获取待签名的交易单">获取待签名的交易单</a>
+            <a href="#d51b06a0fe" class="toc-h1 toc-link" data-title="提交签名信息">提交签名信息</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#http-request-12" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
@@ -470,15 +473,12 @@
                     <a href="#1f9ac54b15-12" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
                   </li>
                   <li>
-                    <a href="#outputs-2" class="toc-h2 toc-link" data-title="outputs 参数">outputs 参数</a>
-                  </li>
-                  <li>
                     <a href="#70bdef7e25-12" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#d51b06a0fe" class="toc-h1 toc-link" data-title="提交签名信息">提交签名信息</a>
+            <a href="#webhook" class="toc-h1 toc-link" data-title="新增钱包WebHook">新增钱包WebHook</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#http-request-13" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
@@ -492,7 +492,7 @@
               </ul>
           </li>
           <li>
-            <a href="#webhook" class="toc-h1 toc-link" data-title="新增钱包WebHook">新增钱包WebHook</a>
+            <a href="#webhook-2" class="toc-h1 toc-link" data-title="获取钱包WebHook">获取钱包WebHook</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#http-request-14" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
@@ -506,7 +506,7 @@
               </ul>
           </li>
           <li>
-            <a href="#webhook-2" class="toc-h1 toc-link" data-title="获取钱包WebHook">获取钱包WebHook</a>
+            <a href="#webhook-3" class="toc-h1 toc-link" data-title="删除钱包WebHook">删除钱包WebHook</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#http-request-15" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
@@ -520,7 +520,7 @@
               </ul>
           </li>
           <li>
-            <a href="#webhook-3" class="toc-h1 toc-link" data-title="删除钱包WebHook">删除钱包WebHook</a>
+            <a href="#d7b4d59a1a" class="toc-h1 toc-link" data-title="查看钱包成员列表">查看钱包成员列表</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#http-request-16" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
@@ -534,7 +534,7 @@
               </ul>
           </li>
           <li>
-            <a href="#d7b4d59a1a" class="toc-h1 toc-link" data-title="查看钱包成员列表">查看钱包成员列表</a>
+            <a href="#2183e48cb5" class="toc-h1 toc-link" data-title="添加钱包观察者">添加钱包观察者</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#http-request-17" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
@@ -548,7 +548,7 @@
               </ul>
           </li>
           <li>
-            <a href="#2183e48cb5" class="toc-h1 toc-link" data-title="添加钱包观察者">添加钱包观察者</a>
+            <a href="#0b7a802d53" class="toc-h1 toc-link" data-title="删除钱包观察者">删除钱包观察者</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#http-request-18" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
@@ -558,20 +558,6 @@
                   </li>
                   <li>
                     <a href="#70bdef7e25-18" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#0b7a802d53" class="toc-h1 toc-link" data-title="删除钱包观察者">删除钱包观察者</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#http-request-19" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
-                  </li>
-                  <li>
-                    <a href="#1f9ac54b15-19" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
-                  </li>
-                  <li>
-                    <a href="#70bdef7e25-19" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
                   </li>
               </ul>
           </li>
@@ -587,13 +573,13 @@
             <a href="#c284998822" class="toc-h1 toc-link" data-title="获取交易记录">获取交易记录</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#http-request-20" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                    <a href="#http-request-19" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
                   </li>
                   <li>
-                    <a href="#1f9ac54b15-20" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                    <a href="#1f9ac54b15-19" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
                   </li>
                   <li>
-                    <a href="#70bdef7e25-20" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                    <a href="#70bdef7e25-19" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
                   </li>
               </ul>
           </li>
@@ -602,7 +588,7 @@
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href="/docs/v1/bch.en.html">English Version</a></li>
+            <li><a href="/docs/v1/zec.en.html">English Version</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -613,7 +599,7 @@
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
-        <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/bch/create/"</span><span class="p">,</span>
+        <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/zec/create/"</span><span class="p">,</span>
         <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">},</span>
         <span class="n">json</span><span class="o">=</span><span class="p">{</span>
             <span class="s">"pubkeys"</span><span class="p">:</span> <span class="p">[</span>
@@ -627,25 +613,25 @@
             <span class="s">"wallet_name"</span><span class="p">:</span> <span class="s">"TestWallet"</span><span class="p">,</span>
         <span class="p">}</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/create/"</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/zec/create/"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
     -d <span class="s1">'{
-    "pubkeys": [
-        "020fcbb44ff4a1f423499b1eb9b2bd9cbe467934467d4857451c7eab7f8cb2885b", 
-        "038f2d1612ae08a9595fbe1d30c9b13e748a4ae55c06d5d3fa5c0b2e59712d3b6b"
-    ],
-    "privkeys": [
-        "NGRjMjdkYWZkYjY3YWY2Y2M4MDNiNWMwYWQyMjIxNzlmMjlkZmNkNWM5NmVhNzY5NTRlNTUxZDY1M2Q3NGM3Zg==",
-        "ZmI0YTdkNDY2MzRmODYyZDg5ZmNmMDdjZDFmMWMxMmZlMTBlNDNkNmNmYThmNjcwZjUwY2U0N2FhMjk1OTI0OA=="
-    ], 
-    "wallet_name": "TestWallet",
-}'</span>
+        "pubkeys": [
+            "020fcbb44ff4a1f423499b1eb9b2bd9cbe467934467d4857451c7eab7f8cb2885b", 
+            "038f2d1612ae08a9595fbe1d30c9b13e748a4ae55c06d5d3fa5c0b2e59712d3b6b"
+        ],
+        "privkeys": [
+            "NGRjMjdkYWZkYjY3YWY2Y2M4MDNiNWMwYWQyMjIxNzlmMjlkZmNkNWM5NmVhNzY5NTRlNTUxZDY1M2Q3NGM3Zg==",
+            "ZmI0YTdkNDY2MzRmODYyZDg5ZmNmMDdjZDFmMWMxMmZlMTBlNDNkNmNmYThmNjcwZjUwY2U0N2FhMjk1OTI0OA=="
+        ], 
+        "wallet_name": "TestWallet",
+        }'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
-    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/create/"</span><span class="p">,</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/zec/create/"</span><span class="p">,</span>
     <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -657,7 +643,7 @@
             <span class="s2">"038f2d1612ae08a9595fbe1d30c9b13e748a4ae55c06d5d3fa5c0b2e59712d3b6b"</span>
         <span class="p">],</span>
         <span class="s2">"privkeys"</span><span class="p">:</span> <span class="p">[</span>
-            <span class="s2">"$`ENCRYPTED_PRIVKEY1`"</span><span class="p">,</span>
+            <span class="s2">"NGRjMjdkYWZkYjY3YWY2Y2M4MDNiNWMwYWQyMjIxNzlmMjlkZmNkNWM5NmVhNzY5NTRlNTUxZDY1M2Q3NGM3Zg=="</span><span class="p">,</span>
             <span class="s2">"ZmI0YTdkNDY2MzRmODYyZDg5ZmNmMDdjZDFmMWMxMmZlMTBlNDNkNmNmYThmNjcwZjUwY2U0N2FhMjk1OTI0OA=="</span>
         <span class="p">],</span>
         <span class="s2">"wallet_name"</span><span class="p">:</span> <span class="s2">"TestWallet"</span><span class="p">,</span>
@@ -677,7 +663,7 @@
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request'>HTTP Request</h3>
-<p><code>POST https://testnet.sectoken.io/api/v1/wallet/bch/create/</code></p>
+<p><code>POST https://testnet.sectoken.io/api/v1/wallet/zec/create/</code></p>
 <h3 id='1f9ac54b15'>请求参数</h3>
 <table><thead>
 <tr>
@@ -756,24 +742,24 @@
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
-        <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/bch/share_create/"</span><span class="p">,</span>
+        <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/zec/share_create/"</span><span class="p">,</span>
         <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">},</span>
         <span class="n">json</span><span class="o">=</span><span class="p">{</span>
             <span class="s">"pubkey"</span><span class="p">:</span> <span class="s">"020fcbb44ff4a1f423499b1eb9b2bd9cbe467934467d4857451c7eab7f8cb2885b"</span><span class="p">,</span>
-            <span class="s">"privkey"</span><span class="p">:</span> <span class="s">"NGRjMjdkYWZkYjY3YWY2Y2M4MDNiNWMwYWQyMjIxNzlmMjlkZmNkNWM5NmVhNzY5NTRlNTUxZDY1M2Q3NGM3Zg=="</span><span class="p">,</span>
+            <span class="s">"privkey"</span><span class="p">:</span> <span class="s">"ZmI0YTdkNDY2MzRmODYyZDg5ZmNmMDdjZDFmMWMxMmZlMTBlNDNkNmNmYThmNjcwZjUwY2U0N2FhMjk1OTI0OA=="</span><span class="p">,</span>
             <span class="s">"threshold"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
             <span class="s">"limit"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
             <span class="s">"control"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
             <span class="s">"wallet_name"</span><span class="p">:</span> <span class="s">"TestWallet"</span><span class="p">,</span>
         <span class="p">}</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/share_create/"</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/zec/share_create/"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
     -d <span class="s1">'{
         "pubkey": "020fcbb44ff4a1f423499b1eb9b2bd9cbe467934467d4857451c7eab7f8cb2885b",
-        "privkey": "NGRjMjdkYWZkYjY3YWY2Y2M4MDNiNWMwYWQyMjIxNzlmMjlkZmNkNWM5NmVhNzY5NTRlNTUxZDY1M2Q3NGM3Zg==",
+        "privkey": "ZmI0YTdkNDY2MzRmODYyZDg5ZmNmMDdjZDFmMWMxMmZlMTBlNDNkNmNmYThmNjcwZjUwY2U0N2FhMjk1OTI0OA==",
         "threshold": 2,
         "limit": 2,
         "control": 1,
@@ -782,7 +768,7 @@
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
-    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/share_create/"</span><span class="p">,</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/zec/share_create/"</span><span class="p">,</span>
     <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -790,7 +776,7 @@
     <span class="p">},</span>
     <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
         <span class="s2">"pubkey"</span><span class="p">:</span> <span class="s2">"020fcbb44ff4a1f423499b1eb9b2bd9cbe467934467d4857451c7eab7f8cb2885b"</span><span class="p">,</span>
-        <span class="s2">"privkey"</span><span class="p">:</span> <span class="s2">"NGRjMjdkYWZkYjY3YWY2Y2M4MDNiNWMwYWQyMjIxNzlmMjlkZmNkNWM5NmVhNzY5NTRlNTUxZDY1M2Q3NGM3Zg=="</span><span class="p">,</span>
+        <span class="s2">"privkey"</span><span class="p">:</span> <span class="s2">"ZmI0YTdkNDY2MzRmODYyZDg5ZmNmMDdjZDFmMWMxMmZlMTBlNDNkNmNmYThmNjcwZjUwY2U0N2FhMjk1OTI0OA=="</span><span class="p">,</span>
         <span class="s2">"threshold"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
         <span class="s2">"limit"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
         <span class="s2">"control"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -808,7 +794,7 @@
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
-<p><code>POST https://testnet.sectoken.io/api/v1/wallet/bch/share_create/</code></p>
+<p><code>POST https://testnet.sectoken.io/api/v1/wallet/zec/share_create/</code></p>
 <h3 id='1f9ac54b15-2'>请求参数</h3>
 <table><thead>
 <tr>
@@ -899,27 +885,27 @@
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
-        <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/bch/join_wallet/"</span><span class="p">,</span>
+        <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/zec/join_wallet/"</span><span class="p">,</span>
         <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">},</span>
         <span class="n">json</span><span class="o">=</span><span class="p">{</span>
             <span class="s">"invitation_code"</span><span class="p">:</span> <span class="s">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
             <span class="s">"pubkey"</span><span class="p">:</span> <span class="s">"038f2d1612ae08a9595fbe1d30c9b13e748a4ae55c06d5d3fa5c0b2e59712d3b6b"</span><span class="p">,</span>
-            <span class="s">"privkey"</span><span class="p">:</span> <span class="s">"NGRjMjdkYWZkYjY3YWY2Y2M4MDNiNWMwYWQyMjIxNzlmMjlkZmNkNWM5NmVhNzY5NTRlNTUxZDY1M2Q3NGM3Zg=="</span><span class="p">,</span>
+            <span class="s">"privkey"</span><span class="p">:</span> <span class="s">"ZmI0YTdkNDY2MzRmODYyZDg5ZmNmMDdjZDFmMWMxMmZlMTBlNDNkNmNmYThmNjcwZjUwY2U0N2FhMjk1OTI0OA=="</span><span class="p">,</span>
         <span class="p">}</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/join_wallet/"</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/zec/join_wallet/"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
     -d <span class="s1">'{
         "invitation_code": "cf761ad1b6c5f30a1557d942cb557b07",
         "pubkey": "038f2d1612ae08a9595fbe1d30c9b13e748a4ae55c06d5d3fa5c0b2e59712d3b6b", 
-        "privkey": "NGRjMjdkYWZkYjY3YWY2Y2M4MDNiNWMwYWQyMjIxNzlmMjlkZmNkNWM5NmVhNzY5NTRlNTUxZDY1M2Q3NGM3Zg==",
+        "privkey": "ZmI0YTdkNDY2MzRmODYyZDg5ZmNmMDdjZDFmMWMxMmZlMTBlNDNkNmNmYThmNjcwZjUwY2U0N2FhMjk1OTI0OA==",
     }'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
-    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/join_wallet/"</span><span class="p">,</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/zec/join_wallet/"</span><span class="p">,</span>
     <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -928,7 +914,7 @@
     <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
         <span class="s2">"invitation_code"</span><span class="p">:</span> <span class="s2">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
         <span class="s2">"pubkey"</span><span class="p">:</span> <span class="s2">"038f2d1612ae08a9595fbe1d30c9b13e748a4ae55c06d5d3fa5c0b2e59712d3b6b"</span><span class="p">,</span>
-        <span class="s2">"privkey"</span><span class="p">:</span> <span class="s2">"NGRjMjdkYWZkYjY3YWY2Y2M4MDNiNWMwYWQyMjIxNzlmMjlkZmNkNWM5NmVhNzY5NTRlNTUxZDY1M2Q3NGM3Zg=="</span><span class="p">,</span>
+        <span class="s2">"privkey"</span><span class="p">:</span> <span class="s2">"ZmI0YTdkNDY2MzRmODYyZDg5ZmNmMDdjZDFmMWMxMmZlMTBlNDNkNmNmYThmNjcwZjUwY2U0N2FhMjk1OTI0OA=="</span><span class="p">,</span>
     <span class="p">})</span>
 <span class="p">});</span>
 </code></pre>
@@ -944,7 +930,7 @@
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-3'>HTTP Request</h3>
-<p><code>POST https://testnet.sectoken.io/api/v1/wallet/bch/join_wallet/</code></p>
+<p><code>POST https://testnet.sectoken.io/api/v1/wallet/zec/join_wallet/</code></p>
 <h3 id='1f9ac54b15-3'>请求参数</h3>
 <table><thead>
 <tr>
@@ -1021,14 +1007,14 @@
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
-        <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/bch/activate/"</span><span class="p">,</span>
+        <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/zec/activate/"</span><span class="p">,</span>
         <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">},</span>
         <span class="n">json</span><span class="o">=</span><span class="p">{</span>
             <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
             <span class="s">"activate_code"</span><span class="p">:</span> <span class="s">"957314"</span><span class="p">,</span>
         <span class="p">}</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/activate/"</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/zec/activate/"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
@@ -1039,7 +1025,7 @@
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
-        <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/activate/"</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/zec/activate/"</span><span class="p">,</span>
         <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
             <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -1059,11 +1045,11 @@
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bchtest:pq5swaa5x0k43gxtczeastt00rekstv4qq76qkdmv8"</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"t28JrAeH8QcCRQZSp1DBgKrr5xPBFun5peb"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-4'>HTTP Request</h3>
-<p><code>POST https://testnet.sectoken.io/api/v1/wallet/bch/activate/</code></p>
+<p><code>POST https://testnet.sectoken.io/api/v1/wallet/zec/activate/</code></p>
 <h3 id='1f9ac54b15-4'>请求参数</h3>
 <table><thead>
 <tr>
@@ -1122,19 +1108,18 @@
 <h1 id='1e3f3182c5'>查看钱包信息</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-        <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/bch/detail/"</span><span class="p">,</span>
+        <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/zec/detail/"</span><span class="p">,</span>
         <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">},</span>
         <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">}</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/detail/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07"</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/zec/detail/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
-    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/detail/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/zec/detail/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
     <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
         <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">,</span>
     <span class="p">},</span>
 <span class="p">});</span>
@@ -1147,7 +1132,7 @@
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"wallet_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TestWallet"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bchtest:pq5swaa5x0k43gxtczeastt00rekstv4qq76qkdmv8"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"t28JrAeH8QcCRQZSp1DBgKrr5xPBFun5peb"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20000"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"unconfirmed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"threshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
@@ -1160,7 +1145,7 @@
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-5'>HTTP Request</h3>
-<p><code>GET https://testnet.sectoken.io/api/v1/wallet/bch/detail/</code></p>
+<p><code>GET https://testnet.sectoken.io/api/v1/wallet/zec/detail/</code></p>
 <h3 id='1f9ac54b15-5'>请求参数</h3>
 <table><thead>
 <tr>
@@ -1268,18 +1253,17 @@
 <h1 id='dd15c4c900'>查看钱包列表</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-        <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/bch/wallet_list/?page=1&amp;multi=1"</span><span class="p">,</span>
+        <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/zec/wallet_list/?page=1&amp;multi=1"</span><span class="p">,</span>
         <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">}</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/wallet_list/?page=1&amp;multi=1"</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/zec/wallet_list/?page=1&amp;multi=1"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
-        <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/wallet_list/?page=1&amp;multi=1"</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/zec/wallet_list/?page=1&amp;multi=1"</span><span class="p">,</span>
         <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
             <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">,</span>
         <span class="p">},</span>
     <span class="p">}</span>
@@ -1294,14 +1278,14 @@
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"wallet_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TestWallet"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bchtest:pq5swaa5x0k43gxtczeastt00rekstv4qq76qkdmv8"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"t28JrAeH8QcCRQZSp1DBgKrr5xPBFun5peb"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"create_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-29T10:45:02.781Z"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"activate_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"957314"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-6'>HTTP Request</h3>
-<p><code>GET https://testnet.sectoken.io/api/v1/wallet/bch/wallet_list/</code></p>
+<p><code>GET https://testnet.sectoken.io/api/v1/wallet/zec/wallet_list/</code></p>
 <h3 id='1f9ac54b15-6'>请求参数</h3>
 <table><thead>
 <tr>
@@ -1380,19 +1364,18 @@
 <h1 id='e7c28ec05c'>钱包地址列表</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-        <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/bch/addr_list/"</span><span class="p">,</span>
+        <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/zec/addr_list/"</span><span class="p">,</span>
         <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">},</span>
         <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span> <span class="s">"page"</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/addr_list/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07&amp;page=1"</span> <span class="se">\</span>
-    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/zec/addr_list/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07&amp;page=1"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
-    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/addr_list/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/zec/addr_list/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
     <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
         <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">,</span>
     <span class="p">},</span>
 <span class="p">});</span>
@@ -1403,11 +1386,11 @@
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="s2">"bchtest:pq5swaa5x0k43gxtczeastt00rekstv4qq76qkdmv8"</span><span class="w">
+    </span><span class="s2">"t28JrAeH8QcCRQZSp1DBgKrr5xPBFun5peb"</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-7'>HTTP Request</h3>
-<p><code>GET https://testnet.sectoken.io/api/v1/wallet/bch/addr_list/</code></p>
+<p><code>GET https://testnet.sectoken.io/api/v1/wallet/zec/addr_list/</code></p>
 <h3 id='1f9ac54b15-7'>请求参数</h3>
 <table><thead>
 <tr>
@@ -1454,11 +1437,11 @@
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
-        <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/bch/derive/"</span><span class="p">,</span>
+        <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/zec/derive/"</span><span class="p">,</span>
         <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">},</span>
         <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">}</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/derive/"</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/zec/derive/"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
@@ -1466,7 +1449,7 @@
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
-        <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/derive/"</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/zec/derive/"</span><span class="p">,</span>
         <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
             <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -1484,11 +1467,11 @@
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bchtest:pq5swaa5x0k43gxtczeastt00rekstv4qq76qkdmv8"</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"t28JrAeH8QcCRQZSp1DBgKrr5xPBFun5peb"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-8'>HTTP Request</h3>
-<p><code>POST https://testnet.sectoken.io/api/v1/wallet/bch/derive/</code></p>
+<p><code>POST https://testnet.sectoken.io/api/v1/wallet/zec/derive/</code></p>
 <h3 id='1f9ac54b15-8'>请求参数</h3>
 <table><thead>
 <tr>
@@ -1541,21 +1524,20 @@
 <h1 id='d1b09b6b80'>查询地址余额</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-        <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/bch/addr_balance/"</span><span class="p">,</span>
+        <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/zec/addr_balance/"</span><span class="p">,</span>
         <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">},</span>
         <span class="n">params</span><span class="o">=</span><span class="p">{</span>
             <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
-            <span class="s">"address"</span><span class="p">:</span> <span class="s">"bchtest:pq5swaa5x0k43gxtczeastt00rekstv4qq76qkdmv8"</span>
+            <span class="s">"address"</span><span class="p">:</span> <span class="s">"t28JrAeH8QcCRQZSp1DBgKrr5xPBFun5peb"</span>
         <span class="p">})</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/addr_balance/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07&amp;address=bchtest:pq5swaa5x0k43gxtczeastt00rekstv4qq76qkdmv8"</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/zec/addr_balance/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07&amp;address=t28JrAeH8QcCRQZSp1DBgKrr5xPBFun5peb"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
-    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/addr_balance/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07&amp;&amp;address=bchtest:pq5swaa5x0k43gxtczeastt00rekstv4qq76qkdmv8"</span><span class="p">,</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/zec/addr_balance/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07&amp;&amp;address=t28JrAeH8QcCRQZSp1DBgKrr5xPBFun5peb"</span><span class="p">,</span>
     <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
         <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">,</span>
     <span class="p">},</span>
 <span class="p">});</span>
@@ -1571,7 +1553,7 @@
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-9'>HTTP Request</h3>
-<p><code>GET https://testnet.sectoken.io/api/v1/wallet/bch/addr_balance/</code></p>
+<p><code>GET https://testnet.sectoken.io/api/v1/wallet/zec/addr_balance/</code></p>
 <h3 id='1f9ac54b15-9'>请求参数</h3>
 <table><thead>
 <tr>
@@ -1632,97 +1614,9 @@
 <td>不可用的地址余额，最小单位</td>
 </tr>
 </tbody></table>
-<h1 id='1d733f4e05'>地址格式转换</h1>
-<p>用于地址格式转换, API中转账建议使用 cash address, 如果您的地址目标地址不是 cash address 建议您通过本接口转换为 cash address, 以防和比特币地址混淆</p>
-<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
-
-<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-        <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/bch/addr_convert/"</span><span class="p">,</span>
-        <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">},</span>
-        <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">"address"</span><span class="p">:</span> <span class="s">"bchtest:pq5swaa5x0k43gxtczeastt00rekstv4qq76qkdmv8"</span><span class="p">}</span>
-<span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/addr_convert/?address=bchtest:pq5swaa5x0k43gxtczeastt00rekstv4qq76qkdmv8"</span> <span class="se">\</span>
-    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
-
-<span class="nx">request</span><span class="p">({</span>
-        <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/addr_convert/?address=bchtest:pq5swaa5x0k43gxtczeastt00rekstv4qq76qkdmv8"</span><span class="p">,</span>
-        <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
-        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">,</span>
-        <span class="p">},</span>
-    <span class="p">}</span>
-<span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>返回示例</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"cash_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bchtest:pq5swaa5x0k43gxtczeastt00rekstv4qq76qkdmv8"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"legacy_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2MvzAe1L5MTSYNQPLUQDoR3o85xAn6UUVaR"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-10'>HTTP Request</h3>
-<p><code>GET https://testnet.sectoken.io/api/v1/wallet/bch/addr_convert/</code></p>
-<h3 id='1f9ac54b15-10'>请求参数</h3>
-<table><thead>
-<tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>必填</th>
-<th>说明</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>address</td>
-<td>string</td>
-<td>是</td>
-<td>要进行转换的钱包地址</td>
-</tr>
-</tbody></table>
-<h3 id='70bdef7e25-10'>返回参数</h3>
-<table><thead>
-<tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>说明</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>code</td>
-<td>integer</td>
-<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
-</tr>
-<tr>
-<td>data</td>
-<td>object</td>
-<td>返回内容</td>
-</tr>
-</tbody></table>
-<h4 id='data-9'>data 参数</h4>
-<table><thead>
-<tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>说明</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>cash_address</td>
-<td>string</td>
-<td>cash格式地址</td>
-</tr>
-<tr>
-<td>legacy_address</td>
-<td>string</td>
-<td>legacy格式地址</td>
-</tr>
-</tbody></table>
 <h1 id='5192238983'>构建交易单</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/bch/dotx/"</span><span class="p">,</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/zec/dotx/"</span><span class="p">,</span>
               <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">},</span>
               <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
                     <span class="s">"outputs"</span><span class="p">:</span> <span class="p">[</span>
@@ -1741,15 +1635,29 @@
                     <span class="s">"total"</span><span class="p">:</span> <span class="mi">0</span>
                     <span class="p">}</span>
               <span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/dotx/"</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/zec/dotx/"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
-    -d <span class="s1">'{"wallet_id": "cf761ad1b6c5f30a1557d942cb557b07", "outputs":[{"address": "destination address", "value": "10000"},{"address": "destination address", "value": "5000"}], "confirm_target":100, "feerate": 1, "memo":"test comment", "total":0}'</span>
+    -d <span class="s1">'{
+        "wallet_id": "cf761ad1b6c5f30a1557d942cb557b07",
+        "outputs":[{
+                "address": "destination address", 
+                "value": "10000"
+            },
+            {
+                "address": "destination address",
+                "value": "5000"
+            }], 
+            "feerate": 1, 
+            "confirm_target":100, 
+            "memo":"test comment", 
+            "total":0
+        }'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
-        <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/dotx/"</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/zec/dotx/"</span><span class="p">,</span>
         <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
             <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -1758,9 +1666,9 @@
         <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
             <span class="s2">"wallet_id"</span><span class="p">:</span> <span class="s2">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
             <span class="s2">"outputs"</span><span class="p">:</span> <span class="p">[{</span>
-                <span class="s2">"address"</span><span class="p">:</span> <span class="s2">"bchtest:pq5swaa5x0k43gxtczeastt00rekstv4qq76qkdmv8"</span><span class="p">,</span>
+                <span class="s2">"address"</span><span class="p">:</span> <span class="s2">"t28JrAeH8QcCRQZSp1DBgKrr5xPBFun5peb"</span><span class="p">,</span>
                 <span class="s2">"value"</span><span class="p">:</span> <span class="s2">"1100"</span>
-            <span class="p">},],</span>
+            <span class="p">}],</span>
             <span class="s2">"memo"</span><span class="p">:</span> <span class="s2">"test comment"</span><span class="p">,</span>
             <span class="s2">"total"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
             <span class="s2">"feerate"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -1787,25 +1695,25 @@
       </span><span class="p">],</span><span class="w">
       </span><span class="s2">"outputs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bchtest:pq5swaa5x0k43gxtczeastt00rekstv4qq76qkdmv8"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"t28JrAeH8QcCRQZSp1DBgKrr5xPBFun5peb"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bchtest:pq5swaa5x0k43gxtczeastt00rekstv4qq76qkdmv8"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"t28JrAeH8QcCRQZSp1DBgKrr5xPBFun5peb"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8785"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">215</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"privkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"privkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NGRjMjdkYWZkYjY3YWY2Y2M4MDNiNWMwYWQyMjIxNzlmMjlkZmNkNWM5NmVhNzY5NTRlNTUxZDY1M2Q3NGM3Zg=="</span><span class="p">,</span><span class="w">
     </span><span class="s2">"change"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8785"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"change_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bchtest:pq5swaa5x0k43gxtczeastt00rekstv4qq76qkdmv8"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"change_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"t28JrAeH8QcCRQZSp1DBgKrr5xPBFun5peb"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"sequence_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20031000071574</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-11'>HTTP Request</h3>
-<p><code>POST https://testnet.sectoken.io/api/v1/wallet/bch/dotx/</code></p>
-<h3 id='1f9ac54b15-11'>请求参数</h3>
+</span></code></pre><h3 id='http-request-10'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/api/v1/wallet/zec/dotx/</code></p>
+<h3 id='1f9ac54b15-10'>请求参数</h3>
 <table><thead>
 <tr>
 <th>参数名</th>
@@ -1873,7 +1781,7 @@
 <td>转账金额, 当total为1时,可以任意金额</td>
 </tr>
 </tbody></table>
-<h3 id='70bdef7e25-11'>返回参数</h3>
+<h3 id='70bdef7e25-10'>返回参数</h3>
 <table><thead>
 <tr>
 <th>参数名</th>
@@ -1892,7 +1800,7 @@
 <td>返回内容</td>
 </tr>
 </tbody></table>
-<h4 id='data-10'>data 参数</h4>
+<h4 id='data-9'>data 参数</h4>
 <table><thead>
 <tr>
 <th>参数名</th>
@@ -1933,19 +1841,19 @@
 </tbody></table>
 <h1 id='8efa5837ff'>获取待签名的交易单</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/bch/unsigned_tx/"</span><span class="p">,</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/zec/unsigned_tx/"</span><span class="p">,</span>
              <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">},</span>
              <span class="n">params</span><span class="o">=</span><span class="p">{</span>
                  <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
                  <span class="s">"sequence_id"</span><span class="p">:</span> <span class="mi">20031000071574</span>
              <span class="p">}</span>
              <span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/unsigned_tx/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07&amp;sequence_id=20031000071574"</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/zec/unsigned_tx/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07&amp;sequence_id=20031000071574"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> 
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
-        <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/unsigned_tx/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07&amp;sequence_id=20031000071574"</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/zec/unsigned_tx/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07&amp;sequence_id=20031000071574"</span><span class="p">,</span>
         <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
             <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">,</span>
@@ -1972,23 +1880,23 @@
       </span><span class="p">],</span><span class="w">
       </span><span class="s2">"outputs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bchtest:pq5swaa5x0k43gxtczeastt00rekstv4qq76qkdmv8"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"t28JrAeH8QcCRQZSp1DBgKrr5xPBFun5peb"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bchtest:pq5swaa5x0k43gxtczeastt00rekstv4qq76qkdmv8"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"t28JrAeH8QcCRQZSp1DBgKrr5xPBFun5peb"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8785"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"maker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wd6Q3RPKdyCrwzA53R7diP"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"privkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NGRjMjdkYWZkYjY3YWY2Y2M4MDNiNWMwYWQyMjIxNzlmMjlkZmNkNWM5NmVhNzY5NTRlNTUxZDY1M2Q3NGM3Zg=="</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"privkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ZmI0YTdkNDY2MzRmODYyZDg5ZmNmMDdjZDFmMWMxMmZlMTBlNDNkNmNmYThmNjcwZjUwY2U0N2FhMjk1OTI0OA=="</span><span class="p">,</span><span class="w">
     </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-12'>HTTP Request</h3>
-<p><code>GET https://testnet.sectoken.io/api/v1/wallet/bch/unsigned_tx/</code></p>
-<h3 id='1f9ac54b15-12'>请求参数</h3>
+</span></code></pre><h3 id='http-request-11'>HTTP Request</h3>
+<p><code>GET https://testnet.sectoken.io/api/v1/wallet/zec/unsigned_tx/</code></p>
+<h3 id='1f9ac54b15-11'>请求参数</h3>
 <table><thead>
 <tr>
 <th>参数名</th>
@@ -2032,7 +1940,7 @@
 <td>转账金额</td>
 </tr>
 </tbody></table>
-<h3 id='70bdef7e25-12'>返回参数</h3>
+<h3 id='70bdef7e25-11'>返回参数</h3>
 <table><thead>
 <tr>
 <th>参数名</th>
@@ -2051,7 +1959,7 @@
 <td>返回内容</td>
 </tr>
 </tbody></table>
-<h4 id='data-11'>data 参数</h4>
+<h4 id='data-10'>data 参数</h4>
 <table><thead>
 <tr>
 <th>参数名</th>
@@ -2085,7 +1993,7 @@
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
-        <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/bch/send/"</span><span class="p">,</span>
+        <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/zec/send/"</span><span class="p">,</span>
         <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">},</span>
         <span class="n">json</span><span class="o">=</span><span class="p">{</span>
             <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
@@ -2093,21 +2001,22 @@
             <span class="s">"signed_tx "</span><span class="p">:</span> <span class="s">"signature data"</span>
         <span class="p">}</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/send/"</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/zec/send/"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
-    -d <span class="s1">'{"wallet_id": "cf761ad1b6c5f30a1557d942cb557b07", "sequence_id": 2003140000064057, "signed_tx":"02000000000101790adf7de80313b34ba241c89e626f78ea3de9f68ce16836e1efed15443223570000000023220020865ec173fbfbda5bce5fb16cb8ac053b589818b7b6674b325d72649665bad354ffffffff02e80300000000000017a9142bd544eadc59f3fc42aeaf1f9c83dc0e5aa7471687512200000000000017a91483e42149f975d13d09e49a17409ec60823985545870300483045022100c5cdeefce82742e331bf1b459221314d6c785a2023bea7d13d622c51c7edef5302206710d526fc925b029510bf4119e86fa2873e6fb4b851810423038b8b2d25ebe301695221020fcbb44ff4a1f423499b1eb9b2bd9cbe467934467d4857451c7eab7f8cb2885b21038f2d1612ae08a9595fbe1d30c9b13e748a4ae55c06d5d3fa5c0b2e59712d3b6b21033276655f29e3ca36a5c8dbf0996fd3267f56c03cfdc092f53972269c1abf97ff53ae00000000"}'</span>
+    -d <span class="s1">'{
+        "wallet_id": "cf761ad1b6c5f30a1557d942cb557b07",
+        "sequence_id": 2003140000064057, 
+        "signed_tx":"02000000000101790adf7de80313b34ba241c89e626f78ea3de9f68ce16836e1efed15443223570000000023220020865ec173fbfbda5bce5fb16cb8ac053b589818b7b6674b325d72649665bad354ffffffff02e80300000000000017a9142bd544eadc59f3fc42aeaf1f9c83dc0e5aa7471687512200000000000017a91483e42149f975d13d09e49a17409ec60823985545870300483045022100c5cdeefce82742e331bf1b459221314d6c785a2023bea7d13d622c51c7edef5302206710d526fc925b029510bf4119e86fa2873e6fb4b851810423038b8b2d25ebe301695221020fcbb44ff4a1f423499b1eb9b2bd9cbe467934467d4857451c7eab7f8cb2885b21038f2d1612ae08a9595fbe1d30c9b13e748a4ae55c06d5d3fa5c0b2e59712d3b6b21033276655f29e3ca36a5c8dbf0996fd3267f56c03cfdc092f53972269c1abf97ff53ae00000000"
+        }'</span>
 
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
-        <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/send/"</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/zec/send/"</span><span class="p">,</span>
         <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
-        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
-            <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">,</span>
-        <span class="p">},</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">},</span>
         <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
             <span class="s2">"wallet_id"</span><span class="p">:</span> <span class="s2">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
             <span class="s2">"sequence_id"</span><span class="p">:</span> <span class="mi">2003140000064057</span><span class="p">,</span>
@@ -2126,9 +2035,9 @@
     </span><span class="s2">"is_sent"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-13'>HTTP Request</h3>
-<p><code>POST https://testnet.sectoken.io/api/v1/wallet/bch/send/</code></p>
-<h3 id='1f9ac54b15-13'>请求参数</h3>
+</span></code></pre><h3 id='http-request-12'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/api/v1/wallet/zec/send/</code></p>
+<h3 id='1f9ac54b15-12'>请求参数</h3>
 <table><thead>
 <tr>
 <th>参数名</th>
@@ -2156,7 +2065,7 @@
 <td>签名完的交易单</td>
 </tr>
 </tbody></table>
-<h3 id='70bdef7e25-13'>返回参数</h3>
+<h3 id='70bdef7e25-12'>返回参数</h3>
 <table><thead>
 <tr>
 <th>参数名</th>
@@ -2175,7 +2084,7 @@
 <td>返回内容</td>
 </tr>
 </tbody></table>
-<h4 id='data-12'>data 参数</h4>
+<h4 id='data-11'>data 参数</h4>
 <table><thead>
 <tr>
 <th>参数名</th>
@@ -2205,7 +2114,7 @@
             <span class="s">"url"</span><span class="p">:</span> <span class="s">"https://example.com/callback/"</span><span class="p">,</span>
             <span class="s">"label"</span><span class="p">:</span> <span class="s">"Receipt"</span><span class="p">,</span>
             <span class="s">"type"</span><span class="p">:</span> <span class="s">"withdraw"</span><span class="p">,</span>
-            <span class="s">"coin"</span><span class="p">:</span> <span class="s">"bch"</span><span class="p">,</span>
+            <span class="s">"coin"</span><span class="p">:</span> <span class="s">"zec"</span><span class="p">,</span>
             <span class="s">"secret_key"</span><span class="p">:</span> <span class="s">"abc123"</span>
         <span class="p">},</span>
         <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">}</span>
@@ -2216,27 +2125,24 @@
     -X POST <span class="se">\</span>
     -d <span class="s1">'{
             "wallet_id": "cf761ad1b6c5f30a1557d942cb557b07",
-            "url":"https://example.com/callback/", 
+            "url": "https://example.com/callback/", 
             "label": "Receipt", 
             "type": "withdraw", 
-            "coin": "bch",
+            "coin": "zec",
             "secret_key":"abc123"
-    }'</span>
+        }'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
     <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/webhook/add/"</span><span class="p">,</span>
     <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
-    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
-        <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">,</span>
-    <span class="p">},</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">},</span>
     <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
         <span class="s2">"wallet_id"</span><span class="p">:</span> <span class="s2">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
         <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://example.com/callback/"</span><span class="p">,</span>
         <span class="s2">"label"</span><span class="p">:</span> <span class="s2">"Receipt"</span><span class="p">,</span>
         <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"withdraw"</span><span class="p">,</span>
-        <span class="s2">"coin"</span><span class="p">:</span> <span class="s2">"bch"</span><span class="p">,</span>
+        <span class="s2">"coin"</span><span class="p">:</span> <span class="s2">"zec"</span><span class="p">,</span>
         <span class="s2">"secret_key"</span><span class="p">:</span> <span class="s2">"abc123"</span>
     <span class="p">})</span>
 <span class="p">});</span>
@@ -2250,9 +2156,9 @@
     </span><span class="s2">"webhook_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"da0e3f3530cb7f63695d8eaad351fdc1"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-14'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request-13'>HTTP Request</h3>
 <p><code>POST https://testnet.sectoken.io/api/v1/wallet/webhook/add/</code></p>
-<h3 id='1f9ac54b15-14'>请求参数</h3>
+<h3 id='1f9ac54b15-13'>请求参数</h3>
 <table><thead>
 <tr>
 <th>参数名</th>
@@ -2298,7 +2204,7 @@
 <td>hash key, 上传后会用此key对callback内容做hash, 默认为空字符串</td>
 </tr>
 </tbody></table>
-<h3 id='70bdef7e25-14'>返回参数</h3>
+<h3 id='70bdef7e25-13'>返回参数</h3>
 <table><thead>
 <tr>
 <th>参数名</th>
@@ -2317,7 +2223,7 @@
 <td>返回内容</td>
 </tr>
 </tbody></table>
-<h4 id='data-13'>Data 参数</h4>
+<h4 id='data-12'>Data 参数</h4>
 <table><thead>
 <tr>
 <th>参数名</th>
@@ -2346,10 +2252,7 @@
 <span class="nx">request</span><span class="p">({</span>
     <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/webhook/list/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
     <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
-    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
-        <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">,</span>
-    <span class="p">},</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">},</span>
 <span class="p">});</span>
 </code></pre>
 <blockquote>
@@ -2362,16 +2265,16 @@
       </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tasdfda"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://testnet.sectoken.io/"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"withdraw"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bch"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zec"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"secret_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
       </span><span class="s2">"webhook_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"073c0372a955c14f49fd88e499fbae2e"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-15'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request-14'>HTTP Request</h3>
 <p><code>GET https://testnet.sectoken.io/api/v1/wallet/webhook/list/</code></p>
-<h3 id='1f9ac54b15-15'>请求参数</h3>
+<h3 id='1f9ac54b15-14'>请求参数</h3>
 <table><thead>
 <tr>
 <th>参数名</th>
@@ -2387,7 +2290,7 @@
 <td>钱包的id</td>
 </tr>
 </tbody></table>
-<h3 id='70bdef7e25-15'>返回参数</h3>
+<h3 id='70bdef7e25-14'>返回参数</h3>
 <table><thead>
 <tr>
 <th>参数名</th>
@@ -2406,7 +2309,7 @@
 <td>返回内容</td>
 </tr>
 </tbody></table>
-<h4 id='data-14'>Data参数</h4>
+<h4 id='data-13'>Data参数</h4>
 <table><thead>
 <tr>
 <th>参数名</th>
@@ -2463,7 +2366,7 @@
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
-    -d <span class="s1">'{ "webhook_id": "073c0372a955c14f49fd88e499fbae2e",}'</span>
+    -d <span class="s1">'{"webhook_id": "073c0372a955c14f49fd88e499fbae2e"}'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
@@ -2485,9 +2388,9 @@
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-16'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request-15'>HTTP Request</h3>
 <p><code>POST https://testnet.sectoken.io/api/v1/wallet/webhook/del/</code></p>
-<h3 id='1f9ac54b15-16'>请求参数</h3>
+<h3 id='1f9ac54b15-15'>请求参数</h3>
 <table><thead>
 <tr>
 <th>参数名</th>
@@ -2503,7 +2406,7 @@
 <td>webhook的唯一标识id</td>
 </tr>
 </tbody></table>
-<h3 id='70bdef7e25-16'>返回参数</h3>
+<h3 id='70bdef7e25-15'>返回参数</h3>
 <table><thead>
 <tr>
 <th>参数名</th>
@@ -2522,21 +2425,18 @@
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-        <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/bch/role_list/"</span><span class="p">,</span>
+        <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/zec/role_list/"</span><span class="p">,</span>
         <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">},</span>
         <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">}</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/role_list/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07"</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/zec/role_list/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
-    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/role_list/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/zec/role_list/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
     <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
-    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
-        <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">,</span>
-    <span class="p">},</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">,},</span>
 <span class="p">});</span>
 </code></pre>
 <blockquote>
@@ -2552,9 +2452,9 @@
     </span><span class="s2">"manager"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kHkLgyKgacopCvtc9FdSW4"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-17'>HTTP Request</h3>
-<p><code>GET https://testnet.sectoken.io/api/v1/wallet/bch/role_list/</code></p>
-<h3 id='1f9ac54b15-17'>请求参数</h3>
+</span></code></pre><h3 id='http-request-16'>HTTP Request</h3>
+<p><code>GET https://testnet.sectoken.io/api/v1/wallet/zec/role_list/</code></p>
+<h3 id='1f9ac54b15-16'>请求参数</h3>
 <table><thead>
 <tr>
 <th>参数名</th>
@@ -2570,7 +2470,7 @@
 <td>钱包的id</td>
 </tr>
 </tbody></table>
-<h3 id='70bdef7e25-17'>返回参数</h3>
+<h3 id='70bdef7e25-16'>返回参数</h3>
 <table><thead>
 <tr>
 <th>参数名</th>
@@ -2589,7 +2489,7 @@
 <td>返回内容</td>
 </tr>
 </tbody></table>
-<h4 id='data-15'>Data参数</h4>
+<h4 id='data-14'>Data参数</h4>
 <table><thead>
 <tr>
 <th>参数名</th>
@@ -2618,24 +2518,102 @@
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
-        <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/bch/role_add/"</span><span class="p">,</span>
+        <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/zec/role_add/"</span><span class="p">,</span>
         <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">},</span>
         <span class="n">json</span><span class="o">=</span><span class="p">{</span>
             <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
             <span class="s">"observer"</span><span class="p">:</span> <span class="s">"wd6Q3RPKdyCrwzA53R7diP"</span>
         <span class="p">}</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/role_add/"</span> 
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/zec/role_add/"</span> 
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> 
     -X POST
     -d <span class="s1">'{
             "wallet_id":"cf761ad1b6c5f30a1557d942cb557b07",
             "observer":"wd6Q3RPKdyCrwzA53R7diP"
-    }'</span>
+        }'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
 
 <span class="nx">request</span><span class="p">({</span>
-    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/role_add/"</span><span class="p">,</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/zec/role_add/"</span><span class="p">,</span>
+    <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+        <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+        <span class="s2">"wallet_id"</span><span class="p">:</span> <span class="s2">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
+        <span class="s2">"observer"</span><span class="p">:</span> <span class="s2">"wd6Q3RPKdyCrwzA53R7diP"</span>
+    <span class="p">})</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-17'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/api/v1/wallet/zec/role_add/</code></p>
+<h3 id='1f9ac54b15-17'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wallet_id</td>
+<td>string</td>
+<td>是</td>
+<td>钱包的id</td>
+</tr>
+<tr>
+<td>observer</td>
+<td>string</td>
+<td>是</td>
+<td>观察者的suid</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-17'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+</tbody></table>
+<h1 id='0b7a802d53'>删除钱包观察者</h1>
+<p>通过该接口可以删除钱包内的观察者成员</p>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+        <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/zec/role_del/"</span><span class="p">,</span>
+        <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">},</span>
+        <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+            <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
+            <span class="s">"observer"</span><span class="p">:</span> <span class="s">"wd6Q3RPKdyCrwzA53R7diP"</span>
+        <span class="p">}</span>
+<span class="p">)</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/zec/role_del/"</span> 
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> 
+    -X POST
+    -d <span class="s1">'{
+            "wallet_id":"cf761ad1b6c5f30a1557d942cb557b07",
+            "observer":"wd6Q3RPKdyCrwzA53R7diP"
+        }'</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">({</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/zec/role_del/"</span><span class="p">,</span>
     <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -2654,7 +2632,7 @@
   </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-18'>HTTP Request</h3>
-<p><code>POST https://testnet.sectoken.io/api/v1/wallet/bch/role_add/</code></p>
+<p><code>POST https://testnet.sectoken.io/api/v1/wallet/zec/role_del/</code></p>
 <h3 id='1f9ac54b15-18'>请求参数</h3>
 <table><thead>
 <tr>
@@ -2691,84 +2669,6 @@
 <td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
 </tr>
 </tbody></table>
-<h1 id='0b7a802d53'>删除钱包观察者</h1>
-<p>通过该接口可以删除钱包内的观察者成员</p>
-<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
-
-<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
-        <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/wallet/bch/role_del/"</span><span class="p">,</span>
-        <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">},</span>
-        <span class="n">json</span><span class="o">=</span><span class="p">{</span>
-            <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
-            <span class="s">"observer"</span><span class="p">:</span> <span class="s">"wd6Q3RPKdyCrwzA53R7diP"</span>
-        <span class="p">}</span>
-<span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/role_del/"</span> 
-    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> 
-    -X POST
-    -d <span class="s1">'{
-            "wallet_id":"cf761ad1b6c5f30a1557d942cb557b07",
-            "observer":"wd6Q3RPKdyCrwzA53R7diP"
-    }'</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
-
-<span class="nx">request</span><span class="p">({</span>
-    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/wallet/bch/role_del/"</span><span class="p">,</span>
-    <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
-    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
-        <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-        <span class="s2">"wallet_id"</span><span class="p">:</span> <span class="s2">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
-        <span class="s2">"observer"</span><span class="p">:</span> <span class="s2">"wd6Q3RPKdyCrwzA53R7diP"</span>
-    <span class="p">})</span>
-<span class="p">});</span>
-</code></pre>
-<blockquote>
-<p>返回示例</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-19'>HTTP Request</h3>
-<p><code>POST https://testnet.sectoken.io/api/v1/wallet/bch/role_del/</code></p>
-<h3 id='1f9ac54b15-19'>请求参数</h3>
-<table><thead>
-<tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>必填</th>
-<th>说明</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>wallet_id</td>
-<td>string</td>
-<td>是</td>
-<td>钱包的id</td>
-</tr>
-<tr>
-<td>observer</td>
-<td>string</td>
-<td>是</td>
-<td>观察者的suid</td>
-</tr>
-</tbody></table>
-<h3 id='70bdef7e25-19'>返回参数</h3>
-<table><thead>
-<tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>说明</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>code</td>
-<td>integer</td>
-<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
-</tr>
-</tbody></table>
 <h1 id='webhook-4'>交易Webhook通知</h1>
 <p>当用户钱包发生交易时，会向指定的url发送HTTP POST请求，请求头content-type为application/json。</p>
 
@@ -2789,29 +2689,27 @@
 <blockquote>
 <p>请求body示例</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="w">
-</span><span class="p">{</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"46ab8299ed14ba7d57b57210b7756d80f67b3db2448fd4d1f1fb78039e5bfd6d"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">1431122</span><span class="p">,</span><span class="w">
   </span><span class="s2">"outputs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"dst_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bchtest:pq5swaa5x0k43gxtczeastt00rekstv4qq76qkdmv8"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000000000"</span><span class="w">
+      </span><span class="s2">"dst_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"t28JrAeH8QcCRQZSp1DBgKrr5xPBFun5peb"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000000000"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"dst_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bchtest:pq5swaa5x0k43gxtczeastt00rekstv4qq76qkdmv8"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"363"</span><span class="w">
+      </span><span class="s2">"dst_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2N58vdmxvRQ6euDBXnpHMLNDTz9o9gEhH1A"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"363"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deposit"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1572510180</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bch"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zec"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
   </span><span class="s2">"memo"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="s2">"webhook_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fa5dc2025e79c37b8656ef4b89619d9d"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-
 </span></code></pre><h3 id='1f233418ae'>参数说明</h3>
 <table><thead>
 <tr>
@@ -2843,7 +2741,7 @@
 <tr>
 <td>type</td>
 <td>string</td>
-<td>交易类型,收款(deposit)或付款(withdraw)</td>
+<td>交易类型，收款(deposit)或付款(withdraw)</td>
 </tr>
 <tr>
 <td>timestamp</td>
@@ -2873,7 +2771,7 @@
 </tbody></table>
 <h1 id='c284998822'>获取交易记录</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/record/bch/"</span><span class="p">,</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/api/v1/record/zec/"</span><span class="p">,</span>
              <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">},</span>
              <span class="n">params</span><span class="o">=</span><span class="p">{</span>
                  <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span>
@@ -2881,16 +2779,13 @@
                  <span class="s">"month"</span><span class="p">:</span> <span class="s">"10"</span>
              <span class="p">}</span>
              <span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/record/bch/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07&amp;year=2019&amp;month=10"</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/record/zec/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07&amp;year=2019&amp;month=10"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
 <span class="nx">request</span><span class="p">({</span>
-        <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/record/bch/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07&amp;&amp;year=2019&amp;&amp;month=12"</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s2">"https://testnet.sectoken.io/api/v1/record/zec/?wallet_id=cf761ad1b6c5f30a1557d942cb557b07&amp;&amp;year=2019&amp;&amp;month=12"</span><span class="p">,</span>
         <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
-        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
-            <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">,</span>
-        <span class="p">},</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer Atk38e9b38c64430d56ee34a05f485279ae"</span><span class="p">},</span>
     <span class="p">}</span>
 <span class="p">);</span>
 </code></pre>
@@ -2904,22 +2799,22 @@
       </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"46ab8299ed14ba7d57b57210b7756d80f67b3db2448fd4d1f1fb78039e5bfd6d"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"outputs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"dst_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bchtest:pq5swaa5x0k43gxtczeastt00rekstv4qq76qkdmv8"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="w">
+          </span><span class="s2">"dst_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"t28JrAeH8QcCRQZSp1DBgKrr5xPBFun5peb"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"withdraw"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">5278224</span><span class="p">,</span><span class="w">
       </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1572259477</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bch"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zec"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"memo"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
       </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-20'>HTTP Request</h3>
-<p><code>GET https://testnet.sectoken.io/api/v1/record/bch/</code></p>
-<h3 id='1f9ac54b15-20'>请求参数</h3>
+</span></code></pre><h3 id='http-request-19'>HTTP Request</h3>
+<p><code>GET https://testnet.sectoken.io/api/v1/record/zec/</code></p>
+<h3 id='1f9ac54b15-19'>请求参数</h3>
 <table><thead>
 <tr>
 <th>参数名</th>
@@ -2953,7 +2848,7 @@
 <td>指定日期</td>
 </tr>
 </tbody></table>
-<h3 id='70bdef7e25-20'>返回参数</h3>
+<h3 id='70bdef7e25-19'>返回参数</h3>
 <table><thead>
 <tr>
 <th>参数名</th>
@@ -2972,7 +2867,7 @@
 <td>返回内容</td>
 </tr>
 </tbody></table>
-<h4 id='data-16'>Data参数</h4>
+<h4 id='data-15'>Data参数</h4>
 <table><thead>
 <tr>
 <th>参数名称</th>
@@ -2993,7 +2888,7 @@
 <tr>
 <td>type</td>
 <td>string</td>
-<td>交易类型,收款(deposit)或付款(withdraw)</td>
+<td>交易类型，收款(deposit)或付款(withdraw)</td>
 </tr>
 <tr>
 <td>coin</td>

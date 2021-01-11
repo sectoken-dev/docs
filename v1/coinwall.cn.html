@@ -506,7 +506,7 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='usdt'>获取USDT充值地址</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://coinwall.sectoken.io/recharge_address/?coin=eth"</span> <span class="se">\</span>
+        <h1 id='usdt'>获取USDT充值地址</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/recharge_address/?coin=eth"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
 </code></pre>
 <blockquote>
@@ -519,7 +519,7 @@
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://coinwall.sectoken.io/recharge_address/</code></p>
+<p><code>GET https://testnet.sectoken.io/api/v1/recharge_address/</code></p>
 <h3 id='1f9ac54b15'>请求参数</h3>
 <table><thead>
 <tr>
@@ -569,7 +569,7 @@
 <td>USDT 充值地址</td>
 </tr>
 </tbody></table>
-<h1 id='3edc9dc975'>获取商品列表</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://coinwall.sectoken.io/goods_list/"</span> <span class="se">\</span>
+<h1 id='3edc9dc975'>获取商品列表</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/goods_list/"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span>
 </code></pre>
 <blockquote>
@@ -579,7 +579,7 @@
   </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET https://coinwall.sectoken.io/goods_list/</code></p>
+<p><code>GET https://testnet.sectoken.io/api/v1/goods_list/</code></p>
 <h3 id='1f9ac54b15-2'>请求参数</h3>
 <blockquote>
 <p>无需请求参数</p>
@@ -647,7 +647,7 @@
 <td>商品描述</td>
 </tr>
 </tbody></table>
-<h1 id='6f0f77dbff'>获取当前余额</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://coinwall.sectoken.io/balance/"</span> <span class="se">\</span>
+<h1 id='6f0f77dbff'>获取当前余额</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/balance/"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
 </code></pre>
 <blockquote>
@@ -660,7 +660,7 @@
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET https://coinwall.sectoken.io/balance/</code></p>
+<p><code>GET https://testnet.sectoken.io/api/v1/balance/</code></p>
 <h3 id='1f9ac54b15-3'>请求参数</h3>
 <blockquote>
 <p>无需请求参数</p>
@@ -698,7 +698,7 @@
 <td>剩余金额,以 USDT 为单位</td>
 </tr>
 </tbody></table>
-<h1 id='vip'>查看VIP信息</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://coinwall.sectoken.io/vip_info/"</span> <span class="se">\</span>
+<h1 id='vip'>查看VIP信息</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/vip_info/"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> 
 </code></pre>
 <blockquote>
@@ -717,7 +717,7 @@
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-4'>HTTP Request</h3>
-<p><code>GET https://coinwall.sectoken.io/vip_info/</code></p>
+<p><code>GET https://testnet.sectoken.io/api/v1/vip_info/</code></p>
 <h3 id='1f9ac54b15-4'>请求参数</h3>
 <blockquote>
 <p>无需请求参数</p>
@@ -775,7 +775,7 @@
 <td>VIP 等级</td>
 </tr>
 </tbody></table>
-<h1 id='vip-2'>购买 VIP 商品</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://coinwall.sectoken.io/buy_vip/"</span> <span class="se">\</span>
+<h1 id='vip-2'>购买 VIP 商品</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/buy_vip/"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
@@ -797,7 +797,7 @@
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-5'>HTTP Request</h3>
-<p><code>POST https://coinwall.sectoken.io/buy_vip/</code></p>
+<p><code>POST https://testnet.sectoken.io/api/v1/buy_vip/</code></p>
 <h3 id='1f9ac54b15-5'>请求参数</h3>
 <table><thead>
 <tr>
@@ -883,7 +883,7 @@
 <td>剩余余额 USDT为单位</td>
 </tr>
 </tbody></table>
-<h1 id='d5d179fb67'>获取购买记录</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://coinwall.sectoken.io/payment_record/"</span> <span class="se">\</span>
+<h1 id='d5d179fb67'>获取购买记录</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/payment_record/"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
     -x POST
     -d <span class="s1">'{"vip_level":1, "page":1}'</span>
@@ -905,7 +905,7 @@
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-6'>HTTP Request</h3>
-<p><code>GET https://coinwall.sectoken.io/payment_record/</code></p>
+<p><code>GET https://testnet.sectoken.io/api/v1/payment_record/</code></p>
 <h3 id='1f9ac54b15-6'>请求参数</h3>
 <table><thead>
 <tr>
@@ -986,7 +986,7 @@
 <td>创建时间</td>
 </tr>
 </tbody></table>
-<h1 id='e2a027ceb6'>获取充值记录</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://coinwall.sectoken.io/recharge_record/"</span> <span class="se">\</span>
+<h1 id='e2a027ceb6'>获取充值记录</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/recharge_record/"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
 </code></pre>
 <blockquote>
@@ -1004,7 +1004,7 @@
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-7'>HTTP Request</h3>
-<p><code>GET https://coinwall.sectoken.io/recharge_record/</code></p>
+<p><code>GET https://testnet.sectoken.io/api/v1/recharge_record/</code></p>
 <h3 id='1f9ac54b15-7'>请求参数</h3>
 <table><thead>
 <tr>
@@ -1070,7 +1070,7 @@
 <td>充值时间</td>
 </tr>
 </tbody></table>
-<h1 id='c328da79ba'>创建规则集</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://coinwall.sectoken.io/api/v1/wall/filter"</span> <span class="se">\</span>
+<h1 id='c328da79ba'>创建规则集</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wall/filter"</span> <span class="se">\</span>
     -x POST <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
     -d <span class="s2">"{
@@ -1095,7 +1095,7 @@
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-8'>HTTP Request</h3>
-<p><code>POST https://coinwall.sectoken.io/api/v1/wall/filters</code></p>
+<p><code>POST https://testnet.sectoken.io/api/v1/wall/filters</code></p>
 <h3 id='1f9ac54b15-8'>请求参数</h3>
 <table><thead>
 <tr>
@@ -1224,7 +1224,7 @@
 <td>规则id</td>
 </tr>
 </tbody></table>
-<h1 id='291e5d8e10'>查询规则集</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://coinwall.sectoken.io/api/v1/wall/filter?filter_id=7f3311e9f7ba4a16d3263e6e80f5eaa3"</span> <span class="se">\</span>
+<h1 id='291e5d8e10'>查询规则集</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wall/filter?filter_id=7f3311e9f7ba4a16d3263e6e80f5eaa3"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
 </code></pre>
 <blockquote>
@@ -1255,7 +1255,7 @@
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-9'>HTTP Request</h3>
-<p><code>GET https://coinwall.sectoken.io/api/v1/wall/filter</code></p>
+<p><code>GET https://testnet.sectoken.io/api/v1/wall/filter</code></p>
 <h3 id='1f9ac54b15-9'>请求参数</h3>
 <table><thead>
 <tr>
@@ -1330,7 +1330,7 @@
 <td>规则条件</td>
 </tr>
 </tbody></table>
-<h1 id='454236d511'>删除规则集</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://coinwall.sectoken.io/api/v1/wall/disable"</span> <span class="se">\</span>
+<h1 id='454236d511'>删除规则集</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wall/disable"</span> <span class="se">\</span>
     -x POST <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
     -d <span class="s2">"{
@@ -1345,7 +1345,7 @@
   </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-10'>HTTP Request</h3>
-<p><code>POST https://coinwall.sectoken.io/api/v1/wall/disable</code></p>
+<p><code>POST https://testnet.sectoken.io/api/v1/wall/disable</code></p>
 <h3 id='1f9ac54b15-10'>请求参数</h3>
 <table><thead>
 <tr>
@@ -1382,7 +1382,7 @@
 <td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
 </tr>
 </tbody></table>
-<h1 id='c03aedddec'>查询规则集交易历史</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://coinwall.sectoken.io/api/v1/wall/history?filter_id=7f3311e9f7ba4a16d3263e6e80f5eaa3"</span> <span class="se">\</span>
+<h1 id='c03aedddec'>查询规则集交易历史</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wall/history?filter_id=7f3311e9f7ba4a16d3263e6e80f5eaa3"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
 </code></pre>
 <blockquote>
@@ -1409,7 +1409,7 @@
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-11'>HTTP Request</h3>
-<p><code>GET https://coinwall.sectoken.io/api/v1/wall/filter</code></p>
+<p><code>GET https://testnet.sectoken.io/api/v1/wall/filter</code></p>
 <h3 id='1f9ac54b15-11'>请求参数</h3>
 <table><thead>
 <tr>
@@ -1499,7 +1499,7 @@
 <td>时间戳</td>
 </tr>
 </tbody></table>
-<h1 id='b7a882ec02'>通过防火墙检查广播交易单</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://coinwall.sectoken.io/api/v1/wall/broadcast/</span><span class="nv">$coin</span><span class="s2">"</span> <span class="se">\</span>
+<h1 id='b7a882ec02'>通过防火墙检查广播交易单</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wall/broadcast/</span><span class="nv">$coin</span><span class="s2">"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
     -H <span class="s1">'Filter-Id: 7f3311e9f7ba4a16d3263e6e80f5eaa3'</span>
     -x POST <span class="se">\</span>
@@ -1536,7 +1536,7 @@
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-12'>HTTP Request</h3>
-<p><code>GET https://coinwall.sectoken.io/api/v1/wall/filter</code></p>
+<p><code>GET https://testnet.sectoken.io/api/v1/wall/filter</code></p>
 <h3 id='url'>URL参数</h3>
 <table><thead>
 <tr>
@@ -1647,7 +1647,7 @@
 <td>广播成功标记, (true: 成功, false: 失败)</td>
 </tr>
 </tbody></table>
-<h1 id='c7a671ba8a'>不通过防火墙检查广播交易单</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://coinwall.sectoken.io/api/v1/wall/broadcast/</span><span class="nv">$coin</span><span class="s2">"</span> <span class="se">\</span>
+<h1 id='c7a671ba8a'>不通过防火墙检查广播交易单</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wall/broadcast/</span><span class="nv">$coin</span><span class="s2">"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
     -H <span class="s1">'Filter-Id: 7f3311e9f7ba4a16d3263e6e80f5eaa3'</span>
     -x POST <span class="se">\</span>
@@ -1684,7 +1684,7 @@
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-13'>HTTP Request</h3>
-<p><code>GET https://coinwall.sectoken.io/api/v1/wall/filter</code></p>
+<p><code>GET https://testnet.sectoken.io/api/v1/wall/filter</code></p>
 <h3 id='url-2'>URL参数</h3>
 <table><thead>
 <tr>

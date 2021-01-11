@@ -1,0 +1,1181 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Documentation</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="../stylesheets/screen-bde86515.css" rel="stylesheet" media="screen" />
+    <link href="../stylesheets/print-5687a71c.css" rel="stylesheet" media="print" />
+      <script src="../javascripts/all_nosearch-ea811c3e.js"></script>
+
+  </head>
+
+  <body class="v1 v1_notice" data-languages="[]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="../images/navbar-cad8cdcb.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="../images/logo-2956005c.png" class="logo" alt="Logo" />
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#ffea7d4f0f" class="toc-h1 toc-link" data-title="添加地址监控">添加地址监控</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#b0751d3df6" class="toc-h1 toc-link" data-title="查看监控列表">查看监控列表</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-2" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-2" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-2" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#99469040e2" class="toc-h1 toc-link" data-title="删除监控条目">删除监控条目</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-3" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-3" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-3" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#6f0f77dbff" class="toc-h1 toc-link" data-title="获取当前余额">获取当前余额</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-4" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-4" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-4" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#usdt" class="toc-h1 toc-link" data-title="获取USDT充值地址">获取USDT充值地址</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-5" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-5" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-5" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#084f68942b" class="toc-h1 toc-link" data-title="获取验证码">获取验证码</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-6" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-6" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-6" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#f807214543" class="toc-h1 toc-link" data-title="获取通知记录">获取通知记录</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-7" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-7" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-7" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#e2a027ceb6" class="toc-h1 toc-link" data-title="获取充值记录">获取充值记录</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-8" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-8" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-8" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#webhook" class="toc-h1 toc-link" data-title="交易 Webhook 通知">交易 Webhook 通知</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#1f233418ae" class="toc-h2 toc-link" data-title="参数说明">参数说明</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#e08c1d4f9a" class="toc-h1 toc-link" data-title="错误码">错误码</a>
+          </li>
+      </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='ffea7d4f0f'>添加地址监控</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/noticenotice_add/"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
+    -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+    -X POST <span class="se">\</span>
+    -d <span class="s1">'{
+            "address": "0xc376fb50176650e77a3ea9b5ccb7902a1de82f71",
+            "label": "test",
+            "event": "deposit",
+            "secret": "abc123",
+            "coin": "eth",
+            "method": "telegram",
+            "notice_code": "314902",
+            "language": "cn"
+    }'</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/api/v1/noticenotice_add/</code></p>
+<h3 id='1f9ac54b15'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>是</td>
+<td>监控地址</td>
+</tr>
+<tr>
+<td>label</td>
+<td>string</td>
+<td>是</td>
+<td>监控标签</td>
+</tr>
+<tr>
+<td>event</td>
+<td>string</td>
+<td>是</td>
+<td>监控类型( deposit / withdraw)</td>
+</tr>
+<tr>
+<td>secret</td>
+<td>string</td>
+<td>否</td>
+<td>hash key, 上传后会用此 key 对推送内容做 hash, 默认为空字符串(仅对 webhook 方式有效)</td>
+</tr>
+<tr>
+<td>coin</td>
+<td>string</td>
+<td>是</td>
+<td>币种信息</td>
+</tr>
+<tr>
+<td>method</td>
+<td>string</td>
+<td>是</td>
+<td>推送方式( telegram / email / webhook )</td>
+</tr>
+<tr>
+<td>notice_code</td>
+<td>string</td>
+<td>否</td>
+<td>通过 telegram / email / 获得的notice_code, 通知方式为 webhook 时, 此项无效</td>
+</tr>
+<tr>
+<td>language</td>
+<td>string</td>
+<td>否</td>
+<td>通知语言, 仅支持 (cn / en), 默认为 en</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+</tbody></table>
+<h1 id='b0751d3df6'>查看监控列表</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/noticenotice_list/"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> 
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"notice_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"db4f57bc1c9f339bd142bd067ed02d5b"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x485C4a3234A06e6DC2abC72C96b5025D16027781"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eth"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"all"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"create_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-22T20:17:45Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://testnet.sectoken.io/api/v1/noticenotice_list/</code></p>
+<h3 id='1f9ac54b15-2'>请求参数</h3>
+<blockquote>
+<p>无需请求参数</p>
+</blockquote>
+<h3 id='70bdef7e25-2'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>array</td>
+<td>返回对象</td>
+</tr>
+</tbody></table>
+<h4 id='data'>data参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>notice_id</td>
+<td>string</td>
+<td>唯一标识id</td>
+</tr>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>监控地址</td>
+</tr>
+<tr>
+<td>coin</td>
+<td>string</td>
+<td>币种信息</td>
+</tr>
+<tr>
+<td>event</td>
+<td>string</td>
+<td>监控类型</td>
+</tr>
+<tr>
+<td>label</td>
+<td>string</td>
+<td>标签</td>
+</tr>
+<tr>
+<td>create_time</td>
+<td>integer</td>
+<td>记录添加时间戳</td>
+</tr>
+</tbody></table>
+<h1 id='99469040e2'>删除监控条目</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/noticenotice_del/"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
+    -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+    -X POST <span class="se">\</span>
+    -d <span class="s1">'{"notice_id": "63ddc13538dde489ddccb0b91c23e5fa"}'</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/api/v1/noticenotice_del/</code></p>
+<h3 id='1f9ac54b15-3'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>notice_id</td>
+<td>string</td>
+<td>是</td>
+<td>notice唯一标识id</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-3'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+</tbody></table>
+<h1 id='6f0f77dbff'>获取当前余额</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/noticebalance/"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> 
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mf">998.23</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"free"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET https://testnet.sectoken.io/api/v1/noticebalance/</code></p>
+<h3 id='1f9ac54b15-4'>请求参数</h3>
+<blockquote>
+<p>无需请求参数</p>
+</blockquote>
+<h3 id='70bdef7e25-4'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>返回内容</td>
+</tr>
+</tbody></table>
+<h4 id='data-2'>data 参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>balance</td>
+<td>float</td>
+<td>剩余金额,以 USDT 为单位</td>
+</tr>
+<tr>
+<td>free</td>
+<td>integer</td>
+<td>剩余免费次数</td>
+</tr>
+</tbody></table>
+<h1 id='usdt'>获取USDT充值地址</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/noticerecharge_address/?coin=eth"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> 
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x66a977F4ecB64972c79Fe2c220326D0aE7e600aF"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-5'>HTTP Request</h3>
+<p><code>GET https://testnet.sectoken.io/api/v1/noticerecharge_address/</code></p>
+<h3 id='1f9ac54b15-5'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>coin</td>
+<td>string</td>
+<td>否</td>
+<td>币种信息, 仅支持 eth 和 trx</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-5'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>返回内容</td>
+</tr>
+</tbody></table>
+<h4 id='data-3'>data 参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>USDT 充值地址</td>
+</tr>
+</tbody></table>
+<h1 id='084f68942b'>获取验证码</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/noticeverification/"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> 
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-6'>HTTP Request</h3>
+<p><code>GET https://testnet.sectoken.io/api/v1/noticeverification/</code></p>
+<h3 id='1f9ac54b15-6'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>method</td>
+<td>string</td>
+<td>是</td>
+<td>发送验证码方式(email / sms)</td>
+</tr>
+<tr>
+<td>contact</td>
+<td>string</td>
+<td>是</td>
+<td>联系方式(邮箱 / 手机号)</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-6'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+</tbody></table>
+<h1 id='f807214543'>获取通知记录</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/noticenotice_record/"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
+    -x POST <span class="se">\</span>
+    -d <span class="s1">'{"address": "0x5e4d2dc726cbc925ec27cd22659a0da6015cc1310216f700333cc2e9ebd0987c"}'</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"notice_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"db4f57bc1c9f339bd142bd067ed02d5b"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"detail"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"watched_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x485C4a3234A06e6DC2abC72C96b5025D16027781"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x2b2e69f12cb79b1f3ddc8fb83696309cd6b34bc951012168dca8aaff5cbe2b62"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xF90eD3984772f78e4Aeb83390E2030D1fCbEc98f"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x485C4a3234A06e6DC2abC72C96b5025D16027781"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456000000000000"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"human_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.123456"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deposit"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">7417459</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-23T10:14:18+08:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"notice_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"db4f57bc1c9f339bd142bd067ed02d5b"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"notice_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1603419273</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"is_free"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-7'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/api/v1/noticenotice_record/</code></p>
+<h3 id='1f9ac54b15-7'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>否</td>
+<td>监控地址</td>
+</tr>
+<tr>
+<td>notice_id</td>
+<td>string</td>
+<td>否</td>
+<td>notice 唯一id</td>
+</tr>
+<tr>
+<td>method</td>
+<td>string</td>
+<td>否</td>
+<td>通知方式</td>
+</tr>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>否</td>
+<td>页码, 默认为 1</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-7'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>array</td>
+<td>返回内容</td>
+</tr>
+</tbody></table>
+<h4 id='data-4'>data 参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>notice_id</td>
+<td>string</td>
+<td>notice 唯一id</td>
+</tr>
+<tr>
+<td>method</td>
+<td>string</td>
+<td>推送方式</td>
+</tr>
+<tr>
+<td>event</td>
+<td>string</td>
+<td>交易类型</td>
+</tr>
+<tr>
+<td>detail</td>
+<td>string</td>
+<td>推送详情</td>
+</tr>
+<tr>
+<td>notice_time</td>
+<td>integer</td>
+<td>推送时间</td>
+</tr>
+<tr>
+<td>is_free</td>
+<td>integer</td>
+<td>是否为免费通知</td>
+</tr>
+</tbody></table>
+<h1 id='e2a027ceb6'>获取充值记录</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/noticerecharge_record/"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span>    
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"free"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"memo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"注册赠送"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"c_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-22T18:59:32Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-8'>HTTP Request</h3>
+<p><code>GET https://testnet.sectoken.io/api/v1/noticerecharge_record/</code></p>
+<h3 id='1f9ac54b15-8'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>否</td>
+<td>USDT 充值地址</td>
+</tr>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>否</td>
+<td>页码, 默认为 1</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-8'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>array</td>
+<td>返回内容</td>
+</tr>
+</tbody></table>
+<h4 id='data-5'>data 参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>txid</td>
+<td>string</td>
+<td>交易单id</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>充值金额(币为单位)</td>
+</tr>
+<tr>
+<td>memo</td>
+<td>string</td>
+<td>备注信息</td>
+</tr>
+<tr>
+<td>c_time</td>
+<td>string</td>
+<td>充值时间</td>
+</tr>
+</tbody></table>
+<h1 id='webhook'>交易 Webhook 通知</h1>
+<p>当监控地址发生交易且用户添加了 Webhook 通知方式时，会向指定的 URL 发送 HTTP POST 请求，请求头<code>content-type</code>为<code>application/json</code>。</p>
+
+<p>此 URL 由用户指定，用户须部署服务接收HTTP POST请求。</p>
+
+<p>请求头中会有Checksum参数，用于验证请求信息是否完整， 通过 <code>sha256（</code> <strong>secret_key</strong> <code>+request.body）</code>来进行哈希.</p>
+
+<p>secret_key 为创建 webhook 时提交的 <code>secret</code> , 如果创建时没有上传,默认为空字符串.</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/noticerecharge_record/"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> 
+</code></pre><h4 id='headers'>请求 Headers 示例</h4><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"Content_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Checksum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sha256=6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h4 id='body'>请求 Body 示例</h4><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"watched_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x3895d913a9A231d2B215F402c528511B569C676D"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x697b880ad8b6d49aec58cd88b97ad2238c6041a11dd9dbab04810d4d0295e21d"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xFFa8637888fb130Af366CEAb1b1E37242861eeB5"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x3895d913a9A231d2B215F402c528511B569C676D"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"token_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x4dCf5ac4509888714dd43A5cCc46d7ab389D9c23"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"human_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deposit"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">7407183</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-21T15:23:02+08:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERC20_HMT"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"notice_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"938b96a30c7955bec866d36bdddad016"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='1f233418ae'>参数说明</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>watched_address</td>
+<td>string</td>
+<td>监控地址</td>
+</tr>
+<tr>
+<td>txid</td>
+<td>string</td>
+<td>交易哈希</td>
+</tr>
+<tr>
+<td>from</td>
+<td>string</td>
+<td>付款地址</td>
+</tr>
+<tr>
+<td>to</td>
+<td>string</td>
+<td>收款地址</td>
+</tr>
+<tr>
+<td>token_address</td>
+<td>string</td>
+<td>合约地址(只有合约交易时才有此项)</td>
+</tr>
+<tr>
+<td>human_value</td>
+<td>string</td>
+<td>交易金额</td>
+</tr>
+<tr>
+<td>event</td>
+<td>string</td>
+<td>交易类型</td>
+</tr>
+<tr>
+<td>height</td>
+<td>integer</td>
+<td>区块高度</td>
+</tr>
+<tr>
+<td>time</td>
+<td>string</td>
+<td>交易时间</td>
+</tr>
+<tr>
+<td>coin</td>
+<td>string</td>
+<td>币种信息</td>
+</tr>
+<tr>
+<td>notice_id</td>
+<td>string</td>
+<td>通知ID</td>
+</tr>
+<tr>
+<td>label</td>
+<td>string</td>
+<td>标签信息</td>
+</tr>
+</tbody></table>
+<h1 id='e08c1d4f9a'>错误码</h1>
+<p>当发生错误时会返回错误码</p>
+
+<table><thead>
+<tr>
+<th>错误码</th>
+<th>错误说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>4000</td>
+<td>请求参数错误</td>
+</tr>
+<tr>
+<td>5000</td>
+<td>未知错误</td>
+</tr>
+<tr>
+<td>4101</td>
+<td>充值地址不存在</td>
+</tr>
+<tr>
+<td>4102</td>
+<td>验证码错误</td>
+</tr>
+<tr>
+<td>4103</td>
+<td>无法添加移动端通知方式, 请充值后重试</td>
+</tr>
+<tr>
+<td>4104</td>
+<td>监控地址达到上限</td>
+</tr>
+<tr>
+<td>4105</td>
+<td>监控地址不存在</td>
+</tr>
+<tr>
+<td>4106</td>
+<td>同一方式下监控地址已存在</td>
+</tr>
+<tr>
+<td>4401</td>
+<td>账户身份验证失败</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+      </div>
+    </div>
+  </body>
+</html>

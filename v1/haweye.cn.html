@@ -1,0 +1,1579 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>FIL API 文档</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="../stylesheets/screen-bde86515.css" rel="stylesheet" media="screen" />
+    <link href="../stylesheets/print-5687a71c.css" rel="stylesheet" media="print" />
+      <script src="../javascripts/all-e9bde216.js"></script>
+
+  </head>
+
+  <body class="v1 v1_haweye" data-languages="[&quot;shell&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="../images/navbar-cad8cdcb.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="../images/logo-2956005c.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#d8a89e5b16" class="toc-h1 toc-link" data-title="登录接口">登录接口</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#393f67a51c" class="toc-h1 toc-link" data-title="登出接口">登出接口</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-2" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-2" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-2" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#btc" class="toc-h1 toc-link" data-title="获取BTC区块基本信息">获取BTC区块基本信息</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-3" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-3" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-3" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#eth" class="toc-h1 toc-link" data-title="获取ETH区块基本信息">获取ETH区块基本信息</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-4" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-4" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-4" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#token" class="toc-h1 toc-link" data-title="获取 Token 详情">获取 Token 详情</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-5" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-5" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-5" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#12be8146ed" class="toc-h1 toc-link" data-title="获取全部规则">获取全部规则</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-6" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-6" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-6" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#d2fc32282a" class="toc-h1 toc-link" data-title="添加规则">添加规则</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-7" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-7" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-7" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#f9ad34b946" class="toc-h1 toc-link" data-title="删除规则">删除规则</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-8" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-8" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-8" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#55ce19aac8" class="toc-h1 toc-link" data-title="通过页码获取交易信息">通过页码获取交易信息</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-9" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-9" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-9" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#3217e44f9b" class="toc-h1 toc-link" data-title="通过检测规则获取交易信息">通过检测规则获取交易信息</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-10" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-10" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-10" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#1f43b7006f" class="toc-h1 toc-link" data-title="删除交易单信息">删除交易单信息</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-11" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-11" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-11" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#de755f6769" class="toc-h1 toc-link" data-title="获取违禁词列表">获取违禁词列表</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-12" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-12" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-12" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#09fb620930" class="toc-h1 toc-link" data-title="删除违禁词">删除违禁词</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-13" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-13" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-13" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#2e88b3b757" class="toc-h1 toc-link" data-title="添加违禁词">添加违禁词</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-14" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-14" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-14" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#fe06d85845" class="toc-h1 toc-link" data-title="获取实时监控">获取实时监控</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href="/docs/v1/hawkeye.en.html">English Version</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='d8a89e5b16'>登录接口</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/haweye/accounts/login/"</span> <span class="se">\</span>
+    -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+    -X POST <span class="se">\</span>
+    -d <span class="s1">'{
+    "username": "test",
+    "password":"test123456"
+}'</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/api/v1/haweye/accounts/login/</code></p>
+<h3 id='1f9ac54b15'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>string</td>
+<td>是</td>
+<td>用户名</td>
+</tr>
+<tr>
+<td>password</td>
+<td>string</td>
+<td>是</td>
+<td>密码</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+</tbody></table>
+<h1 id='393f67a51c'>登出接口</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/haweye/account/logout/"</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://testnet.sectoken.io/api/v1/haweye/account/logout/</code></p>
+<h3 id='1f9ac54b15-2'>请求参数</h3>
+<blockquote>
+<p>无需请求参数</p>
+</blockquote>
+<h3 id='70bdef7e25-2'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+</tbody></table>
+<h1 id='btc'>获取BTC区块基本信息</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/haweye/banned/getbtcnum/"</span> <span class="se">\</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"wordCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"blockNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">1862897</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"transactionsNum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"addressNum"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://testnet.sectoken.io/api/v1/haweye/banned/getbtcnum/</code></p>
+<h3 id='1f9ac54b15-3'>请求参数</h3>
+<blockquote>
+<p>无需请求参数</p>
+</blockquote>
+<h3 id='70bdef7e25-3'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>返回内容</td>
+</tr>
+</tbody></table>
+<h4 id='data'>data 参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wordCount</td>
+<td>integer</td>
+<td>当前违禁词个数</td>
+</tr>
+<tr>
+<td>blockNumber</td>
+<td>integer</td>
+<td>当前区块高度</td>
+</tr>
+<tr>
+<td>transactionsNum</td>
+<td>integer</td>
+<td>交易总量</td>
+</tr>
+<tr>
+<td>addressNum</td>
+<td>integer</td>
+<td>监控地址数量</td>
+</tr>
+</tbody></table>
+<h1 id='eth'>获取ETH区块基本信息</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/haweye/banned/getethnum/"</span> <span class="se">\</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"wordCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"blockNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">1862897</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"transactionsNum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"addressNum"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET https://testnet.sectoken.io/api/v1/haweye/banned/getbtcnum/</code></p>
+<h3 id='1f9ac54b15-4'>请求参数</h3>
+<blockquote>
+<p>无需请求参数</p>
+</blockquote>
+<h3 id='70bdef7e25-4'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>返回内容</td>
+</tr>
+</tbody></table>
+<h4 id='data-2'>data 参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wordCount</td>
+<td>integer</td>
+<td>当前违禁词个数</td>
+</tr>
+<tr>
+<td>blockNumber</td>
+<td>integer</td>
+<td>当前区块高度</td>
+</tr>
+<tr>
+<td>transactionsNum</td>
+<td>integer</td>
+<td>交易总量</td>
+</tr>
+<tr>
+<td>addressNum</td>
+<td>integer</td>
+<td>监控地址数量</td>
+</tr>
+</tbody></table>
+<h1 id='token'>获取 Token 详情</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/haweye/banned/get_token_info/?address=0xa227E7eEecc599600c767CcE8D5e0B40eB5A860e"</span> <span class="se">\</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"social_list"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">""</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"token_names"</span><span class="p">:</span><span class="w"> </span><span class="s2">"erc20_ffa"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"whitepaper"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"detail"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+
+</span></code></pre><h3 id='http-request-5'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/api/v1/haweye/banned/get_token_info/</code></p>
+<h3 id='1f9ac54b15-5'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>是</td>
+<td>要查询的Token地址</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-5'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>返回内容</td>
+</tr>
+</tbody></table>
+<h4 id='data-3'>data 参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>social_list</td>
+<td>array</td>
+<td>币种官方社交账号列表</td>
+</tr>
+<tr>
+<td>start_date</td>
+<td>integer</td>
+<td>币种启用时间戳</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>币种符号</td>
+</tr>
+<tr>
+<td>token_names</td>
+<td>string</td>
+<td>币种名称</td>
+</tr>
+<tr>
+<td>website</td>
+<td>string</td>
+<td>币种官方网站</td>
+</tr>
+<tr>
+<td>whitepaper</td>
+<td>string</td>
+<td>币种官方白皮书</td>
+</tr>
+<tr>
+<td>country</td>
+<td>string</td>
+<td>国家信息</td>
+</tr>
+<tr>
+<td>level</td>
+<td>integer</td>
+<td>风险等级</td>
+</tr>
+<tr>
+<td>detail</td>
+<td>string</td>
+<td>详细描述</td>
+</tr>
+</tbody></table>
+<h1 id='12be8146ed'>获取全部规则</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/haweye/banned/get_all_rules/"</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"rule_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"addr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2Mt98wTvrRBUkffeXWX5UpkPueQ6tqa8eX6"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"word_data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"test"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+
+</span></code></pre><h3 id='http-request-6'>HTTP Request</h3>
+<p><code>GET https://testnet.sectoken.io/api/v1/haweye/banned/get_all_rules/</code></p>
+<h3 id='1f9ac54b15-6'>请求参数</h3>
+<blockquote>
+<p>无需请求参数</p>
+</blockquote>
+<h3 id='70bdef7e25-6'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>array</td>
+<td>规则列表</td>
+</tr>
+<tr>
+<td>count</td>
+<td>integer</td>
+<td>规则数量</td>
+</tr>
+<tr>
+<td>word_data</td>
+<td>array</td>
+<td>违禁词列表</td>
+</tr>
+</tbody></table>
+<h4 id='data-4'>data 参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>rule_id</td>
+<td>integer</td>
+<td>规则id</td>
+</tr>
+<tr>
+<td>addr</td>
+<td>string</td>
+<td>匹配地址</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>匹配金额</td>
+</tr>
+<tr>
+<td>coin_type</td>
+<td>string</td>
+<td>币种信息</td>
+</tr>
+</tbody></table>
+<h1 id='d2fc32282a'>添加规则</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/haweye/banned/add_rule/"</span> <span class="se">\</span>
+-x POST
+-d <span class="s1">'{
+    "addr": "0x5e4d2dc726cbc925ec27cd22659a0da6015cc1310216f700333cc2e9ebd0987c",
+    "coin_type": "ETH",
+    "value": "2000"
+}'</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-7'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/api/v1/haweye/banned/add_rule/</code></p>
+<h3 id='1f9ac54b15-7'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>addr</td>
+<td>string</td>
+<td>是</td>
+<td>监控地址</td>
+</tr>
+<tr>
+<td>coin_type</td>
+<td>string</td>
+<td>是</td>
+<td>币种信息</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>是</td>
+<td>监控金额</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-7'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+</tbody></table>
+<h1 id='f9ad34b946'>删除规则</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/haweye/banned/delete_rule/"</span> <span class="se">\</span>
+-x POST <span class="se">\</span>
+-d <span class="s1">'{"rule_id":2}'</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-8'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/api/v1/haweye/banned/delete_rule/</code></p>
+<h3 id='1f9ac54b15-8'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>rule_id</td>
+<td>integer</td>
+<td>是</td>
+<td>规则id</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-8'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+</tbody></table>
+<h1 id='55ce19aac8'>通过页码获取交易信息</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/haweye/banned/gettransactionsbypage/?page=1&amp;size=1&amp;word=test&amp;coin=btc"</span> <span class="se">\</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"tx_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tx_hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b4aa7677a05110797ed3b6319300fdfbdd010a6488eca2b181133194dfa429f5"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"input_data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tobias Friedrich landete einen Volltreffer und räumte mehr als 13 Millionen Euro bei LOTTO 6aus49 ab.  "</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"from_addr"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"2NBGGhtpZAPMigWu7ioCTuv7g77uL89xwtz"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"to_addr"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"2Muaf4P5Zk3E47b1Bg3TxU9WE7XoZeYqSLR"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234567891</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">123456</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"words"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre><h3 id='http-request-9'>HTTP Request</h3>
+<p><code>GET https://testnet.sectoken.io/api/v1/haweye/banned/gettransactionsbypage/</code></p>
+<h3 id='1f9ac54b15-9'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>是</td>
+<td>页码信息</td>
+</tr>
+<tr>
+<td>size</td>
+<td>integer</td>
+<td>否</td>
+<td>每页条数, 默认为10</td>
+</tr>
+<tr>
+<td>word</td>
+<td>string</td>
+<td>否</td>
+<td>匹配违禁词, 不填则匹配所有违禁词</td>
+</tr>
+<tr>
+<td>coin</td>
+<td>string</td>
+<td>否</td>
+<td>币种信息, 不填匹配所有币种</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-9'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>返回内容</td>
+</tr>
+</tbody></table>
+<h4 id='data-5'>data 参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>tx_id</td>
+<td>string</td>
+<td>交易单索引id</td>
+</tr>
+<tr>
+<td>tx_hash</td>
+<td>string</td>
+<td>交易单tx id</td>
+</tr>
+<tr>
+<td>input_data</td>
+<td>string</td>
+<td>交易单input</td>
+</tr>
+<tr>
+<td>from_addr</td>
+<td>array</td>
+<td>源地址</td>
+</tr>
+<tr>
+<td>to_addr</td>
+<td>array</td>
+<td>目标地址</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>交易金额</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>integer</td>
+<td>交易时间戳</td>
+</tr>
+<tr>
+<td>height</td>
+<td>integer</td>
+<td>区块高度</td>
+</tr>
+<tr>
+<td>status</td>
+<td>integer</td>
+<td>交易单状态</td>
+</tr>
+<tr>
+<td>words</td>
+<td>string</td>
+<td>命中违禁词</td>
+</tr>
+<tr>
+<td>coin_type</td>
+<td>string</td>
+<td>币种信息</td>
+</tr>
+</tbody></table>
+<h1 id='3217e44f9b'>通过检测规则获取交易信息</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/haweye/banned/tran_rules/?page=1&amp;size=1&amp;coin=eth&amp;amount=2000"</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"tx_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tx_hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5e4d2dc726cbc925ec27cd22659a0da6015cc1310216f700333cc2e9ebd0987c"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"input_data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x28e8e2200000000000000000000000000000000000000000000000000000000000000776a0fecbbcfd158d72715fc624f918eae3d11c22f3fc8b3769b2907038a01631340000000000000000000000000000000000000000000000000000000000000003000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000630a5b49544d2c52483a613066656362626366643135386437323731356663363234663931386561653364313163323266336663386233373639623239303730333861303136333133342c54533a313630323635373433393338332c434f3a313931305d0000000000000000000000000000000000000000000000000000000000"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"from_addr"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"0x6B48f7395040793684B201776368Bb1774e4f6C7"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"to_addr"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"0xc434650Ef2C1FA7B0b1a25615f9847e0C65874Ba"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1602657432</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">7366700</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"words"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre><h3 id='http-request-10'>HTTP Request</h3>
+<p><code>GET https://testnet.sectoken.io/api/v1/haweye/banned/tran_rules/</code></p>
+<h3 id='1f9ac54b15-10'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>是</td>
+<td>页码信息</td>
+</tr>
+<tr>
+<td>size</td>
+<td>integer</td>
+<td>否</td>
+<td>每页条数, 默认为10</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>integer</td>
+<td>是</td>
+<td>匹配金额</td>
+</tr>
+<tr>
+<td>coin</td>
+<td>string</td>
+<td>否</td>
+<td>币种信息, 不填匹配所有币种</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-10'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>返回内容</td>
+</tr>
+</tbody></table>
+<h4 id='data-6'>data 参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>tx_id</td>
+<td>string</td>
+<td>交易单索引id</td>
+</tr>
+<tr>
+<td>tx_hash</td>
+<td>string</td>
+<td>交易单tx id</td>
+</tr>
+<tr>
+<td>input_data</td>
+<td>string</td>
+<td>交易单input</td>
+</tr>
+<tr>
+<td>from_addr</td>
+<td>array</td>
+<td>源地址</td>
+</tr>
+<tr>
+<td>to_addr</td>
+<td>array</td>
+<td>目标地址</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>交易金额</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>integer</td>
+<td>交易时间戳</td>
+</tr>
+<tr>
+<td>height</td>
+<td>integer</td>
+<td>区块高度</td>
+</tr>
+<tr>
+<td>status</td>
+<td>integer</td>
+<td>交易单状态</td>
+</tr>
+<tr>
+<td>words</td>
+<td>string</td>
+<td>命中违禁词</td>
+</tr>
+<tr>
+<td>coin_type</td>
+<td>string</td>
+<td>币种信息</td>
+</tr>
+</tbody></table>
+<h1 id='1f43b7006f'>删除交易单信息</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/haweye/banned/delete_data"</span> <span class="se">\</span>
+-x POST
+-d <span class="s1">'{"tx_id":1}'</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-11'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/api/v1/haweye/banned/delete_data</code></p>
+<h3 id='1f9ac54b15-11'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>tx_id</td>
+<td>integer</td>
+<td>是</td>
+<td>要删除的交易单的索引id</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-11'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+</tbody></table>
+<h1 id='de755f6769'>获取违禁词列表</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/haweye/banned/getallwordsid/?page=1&amp;size=1"</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"word_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"word"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-12'>HTTP Request</h3>
+<p><code>GET https://testnet.sectoken.io/api/v1/haweye/banned/getallwordsid/</code></p>
+<h3 id='1f9ac54b15-12'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>size</td>
+<td>integer</td>
+<td>否</td>
+<td>每页默认条数, 默认为10</td>
+</tr>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>是</td>
+<td>页码</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-12'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>返回内容</td>
+</tr>
+</tbody></table>
+<h4 id='data-7'>data 参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>word_id</td>
+<td>integer</td>
+<td>违禁词id</td>
+</tr>
+<tr>
+<td>word</td>
+<td>string</td>
+<td>违禁词</td>
+</tr>
+</tbody></table>
+<h1 id='09fb620930'>删除违禁词</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/haweye/banned/deleteword/"</span> <span class="se">\</span>
+    -X POST <span class="se">\</span>
+    -d <span class="s1">'{"word_id":8}'</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-13'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/api/v1/haweye/banned/deleteword/</code></p>
+<h3 id='1f9ac54b15-13'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>word_id</td>
+<td>integer</td>
+<td>是</td>
+<td>违禁词id</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-13'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+</tbody></table>
+<h1 id='2e88b3b757'>添加违禁词</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/haweye/banned/add_word/"</span> <span class="se">\</span>
+-x POST
+-d <span class="s1">'{
+    "word": "test",
+}'</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"word"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-14'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/api/v1/haweye/banned/add_word/</code></p>
+<h3 id='1f9ac54b15-14'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>word</td>
+<td>string</td>
+<td>是</td>
+<td>违禁词</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-14'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>返回内容</td>
+</tr>
+</tbody></table>
+<h4 id='data-8'>data 参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>word</td>
+<td>string</td>
+<td>l违禁词</td>
+</tr>
+</tbody></table>
+<h1 id='fe06d85845'>获取实时监控</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">import</span> <span class="nn">websockets</span>
+
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s">"ws://testnet.sectoken.io/words/push"</span>
+    <span class="n">async</span> <span class="k">with</span> <span class="n">websockets</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">websocket</span><span class="p">:</span>
+        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+            <span class="n">greeting</span> <span class="o">=</span> <span class="n">await</span> <span class="n">websocket</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">"收到: "</span><span class="p">,</span> <span class="n">greeting</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">hello</span><span class="p">())</span>
+
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span></code></pre>
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

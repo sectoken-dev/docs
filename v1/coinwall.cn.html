@@ -1,0 +1,1837 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>CoinWall API 文档</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="../stylesheets/screen-bde86515.css" rel="stylesheet" media="screen" />
+    <link href="../stylesheets/print-5687a71c.css" rel="stylesheet" media="print" />
+      <script src="../javascripts/all-e9bde216.js"></script>
+
+  </head>
+
+  <body class="v1 v1_coinwall" data-languages="[&quot;shell&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="../images/navbar-cad8cdcb.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="../images/logo-2956005c.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#usdt" class="toc-h1 toc-link" data-title="获取USDT充值地址">获取USDT充值地址</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#3edc9dc975" class="toc-h1 toc-link" data-title="获取商品列表">获取商品列表</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-2" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-2" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-2" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#6f0f77dbff" class="toc-h1 toc-link" data-title="获取当前余额">获取当前余额</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-3" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-3" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-3" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#vip" class="toc-h1 toc-link" data-title="查看VIP信息">查看VIP信息</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-4" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-4" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-4" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#vip-2" class="toc-h1 toc-link" data-title="购买 VIP 商品">购买 VIP 商品</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-5" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-5" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-5" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#d5d179fb67" class="toc-h1 toc-link" data-title="获取购买记录">获取购买记录</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-6" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-6" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-6" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#e2a027ceb6" class="toc-h1 toc-link" data-title="获取充值记录">获取充值记录</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-7" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-7" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-7" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#c328da79ba" class="toc-h1 toc-link" data-title="创建规则集">创建规则集</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-8" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-8" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-8" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#291e5d8e10" class="toc-h1 toc-link" data-title="查询规则集">查询规则集</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-9" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-9" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-9" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#454236d511" class="toc-h1 toc-link" data-title="删除规则集">删除规则集</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-10" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-10" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-10" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#c03aedddec" class="toc-h1 toc-link" data-title="查询规则集交易历史">查询规则集交易历史</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-11" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-11" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-11" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#b7a882ec02" class="toc-h1 toc-link" data-title="通过防火墙检查广播交易单">通过防火墙检查广播交易单</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-12" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#url" class="toc-h2 toc-link" data-title="URL参数">URL参数</a>
+                  </li>
+                  <li>
+                    <a href="#184509aeb7" class="toc-h2 toc-link" data-title="请求头参数">请求头参数</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-12" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-12" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#c7a671ba8a" class="toc-h1 toc-link" data-title="不通过防火墙检查广播交易单">不通过防火墙检查广播交易单</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-13" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#url-2" class="toc-h2 toc-link" data-title="URL参数">URL参数</a>
+                  </li>
+                  <li>
+                    <a href="#184509aeb7-2" class="toc-h2 toc-link" data-title="请求头参数">请求头参数</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-13" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-13" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#e08c1d4f9a" class="toc-h1 toc-link" data-title="错误码">错误码</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href="/docs/v1/coinwall.en.html">English Version</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='usdt'>获取USDT充值地址</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://coinwall.sectoken.io/recharge_address/?coin=eth"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x66a977F4ecB64972c79Fe2c220326D0aE7e600aF"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://coinwall.sectoken.io/recharge_address/</code></p>
+<h3 id='1f9ac54b15'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>coin</td>
+<td>string</td>
+<td>否</td>
+<td>币种信息, 目前仅支持 eth</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>返回内容</td>
+</tr>
+</tbody></table>
+<h4 id='data'>data 参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>USDT 充值地址</td>
+</tr>
+</tbody></table>
+<h1 id='3edc9dc975'>获取商品列表</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://coinwall.sectoken.io/goods_list/"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://coinwall.sectoken.io/goods_list/</code></p>
+<h3 id='1f9ac54b15-2'>请求参数</h3>
+<blockquote>
+<p>无需请求参数</p>
+</blockquote>
+<h3 id='70bdef7e25-2'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>返回内容</td>
+</tr>
+</tbody></table>
+<h4 id='data-2'>data参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>goods_id</td>
+<td>integer</td>
+<td>商品 id</td>
+</tr>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>商品名称</td>
+</tr>
+<tr>
+<td>price</td>
+<td>string</td>
+<td>商品价格</td>
+</tr>
+<tr>
+<td>broadcast_limit</td>
+<td>integer</td>
+<td>广播次数</td>
+</tr>
+<tr>
+<td>filter_limit</td>
+<td>integer</td>
+<td>规则条数</td>
+</tr>
+<tr>
+<td>level</td>
+<td>integer</td>
+<td>VIP 等级</td>
+</tr>
+<tr>
+<td>info</td>
+<td>string</td>
+<td>商品描述</td>
+</tr>
+</tbody></table>
+<h1 id='6f0f77dbff'>获取当前余额</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://coinwall.sectoken.io/balance/"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"998.23 USDT"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://coinwall.sectoken.io/balance/</code></p>
+<h3 id='1f9ac54b15-3'>请求参数</h3>
+<blockquote>
+<p>无需请求参数</p>
+</blockquote>
+<h3 id='70bdef7e25-3'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>返回内容</td>
+</tr>
+</tbody></table>
+<h4 id='data-3'>data 参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>balance</td>
+<td>string</td>
+<td>剩余金额,以 USDT 为单位</td>
+</tr>
+</tbody></table>
+<h1 id='vip'>查看VIP信息</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://coinwall.sectoken.io/vip_info/"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> 
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"suid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"U5uDe8CGaM28Ap6iNspMd7"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"end_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-27T00:00:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"broadcast_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">498</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"filter_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"vip_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET https://coinwall.sectoken.io/vip_info/</code></p>
+<h3 id='1f9ac54b15-4'>请求参数</h3>
+<blockquote>
+<p>无需请求参数</p>
+</blockquote>
+<h3 id='70bdef7e25-4'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>array</td>
+<td>返回对象</td>
+</tr>
+</tbody></table>
+<h4 id='data-4'>data参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>suid</td>
+<td>string</td>
+<td>用户suid</td>
+</tr>
+<tr>
+<td>end_time</td>
+<td>string</td>
+<td>vip结束时间</td>
+</tr>
+<tr>
+<td>broadcast_limit</td>
+<td>string</td>
+<td>剩余广播次数</td>
+</tr>
+<tr>
+<td>filter_limit</td>
+<td>string</td>
+<td>监控规则条目</td>
+</tr>
+<tr>
+<td>vip_level</td>
+<td>string</td>
+<td>VIP 等级</td>
+</tr>
+</tbody></table>
+<h1 id='vip-2'>购买 VIP 商品</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://coinwall.sectoken.io/buy_vip/"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
+    -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+    -X POST <span class="se">\</span>
+    -d <span class="s1">'{"goods_id": 1, "num":3}'</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"squence_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2010280000159627"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"vip"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"broadcast_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">3000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"filter_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"end_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-28T00:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"vip_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15.0 USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.0 USDT"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-5'>HTTP Request</h3>
+<p><code>POST https://coinwall.sectoken.io/buy_vip/</code></p>
+<h3 id='1f9ac54b15-5'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>goods_id</td>
+<td>string</td>
+<td>是</td>
+<td>商品id</td>
+</tr>
+<tr>
+<td>num</td>
+<td>integer</td>
+<td>是</td>
+<td>购买数量</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-5'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>返回内容</td>
+</tr>
+</tbody></table>
+<h4 id='data-5'>data参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>broadcast_limit</td>
+<td>string</td>
+<td>剩余广播次数</td>
+</tr>
+<tr>
+<td>filter_limit</td>
+<td>string</td>
+<td>监控规则条目</td>
+</tr>
+<tr>
+<td>end_time</td>
+<td>string</td>
+<td>VIP 结束时间</td>
+</tr>
+<tr>
+<td>vip_level</td>
+<td>integer</td>
+<td>当前 VIP 等级</td>
+</tr>
+<tr>
+<td>method</td>
+<td>string</td>
+<td>购买类型 (购买/续费)</td>
+</tr>
+<tr>
+<td>price</td>
+<td>string</td>
+<td>消费金额 USDT为单位</td>
+</tr>
+<tr>
+<td>balance</td>
+<td>string</td>
+<td>剩余余额 USDT为单位</td>
+</tr>
+</tbody></table>
+<h1 id='d5d179fb67'>获取购买记录</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://coinwall.sectoken.io/payment_record/"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
+    -x POST
+    -d <span class="s1">'{"vip_level":1, "page":1}'</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"sequence_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"db4f57bc1c9f339bd142bd067ed02d5b"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"vip_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.0 USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"buy_num"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15.0 USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"c_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-27T00:00:00Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-6'>HTTP Request</h3>
+<p><code>GET https://coinwall.sectoken.io/payment_record/</code></p>
+<h3 id='1f9ac54b15-6'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>vip_level</td>
+<td>string</td>
+<td>否</td>
+<td>监控地址</td>
+</tr>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>否</td>
+<td>页码, 默认为 1</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-6'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>array</td>
+<td>返回内容</td>
+</tr>
+</tbody></table>
+<h4 id='data-6'>data 参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>sequence_id</td>
+<td>string</td>
+<td>订单 id</td>
+</tr>
+<tr>
+<td>vip_level</td>
+<td>integer</td>
+<td>vip 等级</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>单价</td>
+</tr>
+<tr>
+<td>buy_num</td>
+<td>integer</td>
+<td>购买数量</td>
+</tr>
+<tr>
+<td>total_amount</td>
+<td>string</td>
+<td>支付总金额</td>
+</tr>
+<tr>
+<td>c_time</td>
+<td>string</td>
+<td>创建时间</td>
+</tr>
+</tbody></table>
+<h1 id='e2a027ceb6'>获取充值记录</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://coinwall.sectoken.io/recharge_record/"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"memo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"注册赠送"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"c_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-22T18:59:32Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-7'>HTTP Request</h3>
+<p><code>GET https://coinwall.sectoken.io/recharge_record/</code></p>
+<h3 id='1f9ac54b15-7'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>否</td>
+<td>USDT 充值地址</td>
+</tr>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>否</td>
+<td>页码, 默认为 1</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-7'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>array</td>
+<td>返回内容</td>
+</tr>
+</tbody></table>
+<h4 id='data-7'>data 参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>txid</td>
+<td>string</td>
+<td>交易单id</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>充值金额(币为单位)</td>
+</tr>
+<tr>
+<td>c_time</td>
+<td>string</td>
+<td>充值时间</td>
+</tr>
+</tbody></table>
+<h1 id='c328da79ba'>创建规则集</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://coinwall.sectoken.io/api/v1/wall/filter"</span> <span class="se">\</span>
+    -x POST <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
+    -d <span class="s2">"{
+      'name':'btc_test',
+      'coin':'btc',
+      'address':'2N4mEcHPeKNcz5jmX1vzrsVhqffb8BCzH9L',
+      'conditions':[
+        {
+          'name': 'black_list', 
+          'values': ['2N7LGJUpCqufDE4NLjecHSimHCDrFwQsgrk', '2N2587eHcUCXpfjJ2B5bHQYNuijRtCXKpmi']
+        }
+      ]
+    }"</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"filter_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7f3311e9f7ba4a16d3263e6e80f5eaa3"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-8'>HTTP Request</h3>
+<p><code>POST https://coinwall.sectoken.io/api/v1/wall/filters</code></p>
+<h3 id='1f9ac54b15-8'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>是</td>
+<td>规则集名称</td>
+</tr>
+<tr>
+<td>coin</td>
+<td>string</td>
+<td>是</td>
+<td>币种信息</td>
+</tr>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>是</td>
+<td>规则地址</td>
+</tr>
+<tr>
+<td>conditions</td>
+<td>array</td>
+<td>是</td>
+<td>规则条件</td>
+</tr>
+</tbody></table>
+<h4 id='conditions'>conditions请求参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>是</td>
+<td>条件名，如（transfer_vale, black_list）</td>
+</tr>
+<tr>
+<td>values</td>
+<td>array</td>
+<td>是</td>
+<td>条件内容, 填写 地址列表</td>
+</tr>
+</tbody></table>
+<h4 id='conditions-2'>现有 conditions</h4>
+<table><thead>
+<tr>
+<th>name</th>
+<th>values 示例</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>black_list</td>
+<td>[&quot;2N7LGJUpCqufDE4NLjecHSimHCDrFwQsgrk&quot;, &quot;2N2587eHcUCXpfjJ2B5bHQYNuijRtCXKpmi&quot;]</td>
+<td>黑名单列表</td>
+</tr>
+<tr>
+<td>white_list</td>
+<td>[&quot;2N7LGJUpCqufDE4NLjecHSimHCDrFwQsgrk&quot;, &quot;2N2587eHcUCXpfjJ2B5bHQYNuijRtCXKpmi&quot;]</td>
+<td>白名单列表</td>
+</tr>
+<tr>
+<td>freeze</td>
+<td>1585312528</td>
+<td>冻结时间</td>
+</tr>
+<tr>
+<td>transfer_value</td>
+<td>1000000</td>
+<td>单次转账金额</td>
+</tr>
+<tr>
+<td>transfer_day_total_value</td>
+<td>1000000</td>
+<td>单日转账金额</td>
+</tr>
+<tr>
+<td>transfer_day_limit</td>
+<td>1000000</td>
+<td>单日转账次数</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-8'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>array</td>
+<td>返回内容</td>
+</tr>
+</tbody></table>
+<h4 id='data-8'>data 参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>filter_id</td>
+<td>string</td>
+<td>规则id</td>
+</tr>
+</tbody></table>
+<h1 id='291e5d8e10'>查询规则集</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://coinwall.sectoken.io/api/v1/wall/filter?filter_id=7f3311e9f7ba4a16d3263e6e80f5eaa3"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc_test"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"filter_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7f3311e9f7ba4a16d3263e6e80f5eaa3"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2N4mEcHPeKNcz5jmX1vzrsVhqffb8BCzH9L"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"conditions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfer_value"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"20000000"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfer_day_limit"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"2"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-9'>HTTP Request</h3>
+<p><code>GET https://coinwall.sectoken.io/api/v1/wall/filter</code></p>
+<h3 id='1f9ac54b15-9'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>filter_id</td>
+<td>string</td>
+<td>是</td>
+<td>规则id</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-9'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>array</td>
+<td>返回内容</td>
+</tr>
+</tbody></table>
+<h4 id='data-9'>data 参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>规则集名称</td>
+</tr>
+<tr>
+<td>filter_id</td>
+<td>string</td>
+<td>规则集Id</td>
+</tr>
+<tr>
+<td>coin</td>
+<td>string</td>
+<td>币种信息</td>
+</tr>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>监控地址</td>
+</tr>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>规则状态 (0: 正常, -1: 停用)</td>
+</tr>
+<tr>
+<td>coindtions</td>
+<td>array</td>
+<td>规则条件</td>
+</tr>
+</tbody></table>
+<h1 id='454236d511'>删除规则集</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://coinwall.sectoken.io/api/v1/wall/disable"</span> <span class="se">\</span>
+    -x POST <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
+    -d <span class="s2">"{
+      'filter_id':'7f3311e9f7ba4a16d3263e6e80f5eaa3',
+      'disable': true
+    }"</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-10'>HTTP Request</h3>
+<p><code>POST https://coinwall.sectoken.io/api/v1/wall/disable</code></p>
+<h3 id='1f9ac54b15-10'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>filter_id</td>
+<td>string</td>
+<td>是</td>
+<td>规则集Id</td>
+</tr>
+<tr>
+<td>disable</td>
+<td>bool</td>
+<td>是</td>
+<td>禁用状态 (true: 禁用, false:启用)</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-10'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+</tbody></table>
+<h1 id='c03aedddec'>查询规则集交易历史</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://coinwall.sectoken.io/api/v1/wall/history?filter_id=7f3311e9f7ba4a16d3263e6e80f5eaa3"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"2NERAaAYfgtERMJgTCE1csSecwEzQt7y3d2"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"2N2587eHcUCXpfjJ2B5bHQYNuijRtCXKpmi"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000000"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"blocked"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"condition_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"black_list"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"condtion_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2N2587eHcUCXpfjJ2B5bHQYNuijRtCXKpmi"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1585312528</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-11'>HTTP Request</h3>
+<p><code>GET https://coinwall.sectoken.io/api/v1/wall/filter</code></p>
+<h3 id='1f9ac54b15-11'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>filter_id</td>
+<td>string</td>
+<td>是</td>
+<td>规则id</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-11'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>array</td>
+<td>返回内容</td>
+</tr>
+</tbody></table>
+<h4 id='data-10'>data 参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>coin</td>
+<td>string</td>
+<td>币种</td>
+</tr>
+<tr>
+<td>from</td>
+<td>array</td>
+<td>来源地址</td>
+</tr>
+<tr>
+<td>to</td>
+<td>array</td>
+<td>目的地址</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>转账金额</td>
+</tr>
+<tr>
+<td>decimal</td>
+<td>int</td>
+<td>币种的小数位</td>
+</tr>
+<tr>
+<td>blocked</td>
+<td>int</td>
+<td>是否被禁止广播，(0: 正常, 1: 禁止)</td>
+</tr>
+<tr>
+<td>condition_name</td>
+<td>string</td>
+<td>如果被禁止广播，禁止的条件名</td>
+</tr>
+<tr>
+<td>condition_value</td>
+<td>string</td>
+<td>如果被禁止广播，禁止的条件内容</td>
+</tr>
+<tr>
+<td>timestatmp</td>
+<td>int</td>
+<td>时间戳</td>
+</tr>
+</tbody></table>
+<h1 id='b7a882ec02'>通过防火墙检查广播交易单</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://coinwall.sectoken.io/api/v1/wall/broadcast/</span><span class="nv">$coin</span><span class="s2">"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
+    -H <span class="s1">'Filter-Id: 7f3311e9f7ba4a16d3263e6e80f5eaa3'</span>
+    -x POST <span class="se">\</span>
+    -d <span class="s1">'{
+        "jsonrpc": "1.0",
+        "id": "curltest",
+        "method": "sendrawtransaction",
+        "params": [
+        "$signed_tx"
+            ]
+        }'</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"2NERAaAYfgtERMJgTCE1csSecwEzQt7y3d2"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"2N2587eHcUCXpfjJ2B5bHQYNuijRtCXKpmi"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000000"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"blocked"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"condition_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"black_list"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"condtion_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2N2587eHcUCXpfjJ2B5bHQYNuijRtCXKpmi"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1585312528</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-12'>HTTP Request</h3>
+<p><code>GET https://coinwall.sectoken.io/api/v1/wall/filter</code></p>
+<h3 id='url'>URL参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>coin</td>
+<td>string</td>
+<td>是</td>
+<td>币种信息</td>
+</tr>
+</tbody></table>
+<h3 id='184509aeb7'>请求头参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>filter_id</td>
+<td>string</td>
+<td>否</td>
+<td>当币种为btc时需要填写, 其他币种暂时不需要</td>
+</tr>
+<tr>
+<td>change_address</td>
+<td>string</td>
+<td>否</td>
+<td>找零地址</td>
+</tr>
+</tbody></table>
+<h3 id='1f9ac54b15-12'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>jsonrpc</td>
+<td>string</td>
+<td>是</td>
+<td>规则id</td>
+</tr>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>是</td>
+<td>规则名称</td>
+</tr>
+<tr>
+<td>method</td>
+<td>string</td>
+<td>是</td>
+<td>固定填写 sendrawtransaction</td>
+</tr>
+<tr>
+<td>params</td>
+<td>string</td>
+<td>是</td>
+<td>签名完成的交易单信息</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-12'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>array</td>
+<td>返回内容</td>
+</tr>
+</tbody></table>
+<h4 id='data-11'>data 参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>txid</td>
+<td>string</td>
+<td>交易单id</td>
+</tr>
+<tr>
+<td>is_sent</td>
+<td>bool</td>
+<td>广播成功标记, (true: 成功, false: 失败)</td>
+</tr>
+</tbody></table>
+<h1 id='c7a671ba8a'>不通过防火墙检查广播交易单</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://coinwall.sectoken.io/api/v1/wall/broadcast/</span><span class="nv">$coin</span><span class="s2">"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
+    -H <span class="s1">'Filter-Id: 7f3311e9f7ba4a16d3263e6e80f5eaa3'</span>
+    -x POST <span class="se">\</span>
+    -d <span class="s1">'{
+        "jsonrpc": "1.0",
+        "id": "curltest",
+        "method": "sendrawtransaction",
+        "params": [
+        "$signed_tx"
+            ]
+        }'</span>
+</code></pre>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"2NERAaAYfgtERMJgTCE1csSecwEzQt7y3d2"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"2N2587eHcUCXpfjJ2B5bHQYNuijRtCXKpmi"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000000"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"blocked"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"condition_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"black_list"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"condtion_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2N2587eHcUCXpfjJ2B5bHQYNuijRtCXKpmi"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1585312528</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-13'>HTTP Request</h3>
+<p><code>GET https://coinwall.sectoken.io/api/v1/wall/filter</code></p>
+<h3 id='url-2'>URL参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>coin</td>
+<td>string</td>
+<td>是</td>
+<td>币种信息</td>
+</tr>
+</tbody></table>
+<h3 id='184509aeb7-2'>请求头参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>filter_id</td>
+<td>string</td>
+<td>否</td>
+<td>当币种为btc时需要填写, 其他币种暂时不需要</td>
+</tr>
+<tr>
+<td>change_address</td>
+<td>string</td>
+<td>否</td>
+<td>找零地址</td>
+</tr>
+</tbody></table>
+<h3 id='1f9ac54b15-13'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>jsonrpc</td>
+<td>string</td>
+<td>是</td>
+<td>规则id</td>
+</tr>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>是</td>
+<td>规则名称</td>
+</tr>
+<tr>
+<td>method</td>
+<td>string</td>
+<td>是</td>
+<td>固定填写 sendrawtransaction</td>
+</tr>
+<tr>
+<td>params</td>
+<td>string</td>
+<td>是</td>
+<td>签名完成的交易单信息</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-13'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>array</td>
+<td>返回内容</td>
+</tr>
+</tbody></table>
+<h4 id='data-12'>data 参数</h4>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>txid</td>
+<td>string</td>
+<td>交易单id</td>
+</tr>
+<tr>
+<td>is_sent</td>
+<td>bool</td>
+<td>广播成功标记, (true: 成功, false: 失败)</td>
+</tr>
+</tbody></table>
+<h1 id='e08c1d4f9a'>错误码</h1>
+<p>当发生错误时会返回错误码</p>
+
+<table><thead>
+<tr>
+<th>错误码</th>
+<th>错误说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>4000</td>
+<td>请求参数错误</td>
+</tr>
+<tr>
+<td>5000</td>
+<td>未知错误</td>
+</tr>
+<tr>
+<td>4101</td>
+<td>充值地址不存在</td>
+</tr>
+<tr>
+<td>4102</td>
+<td>账户余额不足</td>
+</tr>
+<tr>
+<td>4103</td>
+<td>购买商品不存在</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

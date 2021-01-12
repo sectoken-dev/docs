@@ -1680,21 +1680,17 @@
 <p>请求body示例</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bafy2bzacecc4phxvtc22krf4r7mtupwfmtvldlkolzikocpww2m43f4uixvr4"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">4340000</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"src_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"t3qn6xmk5ptovj5f5i4t5qva6ydzvwpvkg27yot6lzbdd4ioh7qhxgjh3izv3nkeumqw7imeidsdjtd4n3cgmq"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"outputs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"dst_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"t3s5obmslykuumykwsv5kvmeb63qq42jd7xvyq36qjdx55bvelkejkxfukrjk5sp6c3b43kqiwtub5dmwd5ojq"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000000000"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deposit"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1872340000</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c2062e6b02f3b4c5eaeb89403fa16538"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bafy2bzaced2it6o3hcaptgfjfrdbc4r5c2tlrdi24cnlkwpsfg62po5ckcelm"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">326</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dst_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"t3s5obmslykuumykwsv5kvmeb63qq42jd7xvyq36qjdx55bvelkejkxfukrjk5sp6c3b43kqiwtub5dmwd5ojq"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"src_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"t3r36whkdunarsg5baopg3tqmg7ncyzcrakcw5o5j4xhv7qsronqjq7le3zty2y46rsbvwgyadkapjbybr3wra"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"withdraw"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1610449833</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000000"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fil"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"webhook_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fa5dc2025e79c37b8656ef4b89619d9d"</span><span class="w">
+  </span><span class="s2">"webhook_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"668f9b5712921854b75f26b307ab85f5"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='1f233418ae'>参数说明</h3>
 <table><thead>
@@ -1725,9 +1721,14 @@
 <td>交易转出地址</td>
 </tr>
 <tr>
-<td>outputs</td>
-<td>array</td>
-<td>收款地址及金额</td>
+<td>dst_address</td>
+<td>string</td>
+<td>收款地址</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>转账金额</td>
 </tr>
 <tr>
 <td>type</td>

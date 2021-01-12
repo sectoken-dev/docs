@@ -422,14 +422,13 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='ffea7d4f0f'>添加地址监控</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/noticenotice_add/"</span> <span class="se">\</span>
+        <h1 id='ffea7d4f0f'>添加地址监控</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/notice/notice_add/"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
     -d <span class="s1">'{
             "address": "0xc376fb50176650e77a3ea9b5ccb7902a1de82f71",
             "label": "test",
-            "event": "deposit",
             "secret": "abc123",
             "coin": "eth",
             "method": "telegram",
@@ -444,7 +443,7 @@
   </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request'>HTTP Request</h3>
-<p><code>POST https://testnet.sectoken.io/api/v1/noticenotice_add/</code></p>
+<p><code>POST https://testnet.sectoken.io/api/v1/notice/notice_add/</code></p>
 <h3 id='1f9ac54b15'>请求参数</h3>
 <table><thead>
 <tr>
@@ -465,12 +464,6 @@
 <td>string</td>
 <td>是</td>
 <td>监控标签</td>
-</tr>
-<tr>
-<td>event</td>
-<td>string</td>
-<td>是</td>
-<td>监控类型( deposit / withdraw)</td>
 </tr>
 <tr>
 <td>secret</td>
@@ -517,7 +510,7 @@
 <td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
 </tr>
 </tbody></table>
-<h1 id='b0751d3df6'>查看监控列表</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/noticenotice_list/"</span> <span class="se">\</span>
+<h1 id='b0751d3df6'>查看监控列表</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/notice/notice_list/"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> 
 </code></pre>
 <blockquote>
@@ -538,7 +531,7 @@
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET https://testnet.sectoken.io/api/v1/noticenotice_list/</code></p>
+<p><code>GET https://testnet.sectoken.io/api/v1/notice/notice_list/</code></p>
 <h3 id='1f9ac54b15-2'>请求参数</h3>
 <blockquote>
 <p>无需请求参数</p>
@@ -601,7 +594,7 @@
 <td>记录添加时间戳</td>
 </tr>
 </tbody></table>
-<h1 id='99469040e2'>删除监控条目</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/noticenotice_del/"</span> <span class="se">\</span>
+<h1 id='99469040e2'>删除监控条目</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/notice/notice_del/"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
     -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
@@ -614,7 +607,7 @@
   </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-3'>HTTP Request</h3>
-<p><code>POST https://testnet.sectoken.io/api/v1/noticenotice_del/</code></p>
+<p><code>POST https://testnet.sectoken.io/api/v1/notice/notice_del/</code></p>
 <h3 id='1f9ac54b15-3'>请求参数</h3>
 <table><thead>
 <tr>
@@ -645,7 +638,7 @@
 <td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
 </tr>
 </tbody></table>
-<h1 id='6f0f77dbff'>获取当前余额</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/noticebalance/"</span> <span class="se">\</span>
+<h1 id='6f0f77dbff'>获取当前余额</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/notice/balance/"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> 
 </code></pre>
 <blockquote>
@@ -659,7 +652,7 @@
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-4'>HTTP Request</h3>
-<p><code>GET https://testnet.sectoken.io/api/v1/noticebalance/</code></p>
+<p><code>GET https://testnet.sectoken.io/api/v1/notice/balance/</code></p>
 <h3 id='1f9ac54b15-4'>请求参数</h3>
 <blockquote>
 <p>无需请求参数</p>
@@ -702,7 +695,7 @@
 <td>剩余免费次数</td>
 </tr>
 </tbody></table>
-<h1 id='usdt'>获取USDT充值地址</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/noticerecharge_address/?coin=eth"</span> <span class="se">\</span>
+<h1 id='usdt'>获取USDT充值地址</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/notice/recharge_address/?coin=eth"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> 
 </code></pre>
 <blockquote>
@@ -715,7 +708,7 @@
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-5'>HTTP Request</h3>
-<p><code>GET https://testnet.sectoken.io/api/v1/noticerecharge_address/</code></p>
+<p><code>GET https://testnet.sectoken.io/api/v1/notice/recharge_address/</code></p>
 <h3 id='1f9ac54b15-5'>请求参数</h3>
 <table><thead>
 <tr>
@@ -765,7 +758,7 @@
 <td>USDT 充值地址</td>
 </tr>
 </tbody></table>
-<h1 id='084f68942b'>获取验证码</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/noticeverification/"</span> <span class="se">\</span>
+<h1 id='084f68942b'>获取验证码</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/notice/verification/"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> 
 </code></pre>
 <blockquote>
@@ -775,7 +768,7 @@
   </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-6'>HTTP Request</h3>
-<p><code>GET https://testnet.sectoken.io/api/v1/noticeverification/</code></p>
+<p><code>GET https://testnet.sectoken.io/api/v1/notice/verification/</code></p>
 <h3 id='1f9ac54b15-6'>请求参数</h3>
 <table><thead>
 <tr>
@@ -812,7 +805,7 @@
 <td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
 </tr>
 </tbody></table>
-<h1 id='f807214543'>获取通知记录</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/noticenotice_record/"</span> <span class="se">\</span>
+<h1 id='f807214543'>获取通知记录</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/notice/notice_record/"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
     -x POST <span class="se">\</span>
     -d <span class="s1">'{"address": "0x5e4d2dc726cbc925ec27cd22659a0da6015cc1310216f700333cc2e9ebd0987c"}'</span>
@@ -846,7 +839,7 @@
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-7'>HTTP Request</h3>
-<p><code>POST https://testnet.sectoken.io/api/v1/noticenotice_record/</code></p>
+<p><code>POST https://testnet.sectoken.io/api/v1/notice/notice_record/</code></p>
 <h3 id='1f9ac54b15-7'>请求参数</h3>
 <table><thead>
 <tr>
@@ -939,7 +932,7 @@
 <td>是否为免费通知</td>
 </tr>
 </tbody></table>
-<h1 id='e2a027ceb6'>获取充值记录</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/noticerecharge_record/"</span> <span class="se">\</span>
+<h1 id='e2a027ceb6'>获取充值记录</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/notice/recharge_record/"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span>    
 </code></pre>
 <blockquote>
@@ -958,7 +951,7 @@
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-8'>HTTP Request</h3>
-<p><code>GET https://testnet.sectoken.io/api/v1/noticerecharge_record/</code></p>
+<p><code>GET https://testnet.sectoken.io/api/v1/notice/recharge_record/</code></p>
 <h3 id='1f9ac54b15-8'>请求参数</h3>
 <table><thead>
 <tr>
@@ -1037,7 +1030,7 @@
 <p>请求头中会有Checksum参数，用于验证请求信息是否完整， 通过 <code>sha256（</code> <strong>secret_key</strong> <code>+request.body）</code>来进行哈希.</p>
 
 <p>secret_key 为创建 webhook 时提交的 <code>secret</code> , 如果创建时没有上传,默认为空字符串.</p>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/noticerecharge_record/"</span> <span class="se">\</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/notice/recharge_record/"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> 
 </code></pre><h4 id='headers'>请求 Headers 示例</h4><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"Content_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json"</span><span class="p">,</span><span class="w">

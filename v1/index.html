@@ -42,7 +42,7 @@
 .highlight .cs {
   color: #75715e;
 }
-.highlight .c, .highlight .cd {
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
   color: #75715e;
 }
 .highlight .err {
@@ -126,7 +126,7 @@
 .highlight .s1 {
   color: #e6db74;
 }
-.highlight .s {
+.highlight .s, .highlight .sa, .highlight .dl {
   color: #e6db74;
 }
 .highlight .na {
@@ -141,7 +141,7 @@
 .highlight .ne {
   color: #a6e22e;
 }
-.highlight .nf {
+.highlight .nf, .highlight .fm {
   color: #a6e22e;
 }
 .highlight .vc {
@@ -162,7 +162,7 @@
 .highlight .vi {
   color: #ffffff;
 }
-.highlight .nv {
+.highlight .nv, .highlight .vm {
   color: #ffffff;
 }
 .highlight .w {
@@ -198,6 +198,7 @@
     </style>
     <style media="print">
       * {
+        -webkit-transition:none!important;
         transition:none!important;
       }
       .highlight table td { padding: 5px; }
@@ -209,7 +210,7 @@
   color: #002b36;
   background-color: #dc322f;
 }
-.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
   color: #657b83;
 }
 .highlight .cp {
@@ -247,8 +248,11 @@
 .highlight .kd {
   color: #cb4b16;
 }
-.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
   color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
 }
 .highlight .sr {
   color: #2aa198;
@@ -271,16 +275,16 @@
 .highlight .na {
   color: #268bd2;
 }
-.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
   color: #859900;
 }
 .highlight .ss {
   color: #859900;
 }
     </style>
-    <link href="../stylesheets/screen-bde86515.css" rel="stylesheet" media="screen" />
-    <link href="../stylesheets/print-5687a71c.css" rel="stylesheet" media="print" />
-      <script src="../javascripts/all_nosearch-ea811c3e.js"></script>
+    <link href="../stylesheets/screen-c9d8fa83.css" rel="stylesheet" media="screen" />
+    <link href="../stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
+      <script src="../javascripts/all_nosearch-8f5ea5a5.js"></script>
 
   </head>
 
@@ -288,11 +292,11 @@
     <a href="#" id="nav-button">
       <span>
         NAV
-        <img src="../images/navbar-cad8cdcb.png" alt="Navbar" />
+        <img src="../images/navbar-cad8cdcb.png" alt="" />
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="../images/logo-2956005c.png" class="logo" alt="Logo" />
+      <img src="../images/logo-2956005c.png" class="logo" alt="" />
       <ul id="toc" class="toc-list-h1">
           <li>
             <a href="#english-documentation" class="toc-h1 toc-link" data-title="English Documentation">English Documentation</a>

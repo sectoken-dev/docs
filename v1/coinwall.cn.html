@@ -42,7 +42,7 @@
 .highlight .cs {
   color: #75715e;
 }
-.highlight .c, .highlight .cd {
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
   color: #75715e;
 }
 .highlight .err {
@@ -126,7 +126,7 @@
 .highlight .s1 {
   color: #e6db74;
 }
-.highlight .s {
+.highlight .s, .highlight .sa, .highlight .dl {
   color: #e6db74;
 }
 .highlight .na {
@@ -141,7 +141,7 @@
 .highlight .ne {
   color: #a6e22e;
 }
-.highlight .nf {
+.highlight .nf, .highlight .fm {
   color: #a6e22e;
 }
 .highlight .vc {
@@ -162,7 +162,7 @@
 .highlight .vi {
   color: #ffffff;
 }
-.highlight .nv {
+.highlight .nv, .highlight .vm {
   color: #ffffff;
 }
 .highlight .w {
@@ -198,6 +198,7 @@
     </style>
     <style media="print">
       * {
+        -webkit-transition:none!important;
         transition:none!important;
       }
       .highlight table td { padding: 5px; }
@@ -209,7 +210,7 @@
   color: #002b36;
   background-color: #dc322f;
 }
-.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
   color: #657b83;
 }
 .highlight .cp {
@@ -247,8 +248,11 @@
 .highlight .kd {
   color: #cb4b16;
 }
-.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
   color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
 }
 .highlight .sr {
   color: #2aa198;
@@ -271,16 +275,16 @@
 .highlight .na {
   color: #268bd2;
 }
-.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
   color: #859900;
 }
 .highlight .ss {
   color: #859900;
 }
     </style>
-    <link href="../stylesheets/screen-bde86515.css" rel="stylesheet" media="screen" />
-    <link href="../stylesheets/print-5687a71c.css" rel="stylesheet" media="print" />
-      <script src="../javascripts/all-e9bde216.js"></script>
+    <link href="../stylesheets/screen-c9d8fa83.css" rel="stylesheet" media="screen" />
+    <link href="../stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
+      <script src="../javascripts/all-a9fde460.js"></script>
 
   </head>
 
@@ -288,11 +292,11 @@
     <a href="#" id="nav-button">
       <span>
         NAV
-        <img src="../images/navbar-cad8cdcb.png" alt="Navbar" />
+        <img src="../images/navbar-cad8cdcb.png" alt="" />
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="../images/logo-2956005c.png" class="logo" alt="Logo" />
+      <img src="../images/logo-2956005c.png" class="logo" alt="" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
         </div>
@@ -506,19 +510,19 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='usdt'>获取USDT充值地址</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/recharge_address/?coin=eth"</span> <span class="se">\</span>
-    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
-</code></pre>
+        <h1 id='usdt'>获取USDT充值地址</h1><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/recharge_address/?coin=eth"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
+</code></pre></div>
 <blockquote>
 <p>返回示例</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x66a977F4ecB64972c79Fe2c220326D0aE7e600aF"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x66a977F4ecB64972c79Fe2c220326D0aE7e600aF"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request'>HTTP Request</h3>
+</span></code></pre></div><h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://testnet.sectoken.io/api/v1/recharge_address/</code></p>
 <h3 id='1f9ac54b15'>请求参数</h3>
 <table><thead>
@@ -569,16 +573,16 @@
 <td>USDT 充值地址</td>
 </tr>
 </tbody></table>
-<h1 id='3edc9dc975'>获取商品列表</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/goods_list/"</span> <span class="se">\</span>
-    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span>
-</code></pre>
+<h1 id='3edc9dc975'>获取商品列表</h1><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/goods_list/"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span>
+</code></pre></div>
 <blockquote>
 <p>返回示例</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
+</span></code></pre></div><h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://testnet.sectoken.io/api/v1/goods_list/</code></p>
 <h3 id='1f9ac54b15-2'>请求参数</h3>
 <blockquote>
@@ -647,19 +651,19 @@
 <td>商品描述</td>
 </tr>
 </tbody></table>
-<h1 id='6f0f77dbff'>获取当前余额</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/balance/"</span> <span class="se">\</span>
-    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
-</code></pre>
+<h1 id='6f0f77dbff'>获取当前余额</h1><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/balance/"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
+</code></pre></div>
 <blockquote>
 <p>返回示例</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"998.23 USDT"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"998.23 USDT"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-3'>HTTP Request</h3>
+</span></code></pre></div><h3 id='http-request-3'>HTTP Request</h3>
 <p><code>GET https://testnet.sectoken.io/api/v1/balance/</code></p>
 <h3 id='1f9ac54b15-3'>请求参数</h3>
 <blockquote>
@@ -698,25 +702,25 @@
 <td>剩余金额,以 USDT 为单位</td>
 </tr>
 </tbody></table>
-<h1 id='vip'>查看VIP信息</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/vip_info/"</span> <span class="se">\</span>
-    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> 
-</code></pre>
+<h1 id='vip'>查看VIP信息</h1><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/vip_info/"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> 
+</code></pre></div>
 <blockquote>
 <p>返回示例</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"suid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"U5uDe8CGaM28Ap6iNspMd7"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"end_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-27T00:00:00Z"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"broadcast_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">498</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"filter_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"vip_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="nl">"suid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"U5uDe8CGaM28Ap6iNspMd7"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"end_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-27T00:00:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"broadcast_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">498</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"filter_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"vip_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-4'>HTTP Request</h3>
+</span></code></pre></div><h3 id='http-request-4'>HTTP Request</h3>
 <p><code>GET https://testnet.sectoken.io/api/v1/vip_info/</code></p>
 <h3 id='1f9ac54b15-4'>请求参数</h3>
 <blockquote>
@@ -775,28 +779,28 @@
 <td>VIP 等级</td>
 </tr>
 </tbody></table>
-<h1 id='vip-2'>购买 VIP 商品</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/buy_vip/"</span> <span class="se">\</span>
-    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
-    -H <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
-    -X POST <span class="se">\</span>
-    -d <span class="s1">'{"goods_id": 1, "num":3}'</span>
-</code></pre>
+<h1 id='vip-2'>购买 VIP 商品</h1><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/buy_vip/"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+    <span class="nt">-X</span> POST <span class="se">\</span>
+    <span class="nt">-d</span> <span class="s1">'{"goods_id": 1, "num":3}'</span>
+</code></pre></div>
 <blockquote>
 <p>返回示例</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"squence_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2010280000159627"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"vip"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"broadcast_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">3000</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"filter_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"end_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-28T00:00:00Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"vip_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15.0 USDT"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.0 USDT"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"squence_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2010280000159627"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"vip"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"broadcast_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">3000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"filter_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"end_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-28T00:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"vip_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15.0 USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.0 USDT"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-5'>HTTP Request</h3>
+</span></code></pre></div><h3 id='http-request-5'>HTTP Request</h3>
 <p><code>POST https://testnet.sectoken.io/api/v1/buy_vip/</code></p>
 <h3 id='1f9ac54b15-5'>请求参数</h3>
 <table><thead>
@@ -883,28 +887,28 @@
 <td>剩余余额 USDT为单位</td>
 </tr>
 </tbody></table>
-<h1 id='d5d179fb67'>获取购买记录</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/payment_record/"</span> <span class="se">\</span>
-    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
-    -x POST
-    -d <span class="s1">'{"vip_level":1, "page":1}'</span>
-</code></pre>
+<h1 id='d5d179fb67'>获取购买记录</h1><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/payment_record/"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
+    <span class="nt">-x</span> POST
+    <span class="nt">-d</span> <span class="s1">'{"vip_level":1, "page":1}'</span>
+</code></pre></div>
 <blockquote>
 <p>返回示例</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"sequence_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"db4f57bc1c9f339bd142bd067ed02d5b"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"vip_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.0 USDT"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"buy_num"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"total_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15.0 USDT"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"c_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-27T00:00:00Z"</span><span class="w">
+      </span><span class="nl">"sequence_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"db4f57bc1c9f339bd142bd067ed02d5b"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"vip_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.0 USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buy_num"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15.0 USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"c_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-27T00:00:00Z"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-6'>HTTP Request</h3>
+</span></code></pre></div><h3 id='http-request-6'>HTTP Request</h3>
 <p><code>GET https://testnet.sectoken.io/api/v1/payment_record/</code></p>
 <h3 id='1f9ac54b15-6'>请求参数</h3>
 <table><thead>
@@ -986,24 +990,24 @@
 <td>创建时间</td>
 </tr>
 </tbody></table>
-<h1 id='e2a027ceb6'>获取充值记录</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/recharge_record/"</span> <span class="se">\</span>
-    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
-</code></pre>
+<h1 id='e2a027ceb6'>获取充值记录</h1><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/recharge_record/"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
+</code></pre></div>
 <blockquote>
 <p>返回示例</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"memo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"注册赠送"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"c_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-22T18:59:32Z"</span><span class="w">
+      </span><span class="nl">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"memo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"注册赠送"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"c_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-22T18:59:32Z"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-7'>HTTP Request</h3>
+</span></code></pre></div><h3 id='http-request-7'>HTTP Request</h3>
 <p><code>GET https://testnet.sectoken.io/api/v1/recharge_record/</code></p>
 <h3 id='1f9ac54b15-7'>请求参数</h3>
 <table><thead>
@@ -1070,10 +1074,10 @@
 <td>充值时间</td>
 </tr>
 </tbody></table>
-<h1 id='c328da79ba'>创建规则集</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wall/filter"</span> <span class="se">\</span>
-    -x POST <span class="se">\</span>
-    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
-    -d <span class="s2">"{
+<h1 id='c328da79ba'>创建规则集</h1><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wall/filter"</span> <span class="se">\</span>
+    <span class="nt">-x</span> POST <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
+    <span class="nt">-d</span> <span class="s2">"{
       'name':'btc_test',
       'coin':'btc',
       'address':'2N4mEcHPeKNcz5jmX1vzrsVhqffb8BCzH9L',
@@ -1084,17 +1088,17 @@
         }
       ]
     }"</span>
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>返回示例</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"filter_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7f3311e9f7ba4a16d3263e6e80f5eaa3"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"filter_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7f3311e9f7ba4a16d3263e6e80f5eaa3"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-8'>HTTP Request</h3>
+</span></code></pre></div><h3 id='http-request-8'>HTTP Request</h3>
 <p><code>POST https://testnet.sectoken.io/api/v1/wall/filters</code></p>
 <h3 id='1f9ac54b15-8'>请求参数</h3>
 <table><thead>
@@ -1224,37 +1228,37 @@
 <td>规则id</td>
 </tr>
 </tbody></table>
-<h1 id='291e5d8e10'>查询规则集</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wall/filter?filter_id=7f3311e9f7ba4a16d3263e6e80f5eaa3"</span> <span class="se">\</span>
-    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
-</code></pre>
+<h1 id='291e5d8e10'>查询规则集</h1><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wall/filter?filter_id=7f3311e9f7ba4a16d3263e6e80f5eaa3"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
+</code></pre></div>
 <blockquote>
 <p>返回示例</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc_test"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"filter_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7f3311e9f7ba4a16d3263e6e80f5eaa3"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2N4mEcHPeKNcz5jmX1vzrsVhqffb8BCzH9L"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"conditions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc_test"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"filter_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7f3311e9f7ba4a16d3263e6e80f5eaa3"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2N4mEcHPeKNcz5jmX1vzrsVhqffb8BCzH9L"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"conditions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfer_value"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfer_value"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="s2">"20000000"</span><span class="w">
         </span><span class="p">]</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfer_day_limit"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfer_day_limit"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="s2">"2"</span><span class="w">
         </span><span class="p">]</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-9'>HTTP Request</h3>
+</span></code></pre></div><h3 id='http-request-9'>HTTP Request</h3>
 <p><code>GET https://testnet.sectoken.io/api/v1/wall/filter</code></p>
 <h3 id='1f9ac54b15-9'>请求参数</h3>
 <table><thead>
@@ -1330,21 +1334,21 @@
 <td>规则条件</td>
 </tr>
 </tbody></table>
-<h1 id='454236d511'>删除规则集</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wall/disable"</span> <span class="se">\</span>
-    -x POST <span class="se">\</span>
-    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
-    -d <span class="s2">"{
+<h1 id='454236d511'>删除规则集</h1><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wall/disable"</span> <span class="se">\</span>
+    <span class="nt">-x</span> POST <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
+    <span class="nt">-d</span> <span class="s2">"{
       'filter_id':'7f3311e9f7ba4a16d3263e6e80f5eaa3',
       'disable': true
     }"</span>
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>返回示例</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-10'>HTTP Request</h3>
+</span></code></pre></div><h3 id='http-request-10'>HTTP Request</h3>
 <p><code>POST https://testnet.sectoken.io/api/v1/wall/disable</code></p>
 <h3 id='1f9ac54b15-10'>请求参数</h3>
 <table><thead>
@@ -1382,33 +1386,33 @@
 <td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
 </tr>
 </tbody></table>
-<h1 id='c03aedddec'>查询规则集交易历史</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wall/history?filter_id=7f3311e9f7ba4a16d3263e6e80f5eaa3"</span> <span class="se">\</span>
-    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
-</code></pre>
+<h1 id='c03aedddec'>查询规则集交易历史</h1><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wall/history?filter_id=7f3311e9f7ba4a16d3263e6e80f5eaa3"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
+</code></pre></div>
 <blockquote>
 <p>返回示例</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="nl">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="s2">"2NERAaAYfgtERMJgTCE1csSecwEzQt7y3d2"</span><span class="w">
       </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="nl">"to"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="s2">"2N2587eHcUCXpfjJ2B5bHQYNuijRtCXKpmi"</span><span class="w">
       </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000000"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"blocked"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"condition_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"black_list"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"condtion_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2N2587eHcUCXpfjJ2B5bHQYNuijRtCXKpmi"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1585312528</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"blocked"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"condition_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"black_list"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"condtion_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2N2587eHcUCXpfjJ2B5bHQYNuijRtCXKpmi"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1585312528</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-11'>HTTP Request</h3>
+</span></code></pre></div><h3 id='http-request-11'>HTTP Request</h3>
 <p><code>GET https://testnet.sectoken.io/api/v1/wall/filter</code></p>
 <h3 id='1f9ac54b15-11'>请求参数</h3>
 <table><thead>
@@ -1499,11 +1503,11 @@
 <td>时间戳</td>
 </tr>
 </tbody></table>
-<h1 id='b7a882ec02'>通过防火墙检查广播交易单</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wall/broadcast/</span><span class="nv">$coin</span><span class="s2">"</span> <span class="se">\</span>
-    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
-    -H <span class="s1">'Filter-Id: 7f3311e9f7ba4a16d3263e6e80f5eaa3'</span>
-    -x POST <span class="se">\</span>
-    -d <span class="s1">'{
+<h1 id='b7a882ec02'>通过防火墙检查广播交易单</h1><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wall/broadcast/</span><span class="nv">$coin</span><span class="s2">"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
+    <span class="nt">-H</span> <span class="s1">'Filter-Id: 7f3311e9f7ba4a16d3263e6e80f5eaa3'</span>
+    <span class="nt">-x</span> POST <span class="se">\</span>
+    <span class="nt">-d</span> <span class="s1">'{
         "jsonrpc": "1.0",
         "id": "curltest",
         "method": "sendrawtransaction",
@@ -1511,31 +1515,31 @@
         "$signed_tx"
             ]
         }'</span>
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>返回示例</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="nl">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="s2">"2NERAaAYfgtERMJgTCE1csSecwEzQt7y3d2"</span><span class="w">
       </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="nl">"to"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="s2">"2N2587eHcUCXpfjJ2B5bHQYNuijRtCXKpmi"</span><span class="w">
       </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000000"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"blocked"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"condition_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"black_list"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"condtion_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2N2587eHcUCXpfjJ2B5bHQYNuijRtCXKpmi"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1585312528</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"blocked"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"condition_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"black_list"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"condtion_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2N2587eHcUCXpfjJ2B5bHQYNuijRtCXKpmi"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1585312528</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-12'>HTTP Request</h3>
+</span></code></pre></div><h3 id='http-request-12'>HTTP Request</h3>
 <p><code>GET https://testnet.sectoken.io/api/v1/wall/filter</code></p>
 <h3 id='url'>URL参数</h3>
 <table><thead>
@@ -1647,11 +1651,11 @@
 <td>广播成功标记, (true: 成功, false: 失败)</td>
 </tr>
 </tbody></table>
-<h1 id='c7a671ba8a'>不通过防火墙检查广播交易单</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wall/broadcast/</span><span class="nv">$coin</span><span class="s2">"</span> <span class="se">\</span>
-    -H <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
-    -H <span class="s1">'Filter-Id: 7f3311e9f7ba4a16d3263e6e80f5eaa3'</span>
-    -x POST <span class="se">\</span>
-    -d <span class="s1">'{
+<h1 id='c7a671ba8a'>不通过防火墙检查广播交易单</h1><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/wall/broadcast/</span><span class="nv">$coin</span><span class="s2">"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
+    <span class="nt">-H</span> <span class="s1">'Filter-Id: 7f3311e9f7ba4a16d3263e6e80f5eaa3'</span>
+    <span class="nt">-x</span> POST <span class="se">\</span>
+    <span class="nt">-d</span> <span class="s1">'{
         "jsonrpc": "1.0",
         "id": "curltest",
         "method": "sendrawtransaction",
@@ -1659,31 +1663,31 @@
         "$signed_tx"
             ]
         }'</span>
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>返回示例</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="nl">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="s2">"2NERAaAYfgtERMJgTCE1csSecwEzQt7y3d2"</span><span class="w">
       </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="nl">"to"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="s2">"2N2587eHcUCXpfjJ2B5bHQYNuijRtCXKpmi"</span><span class="w">
       </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000000"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"blocked"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"condition_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"black_list"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"condtion_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2N2587eHcUCXpfjJ2B5bHQYNuijRtCXKpmi"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1585312528</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"blocked"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"condition_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"black_list"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"condtion_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2N2587eHcUCXpfjJ2B5bHQYNuijRtCXKpmi"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1585312528</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-13'>HTTP Request</h3>
+</span></code></pre></div><h3 id='http-request-13'>HTTP Request</h3>
 <p><code>GET https://testnet.sectoken.io/api/v1/wall/filter</code></p>
 <h3 id='url-2'>URL参数</h3>
 <table><thead>

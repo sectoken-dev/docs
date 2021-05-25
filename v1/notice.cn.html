@@ -341,7 +341,7 @@
               </ul>
           </li>
           <li>
-            <a href="#084f68942b" class="toc-h1 toc-link" data-title="获取验证码">获取验证码</a>
+            <a href="#d8f59104df" class="toc-h1 toc-link" data-title="删除监控地址">删除监控地址</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#http-request-4" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
@@ -355,7 +355,7 @@
               </ul>
           </li>
           <li>
-            <a href="#f807214543" class="toc-h1 toc-link" data-title="获取通知记录">获取通知记录</a>
+            <a href="#084f68942b" class="toc-h1 toc-link" data-title="获取验证码">获取验证码</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#http-request-5" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
@@ -365,6 +365,20 @@
                   </li>
                   <li>
                     <a href="#70bdef7e25-5" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#f807214543" class="toc-h1 toc-link" data-title="获取通知记录">获取通知记录</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-6" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-6" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#70bdef7e25-6" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
                   </li>
               </ul>
           </li>
@@ -631,6 +645,59 @@
 <td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
 </tr>
 </tbody></table>
+<h1 id='d8f59104df'>删除监控地址</h1><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://notify.sectoken.io/api/v1/trade/addr_del/"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+    <span class="nt">-X</span> POST <span class="se">\</span>
+    <span class="nt">-d</span> <span class="s1">'{
+          "address": "0x631Fc1EA2270e98fbD9D92658eCe0F5a269Aa161",
+           "coin": "bsc"
+      }'</span>
+</code></pre></div>
+<blockquote>
+<p>返回示例</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-4'>HTTP Request</h3>
+<p><code>POST https://notify.sectoken.io/api/v1/trade/addr_del/</code></p>
+<h3 id='1f9ac54b15-4'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>是</td>
+<td>地址</td>
+</tr>
+<tr>
+<td>coin</td>
+<td>string</td>
+<td>是</td>
+<td>币种名</td>
+</tr>
+</tbody></table>
+<h3 id='70bdef7e25-4'>返回参数</h3>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
+</tr>
+</tbody></table>
 <h1 id='084f68942b'>获取验证码</h1><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://notify.sectoken.io/api/v1/trade/verification/?method=email&amp;contact=xxx@123.com"</span> <span class="se">\</span>
     <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span>  <span class="se">\</span>
 
@@ -641,9 +708,9 @@
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='http-request-4'>HTTP Request</h3>
+</span></code></pre></div><h3 id='http-request-5'>HTTP Request</h3>
 <p><code>GET https://notify.sectoken.io/api/v1/trade/verification/</code></p>
-<h3 id='1f9ac54b15-4'>请求参数</h3>
+<h3 id='1f9ac54b15-5'>请求参数</h3>
 <table><thead>
 <tr>
 <th>参数名</th>
@@ -665,7 +732,7 @@
 <td>联系方式(邮箱 / telegram)</td>
 </tr>
 </tbody></table>
-<h3 id='70bdef7e25-4'>返回参数</h3>
+<h3 id='70bdef7e25-5'>返回参数</h3>
 <table><thead>
 <tr>
 <th>参数名</th>
@@ -710,9 +777,9 @@
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='http-request-5'>HTTP Request</h3>
+</span></code></pre></div><h3 id='http-request-6'>HTTP Request</h3>
 <p><code>GET https:// notify.sectoken.io/api/v1/trade/notice_record/</code></p>
-<h3 id='1f9ac54b15-5'>请求参数</h3>
+<h3 id='1f9ac54b15-6'>请求参数</h3>
 <table><thead>
 <tr>
 <th>参数名</th>
@@ -746,7 +813,7 @@
 <td>页码, 默认为 1</td>
 </tr>
 </tbody></table>
-<h3 id='70bdef7e25-5'>返回参数</h3>
+<h3 id='70bdef7e25-6'>返回参数</h3>
 <table><thead>
 <tr>
 <th>参数名</th>

@@ -805,8 +805,7 @@
 <p>请求头中会有Checksum参数，用于验证请求信息是否完整， 通过 <code>sha256（</code> <strong>secret_key</strong> <code>+request.body）</code>来进行哈希.</p>
 
 <p>secret_key 为创建 webhook 时提交的 <code>secret</code> , 如果创建时没有上传,默认为空字符串.</p>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/api/v1/notice/recharge_record/"</span> <span class="se">\</span>
-    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> 
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://yourServer/cbdata"</span> 
 </code></pre></div><h4 id='headers'>请求 Headers 示例</h4><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"Content_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"Checksum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sha256=6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090"</span><span class="w">
@@ -912,16 +911,8 @@
 <td>未知错误</td>
 </tr>
 <tr>
-<td>4101</td>
-<td>充值地址不存在</td>
-</tr>
-<tr>
 <td>4102</td>
 <td>验证码错误</td>
-</tr>
-<tr>
-<td>4103</td>
-<td>无法添加移动端通知方式, 请充值后重试</td>
 </tr>
 <tr>
 <td>4104</td>

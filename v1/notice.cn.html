@@ -454,13 +454,13 @@
 <td>secret</td>
 <td>string</td>
 <td>否</td>
-<td>仅对 webhook 方式有效,会用此 key 对推送内容做 hash,默认为空字符串()</td>
+<td>默认为空, webhook 推送时用此参数对推送内容做 hash</td>
 </tr>
 <tr>
 <td>coin</td>
 <td>string</td>
 <td>是</td>
-<td>币种名: bsc，eth等</td>
+<td>币种名: bsc,eth等</td>
 </tr>
 <tr>
 <td>method</td>
@@ -522,7 +522,7 @@
       </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"webhook"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"all"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"contract"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://yourweb.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"contract"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://yourServer/diyUrl"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"create_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-22T20:17:45Z"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
@@ -530,9 +530,39 @@
 </span></code></pre></div><h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://notify.sectoken.io/api/v1/trade/notice_list/</code></p>
 <h3 id='1f9ac54b15-2'>请求参数</h3>
-<blockquote>
-<p>无需请求参数</p>
-</blockquote>
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>int</td>
+<td>否</td>
+<td>默认为1</td>
+</tr>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>否</td>
+<td>被监控地址</td>
+</tr>
+<tr>
+<td>coin</td>
+<td>string</td>
+<td>否</td>
+<td>币种名: bsc,eth等</td>
+</tr>
+<tr>
+<td>method</td>
+<td>string</td>
+<td>否</td>
+<td>推送方式( telegram / email / webhook )</td>
+</tr>
+</tbody></table>
 <h3 id='70bdef7e25-2'>返回参数</h3>
 <table><thead>
 <tr>

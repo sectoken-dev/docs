@@ -394,7 +394,7 @@
             "secret": "abc123",
             "coin": "eth",
             "method": "webhook",
-            "contact": "https://user.webhook",
+            "contact": "http://yourServer/diyUrl",
             "language": "cn"
     }'</span>
 </code></pre></div>
@@ -631,8 +631,9 @@
 <td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
 </tr>
 </tbody></table>
-<h1 id='084f68942b'>获取验证码</h1><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://notify.sectoken.io/api/v1/trade/verification/"</span> <span class="se">\</span>
-    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> 
+<h1 id='084f68942b'>获取验证码</h1><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://notify.sectoken.io/api/v1/trade/verification/?method=email&amp;contact=xxx@123.com"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span>  <span class="se">\</span>
+
 </code></pre></div>
 <blockquote>
 <p>返回示例</p>

@@ -679,10 +679,8 @@
 <td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
 </tr>
 </tbody></table>
-<h1 id='f807214543'>获取通知记录</h1><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://notify.sectoken.io/api/v1/trade/notice_record/"</span> <span class="se">\</span>
-    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
-    <span class="nt">-x</span> POST <span class="se">\</span>
-    <span class="nt">-d</span> <span class="s1">'{"address": "0x5e4d2dc726cbc925ec27cd22659a0da6015cc1310216f700333cc2e9ebd0987c"}'</span>
+<h1 id='f807214543'>获取通知记录</h1><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://notify.sectoken.io/api/v1/trade/notice_record/?notice_id=db4f57bc1c9f339bd142bd067ed02d5b"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> 
 </code></pre></div>
 <blockquote>
 <p>返回示例</p>
@@ -713,7 +711,7 @@
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-5'>HTTP Request</h3>
-<p><code>POST https:// notify.sectoken.io/api/v1/trade/notice_record/</code></p>
+<p><code>GET https:// notify.sectoken.io/api/v1/trade/notice_record/</code></p>
 <h3 id='1f9ac54b15-5'>请求参数</h3>
 <table><thead>
 <tr>

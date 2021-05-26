@@ -495,7 +495,7 @@
 <td>values</td>
 <td>array</td>
 <td>是</td>
-<td>条件内容</td>
+<td>条件内容:见下表</td>
 </tr>
 </tbody></table>
 <h4 id='conditions-2'>现有 conditions</h4>
@@ -519,12 +519,12 @@
 <tr>
 <td>transfer_value</td>
 <td>[&quot;1000000&quot;]</td>
-<td>单次转账金额</td>
+<td>单次转账金额,币种最小粒度位数表示</td>
 </tr>
 <tr>
 <td>transfer_day_total_value</td>
 <td>[&quot;5000000&quot;]</td>
-<td>单日转账金额</td>
+<td>单日转账金额,币种最小粒度位数表示</td>
 </tr>
 <tr>
 <td>transfer_day_limit</td>
@@ -562,7 +562,7 @@
 <tr>
 <td>filter_id</td>
 <td>string</td>
-<td>规则id</td>
+<td>规则集id</td>
 </tr>
 </tbody></table>
 <h1 id='291e5d8e10'>查询规则集</h1><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://wall.sectoken.io/api/v1/wall/filters/?filter_id=7f3311e9f7ba4a16d3263e6e80f5eaa3"</span> <span class="se">\</span>
@@ -674,10 +674,10 @@
 <td>规则条件</td>
 </tr>
 </tbody></table>
-<h1 id='454236d511'>删除规则集</h1><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://wall.sectoken.io/api/v1/wall/set_status/"</span> <span class="se">\</span>
+<h1 id='454236d511'>删除规则集</h1><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://wall.sectoken.io/api/v1/wall/del_filter/"</span> <span class="se">\</span>
     <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
     <span class="nt">-X</span> POST <span class="se">\</span>
-    <span class="nt">-d</span> <span class="s1">'{"filter_id":"e35c0a52dc48347890e4d9f3c218d637","status":-1}'</span>
+    <span class="nt">-d</span> <span class="s1">'{"filter_id":"e35c0a52dc48347890e4d9f3c218d637"}'</span>
 
 </code></pre></div>
 <blockquote>
@@ -687,7 +687,7 @@
   </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-3'>HTTP Request</h3>
-<p><code>POST https://wall.sectoken.io/api/v1/wall/set_status/</code></p>
+<p><code>POST https://wall.sectoken.io/api/v1/wall/del_filter/</code></p>
 <h3 id='1f9ac54b15-3'>请求参数</h3>
 <table><thead>
 <tr>
@@ -702,12 +702,6 @@
 <td>string</td>
 <td>是</td>
 <td>规则集Id</td>
-</tr>
-<tr>
-<td>status</td>
-<td>int</td>
-<td>是</td>
-<td>-1 删除</td>
 </tr>
 </tbody></table>
 <h3 id='70bdef7e25-3'>返回参数</h3>

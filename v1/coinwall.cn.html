@@ -376,9 +376,6 @@
                   <li>
                     <a href="#1f9ac54b15-5" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
                   </li>
-                  <li>
-                    <a href="#70bdef7e25-5" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
-                  </li>
               </ul>
           </li>
           <li>
@@ -392,9 +389,6 @@
                   </li>
                   <li>
                     <a href="#1f9ac54b15-6" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
-                  </li>
-                  <li>
-                    <a href="#70bdef7e25-6" class="toc-h2 toc-link" data-title="返回参数">返回参数</a>
                   </li>
               </ul>
           </li>
@@ -872,7 +866,7 @@
     <span class="nt">-H</span> <span class="s1">'Filter-Id: 7f3311e9f7ba4a16d3263e6e80f5eaa3'</span>
     <span class="nt">-X</span> POST <span class="se">\</span>
     <span class="nt">-d</span> <span class="s1">'{
-        "jsonrpc": "1.0",
+        "jsonrpc": "2.0",
         "id": "curltest",
         "method": "eth_sendRawTransaction",
         "params": [
@@ -882,16 +876,32 @@
         }'</span>
 </code></pre></div>
 <blockquote>
-<p>返回示例</p>
+<p>广播成功返回示例</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"curltest"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">-499</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Transaction blocked. Condition name `transfer_day_total_value`"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+    </span><span class="err">'jsonrpc':</span><span class="w"> </span><span class="err">'</span><span class="mf">2.0</span><span class="err">'</span><span class="p">,</span><span class="w"> 
+    </span><span class="err">'id':</span><span class="w"> </span><span class="err">'curltest'</span><span class="p">,</span><span class="w"> 
+    </span><span class="err">'result':</span><span class="w"> </span><span class="err">'</span><span class="mi">0</span><span class="err">x</span><span class="mi">9</span><span class="err">a</span><span class="mi">5</span><span class="err">dc</span><span class="mi">1</span><span class="err">bb</span><span class="mi">2e7</span><span class="err">dc</span><span class="mi">22</span><span class="err">ca</span><span class="mi">3</span><span class="err">eddfe</span><span class="mi">6</span><span class="err">d</span><span class="mi">62</span><span class="err">f</span><span class="mi">4</span><span class="err">f</span><span class="mi">865</span><span class="err">a</span><span class="mi">4</span><span class="err">bff</span><span class="mi">12990</span><span class="err">b</span><span class="mi">34</span><span class="err">b</span><span class="mi">0</span><span class="err">a</span><span class="mi">650</span><span class="err">bcb</span><span class="mi">233</span><span class="err">f</span><span class="mi">1</span><span class="err">bb</span><span class="mi">20</span><span class="err">'</span><span class="w">
 </span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>风控拦截返回示例</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"curltest"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"result"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"error"</span><span class="p">:{</span><span class="nl">"code"</span><span class="p">:</span><span class="mi">-499</span><span class="p">,</span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Transaction blocked. Condition name `transfer_day_total_value`"</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>节点报错返回示例</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'jsonrpc':</span><span class="w"> </span><span class="err">'</span><span class="mf">2.0</span><span class="err">'</span><span class="p">,</span><span class="w"> 
+    </span><span class="err">'id':</span><span class="w"> </span><span class="err">'curltest'</span><span class="p">,</span><span class="w"> 
+    </span><span class="err">'error':</span><span class="w"> </span><span class="p">{</span><span class="err">'code':</span><span class="w"> </span><span class="mi">-32000</span><span class="p">,</span><span class="w"> </span><span class="err">'message':</span><span class="w"> </span><span class="err">'already</span><span class="w"> </span><span class="err">known'</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
 </span></code></pre></div><h3 id='http-request-5'>HTTP Request</h3>
 <p><code>GET https://wall.sectoken.io/api/v1/wall/broadcast/</code></p>
 <h3 id='url'>URL参数</h3>
@@ -939,7 +949,7 @@
 <td>jsonrpc</td>
 <td>string</td>
 <td>否</td>
-<td>1.0</td>
+<td>2.0</td>
 </tr>
 <tr>
 <td>id</td>
@@ -960,49 +970,11 @@
 <td>签名完成的交易单信息</td>
 </tr>
 </tbody></table>
-<h3 id='70bdef7e25-5'>返回参数</h3>
-<table><thead>
-<tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>说明</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>code</td>
-<td>integer</td>
-<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
-</tr>
-<tr>
-<td>data</td>
-<td>array</td>
-<td>返回内容</td>
-</tr>
-</tbody></table>
-<h4 id='data-4'>data 参数</h4>
-<table><thead>
-<tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>说明</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>txid</td>
-<td>string</td>
-<td>交易单id</td>
-</tr>
-<tr>
-<td>is_sent</td>
-<td>bool</td>
-<td>true 广播成功标记</td>
-</tr>
-</tbody></table>
 <h1 id='131571d3f3'>不检查广播交易单</h1><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://wall.sectoken.io/api/v1/wall/unchecked_broadcast/</span><span class="nv">$coin</span><span class="s2">"</span> <span class="se">\</span>
     <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$BEARER_TOKEN</span><span class="s2">"</span> <span class="se">\ </span> 
     <span class="nt">-x</span> POST <span class="se">\</span>
     <span class="nt">-d</span> <span class="s1">'{
-        "jsonrpc": "1.0",
+        "jsonrpc": "2.0",
         "id": "curltest",
         "method": "sendrawtransaction",
         "params": [
@@ -1014,12 +986,9 @@
 <p>返回示例</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"curltest"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"txid"</span><span class="p">:</span><span class="s2">"0xc11269356a0c1318754466ed6e183d19de9f196c6d5139dbd56c0f501fb2c2ed"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"is_sent"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-   </span><span class="p">}</span><span class="w">
+    </span><span class="err">'jsonrpc':</span><span class="w"> </span><span class="err">'</span><span class="mf">2.0</span><span class="err">'</span><span class="p">,</span><span class="w"> 
+    </span><span class="err">'id':</span><span class="w"> </span><span class="err">'curltest'</span><span class="p">,</span><span class="w"> 
+    </span><span class="err">'result':</span><span class="w"> </span><span class="err">'</span><span class="mi">0</span><span class="err">x</span><span class="mi">9</span><span class="err">a</span><span class="mi">5</span><span class="err">dc</span><span class="mi">1</span><span class="err">bb</span><span class="mi">2e7</span><span class="err">dc</span><span class="mi">22</span><span class="err">ca</span><span class="mi">3</span><span class="err">eddfe</span><span class="mi">6</span><span class="err">d</span><span class="mi">62</span><span class="err">f</span><span class="mi">4</span><span class="err">f</span><span class="mi">865</span><span class="err">a</span><span class="mi">4</span><span class="err">bff</span><span class="mi">12990</span><span class="err">b</span><span class="mi">34</span><span class="err">b</span><span class="mi">0</span><span class="err">a</span><span class="mi">650</span><span class="err">bcb</span><span class="mi">233</span><span class="err">f</span><span class="mi">1</span><span class="err">bb</span><span class="mi">20</span><span class="err">'</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-6'>HTTP Request</h3>
 <p><code>POST https://wall.sectoken.io/api/v1/wall/unchecked_broadcast/$coin</code></p>
@@ -1052,7 +1021,7 @@
 <td>jsonrpc</td>
 <td>string</td>
 <td>是</td>
-<td>1.0</td>
+<td>2.0</td>
 </tr>
 <tr>
 <td>id</td>
@@ -1071,44 +1040,6 @@
 <td>string</td>
 <td>是</td>
 <td>签名完成的交易单信息</td>
-</tr>
-</tbody></table>
-<h3 id='70bdef7e25-6'>返回参数</h3>
-<table><thead>
-<tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>说明</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>code</td>
-<td>integer</td>
-<td>返回码，200成功，其他失败，请查看<a href="#e08c1d4f9a">错误码</a></td>
-</tr>
-<tr>
-<td>data</td>
-<td>array</td>
-<td>返回内容</td>
-</tr>
-</tbody></table>
-<h4 id='data-5'>data 参数</h4>
-<table><thead>
-<tr>
-<th>参数名</th>
-<th>参数类型</th>
-<th>说明</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>txid</td>
-<td>string</td>
-<td>交易单id</td>
-</tr>
-<tr>
-<td>is_sent</td>
-<td>bool</td>
-<td>true广播成功标记</td>
 </tr>
 </tbody></table>
 <h1 id='e08c1d4f9a'>错误码</h1>

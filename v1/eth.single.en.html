@@ -1,0 +1,2357 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>ETH 单签 API Documentation</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="../stylesheets/screen-c9d8fa83.css" rel="stylesheet" media="screen" />
+    <link href="../stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
+      <script src="../javascripts/all-a9fde460.js"></script>
+
+  </head>
+
+  <body class="v1 v1_eth" data-languages="[&quot;shell&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="../images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="../images/logo-2956005c.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="python">python</a>
+              <a href="#" data-language-name="javascript">javascript</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#create-wallet" class="toc-h1 toc-link" data-title="Create Wallet">Create Wallet</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#request-parameters" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#response-parameters" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#activate-wallet" class="toc-h1 toc-link" data-title="Activate Wallet">Activate Wallet</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-2" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#request-parameters-2" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#response-parameters-2" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#get-wallet-details" class="toc-h1 toc-link" data-title="Get Wallet Details">Get Wallet Details</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-3" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#request-parameters-3" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#response-parameters-3" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#get-wallet-list" class="toc-h1 toc-link" data-title="Get Wallet List">Get Wallet List</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-4" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#request-parameters-4" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#response-parameters-4" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#get-balance-of-eth-address" class="toc-h1 toc-link" data-title="Get Balance of ETH Address">Get Balance of ETH Address</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-5" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#request-parameters-5" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#response-parameters-5" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#build-transaction" class="toc-h1 toc-link" data-title="Build Transaction">Build Transaction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-6" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#request-parameters-6" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#response-parameters-6" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#submit-transaction" class="toc-h1 toc-link" data-title="Submit Transaction">Submit Transaction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-7" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#request-parameters-7" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#response-parameters-7" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#build-batch-transaction" class="toc-h1 toc-link" data-title="Build Batch Transaction">Build Batch Transaction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-8" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#request-parameters-8" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#outputs-parameters" class="toc-h2 toc-link" data-title="Outputs Parameters">Outputs Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#response-parameters-8" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#data-parameters-8" class="toc-h2 toc-link" data-title="Data Parameters">Data Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#submit-batch-transaction" class="toc-h1 toc-link" data-title="Submit  Batch Transaction">Submit  Batch Transaction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-9" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#request-parameters-9" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#response-parameters-9" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#get-erc20-token-list" class="toc-h1 toc-link" data-title="Get ERC20 Token List">Get ERC20 Token List</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-10" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#no-request-parameters" class="toc-h2 toc-link" data-title="No Request Parameters">No Request Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#response-parameters-10" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#add-wallet-webhook" class="toc-h1 toc-link" data-title="Add Wallet WebHook">Add Wallet WebHook</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-11" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#request-parameters-10" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#response-parameters-11" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#list-wallet-webhook" class="toc-h1 toc-link" data-title="List Wallet WebHook">List Wallet WebHook</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-12" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#request-parameters-11" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#response-parameters-12" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#delete-wallet-webhook" class="toc-h1 toc-link" data-title="Delete Wallet WebHook">Delete Wallet WebHook</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-13" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#request-parameters-12" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#response-parameters-13" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#transaction-callback" class="toc-h1 toc-link" data-title="Transaction Callback">Transaction Callback</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#parameters-descriptions" class="toc-h2 toc-link" data-title="Parameters descriptions">Parameters descriptions</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#get-transaction-records" class="toc-h1 toc-link" data-title="Get Transaction Records">Get Transaction Records</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-14" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#request-parameters-13" class="toc-h2 toc-link" data-title="Request Parameters">Request Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#response-parameters-14" class="toc-h2 toc-link" data-title="Response Parameters">Response Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#error-codes" class="toc-h1 toc-link" data-title="Error Codes">Error Codes</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='/docs/v1/eth.single.cn.html'>中文版本</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p><a href="https://testnet.sectoken.io/">https://testnet.sectoken.io/</a></p>
+<h1 id='create-wallet'>Create Wallet</h1><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth_single/create/"</span><span class="p">,</span> 
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span> 
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+        <span class="s">"pubkey"</span><span class="p">:</span> <span class="s">"03976717038a5c6967535cc469acb6d7a43dee00568b9c4d4f2bbccb287503787c"</span><span class="p">,</span>
+        <span class="s">"wallet_name"</span><span class="p">:</span> <span class="s">"your wallet name"</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth_single/create/"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+    <span class="nt">-X</span> POST <span class="se">\</span>
+    <span class="nt">-d</span> <span class="s1">'{"pubkey": "03976717038a5c6967535cc469acb6d7a43dee00568b9c4d4f2bbccb287503787c", "wallet_name": "your wallet name"}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">request</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://testnet.sectoken.io/wallet/eth_single/create/</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">post</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">'</span><span class="s1">HMAC</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">your token</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+            <span class="dl">'</span><span class="s1">pubkey</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">02c21fa2c5e7f10ee87b22dd33dc1e6eabe3416a9cb117e4f344d590eda7fd3088</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">'</span><span class="s1">wallet_name</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">your wallet name</span><span class="dl">'</span>
+        <span class="p">})</span>
+    <span class="p">},</span>
+    <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+
+</code></pre></div>
+<blockquote>
+<p>Response Samples</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cf761ad1b6c5f30a1557d942cb557b07"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"create_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-10T10:13:03.195"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"activate_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"712968"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/wallet/eth_single/create/</code></p>
+<h3 id='request-parameters'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>pubkey</td>
+<td>string</td>
+<td>Yes</td>
+<td>Compressed public key. Length of 66.</td>
+</tr>
+<tr>
+<td>privkey</td>
+<td>string</td>
+<td>Optional</td>
+<td>Private key. Users should encrypt and decrypt when using. (Must be base64 format.)</td>
+</tr>
+<tr>
+<td>wallet_name</td>
+<td>string</td>
+<td>Yes</td>
+<td>Wallet Name</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameters'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>Status code. Successful return 200. Others are <a href="#error-codes">Error Codes</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>Response data.</td>
+</tr>
+</tbody></table>
+<h4 id='data-parameters'>Data Parameters</h4>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wallet_id</td>
+<td>string</td>
+<td>Wallet id</td>
+</tr>
+<tr>
+<td>create_time</td>
+<td>string</td>
+<td>Creation time of wallet</td>
+</tr>
+<tr>
+<td>activate_code</td>
+<td>string</td>
+<td>Activate code</td>
+</tr>
+</tbody></table>
+<h1 id='activate-wallet'>Activate Wallet</h1><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth_single/activate/"</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+        <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"your wallet id"</span><span class="p">,</span>
+        <span class="s">"activate_code"</span><span class="p">:</span> <span class="s">"your activate code"</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth_single/activate/"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+    <span class="nt">-X</span> POST <span class="se">\</span>
+    <span class="nt">-d</span> <span class="s1">'{"wallet_id": "your wallet id", "activate_code": "your activate code"}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">request</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://testnet.sectoken.io/wallet/eth_single/activate/</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">post</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">'</span><span class="s1">HMAC</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">your token</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+            <span class="dl">'</span><span class="s1">wallet_id</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">your wallet id</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">'</span><span class="s1">activate_code</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">your activate code</span><span class="dl">'</span>
+        <span class="p">})</span>
+    <span class="p">},</span>
+    <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>Response Samples</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x4b81124e2C5B6a774c0d4CFa0c346D37c5d9087B"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/wallet/eth_single/activate/</code></p>
+<h3 id='request-parameters-2'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wallet_id</td>
+<td>string</td>
+<td>Yes</td>
+<td>Wallet id</td>
+</tr>
+<tr>
+<td>activate_code</td>
+<td>string</td>
+<td>Yes</td>
+<td>Activate Code</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameters-2'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>Status code. Successful return 200. Others are <a href="#error-codes">Error Codes</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>Response data.</td>
+</tr>
+</tbody></table>
+<h4 id='data-parameters-2'>Data Parameters</h4>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>ETH address of wallet</td>
+</tr>
+</tbody></table>
+<h1 id='get-wallet-details'>Get Wallet Details</h1><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth_single/detail/"</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span> 
+    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"your wallet id"</span><span class="p">,</span> <span class="s">"coin_type"</span><span class="p">:</span> <span class="s">"eth"</span><span class="p">}</span>
+<span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth_single/detail/?wallet_id=your_wallet_id&amp;coin_type=eth"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
+    <span class="nt">-X</span> GET    
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">request</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://testnet.sectoken.io/wallet/eth_single/detail/?wallet_id=your_wallet_id</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">get</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">'</span><span class="s1">HMAC</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">your token</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>Response Samples</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2cc5abb2b9932ca1ec5513ad1a9685f9"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"wallet_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TestSeven"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x32FfC556A1E1deEfE1084A0E276501d0B347bb39"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"999999999997000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"send_max"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"send_day_max"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"send_day_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"freeze_overtime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://testnet.sectoken.io/wallet/eth_single/detail/</code></p>
+<h3 id='request-parameters-3'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wallet_id</td>
+<td>string</td>
+<td>Yes</td>
+<td>Wallet id</td>
+</tr>
+<tr>
+<td>coin_type</td>
+<td>string</td>
+<td>Optional</td>
+<td>Coin type. ETH or other ERC20 token supported by the platform. Default is &quot;ETH&quot;.</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameters-3'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>Status code. Successful return 200. Others are <a href="#error-codes">Error Codes</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>Response data.</td>
+</tr>
+</tbody></table>
+<h4 id='data-parameters-3'>Data Parameters</h4>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wallet_id</td>
+<td>string</td>
+<td>Wallet id</td>
+</tr>
+<tr>
+<td>wallet_name</td>
+<td>string</td>
+<td>Wallet Name</td>
+</tr>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>Eth address of wallet</td>
+</tr>
+<tr>
+<td>balance</td>
+<td>string</td>
+<td>Balance. (Minimum unit)</td>
+</tr>
+<tr>
+<td>send_max</td>
+<td>string</td>
+<td>Maximum value per transfer. &quot;0&quot; is unlimited.</td>
+</tr>
+<tr>
+<td>send_day_limit</td>
+<td>integer</td>
+<td>Maximum number of transfers per day. 0 is unlimited.</td>
+</tr>
+<tr>
+<td>send_day_max</td>
+<td>string</td>
+<td>Maximum number of transfers per day. &quot;0&quot; is unlimited.</td>
+</tr>
+<tr>
+<td>freeze_overtime</td>
+<td>integer</td>
+<td>Wallet freeze deadline. 0 is not frozen.</td>
+</tr>
+</tbody></table>
+<h1 id='get-wallet-list'>Get Wallet List</h1><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth_single/wallet_list/?page=1, 
+    headers={"</span><span class="n">HMAC</span><span class="s">": "</span><span class="n">your</span> <span class="n">token</span><span class="s">"}
+)
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth_single/wallet_list/?page=1"</span> <span class="se">\</span>
+    <span class="nt">-X</span> GET <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"HMAC:your token"</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">request</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://testnet.sectoken.io/wallet/eth_single/wallet_list/?page=1</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">get</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">'</span><span class="s1">HMAC</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">your token</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>Response Samples</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"wallet_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TestSeven"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2cc5abb2b9932ca1ec5513ad1a9685f9"</span><span class="p">,</span><span class="w"> 
+            </span><span class="nl">"address"</span><span class="p">:</span><span class="s2">"0x32FfC556A1E1deEfE1084A0E276501d0B347bb39"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"create_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-09T02:27:18.465"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET https://testnet.sectoken.io/wallet/eth_single/wallet_list/</code></p>
+<h3 id='request-parameters-4'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>Optional</td>
+<td>Page number. Default get all addresses.</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameters-4'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>Status code. Successful return 200. Others are <a href="#error-codes">Error Codes</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>array</td>
+<td>Response data.</td>
+</tr>
+</tbody></table>
+<h4 id='data-parameters-4'>Data Parameters</h4>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wallet_id</td>
+<td>string</td>
+<td>Wallet id</td>
+</tr>
+<tr>
+<td>wallet_name</td>
+<td>string</td>
+<td>Wallet name</td>
+</tr>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>ETH address of balance</td>
+</tr>
+<tr>
+<td>create_time</td>
+<td>string</td>
+<td>Creation time of wallet</td>
+</tr>
+</tbody></table>
+<h1 id='get-balance-of-eth-address'>Get Balance of ETH Address</h1><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">reqeusts</span>
+
+<span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span>                     
+    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth_single/addr_balance/"</span><span class="p">,</span>                             
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>                                                                
+    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">"address"</span><span class="p">:</span> <span class="s">"0xc467089a6f3b60c6bff81fc2784406bdccf63913"</span><span class="p">,</span> <span class="s">"coin_type"</span><span class="p">:</span> <span class="s">"eth"</span><span class="p">}</span>           
+<span class="p">)</span>                                                                                                  
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth_single/addr_balance/?address=your addr&amp;coin_type=eth"</span> <span class="se">\</span>
+    <span class="nt">-X</span> GET <span class="se">\ </span>                     
+    <span class="nt">-H</span> <span class="s2">"HMAC:your token"</span>                                                                           
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">request</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://testnet.sectoken.io/wallet/eth_single/addr_balance/?address=your addr&amp;coin_type=eth</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">get</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">'</span><span class="s1">HMAC</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">your token</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>Response Sample</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">       
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">                  
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                      
+        </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"312672375000000000"</span><span class="w">
+    </span><span class="p">}</span><span class="w">                                                                                              
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-5'>HTTP Request</h3>
+<p><code>GET https://testnet.sectoken.io/wallet/eth_single/addr_balance/</code></p>
+<h3 id='request-parameters-5'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>Yes</td>
+<td>ETH address</td>
+</tr>
+<tr>
+<td>coin_type</td>
+<td>string</td>
+<td>Optional</td>
+<td>Coin type. ETH or other ERC20 token supported by the platform. Default is &quot;ETH&quot;.</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameters-5'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>Status code. Successful return 200. Others are <a href="#error-codes">Error Codes</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>Response data.</td>
+</tr>
+</tbody></table>
+<h4 id='data-parameters-5'>Data Parameters</h4>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>balance</td>
+<td>string</td>
+<td>Balance. (Minimum unit)</td>
+</tr>
+</tbody></table>
+<h1 id='build-transaction'>Build Transaction</h1><div class="highlight"><pre class="highlight python tab-python"><code><span class="n">impor</span> <span class="n">requests</span>
+
+<span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth_single/dotx/"</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+        <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"your wallet id"</span><span class="p">,</span>
+        <span class="s">"to_address"</span><span class="p">:</span> <span class="s">"recipient address"</span><span class="p">,</span>
+        <span class="s">"value"</span><span class="p">:</span> <span class="s">"1000000000"</span><span class="p">,</span>
+        <span class="s">"coin_type"</span><span class="p">:</span> <span class="s">"eth"</span><span class="p">,</span>
+        <span class="s">"feerate"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth_single/dotx/"</span> <span class="se">\</span>
+    <span class="nt">-X</span> POST <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
+    <span class="nt">-d</span> <span class="s1">'{"wallet_id": "your wallet id", "to_address": "recipient address", "value": "1000000000", "coin_type": "eth", "feerate": 1}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">request</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://testnet.sectoken.io/wallet/eth_single/dotx/</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">post</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">'</span><span class="s1">HMAC</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">your token</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+            <span class="dl">'</span><span class="s1">wallet_id</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">your wallet id</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">'</span><span class="s1">to_address</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">recipient address</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">'</span><span class="s1">value</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">1000000000</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">'</span><span class="s1">coin_type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">eth</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">'</span><span class="s1">feerate</span><span class="dl">'</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">})</span>
+    <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span> 
+    <span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>Response Simple</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> 
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"unsigned_tx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f863808459682f008252089405c1fcbf26b0fa3f6a107dd3d496faccb55644da01801ca05aa02750896c8581304a7e0de9f2a4f7674ef275a033c006ce5f70cd58ca7b6ba07998e979e5c918d4e0a1b047788c43636ed3627d265a875c464f1c1c8ede095e"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"privkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-6'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/wallet/eth_single/dotx/</code></p>
+<h3 id='request-parameters-6'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wallet_id</td>
+<td>string</td>
+<td>Yes</td>
+<td>Wallet id</td>
+</tr>
+<tr>
+<td>to_address</td>
+<td>string</td>
+<td>Yes</td>
+<td>Destination address.</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Yes</td>
+<td>Transfer value. (Minimum unit).</td>
+</tr>
+<tr>
+<td>coin_type</td>
+<td>string</td>
+<td>Optional</td>
+<td>Coin type. ETH or other ERC20 token supported by the platform. Default is &quot;ETH&quot;.</td>
+</tr>
+<tr>
+<td>feerate</td>
+<td>integer</td>
+<td>Optional</td>
+<td>Transfer speed. 1 is fast, 0 is normal. Default is 0.</td>
+</tr>
+<tr>
+<td>total</td>
+<td>boolean</td>
+<td>Optional</td>
+<td>Transfer all balance. set value true to enbale. The value parameter is not in effect at this point.</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameters-6'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>Status code. Successful return 200. Others are <a href="#error-codes">Error Codes</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>Response data.</td>
+</tr>
+</tbody></table>
+<h4 id='data-parameters-6'>Data Parameters</h4>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>unsigned_tx</td>
+<td>string</td>
+<td>Unsigned transaction</td>
+</tr>
+<tr>
+<td>privkey</td>
+<td>string</td>
+<td>The privkey field that was submitted when the wallet was created. Uncommentted returns an empty string.</td>
+</tr>
+</tbody></table>
+<h1 id='submit-transaction'>Submit Transaction</h1><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">reqeusts</span>
+
+<span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth_single/send/"</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+        <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"your wallet id"</span><span class="p">,</span> 
+        <span class="s">"signed_tx"</span><span class="p">:</span> <span class="s">"f863808459682f008252089405c1fcbf26b0fa3f6a107dd3d496faccb55644da01801ca05aa02750896c8581304a7e0de9f2a4f7674ef275a033c006ce5f70cd58ca7b6ba07998e979e5c918d4e0a1b047788c43636ed3627d265a875c464f1c1c8ede095e"</span><span class="p">,</span> 
+    <span class="p">}</span>
+<span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth_single/send/"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+    <span class="nt">-X</span> POST <span class="se">\</span>
+    <span class="nt">-d</span> <span class="s1">'{"wallet_id": "your wallet id", "signed_tx": "f863808459682f008252089405c1fcbf26b0fa3f6a107dd3d496faccb55644da01801ca05aa02750896c8581304a7e0de9f2a4f7674ef275a033c006ce5f70cd58ca7b6ba07998e979e5c918d4e0a1b047788c43636ed3627d265a875c464f1c1c8ede095e"}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">request</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://testnet.sectoken.io/wallet/eth_single/send/</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">post</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">'</span><span class="s1">HMAC</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">your token</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+            <span class="dl">'</span><span class="s1">wallet_id</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">your_wallet_id</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">'</span><span class="s1">signed_tx</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">f863808459682f008252089405c1fcbf26b0fa3f6a107dd3d496faccb55644da01801ca05aa02750896c8581304a7e0de9f2a4f7674ef275a033c006ce5f70cd58ca7b6ba07998e979e5c918d4e0a1b047788c43636ed3627d265a875c464f1c1c8ede095e</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">})</span>
+    <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span> 
+    <span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>Response Sample</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+     </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> 
+     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xc03c4a9dba55a239c165a4cbcf1eddcfa9cc7673ea1c6d492105d0145ff6f0ee"</span><span class="w">
+     </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-7'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/wallet/eth_single/send/</code></p>
+<h3 id='request-parameters-7'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wallet_id</td>
+<td>string</td>
+<td>Yes</td>
+<td>Wallet id</td>
+</tr>
+<tr>
+<td>signed_tx</td>
+<td>string</td>
+<td>Yes</td>
+<td>Signed transaction</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameters-7'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>Status code. Successful return 200. Others are <a href="#error-codes">Error Codes</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>Response data.</td>
+</tr>
+</tbody></table>
+<h4 id='data-parameters-7'>Data Parameters</h4>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>txid</td>
+<td>string</td>
+<td>Transaction id</td>
+</tr>
+</tbody></table>
+<h1 id='build-batch-transaction'>Build Batch Transaction</h1><div class="highlight"><pre class="highlight python tab-python"><code><span class="n">impor</span> <span class="n">requests</span>
+
+<span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth_single/batch_dotx/"</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+        <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"your wallet id"</span><span class="p">,</span>
+        <span class="s">"outputs"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span><span class="s">"address"</span><span class="p">:</span><span class="s">"recipient address"</span><span class="p">,</span> <span class="s">"value"</span><span class="p">:</span><span class="s">"1000"</span><span class="p">},</span>
+            <span class="p">{</span><span class="s">"address"</span><span class="p">:</span><span class="s">"recipient address"</span><span class="p">,</span> <span class="s">"value"</span><span class="p">:</span><span class="s">"1000"</span><span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s">"value"</span><span class="p">:</span> <span class="s">"1000000000"</span><span class="p">,</span>
+        <span class="s">"coin_type"</span><span class="p">:</span> <span class="s">"eth"</span><span class="p">,</span>
+        <span class="s">"feerate"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth_single/dotx/"</span> <span class="se">\</span>
+    <span class="nt">-X</span> POST <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
+    <span class="nt">-d</span> <span class="s1">'{"wallet_id": "your wallet id", "outputs": [{"address":"recipient address", "value":"1000"}{"address":"recipient address", "value":"1000"}], "coin_type": "eth", "feerate": 1}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">request</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://testnet.sectoken.io/wallet/eth_single/dotx/</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">post</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">'</span><span class="s1">HMAC</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">your token</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+            <span class="dl">'</span><span class="s1">wallet_id</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">your wallet id</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">outputs</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span><span class="dl">"</span><span class="s2">address</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">recipient address</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">1000</span><span class="dl">"</span><span class="p">},</span>
+            <span class="p">{</span><span class="dl">"</span><span class="s2">address</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">recipient address</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">1000</span><span class="dl">"</span><span class="p">}</span>
+        <span class="p">],</span>
+            <span class="dl">'</span><span class="s1">coin_type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">eth</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">'</span><span class="s1">feerate</span><span class="dl">'</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">})</span>
+    <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span> 
+    <span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>Response Simple</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> 
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"approval_tx"</span><span class="p">:</span><span class="s2">""</span><span class="w">
+        </span><span class="nl">"unsigned_tx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f863808459682f008252089405c1fcbf26b0fa3f6a107dd3d496faccb55644da01801ca05aa02750896c8581304a7e0de9f2a4f7674ef275a033c006ce5f70cd58ca7b6ba07998e979e5c918d4e0a1b047788c43636ed3627d265a875c464f1c1c8ede095e"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"privkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-8'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/wallet/eth_single/batch_dotx/</code></p>
+<h3 id='request-parameters-8'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wallet_id</td>
+<td>string</td>
+<td>Yes</td>
+<td>Wallet id</td>
+</tr>
+<tr>
+<td>outputs</td>
+<td>array</td>
+<td>Yes</td>
+<td>Destination address and Transfer value. (Minimum unit).</td>
+</tr>
+<tr>
+<td>coin_type</td>
+<td>string</td>
+<td>Optional</td>
+<td>Coin type. ETH or other ERC20 token supported by the platform. Default is &quot;ETH&quot;.</td>
+</tr>
+<tr>
+<td>feerate</td>
+<td>integer</td>
+<td>Optional</td>
+<td>Transfer speed. 1 is fast, 0 is normal. Default is 0.</td>
+</tr>
+</tbody></table>
+<h3 id='outputs-parameters'>Outputs Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>Yes</td>
+<td>Wallet id</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Yes</td>
+<td>Transfer value. (Minimum unit).</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameters-8'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>Status code. Successful return 200. Others are <a href="#error-codes">Error Codes</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>Response data.</td>
+</tr>
+</tbody></table>
+<h3 id='data-parameters-8'>Data Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>approval_tx</td>
+<td>string</td>
+<td>Unsigned Authorization Transaction, This Parameter is null character string  When transfer ETH or ERC20 authorize amount is enough</td>
+</tr>
+<tr>
+<td>unsigned_tx</td>
+<td>string</td>
+<td>Unsigned batch transaction</td>
+</tr>
+<tr>
+<td>privkey</td>
+<td>string</td>
+<td>The privkey field that was submitted when the wallet was created. Uncommentted returns an empty string.</td>
+</tr>
+</tbody></table>
+<h1 id='submit-batch-transaction'>Submit  Batch Transaction</h1><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">reqeusts</span>
+
+<span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth_single/batch_send/"</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span>
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+        <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"your wallet id"</span><span class="p">,</span> 
+        <span class="s">"signed_txs"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s">"f863808459682f008252089405c1fcbf26b0fa3f6a107dd3d496faccb55644da01801ca05aa02750896c8581304a7e0de9f2a4f7674ef275a033c006ce5f70cd58ca7b6ba07998e979e5c918d4e0a1b047788c43636ed3627d265a875c464f1c1c8ede095e"</span><span class="p">,</span>                    <span class="s">"f863808459682f008252089405c1fcbf26b0fa3f6a107dd3d496faccb55644da01801ca05aa02750896c8581304a7e0de9f2a4f7674ef275a033c006ce5f70cd58ca7b6ba07998e979e5c918d4e0a1b047788c43636ed3627d265a875c464f1c1c8ede09cb"</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth_single/batch_send/"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+    <span class="nt">-X</span> POST <span class="se">\</span>
+    <span class="nt">-d</span> <span class="s1">'{"wallet_id": "your wallet id", "signed_txs": ["f863808459682f008252089405c1fcbf26b0fa3f6a107dd3d496faccb55644da01801ca05aa02750896c8581304a7e0de9f2a4f7674ef275a033c006ce5f70cd58ca7b6ba07998e979e5c918d4e0a1b047788c43636ed3627d265a875c464f1c1c8ede095e","f863808459682f008252089405c1fcbf26b0fa3f6a107dd3d496faccb55644da01801ca05aa02750896c8581304a7e0de9f2a4f7674ef275a033c006ce5f70cd58ca7b6ba07998e979e5c918d4e0a1b047788c43636ed3627d265a875c464f1c1c8ede09cb"]}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">request</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://testnet.sectoken.io/wallet/eth_single/batch_send/</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">post</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">'</span><span class="s1">HMAC</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">your token</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+            <span class="dl">'</span><span class="s1">wallet_id</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">your_wallet_id</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">'</span><span class="s1">signed_txs</span><span class="dl">'</span><span class="p">:</span> <span class="p">[</span>
+                <span class="dl">"</span><span class="s2">f863808459682f008252089405c1fcbf26b0fa3f6a107dd3d496faccb55644da01801ca05aa02750896c8581304a7e0de9f2a4f7674ef275a033c006ce5f70cd58ca7b6ba07998e979e5c918d4e0a1b047788c43636ed3627d265a875c464f1c1c8ede095e</span><span class="dl">"</span><span class="p">,</span>                    <span class="dl">"</span><span class="s2">f863808459682f008252089405c1fcbf26b0fa3f6a107dd3d496faccb55644da01801ca05aa02750896c8581304a7e0de9f2a4f7674ef275a033c006ce5f70cd58ca7b6ba07998e979e5c918d4e0a1b047788c43636ed3627d265a875c464f1c1c8ede09cb</span><span class="dl">"</span>
+            <span class="p">],</span>
+        <span class="p">})</span>
+    <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span> 
+    <span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>Response Sample</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+     </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> 
+     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"txids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+             </span><span class="s2">"0xc03c4a9dba55a239c165a4cbcf1eddcfa9cc7673ea1c6d492105d0145ff6f0ee"</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"0xc03c4a9dba55a239c165a4cbcf1eddcfa9cc7673ea1c6d492105d0145bcdef3c"</span><span class="w">
+         </span><span class="p">]</span><span class="w">
+     </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-9'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/wallet/eth_single/batch_send/</code></p>
+<h3 id='request-parameters-9'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wallet_id</td>
+<td>string</td>
+<td>Yes</td>
+<td>Wallet id</td>
+</tr>
+<tr>
+<td>signed_txs</td>
+<td>array</td>
+<td>Yes</td>
+<td>Complete the signed transaction ticket. There should be two signatures when there is an authorized transaction, and one signature if there is no authorized transaction.</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameters-9'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>Status code. Successful return 200. Others are <a href="#error-codes">Error Codes</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>Response data.</td>
+</tr>
+</tbody></table>
+<h4 id='data-parameters-9'>Data Parameters</h4>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>txids</td>
+<td>array</td>
+<td>Transaction ids</td>
+</tr>
+</tbody></table>
+<h1 id='get-erc20-token-list'>Get ERC20 Token List</h1>
+<p>Get a list of ETH ERC20 tokens supported by the platform.</p>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span>
+
+    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth_single/coin_types/"</span><span class="p">,</span> 
+
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">}</span>
+
+    <span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth_single/coin_types/"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"HMAC:your token"</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">request</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://testnet.sectoken.io/wallet/eth_single/coin_types/</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">get</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">'</span><span class="s1">HMAC</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">your token</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>Response Samples</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="nl">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERC20_MT"</span><span class="p">,</span><span class="w"> </span><span class="nl">"contract_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x37aef616A9d15563F3267b3776f9FFDdb8797879"</span><span class="p">,</span><span class="w"> </span><span class="nl">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="nl">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERC20_HT"</span><span class="p">,</span><span class="w"> </span><span class="nl">"contract_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x0f2Dac5Bfdc7Ce4aea8dfb9a085703a92998aA48"</span><span class="p">,</span><span class="w"> </span><span class="nl">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">},</span><span class="w"> 
+        </span><span class="p">{</span><span class="nl">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERC20_JLL"</span><span class="p">,</span><span class="w"> </span><span class="nl">"contract_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x7e326A29f182544E3982CDB3E0e24e19412CA34D"</span><span class="p">,</span><span class="w"> </span><span class="nl">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="nl">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERC20_FFA"</span><span class="p">,</span><span class="w"> </span><span class="nl">"contract_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xa227E7eEecc599600c767CcE8D5e0B40eB5A860e"</span><span class="p">,</span><span class="w"> </span><span class="nl">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">},</span><span class="w"> 
+        </span><span class="p">{</span><span class="nl">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERC20_KOZ"</span><span class="p">,</span><span class="w"> </span><span class="nl">"contract_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x9d79bb99b41dbe5a3cf037ae8e8d22425c8e823d"</span><span class="p">,</span><span class="w"> </span><span class="nl">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">},</span><span class="w"> 
+        </span><span class="p">{</span><span class="nl">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERC20_USDT"</span><span class="p">,</span><span class="w"> </span><span class="nl">"contract_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x41BaE6D3389Faf27762CFcCEdd003C6242197f5f"</span><span class="p">,</span><span class="w"> </span><span class="nl">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-10'>HTTP Request</h3>
+<p><code>GET https://testnet.sectoken.io/wallet/eth_single/coin_types/</code></p>
+<h3 id='no-request-parameters'>No Request Parameters</h3><h3 id='response-parameters-10'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>Status code. Successful return 200. Others are <a href="#error-codes">Error Codes</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>array</td>
+<td>Response data.</td>
+</tr>
+</tbody></table>
+<h4 id='data-parameters-10'>Data Parameters</h4>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>coin_type</td>
+<td>string</td>
+<td>Coin type</td>
+</tr>
+<tr>
+<td>contract_address</td>
+<td>string</td>
+<td>ERC20 token contract address</td>
+</tr>
+<tr>
+<td>decimal</td>
+<td>integer</td>
+<td>Coin decimal</td>
+</tr>
+</tbody></table>
+<h1 id='add-wallet-webhook'>Add Wallet WebHook</h1>
+<p>Add a webhook that will result in an HTTP callback at the specified URL from Sectoken when events are triggered.</p>
+
+<p>There is a limit of 10 webhooks per wallet.</p>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/webhook_add/"</span><span class="p">,</span> 
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span> 
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+        <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"your wallet id"</span><span class="p">,</span>
+        <span class="s">"url"</span><span class="p">:</span> <span class="s">"https://your.server.com/webhook"</span><span class="p">,</span>
+        <span class="s">"label"</span><span class="p">:</span> <span class="s">"test callback"</span><span class="p">,</span>
+        <span class="s">"type"</span><span class="p">:</span> <span class="s">"deposit"</span><span class="p">,</span>
+        <span class="s">"token"</span><span class="p">:</span> <span class="s">"erc20_ht"</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/webhook_add/"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+    <span class="nt">-X</span> POST <span class="se">\</span>
+    <span class="nt">-d</span>  <span class="s1">'{"wallet_id": "your wallet id", "url":"https://your.server.com/webhook", "label":"test callback", "type":"deposit", "token": "erc20_ht"}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">request</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://testnet.sectoken.io/wallet/eth/webhook_add/</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">post</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">'</span><span class="s1">HMAC</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">your token</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+            <span class="dl">'</span><span class="s1">wallet_id</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">your_wallet_id</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">'</span><span class="s1">url</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://your.server.com/webhook</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">'</span><span class="s1">type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">deposit</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">'</span><span class="s1">label</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">callback</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">'</span><span class="s1">token</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">erc20_koz</span><span class="dl">'</span>
+        <span class="p">})</span>
+    <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>Response Samples</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"callbackid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"da0e3f3530cb7f63695d8eaad351fdc1"</span><span class="w"> 
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-11'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/wallet/eth_single/webhook_add/</code></p>
+<h3 id='request-parameters-10'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wallet_id</td>
+<td>string</td>
+<td>Yes</td>
+<td>Wallet id</td>
+</tr>
+<tr>
+<td>url</td>
+<td>string</td>
+<td>Yes</td>
+<td>URL to fire the webhook to, the protocol must be HTTP or HTTPS</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>Yes</td>
+<td>deposit or withdraw</td>
+</tr>
+<tr>
+<td>label</td>
+<td>string</td>
+<td>Optional</td>
+<td>Label of the new webhook</td>
+</tr>
+<tr>
+<td>token</td>
+<td>string</td>
+<td>Optional</td>
+<td>erc20_koz,erc20_usdt, default eth</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameters-11'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>Status code. Successful return 200. Others are <a href="#error-codes">Error Codes</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>Response data.</td>
+</tr>
+</tbody></table>
+<h4 id='data-parameters-11'>Data Parameters</h4>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>callbackid</td>
+<td>string</td>
+<td>callback id</td>
+</tr>
+</tbody></table>
+<h1 id='list-wallet-webhook'>List Wallet WebHook</h1>
+<p>List webhooks set up on the wallet</p>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/webhook_list/"</span><span class="p">,</span> 
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span> 
+    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"your wallet id"</span><span class="p">}</span>
+<span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/webhook_list/?wallet_id=your_wallet_id"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
+    <span class="nt">-X</span> GET
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">request</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://testnet.sectoken.io/wallet/eth/webhook_list/?wallet_id=41a0975d13ed85093fc4702cb44a0e94</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">get</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">'</span><span class="s1">HMAC</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">your token</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>Response Samples</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">Deposit</span><span class="w"> </span><span class="err">Example:</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test callback"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://your.server.com/webhook"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deposit"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"erc20_ht"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"callbackid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"da0e3f3530cb7f63695d8eaad351fdc1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your wallet id"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"create_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-31T19:54:22.977"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="err">Withdraw</span><span class="w"> </span><span class="err">Example:</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test callback"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://your.server.com/webhook"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"withdraw"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"erc20_ht"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"callback_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"da0e3f3530cb7f63695d8eaad351fdc1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your wallet id"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"create_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-31T19:54:22.977"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-12'>HTTP Request</h3>
+<p><code>GET https://testnet.sectoken.io/wallet/eth_single/webhook_list/</code></p>
+<h3 id='request-parameters-11'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wallet_id</td>
+<td>string</td>
+<td>Yes</td>
+<td>Wallet id</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameters-12'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>Status code. Successful return 200. Others are <a href="#error-codes">Error Codes</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>array</td>
+<td>Response data.</td>
+</tr>
+</tbody></table>
+<h4 id='data-parameters-12'>Data Parameters</h4>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>label</td>
+<td>string</td>
+<td>label of the webhook</td>
+</tr>
+<tr>
+<td>url</td>
+<td>string</td>
+<td>URL to fire the webhook to</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>deposit or withdraw</td>
+</tr>
+<tr>
+<td>token</td>
+<td>string</td>
+<td>erc20 token name or eth</td>
+</tr>
+<tr>
+<td>callbackid</td>
+<td>string</td>
+<td>callback id</td>
+</tr>
+<tr>
+<td>wallet_id</td>
+<td>string</td>
+<td>Wallet id</td>
+</tr>
+<tr>
+<td>create_time</td>
+<td>string</td>
+<td>Create Timestamp</td>
+</tr>
+</tbody></table>
+<h1 id='delete-wallet-webhook'>Delete Wallet WebHook</h1>
+<p>Del a webhook.</p>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/wallet/eth/webhook_del/"</span><span class="p">,</span> 
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span> 
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+        <span class="s">"callbackid"</span><span class="p">:</span> <span class="s">"your callback id"</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/wallet/eth/webhook_del/"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"HMAC:your token"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+    <span class="nt">-X</span> POST <span class="se">\</span>
+    <span class="nt">-d</span>  <span class="s1">'{"callbackid": "your callback id"}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">request</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://testnet.sectoken.io/wallet/eth/webhook_del/</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">post</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">'</span><span class="s1">HMAC</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">your token</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+            <span class="dl">'</span><span class="s1">callbackid</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">your callback id</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">})</span>
+    <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>Response Samples</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-13'>HTTP Request</h3>
+<p><code>POST https://testnet.sectoken.io/wallet/eth_single/webhook_del/</code></p>
+<h3 id='request-parameters-12'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>callbackid</td>
+<td>string</td>
+<td>Yes</td>
+<td>callback id</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameters-13'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>Status code. Successful return 200. Others are <a href="#error-codes">Error Codes</a></td>
+</tr>
+</tbody></table>
+<h1 id='transaction-callback'>Transaction Callback</h1>
+<p>When a transaction occurs in a wallet，Sectoken will send an Http POST request to the specified url，The content-type of the request header is application/json.
+Need to add the wallet Webhook first.</p>
+
+<p>This url is specified by the user, who must deploy the service to receive the HTTP POST request.</p>
+
+<p>Sectoken servers will make a POST http request to the URL defined with a JSON payload, and expect a HTTP 200 OK. If a successful response is not received, Sectoken will attempt to retry the webhook with an increasing delay between each retry.</p>
+
+<blockquote>
+<p>request body</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">deposit</span><span class="w"> </span><span class="err">Example:</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6004e156344ec27cad24a8df5bbaa5ab"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x2b4675aff7efad0c7dcee09a943f9cc501402f18b67393a47cdcfa887f5ab2da"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">4340000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dst_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x759ac48a2754be136d495da1a826200ab1c911f2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"src_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x8cb9e65d6a771424dfabbda4221bdb446d9183fe"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deposit"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1872340000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"callbackid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fa5dc2025e79c37b8656ef4b89619d9d"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="err">withdraw</span><span class="w"> </span><span class="err">Example:</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6004e156344ec27cad24a8df5bbaa5ab"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x2b4675aff7efad0c7dcee09a943f9cc501402f18b67393a47cdcfa887f5ab2da"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">4340000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dst_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x759ac48a2754be136d495da1a826200ab1c911f2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"src_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x8cb9e65d6a771424dfabbda4221bdb446d9183fe"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"withdraw"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1872340000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"callbackid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fa5dc2025e79c37b8656ef4b89619d9d"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h3 id='parameters-descriptions'>Parameters descriptions</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wallet_id</td>
+<td>string</td>
+<td>wallet_id</td>
+</tr>
+<tr>
+<td>txid</td>
+<td>string</td>
+<td>Transaction id</td>
+</tr>
+<tr>
+<td>height</td>
+<td>integer</td>
+<td>Block height</td>
+</tr>
+<tr>
+<td>dst_address</td>
+<td>string</td>
+<td>Destination address</td>
+</tr>
+<tr>
+<td>src_address</td>
+<td>string</td>
+<td>Source address</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>Transfer status, deposit or withdraw</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>integer</td>
+<td>Block confirmation time</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Transfer value</td>
+</tr>
+<tr>
+<td>coin_type</td>
+<td>string</td>
+<td>coin type</td>
+</tr>
+<tr>
+<td>decimal</td>
+<td>integer</td>
+<td>Coin balance decimal places</td>
+</tr>
+<tr>
+<td>callbackid</td>
+<td>string</td>
+<td>Callback id</td>
+</tr>
+</tbody></table>
+<h1 id='get-transaction-records'>Get Transaction Records</h1><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s">"https://testnet.sectoken.io/flow/record/eth/"</span><span class="p">,</span> 
+            <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"HMAC"</span><span class="p">:</span> <span class="s">"your token"</span><span class="p">},</span> 
+            <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+                <span class="s">"wallet_id"</span><span class="p">:</span> <span class="s">"b81d38f5f250c36a05da0d0e1f9bd394"</span><span class="p">,</span>
+                <span class="s">"year"</span><span class="p">:</span> <span class="s">"2019"</span><span class="p">,</span>
+                <span class="s">"month"</span><span class="p">:</span> <span class="s">"10"</span>
+            <span class="p">}</span>
+<span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://testnet.sectoken.io/flow/record/eth/?wallet_id=b81d38f5f250c36a05da0d0e1f9bd394&amp;year=2019&amp;month=10"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"HMAC:your token"</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">request</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://testnet.sectoken.io/flow/record/eth/?wallet_id=your_wallet_id&amp;&amp;year=2019&amp;&amp;month=12</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">get</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">'</span><span class="s1">HMAC</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">your token</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>Response Samples</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> 
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xab5e867f7246ac484d79d9d5c73fbdf7a96227ec0d1c5f18340a860d4bf6cb72"</span><span class="p">,</span><span class="w"> 
+            </span><span class="nl">"src_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xcc6620eACfFe84e936285b167F0D2c7C24155363"</span><span class="p">,</span><span class="w"> 
+            </span><span class="nl">"dst_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xa2465290580A948063B713cFf09dD550e4C4E3DB"</span><span class="p">,</span><span class="w"> 
+            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="p">,</span><span class="w"> 
+            </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1572259477</span><span class="p">,</span><span class="w"> 
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"withdraw"</span><span class="p">,</span><span class="w"> 
+            </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">5278224</span><span class="p">,</span><span class="w"> 
+            </span><span class="nl">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"decimal"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-14'>HTTP Request</h3>
+<p><code>GET https://testnet.sectoken.io/flow/record/eth/</code></p>
+<h3 id='request-parameters-13'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wallet_id</td>
+<td>string</td>
+<td>Yes</td>
+<td>wallet_id</td>
+</tr>
+<tr>
+<td>year</td>
+<td>string</td>
+<td>Yes</td>
+<td>year</td>
+</tr>
+<tr>
+<td>month</td>
+<td>string</td>
+<td>Yes</td>
+<td>month</td>
+</tr>
+<tr>
+<td>day</td>
+<td>string</td>
+<td>Optional</td>
+<td>day</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameters-14'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>Status code. Successful return 200. Others are <a href="#error-codes">Error Codes</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>array</td>
+<td>Response data</td>
+</tr>
+</tbody></table>
+<h4 id='data-parameters-13'>Data Parameters</h4>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>txid</td>
+<td>string</td>
+<td>Transaction id</td>
+</tr>
+<tr>
+<td>src_address</td>
+<td>string</td>
+<td>Transaction source address</td>
+</tr>
+<tr>
+<td>det_address</td>
+<td>string</td>
+<td>Transaction destination address</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Transfer value</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>integer</td>
+<td>Transfer time</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>Transfer status, deposit or withdraw</td>
+</tr>
+<tr>
+<td>height</td>
+<td>integer</td>
+<td>Block height</td>
+</tr>
+<tr>
+<td>decimal</td>
+<td>integer</td>
+<td>Coin balance decimal places</td>
+</tr>
+</tbody></table>
+<h1 id='error-codes'>Error Codes</h1>
+<p>The error code returned when an error occurs</p>
+
+<table><thead>
+<tr>
+<th>Error code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>4000</td>
+<td>Invalid params</td>
+</tr>
+<tr>
+<td>5000</td>
+<td>Unknown error, Please contact Sectoken.</td>
+</tr>
+<tr>
+<td>4201</td>
+<td>Wallet not exist</td>
+</tr>
+<tr>
+<td>4202</td>
+<td>Wallet frozen</td>
+</tr>
+<tr>
+<td>4204</td>
+<td>Insufficient balance</td>
+</tr>
+<tr>
+<td>4207</td>
+<td>This public key has been used and the wallet cannot be created repeatedly</td>
+</tr>
+<tr>
+<td>4209</td>
+<td>Activate code error</td>
+</tr>
+<tr>
+<td>4210</td>
+<td>The number of webhook reaches an upper limit</td>
+</tr>
+<tr>
+<td>4401</td>
+<td>Authentication failed</td>
+</tr>
+<tr>
+<td>4402</td>
+<td>The wallet not belong to the user</td>
+</tr>
+<tr>
+<td>4403</td>
+<td>The number of wallets reached the limit</td>
+</tr>
+<tr>
+<td>4404</td>
+<td>No operation permissions</td>
+</tr>
+<tr>
+<td>4503</td>
+<td>Can&#39;t transfer it to yourself</td>
+</tr>
+<tr>
+<td>4504</td>
+<td>Signature error</td>
+</tr>
+<tr>
+<td>4506</td>
+<td>Invalid public key format</td>
+</tr>
+<tr>
+<td>4507</td>
+<td>Private Key Must be base64 format</td>
+</tr>
+<tr>
+<td>4508</td>
+<td>Webhook not exist</td>
+</tr>
+<tr>
+<td>4512</td>
+<td>Can not send already sent transaction</td>
+</tr>
+<tr>
+<td>4605</td>
+<td>ERC20 Token not support</td>
+</tr>
+<tr>
+<td>4606</td>
+<td>Too many unconfirmed transactions</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="python">python</a>
+                <a href="#" data-language-name="javascript">javascript</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
